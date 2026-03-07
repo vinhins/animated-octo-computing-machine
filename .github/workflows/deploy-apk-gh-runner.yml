@@ -1,0 +1,135 @@
+name: Deploy Patched APK (GH Runner Docker Emulator)
+
+on:
+  workflow_dispatch:
+    inputs:
+      patch_run_id:
+        description: "GitHub Actions run ID that produced patched APK artifact"
+        required: true
+        type: string
+      artifact_name:
+        description: "Artifact name from patch workflow"
+        required: true
+        default: "patched-apk-output-v400.1456"
+        type: string
+      package_name:
+        description: "Android package name (optional override)"
+        required: false
+        default: "net.metaquotes.metatrader4"
+        type: string
+      launch_activity:
+        description: "Launcher activity full class name (optional override)"
+        required: false
+        default: "net.metaquotes.metatrader4.ui.MainActivity"
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  deploy-to-emulator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Android SDK tools
+        uses: android-actions/setup-android@v3
+
+      - name: Download patched APK artifact from patch workflow run
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.patch_run_id }}
+          name: ${{ inputs.artifact_name }}
+          path: build
+
+      - name: Pick APK from artifact
+        id: apk
+        shell: bash
+        run: |
+          set -euo pipefail
+          signed_apk="$(ls build/*-patched-signed.apk 2>/dev/null | head -n1 || true)"
+          unsigned_apk="$(ls build/*-patched-unsigned.apk 2>/dev/null | head -n1 || true)"
+
+          if [[ -n "$signed_apk" ]]; then
+            selected="$signed_apk"
+            echo "Using signed APK: $selected"
+          elif [[ -n "$unsigned_apk" ]]; then
+            selected="$unsigned_apk"
+            echo "Signed APK not found. Using unsigned APK: $selected"
+          else
+            echo "No patched APK found in artifact."
+            ls -la build || true
+            exit 1
+          fi
+
+          echo "apk_path=$selected" >> "$GITHUB_OUTPUT"
+
+      - name: Start Docker Android emulator (experimental on GH runner)
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run -d --rm \
+            --name android-emu \
+            --privileged \
+            -p 5555:5555 \
+            -e EMULATOR_DEVICE="Samsung Galaxy S10" \
+            -e WEB_VNC=false \
+            -e EMULATOR_ARGS="-no-window -noaudio -no-boot-anim -gpu swiftshader_indirect -accel off" \
+            budtmo/docker-android:emulator_13.0
+
+      - name: Wait for emulator boot
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in {1..60}; do
+            adb connect 127.0.0.1:5555 >/dev/null 2>&1 || true
+            if adb -s 127.0.0.1:5555 shell getprop sys.boot_completed 2>/dev/null | grep -q "1"; then
+              echo "Emulator booted"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Emulator did not boot in time"
+          docker logs android-emu || true
+          exit 1
+
+      - name: Install APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          adb -s 127.0.0.1:5555 install -r "${{ steps.apk.outputs.apk_path }}"
+
+      - name: Launch app
+        shell: bash
+        run: |
+          set -euo pipefail
+          pkg="${{ inputs.package_name }}"
+          act="${{ inputs.launch_activity }}"
+          adb -s 127.0.0.1:5555 shell am start -n "${pkg}/${act}"
+          adb -s 127.0.0.1:5555 shell pidof "$pkg" || true
+
+      - name: Capture logcat snapshot
+        if: always()
+        shell: bash
+        run: |
+          adb -s 127.0.0.1:5555 logcat -d -t 300 > build/emulator-logcat.txt || true
+
+      - name: Upload deploy logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-emulator-logs-${{ github.run_id }}
+          if-no-files-found: warn
+          path: |
+            build/emulator-logcat.txt
+
+      - name: Cleanup emulator
+        if: always()
+        shell: bash
+        run: |
+          docker rm -f android-emu || true
