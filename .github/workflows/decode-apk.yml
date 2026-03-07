@@ -11,6 +11,10 @@ on:
         description: "Output decode directory (leave empty to auto-generate)"
         required: false
         default: ""
+      apktool_version:
+        description: "Apktool version to install"
+        required: true
+        default: "2.6.1"
       push_to_repo:
         description: "Commit and push decoded output to repository"
         required: true
@@ -39,7 +43,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          APKTOOL_VERSION="3.0.1"
+          APKTOOL_VERSION="${{ github.event.inputs.apktool_version }}"
           APKTOOL_TAG="v${APKTOOL_VERSION}"
           curl -fsSL "https://github.com/iBotPeaches/Apktool/releases/download/${APKTOOL_TAG}/apktool_${APKTOOL_VERSION}.jar" -o /tmp/apktool.jar
           curl -fsSL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -o /tmp/apktool
@@ -59,6 +63,12 @@ jobs:
             exit 1
           fi
 
+          framework_dir="tools/apktool/framework"
+          if [[ ! -d "$framework_dir" ]]; then
+            echo "Framework directory not found: $framework_dir"
+            exit 1
+          fi
+
           requested_output="${{ github.event.inputs.output_dir }}"
           if [[ -n "$requested_output" ]]; then
             output_dir="$requested_output"
@@ -68,7 +78,7 @@ jobs:
           fi
 
           mkdir -p decoded_apks
-          apktool d -f "$apk_path" -o "$output_dir"
+          apktool d -f -p "$framework_dir" "$apk_path" -o "$output_dir"
 
           echo "apk_path=$apk_path" >> "$GITHUB_OUTPUT"
           echo "output_dir=$output_dir" >> "$GITHUB_OUTPUT"
