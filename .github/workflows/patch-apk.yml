@@ -74,15 +74,14 @@ jobs:
           apktool d -f build/source.apk -o decoded_apks/patched_workdir
 
       - name: Apply smali patch
-        shell: pwsh
+        shell: bash
         run: |
-          $prefer = "${{ inputs.preferFallback }}"
-          if ($prefer -eq "true") {
-            ./tools/patch_servers_logging.ps1 -RootPath "decoded_apks/patched_workdir" -PreferFallback 2>&1 | Tee-Object -FilePath "build/patch.log"
-          }
-          else {
-            ./tools/patch_servers_logging.ps1 -RootPath "decoded_apks/patched_workdir" 2>&1 | Tee-Object -FilePath "build/patch.log"
-          }
+          set -euo pipefail
+          if [[ "${{ inputs.preferFallback }}" == "true" ]]; then
+            python3 tools/patch_servers_logging.py --root-path decoded_apks/patched_workdir --prefer-fallback 2>&1 | tee build/patch.log
+          else
+            python3 tools/patch_servers_logging.py --root-path decoded_apks/patched_workdir 2>&1 | tee build/patch.log
+          fi
 
       - name: Rebuild patched APK
         shell: bash
