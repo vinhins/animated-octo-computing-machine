@@ -1,0 +1,90 @@
+name: Decode APK And Commit Output
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_path:
+        description: "Path to source APK in repository"
+        required: true
+        default: "apks/v400.1456.apk"
+      output_dir:
+        description: "Output decode directory (leave empty to auto-generate)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  decode-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install apktool
+        shell: bash
+        run: |
+          set -euo pipefail
+          APKTOOL_VERSION="3.0.1"
+          APKTOOL_TAG="v${APKTOOL_VERSION}"
+          curl -fsSL "https://github.com/iBotPeaches/Apktool/releases/download/${APKTOOL_TAG}/apktool_${APKTOOL_VERSION}.jar" -o /tmp/apktool.jar
+          curl -fsSL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -o /tmp/apktool
+          chmod +x /tmp/apktool
+          sudo mv /tmp/apktool /usr/local/bin/apktool
+          sudo mv /tmp/apktool.jar /usr/local/bin/apktool.jar
+          apktool --version
+
+      - name: Decode APK
+        id: decode
+        shell: bash
+        run: |
+          set -euo pipefail
+          apk_path="${{ github.event.inputs.apk_path }}"
+          if [[ ! -f "$apk_path" ]]; then
+            echo "APK file not found: $apk_path"
+            exit 1
+          fi
+
+          requested_output="${{ github.event.inputs.output_dir }}"
+          if [[ -n "$requested_output" ]]; then
+            output_dir="$requested_output"
+          else
+            apk_name="$(basename "$apk_path" .apk)"
+            output_dir="decoded_apks/${apk_name}_decoded"
+          fi
+
+          mkdir -p decoded_apks
+          apktool d -f "$apk_path" -o "$output_dir"
+
+          echo "apk_path=$apk_path" >> "$GITHUB_OUTPUT"
+          echo "output_dir=$output_dir" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push decoded output
+        shell: bash
+        run: |
+          set -euo pipefail
+          output_dir="${{ steps.decode.outputs.output_dir }}"
+          apk_path="${{ steps.decode.outputs.apk_path }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "$output_dir"
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit for $output_dir"
+            exit 0
+          fi
+
+          git commit -m "Decode $(basename "$apk_path") into $output_dir"
+          git push
