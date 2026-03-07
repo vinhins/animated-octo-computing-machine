@@ -1,0 +1,102 @@
+.class public final synthetic Lcom/google/firebase/analytics/connector/internal/a;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+# interfaces
+.implements Lx40;
+
+
+# static fields
+.field public static final synthetic a:Lcom/google/firebase/analytics/connector/internal/a;
+
+
+# direct methods
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/firebase/analytics/connector/internal/a;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lcom/google/firebase/analytics/connector/internal/a;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lcom/google/firebase/analytics/connector/internal/a;->a:Lcom/google/firebase/analytics/connector/internal/a;
+
+    .line 7
+    .line 8
+    return-void
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+.end method
+
+.method private synthetic constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+.end method
+
+
+# virtual methods
+.method public final a(Lr40;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/AnalyticsConnectorRegistrar;->lambda$getComponents$0(Lr40;)Lm4;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p1
+
+    .line 5
+    return-object p1
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method

@@ -1,0 +1,774 @@
+.class public abstract Lni0;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+
+# direct methods
+.method public static final synthetic a(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->g(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final synthetic b(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->h(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final synthetic c(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->i(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final synthetic d(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->j(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final synthetic e(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->k(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final synthetic f(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lni0;->l(J)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide p0
+
+    .line 5
+    return-wide p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method private static final g(J)J
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    shl-long/2addr p0, v0
+
+    .line 3
+    const-wide/16 v0, 0x1
+
+    .line 4
+    .line 5
+    add-long/2addr p0, v0
+
+    .line 6
+    invoke-static {p0, p1}, Lli0;->e(J)J
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-wide p0
+
+    .line 10
+    return-wide p0
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method private static final h(J)J
+    .locals 6
+
+    .line 1
+    const-wide v0, -0x431bde82d7aL
+
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    cmp-long v0, v0, p0
+
+    .line 7
+    .line 8
+    if-gtz v0, :cond_0
+
+    .line 9
+    .line 10
+    const-wide v0, 0x431bde82d7bL
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    cmp-long v0, p0, v0
+
+    .line 16
+    .line 17
+    if-gez v0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-static {p0, p1}, Lni0;->k(J)J
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-wide p0
+
+    .line 23
+    invoke-static {p0, p1}, Lni0;->i(J)J
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-wide p0
+
+    .line 27
+    return-wide p0
+
+    .line 28
+    :cond_0
+    const-wide v2, -0x3fffffffffffffffL    # -2.0000000000000004
+
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    const-wide v4, 0x3fffffffffffffffL    # 1.9999999999999998
+
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    move-wide v0, p0
+
+    .line 39
+    invoke-static/range {v0 .. v5}, Lhc2;->h(JJJ)J
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-wide p0
+
+    .line 43
+    invoke-static {p0, p1}, Lni0;->g(J)J
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-wide p0
+
+    .line 47
+    return-wide p0
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+.end method
+
+.method private static final i(J)J
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    shl-long/2addr p0, v0
+
+    .line 3
+    invoke-static {p0, p1}, Lli0;->e(J)J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide p0
+
+    .line 7
+    return-wide p0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method private static final j(J)J
+    .locals 2
+
+    .line 1
+    const-wide v0, -0x3ffffffffffa14bfL    # -2.0000000001722644
+
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    cmp-long v0, v0, p0
+
+    .line 7
+    .line 8
+    if-gtz v0, :cond_0
+
+    .line 9
+    .line 10
+    const-wide v0, 0x3ffffffffffa14c0L    # 1.999999999913868
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    cmp-long v0, p0, v0
+
+    .line 16
+    .line 17
+    if-gez v0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-static {p0, p1}, Lni0;->i(J)J
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-wide p0
+
+    .line 23
+    return-wide p0
+
+    .line 24
+    :cond_0
+    invoke-static {p0, p1}, Lni0;->l(J)J
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-wide p0
+
+    .line 28
+    invoke-static {p0, p1}, Lni0;->g(J)J
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-wide p0
+
+    .line 32
+    return-wide p0
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+.end method
+
+.method private static final k(J)J
+    .locals 2
+
+    .line 1
+    const v0, 0xf4240
+
+    .line 2
+    .line 3
+    .line 4
+    int-to-long v0, v0
+
+    .line 5
+    mul-long/2addr p0, v0
+
+    .line 6
+    return-wide p0
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method private static final l(J)J
+    .locals 2
+
+    .line 1
+    const v0, 0xf4240
+
+    .line 2
+    .line 3
+    .line 4
+    int-to-long v0, v0
+
+    .line 5
+    div-long/2addr p0, v0
+
+    .line 6
+    return-wide p0
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+.end method
+
+.method public static final m(ILpi0;)J
+    .locals 2
+
+    .line 1
+    const-string v0, "unit"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Li61;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object v0, Lpi0;->q:Lpi0;
+
+    .line 7
+    .line 8
+    invoke-virtual {p1, v0}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    if-gtz v0, :cond_0
+
+    .line 13
+    .line 14
+    int-to-long v0, p0
+
+    .line 15
+    sget-object p0, Lpi0;->n:Lpi0;
+
+    .line 16
+    .line 17
+    invoke-static {v0, v1, p1, p0}, Lqi0;->b(JLpi0;Lpi0;)J
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-wide p0
+
+    .line 21
+    invoke-static {p0, p1}, Lni0;->i(J)J
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-wide p0
+
+    .line 25
+    return-wide p0
+
+    .line 26
+    :cond_0
+    int-to-long v0, p0
+
+    .line 27
+    invoke-static {v0, v1, p1}, Lni0;->n(JLpi0;)J
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-wide p0
+
+    .line 31
+    return-wide p0
+    .line 32
+    .line 33
+    .line 34
+.end method
+
+.method public static final n(JLpi0;)J
+    .locals 7
+
+    .line 1
+    const-string v0, "unit"
+
+    .line 2
+    .line 3
+    invoke-static {p2, v0}, Li61;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object v0, Lpi0;->n:Lpi0;
+
+    .line 7
+    .line 8
+    const-wide v1, 0x3ffffffffffa14bfL    # 1.9999999999138678
+
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    invoke-static {v1, v2, v0, p2}, Lqi0;->b(JLpi0;Lpi0;)J
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-wide v1
+
+    .line 17
+    neg-long v3, v1
+
+    .line 18
+    cmp-long v3, v3, p0
+
+    .line 19
+    .line 20
+    if-gtz v3, :cond_0
+
+    .line 21
+    .line 22
+    cmp-long v1, p0, v1
+
+    .line 23
+    .line 24
+    if-gtz v1, :cond_0
+
+    .line 25
+    .line 26
+    invoke-static {p0, p1, p2, v0}, Lqi0;->b(JLpi0;Lpi0;)J
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-wide p0
+
+    .line 30
+    invoke-static {p0, p1}, Lni0;->i(J)J
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-wide p0
+
+    .line 34
+    return-wide p0
+
+    .line 35
+    :cond_0
+    sget-object v0, Lpi0;->p:Lpi0;
+
+    .line 36
+    .line 37
+    invoke-static {p0, p1, p2, v0}, Lqi0;->a(JLpi0;Lpi0;)J
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-wide v1
+
+    .line 41
+    const-wide v3, -0x3fffffffffffffffL    # -2.0000000000000004
+
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    const-wide v5, 0x3fffffffffffffffL    # 1.9999999999999998
+
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    invoke-static/range {v1 .. v6}, Lhc2;->h(JJJ)J
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-wide p0
+
+    .line 55
+    invoke-static {p0, p1}, Lni0;->g(J)J
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-wide p0
+
+    .line 59
+    return-wide p0
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+    .line 70
+    .line 71
+    .line 72
+    .line 73
+    .line 74
+    .line 75
+    .line 76
+    .line 77
+    .line 78
+    .line 79
+    .line 80
+    .line 81
+    .line 82
+    .line 83
+    .line 84
+    .line 85
+    .line 86
+    .line 87
+    .line 88
+    .line 89
+    .line 90
+    .line 91
+    .line 92
+    .line 93
+    .line 94
+    .line 95
+    .line 96
+    .line 97
+    .line 98
+    .line 99
+    .line 100
+    .line 101
+    .line 102
+    .line 103
+    .line 104
+    .line 105
+    .line 106
+    .line 107
+    .line 108
+    .line 109
+    .line 110
+    .line 111
+    .line 112
+    .line 113
+    .line 114
+    .line 115
+    .line 116
+    .line 117
+    .line 118
+    .line 119
+    .line 120
+    .line 121
+    .line 122
+    .line 123
+    .line 124
+    .line 125
+    .line 126
+    .line 127
+    .line 128
+    .line 129
+    .line 130
+    .line 131
+    .line 132
+    .line 133
+.end method

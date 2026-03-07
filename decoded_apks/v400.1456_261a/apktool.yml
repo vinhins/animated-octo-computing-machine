@@ -1,0 +1,54 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: v400.1456.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- wav
+- lib/arm64-v8a/libchannels.so
+- lib/arm64-v8a/libdatastore_shared_counter.so
+- lib/arm64-v8a/libmt4.so
+- lib/armeabi-v7a/libchannels.so
+- lib/armeabi-v7a/libdatastore_shared_counter.so
+- lib/armeabi-v7a/libmt4.so
+- png
+- res/3K.dat
+isFrameworkApk: false
+packageInfo: null
+sdkInfo:
+  minSdkVersion: '23'
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  DebugProbesKt.bin: '8'
+  client_analytics.proto: '8'
+  firebase-analytics.properties: '8'
+  firebase-core.properties: '8'
+  firebase-encoders-json.properties: '8'
+  firebase-encoders-proto.properties: '8'
+  firebase-encoders.properties: '8'
+  firebase-iid-interop.properties: '8'
+  firebase-measurement-connector.properties: '8'
+  kotlin-tooling-metadata.json: '8'
+  messaging_event.proto: '8'
+  messaging_event_extension.proto: '8'
+  play-services-ads-identifier.properties: '8'
+  play-services-auth-api-phone.properties: '8'
+  play-services-auth-base.properties: '8'
+  play-services-auth.properties: '8'
+  play-services-base.properties: '8'
+  play-services-basement.properties: '8'
+  play-services-cloud-messaging.properties: '8'
+  play-services-fido.properties: '8'
+  play-services-measurement-api.properties: '8'
+  play-services-measurement-base.properties: '8'
+  play-services-measurement-impl.properties: '8'
+  play-services-measurement-sdk-api.properties: '8'
+  play-services-measurement-sdk.properties: '8'
+  play-services-measurement.properties: '8'
+  play-services-stats.properties: '8'
+  play-services-tasks.properties: '8'
+usesFramework: null
+version: 2.6.1
+versionInfo: null
