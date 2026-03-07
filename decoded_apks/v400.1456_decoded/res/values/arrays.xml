@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Bar chart</item>
+        <item>Candlestick</item>
+        <item>Line chart</item>
+    </string-array>
+    <string-array name="chart_line_types_values">
+        <item>bars</item>
+        <item>candles</item>
+        <item>line</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>"Don't show volumes"</item>
+        <item>Show tick volumes</item>
+        <item>Show real volumes</item>
+    </string-array>
+    <string-array name="chart_volumes_values">
+        <item>none</item>
+        <item>ticks</item>
+        <item>real</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Never</item>
+        <item>Only when silent</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes_values">
+        <item>never</item>
+        <item>silent</item>
+        <item>always</item>
+    </string-array>
+</resources>

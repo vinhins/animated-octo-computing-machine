@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.metaquotes.common.ui.Toolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
+    <ViewFlipper android:id="@id/view_flipper" android:layout_width="match_parent" android:layout_height="0.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <net.metaquotes.metatrader4.ui.common.EmptyDataStub android:id="@id/empty_data_stub" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <ListView android:orientation="vertical" android:id="@id/content_list" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </ViewFlipper>
+</androidx.constraintlayout.widget.ConstraintLayout>

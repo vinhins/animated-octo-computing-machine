@@ -1,0 +1,2393 @@
+.class public Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;
+.super Loc;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+    }
+.end annotation
+
+
+# instance fields
+.field private G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+.field private H0:Z
+
+.field private I0:Landroid/widget/CheckBox;
+
+.field private J0:Landroid/widget/TextView;
+
+.field private K0:Landroid/widget/TextView;
+
+.field private final L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+.field private final M0:Landroid/view/View$OnClickListener;
+
+.field private final N0:Landroid/view/View$OnClickListener;
+
+.field private final O0:Lb82;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Loc;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 5
+    .line 6
+    invoke-direct {v0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 10
+    .line 11
+    new-instance v0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$a;
+
+    .line 12
+    .line 13
+    invoke-direct {v0, p0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$a;-><init>(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)V
+
+    .line 14
+    .line 15
+    .line 16
+    iput-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->M0:Landroid/view/View$OnClickListener;
+
+    .line 17
+    .line 18
+    new-instance v0, Lmw1;
+
+    .line 19
+    .line 20
+    invoke-direct {v0, p0}, Lmw1;-><init>(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)V
+
+    .line 21
+    .line 22
+    .line 23
+    iput-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->N0:Landroid/view/View$OnClickListener;
+
+    .line 24
+    .line 25
+    new-instance v0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$b;
+
+    .line 26
+    .line 27
+    invoke-direct {v0, p0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$b;-><init>(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)V
+
+    .line 28
+    .line 29
+    .line 30
+    iput-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->O0:Lb82;
+
+    .line 31
+    .line 32
+    return-void
+.end method
+
+.method public static synthetic I2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->V2(Landroid/view/View;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static synthetic J2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Landroid/os/Bundle;Landroid/view/View;Z)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2, p3}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->W2(Landroid/os/Bundle;Landroid/view/View;Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static synthetic K2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->U2(Landroid/view/View;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method static bridge synthetic L2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Landroid/widget/CheckBox;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method static bridge synthetic M2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method static bridge synthetic N2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Landroid/view/View$OnClickListener;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->N0:Landroid/view/View$OnClickListener;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method static bridge synthetic O2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->H0:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method static bridge synthetic P2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Landroid/widget/TextView;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->J0:Landroid/widget/TextView;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method static bridge synthetic Q2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->H0:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method static bridge synthetic R2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Z)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->a3(Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method static synthetic S2(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Loc;->v2()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method private T2(Landroid/os/Bundle;)V
+    .locals 4
+
+    .line 1
+    const-string v0, "Bind.Login"
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
+
+    .line 7
+    if-eqz p1, :cond_4
+
+    .line 8
+    .line 9
+    if-nez v1, :cond_0
+
+    .line 10
+    .line 11
+    goto :goto_2
+
+    .line 12
+    :cond_0
+    const v2, 0x7f0a02aa
+
+    .line 13
+    .line 14
+    .line 15
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v2
+
+    .line 19
+    check-cast v2, Landroid/widget/TextView;
+
+    .line 20
+    .line 21
+    const v3, 0x7f0a040d
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v1
+
+    .line 28
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 29
+    .line 30
+    if-eqz v2, :cond_1
+
+    .line 31
+    .line 32
+    :try_start_0
+    invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v2
+
+    .line 36
+    invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v2
+
+    .line 40
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 41
+    .line 42
+    .line 43
+    move-result-wide v2
+
+    .line 44
+    invoke-virtual {p1, v0, v2, v3}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 45
+    .line 46
+    .line 47
+    goto :goto_0
+
+    .line 48
+    :catch_0
+    const-wide/16 v2, 0x0
+
+    .line 49
+    .line 50
+    invoke-virtual {p1, v0, v2, v3}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
+
+    .line 51
+    .line 52
+    .line 53
+    :cond_1
+    :goto_0
+    const-string v0, "Bind.Password"
+
+    .line 54
+    .line 55
+    if-eqz v1, :cond_2
+
+    .line 56
+    .line 57
+    invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v1
+
+    .line 61
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v1
+
+    .line 65
+    invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 66
+    .line 67
+    .line 68
+    goto :goto_1
+
+    .line 69
+    :cond_2
+    const/4 v1, 0x0
+
+    .line 70
+    invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 71
+    .line 72
+    .line 73
+    :goto_1
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 74
+    .line 75
+    const-string v1, "Bind.Bind"
+
+    .line 76
+    .line 77
+    if-eqz v0, :cond_3
+
+    .line 78
+    .line 79
+    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v0
+
+    .line 83
+    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 84
+    .line 85
+    .line 86
+    goto :goto_2
+
+    .line 87
+    :cond_3
+    const/4 v0, 0x1
+
+    .line 88
+    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 89
+    .line 90
+    .line 91
+    :cond_4
+    :goto_2
+    return-void
+.end method
+
+.method private synthetic U2(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Landroidx/fragment/app/f;->n2()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method private synthetic V2(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->J0:Landroid/widget/TextView;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p1}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->X2(Landroid/widget/TextView;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method private synthetic W2(Landroid/os/Bundle;Landroid/view/View;Z)V
+    .locals 1
+
+    .line 1
+    if-nez p3, :cond_3
+
+    .line 2
+    .line 3
+    if-nez p2, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_2
+
+    .line 6
+    :cond_0
+    const/4 p3, 0x1
+
+    .line 7
+    if-eqz p1, :cond_2
+
+    .line 8
+    .line 9
+    const-string v0, "Bind.Bind"
+
+    .line 10
+    .line 11
+    invoke-virtual {p1, v0, p3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p1
+
+    .line 15
+    if-eqz p1, :cond_1
+
+    .line 16
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_1
+    const/4 p3, 0x0
+
+    .line 19
+    :cond_2
+    :goto_0
+    :try_start_0
+    check-cast p2, Landroid/widget/TextView;
+
+    .line 20
+    .line 21
+    invoke-virtual {p2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p1
+
+    .line 25
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p1
+
+    .line 29
+    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-wide p1
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :catch_0
+    const-wide/16 p1, 0x0
+
+    .line 35
+    .line 36
+    :goto_1
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 37
+    .line 38
+    invoke-direct {p0, p3, p1, p2, v0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->Y2(ZJLnet/metaquotes/metatrader4/types/ServerRecord;)V
+
+    .line 39
+    .line 40
+    .line 41
+    :cond_3
+    :goto_2
+    return-void
+.end method
+
+.method private X2(Landroid/widget/TextView;)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Loc;->v2()Z
+
+    .line 2
+    .line 3
+    .line 4
+    :try_start_0
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p1
+
+    .line 8
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p1
+
+    .line 12
+    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-wide v0
+
+    .line 16
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 17
+    .line 18
+    if-eqz p1, :cond_0
+
+    .line 19
+    .line 20
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p1
+
+    .line 24
+    iget-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 25
+    .line 26
+    invoke-direct {p0, p1, v0, v1, v2}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->Y2(ZJLnet/metaquotes/metatrader4/types/ServerRecord;)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 27
+    .line 28
+    .line 29
+    :catch_0
+    :cond_0
+    return-void
+.end method
+
+.method private Y2(ZJLnet/metaquotes/metatrader4/types/ServerRecord;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    goto :goto_1
+
+    .line 8
+    :cond_0
+    const v1, 0x7f0a03f1
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v1
+
+    .line 15
+    if-nez v1, :cond_1
+
+    .line 16
+    .line 17
+    goto :goto_1
+
+    .line 18
+    :cond_1
+    const-wide/16 v2, 0x0
+
+    .line 19
+    .line 20
+    cmp-long v2, p2, v2
+
+    .line 21
+    .line 22
+    if-lez v2, :cond_5
+
+    .line 23
+    .line 24
+    if-eqz p4, :cond_5
+
+    .line 25
+    .line 26
+    iget-object v2, p4, Lnet/metaquotes/metatrader4/types/ServerRecord;->m:Ljava/lang/String;
+
+    .line 27
+    .line 28
+    if-nez v2, :cond_2
+
+    .line 29
+    .line 30
+    goto :goto_2
+
+    .line 31
+    :cond_2
+    const/4 v2, 0x0
+
+    .line 32
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 33
+    .line 34
+    .line 35
+    const v1, 0x7f0a03f0
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v0
+
+    .line 42
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 43
+    .line 44
+    if-eqz v0, :cond_4
+
+    .line 45
+    .line 46
+    if-eqz p1, :cond_3
+
+    .line 47
+    .line 48
+    const p1, 0x7f13032f
+
+    .line 49
+    .line 50
+    .line 51
+    goto :goto_0
+
+    .line 52
+    :cond_3
+    const p1, 0x7f130344
+
+    .line 53
+    .line 54
+    .line 55
+    :goto_0
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->o0(I)Ljava/lang/String;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p1
+
+    .line 59
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object p2
+
+    .line 63
+    iget-object p3, p4, Lnet/metaquotes/metatrader4/types/ServerRecord;->m:Ljava/lang/String;
+
+    .line 64
+    .line 65
+    const/4 p4, 0x2
+
+    .line 66
+    new-array p4, p4, [Ljava/lang/Object;
+
+    .line 67
+    .line 68
+    aput-object p2, p4, v2
+
+    .line 69
+    .line 70
+    const/4 p2, 0x1
+
+    .line 71
+    aput-object p3, p4, p2
+
+    .line 72
+    .line 73
+    invoke-static {p1, p4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 74
+    .line 75
+    .line 76
+    move-result-object p1
+
+    .line 77
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 78
+    .line 79
+    .line 80
+    :cond_4
+    :goto_1
+    return-void
+
+    .line 81
+    :cond_5
+    :goto_2
+    const/16 p1, 0x8
+
+    .line 82
+    .line 83
+    invoke-virtual {v1, p1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 84
+    .line 85
+    .line 86
+    return-void
+.end method
+
+.method private Z2(Lnet/metaquotes/metatrader4/types/ServerRecord;)V
+    .locals 7
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    goto/16 :goto_1
+
+    .line 8
+    .line 9
+    :cond_0
+    const v1, 0x7f0a04b8
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v1
+
+    .line 16
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 17
+    .line 18
+    const v2, 0x7f0a0157
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v2
+
+    .line 25
+    const v3, 0x7f0a04b4
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v3
+
+    .line 32
+    check-cast v3, Landroid/widget/TextView;
+
+    .line 33
+    .line 34
+    const v4, 0x7f0a04b5
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object v0
+
+    .line 41
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 42
+    .line 43
+    const/4 v4, 0x0
+
+    .line 44
+    const/16 v5, 0x8
+
+    .line 45
+    .line 46
+    if-eqz p1, :cond_3
+
+    .line 47
+    .line 48
+    if-eqz v2, :cond_7
+
+    .line 49
+    .line 50
+    if-eqz v1, :cond_7
+
+    .line 51
+    .line 52
+    if-eqz v3, :cond_7
+
+    .line 53
+    .line 54
+    if-eqz v0, :cond_7
+
+    .line 55
+    .line 56
+    iget-object v6, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 57
+    .line 58
+    if-eqz v6, :cond_7
+
+    .line 59
+    .line 60
+    invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 61
+    .line 62
+    .line 63
+    iget-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 64
+    .line 65
+    iget-object v2, v2, Lnet/metaquotes/metatrader4/types/ServerRecord;->m:Ljava/lang/String;
+
+    .line 66
+    .line 67
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 68
+    .line 69
+    .line 70
+    iget-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 71
+    .line 72
+    iget-object v2, v2, Lnet/metaquotes/metatrader4/types/ServerRecord;->n:Ljava/lang/String;
+
+    .line 73
+    .line 74
+    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 75
+    .line 76
+    .line 77
+    invoke-static {}, Lcu2;->i()Ljava/lang/StringBuilder;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object v2
+
+    .line 81
+    if-eqz v2, :cond_1
+
+    .line 82
+    .line 83
+    iget-object p1, p1, Lnet/metaquotes/metatrader4/types/ServerRecord;->o:Ljava/lang/String;
+
+    .line 84
+    .line 85
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 86
+    .line 87
+    .line 88
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 89
+    .line 90
+    .line 91
+    move-result-object p1
+
+    .line 92
+    invoke-static {p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    .line 93
+    .line 94
+    .line 95
+    move-result-object p1
+
+    .line 96
+    if-eqz p1, :cond_2
+
+    .line 97
+    .line 98
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 99
+    .line 100
+    .line 101
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 102
+    .line 103
+    .line 104
+    goto :goto_0
+
+    .line 105
+    :cond_1
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 106
+    .line 107
+    .line 108
+    :cond_2
+    :goto_0
+    invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 109
+    .line 110
+    .line 111
+    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 112
+    .line 113
+    .line 114
+    return-void
+
+    .line 115
+    :cond_3
+    if-eqz v2, :cond_4
+
+    .line 116
+    .line 117
+    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 118
+    .line 119
+    .line 120
+    :cond_4
+    if-eqz v1, :cond_5
+
+    .line 121
+    .line 122
+    invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 123
+    .line 124
+    .line 125
+    :cond_5
+    if-eqz v3, :cond_6
+
+    .line 126
+    .line 127
+    invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 128
+    .line 129
+    .line 130
+    :cond_6
+    if-eqz v0, :cond_7
+
+    .line 131
+    .line 132
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 133
+    .line 134
+    .line 135
+    const p1, 0x7f080248
+
+    .line 136
+    .line 137
+    .line 138
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 139
+    .line 140
+    .line 141
+    :cond_7
+    :goto_1
+    return-void
+.end method
+
+.method private a3(Z)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->H()Landroidx/fragment/app/FragmentActivity;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-eqz v0, :cond_3
+
+    .line 6
+    .line 7
+    const v1, 0x7f0a0156
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object v1
+
+    .line 14
+    if-eqz v1, :cond_0
+
+    .line 15
+    .line 16
+    invoke-virtual {v1, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 17
+    .line 18
+    .line 19
+    :cond_0
+    const v1, 0x7f0a02aa
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v1
+
+    .line 26
+    if-eqz v1, :cond_1
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_1
+    const v1, 0x7f0a040d
+
+    .line 32
+    .line 33
+    .line 34
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v0
+
+    .line 38
+    if-eqz v0, :cond_2
+
+    .line 39
+    .line 40
+    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 41
+    .line 42
+    .line 43
+    :cond_2
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 44
+    .line 45
+    if-eqz v0, :cond_3
+
+    .line 46
+    .line 47
+    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 48
+    .line 49
+    .line 50
+    :cond_3
+    return-void
+.end method
+
+.method private b3()V
+    .locals 10
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->L()Landroid/os/Bundle;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    if-nez v0, :cond_0
+
+    .line 10
+    .line 11
+    return-void
+
+    .line 12
+    :cond_0
+    const/4 v2, 0x0
+
+    .line 13
+    const/4 v3, 0x1
+
+    .line 14
+    const-string v4, ""
+
+    .line 15
+    .line 16
+    const-wide/16 v5, 0x0
+
+    .line 17
+    .line 18
+    if-eqz v1, :cond_1
+
+    .line 19
+    .line 20
+    const-string v7, "Bind.Login"
+
+    .line 21
+    .line 22
+    invoke-virtual {v1, v7, v5, v6}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-wide v7
+
+    .line 26
+    const-string v9, "Bind.Password"
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, v9, v2}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v2
+
+    .line 32
+    const-string v9, "Bind.Bind"
+
+    .line 33
+    .line 34
+    invoke-virtual {v1, v9, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v3
+
+    .line 38
+    const-string v9, "label"
+
+    .line 39
+    .line 40
+    invoke-virtual {v1, v9}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    .line 41
+    .line 42
+    .line 43
+    move-result-object v9
+
+    .line 44
+    check-cast v9, Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 45
+    .line 46
+    iput-object v9, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 47
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :cond_1
+    iput-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 50
+    .line 51
+    invoke-static {}, Lnet/metaquotes/metatrader4/terminal/a;->r0()Lnet/metaquotes/metatrader4/terminal/a;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v2
+
+    .line 55
+    if-eqz v2, :cond_2
+
+    .line 56
+    .line 57
+    invoke-virtual {v2}, Lnet/metaquotes/metatrader4/terminal/TerminalNetwork;->h()J
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-wide v7
+
+    .line 61
+    invoke-virtual {v2, v7, v8}, Lnet/metaquotes/metatrader4/terminal/TerminalServers;->seversGetForAccount(J)Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v2
+
+    .line 65
+    iput-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 66
+    .line 67
+    move-object v2, v4
+
+    .line 68
+    goto :goto_0
+
+    .line 69
+    :cond_2
+    move-object v2, v4
+
+    .line 70
+    move-wide v7, v5
+
+    .line 71
+    :goto_0
+    cmp-long v5, v7, v5
+
+    .line 72
+    .line 73
+    if-lez v5, :cond_3
+
+    .line 74
+    .line 75
+    iget-object v5, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->J0:Landroid/widget/TextView;
+
+    .line 76
+    .line 77
+    invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object v6
+
+    .line 81
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 82
+    .line 83
+    .line 84
+    :cond_3
+    const v5, 0x7f0a02aa
+
+    .line 85
+    .line 86
+    .line 87
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-object v5
+
+    .line 91
+    new-instance v6, Low1;
+
+    .line 92
+    .line 93
+    invoke-direct {v6, p0, v1}, Low1;-><init>(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;Landroid/os/Bundle;)V
+
+    .line 94
+    .line 95
+    .line 96
+    invoke-virtual {v5, v6}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+
+    .line 97
+    .line 98
+    .line 99
+    const v1, 0x7f0a040d
+
+    .line 100
+    .line 101
+    .line 102
+    if-eqz v2, :cond_4
+
+    .line 103
+    .line 104
+    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
+
+    .line 105
+    .line 106
+    .line 107
+    move-result v5
+
+    .line 108
+    if-nez v5, :cond_4
+
+    .line 109
+    .line 110
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 111
+    .line 112
+    .line 113
+    move-result-object v0
+
+    .line 114
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 115
+    .line 116
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 117
+    .line 118
+    .line 119
+    goto :goto_1
+
+    .line 120
+    :cond_4
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-object v0
+
+    .line 124
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 125
+    .line 126
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 127
+    .line 128
+    .line 129
+    :goto_1
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 130
+    .line 131
+    invoke-virtual {v0, v3}, Landroid/widget/CompoundButton;->setChecked(Z)V
+
+    .line 132
+    .line 133
+    .line 134
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 135
+    .line 136
+    invoke-direct {p0, v0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->Z2(Lnet/metaquotes/metatrader4/types/ServerRecord;)V
+
+    .line 137
+    .line 138
+    .line 139
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 140
+    .line 141
+    invoke-direct {p0, v3, v7, v8, v0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->Y2(ZJLnet/metaquotes/metatrader4/types/ServerRecord;)V
+
+    .line 142
+    .line 143
+    .line 144
+    return-void
+.end method
+
+
+# virtual methods
+.method public S0(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .locals 1
+
+    .line 1
+    const p3, 0x7f0d0087
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v0, 0x0
+
+    .line 5
+    invoke-virtual {p1, p3, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p1
+
+    .line 9
+    return-object p1
+.end method
+
+.method public c1(Landroid/view/MenuItem;)Z
+    .locals 11
+
+    .line 1
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    if-eqz p1, :cond_0
+
+    .line 5
+    .line 6
+    iget-object p1, p1, Lnet/metaquotes/metatrader4/types/ServerRecord;->hash:[B
+
+    .line 7
+    .line 8
+    move-object v6, p1
+
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    move-object v6, v0
+
+    .line 11
+    :goto_0
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 12
+    .line 13
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v2
+
+    .line 17
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->K0:Landroid/widget/TextView;
+
+    .line 18
+    .line 19
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p1
+
+    .line 23
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v5
+
+    .line 27
+    const p1, 0x7f130337
+
+    .line 28
+    .line 29
+    .line 30
+    const/4 v7, 0x0
+
+    .line 31
+    const/4 v8, 0x1
+
+    .line 32
+    :try_start_0
+    iget-object v1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->J0:Landroid/widget/TextView;
+
+    .line 33
+    .line 34
+    invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v1
+
+    .line 38
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v1
+
+    .line 42
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-wide v3
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 46
+    if-eqz v6, :cond_3
+
+    .line 47
+    .line 48
+    if-eqz v5, :cond_3
+
+    .line 49
+    .line 50
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v1
+
+    .line 54
+    if-nez v1, :cond_3
+
+    .line 55
+    .line 56
+    const-wide/16 v9, 0x0
+
+    .line 57
+    .line 58
+    cmp-long v1, v3, v9
+
+    .line 59
+    .line 60
+    if-eqz v1, :cond_3
+
+    .line 61
+    .line 62
+    iput-boolean v8, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->H0:Z
+
+    .line 63
+    .line 64
+    invoke-virtual {p0}, Loc;->v2()Z
+
+    .line 65
+    .line 66
+    .line 67
+    invoke-direct {p0, v7}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->a3(Z)V
+
+    .line 68
+    .line 69
+    .line 70
+    invoke-static {}, Lnet/metaquotes/metatrader4/terminal/a;->r0()Lnet/metaquotes/metatrader4/terminal/a;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object v1
+
+    .line 74
+    if-nez v1, :cond_1
+
+    .line 75
+    .line 76
+    return v7
+
+    .line 77
+    :cond_1
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->O0:Lb82;
+
+    .line 78
+    .line 79
+    const/16 v9, 0x1b59
+
+    .line 80
+    .line 81
+    invoke-static {v9, p1}, Lnet/metaquotes/metatrader4/terminal/Publisher;->subscribe(ILb82;)V
+
+    .line 82
+    .line 83
+    .line 84
+    invoke-virtual/range {v1 .. v6}, Lnet/metaquotes/metatrader4/terminal/TerminalAccounts;->accountsOTPBind(ZJLjava/lang/String;[B)Z
+
+    .line 85
+    .line 86
+    .line 87
+    move-result p1
+
+    .line 88
+    if-nez p1, :cond_2
+
+    .line 89
+    .line 90
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->O0:Lb82;
+
+    .line 91
+    .line 92
+    invoke-static {v9, p1}, Lnet/metaquotes/metatrader4/terminal/Publisher;->unsubscribe(ILb82;)V
+
+    .line 93
+    .line 94
+    .line 95
+    iput-boolean v7, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->H0:Z
+
+    .line 96
+    .line 97
+    invoke-virtual {p0}, Loc;->v2()Z
+
+    .line 98
+    .line 99
+    .line 100
+    invoke-direct {p0, v8}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->a3(Z)V
+
+    .line 101
+    .line 102
+    .line 103
+    :cond_2
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 104
+    .line 105
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->c0()Landroidx/fragment/app/FragmentManager;
+
+    .line 106
+    .line 107
+    .line 108
+    move-result-object v1
+
+    .line 109
+    invoke-virtual {p1, v1, v0}, Landroidx/fragment/app/f;->A2(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V
+
+    .line 110
+    .line 111
+    .line 112
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->L0:Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;
+
+    .line 113
+    .line 114
+    const v0, 0x7f13033f
+
+    .line 115
+    .line 116
+    .line 117
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->o0(I)Ljava/lang/String;
+
+    .line 118
+    .line 119
+    .line 120
+    move-result-object v0
+
+    .line 121
+    const v1, 0x7f13006b
+
+    .line 122
+    .line 123
+    .line 124
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/Fragment;->o0(I)Ljava/lang/String;
+
+    .line 125
+    .line 126
+    .line 127
+    move-result-object v1
+
+    .line 128
+    iget-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->M0:Landroid/view/View$OnClickListener;
+
+    .line 129
+    .line 130
+    invoke-virtual {p1, v0, v1, v2}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment$c;->K2(Ljava/lang/String;Ljava/lang/String;Landroid/view/View$OnClickListener;)V
+
+    .line 131
+    .line 132
+    .line 133
+    return v8
+
+    .line 134
+    :cond_3
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->R1()Landroid/content/Context;
+
+    .line 135
+    .line 136
+    .line 137
+    move-result-object v0
+
+    .line 138
+    invoke-static {v0, p1, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    .line 139
+    .line 140
+    .line 141
+    move-result-object p1
+
+    .line 142
+    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
+
+    .line 143
+    .line 144
+    .line 145
+    return v7
+
+    .line 146
+    :catch_0
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->R1()Landroid/content/Context;
+
+    .line 147
+    .line 148
+    .line 149
+    move-result-object v0
+
+    .line 150
+    invoke-static {v0, p1, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    .line 151
+    .line 152
+    .line 153
+    move-result-object p1
+
+    .line 154
+    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
+
+    .line 155
+    .line 156
+    .line 157
+    return v7
+.end method
+
+.method public l1()V
+    .locals 3
+
+    .line 1
+    invoke-super {p0}, Loc;->l1()V
+
+    .line 2
+    .line 3
+    .line 4
+    const v0, 0x7f130342
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p0, v0}, Loc;->A2(I)V
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->i0()Landroid/content/res/Resources;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object v0
+
+    .line 14
+    const v1, 0x7f13032c
+
+    .line 15
+    .line 16
+    .line 17
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    invoke-virtual {p0, v0}, Loc;->z2(Ljava/lang/String;)V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v0
+
+    .line 28
+    if-eqz v0, :cond_1
+
+    .line 29
+    .line 30
+    const v1, 0x7f0a02aa
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v1
+
+    .line 37
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 38
+    .line 39
+    const-string v2, ""
+
+    .line 40
+    .line 41
+    if-eqz v1, :cond_0
+
+    .line 42
+    .line 43
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 44
+    .line 45
+    .line 46
+    :cond_0
+    const v1, 0x7f0a040d
+
+    .line 47
+    .line 48
+    .line 49
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object v0
+
+    .line 53
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 54
+    .line 55
+    if-eqz v0, :cond_1
+
+    .line 56
+    .line 57
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 58
+    .line 59
+    .line 60
+    :cond_1
+    invoke-direct {p0}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->b3()V
+
+    .line 61
+    .line 62
+    .line 63
+    return-void
+.end method
+
+.method public m1()V
+    .locals 2
+
+    .line 1
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->m1()V
+
+    .line 2
+    .line 3
+    .line 4
+    const/16 v0, 0x1b59
+
+    .line 5
+    .line 6
+    iget-object v1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->O0:Lb82;
+
+    .line 7
+    .line 8
+    invoke-static {v0, v1}, Lnet/metaquotes/metatrader4/terminal/Publisher;->unsubscribe(ILb82;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public n1(Landroid/view/View;Landroid/os/Bundle;)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1, p2}, Loc;->n1(Landroid/view/View;Landroid/os/Bundle;)V
+
+    .line 2
+    .line 3
+    .line 4
+    const p2, 0x7f0a0156
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p2
+
+    .line 11
+    invoke-virtual {p2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 12
+    .line 13
+    .line 14
+    const p2, 0x7f0a00ca
+
+    .line 15
+    .line 16
+    .line 17
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p2
+
+    .line 21
+    invoke-virtual {p2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 22
+    .line 23
+    .line 24
+    const p2, 0x7f0a02aa
+
+    .line 25
+    .line 26
+    .line 27
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p2
+
+    .line 31
+    check-cast p2, Landroid/widget/TextView;
+
+    .line 32
+    .line 33
+    iput-object p2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->J0:Landroid/widget/TextView;
+
+    .line 34
+    .line 35
+    const p2, 0x7f0a040d
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object p2
+
+    .line 42
+    check-cast p2, Landroid/widget/TextView;
+
+    .line 43
+    .line 44
+    iput-object p2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->K0:Landroid/widget/TextView;
+
+    .line 45
+    .line 46
+    const p2, 0x7f0a0152
+
+    .line 47
+    .line 48
+    .line 49
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object p1
+
+    .line 53
+    check-cast p1, Landroid/widget/CheckBox;
+
+    .line 54
+    .line 55
+    iput-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 56
+    .line 57
+    new-instance p2, Lnw1;
+
+    .line 58
+    .line 59
+    invoke-direct {p2, p0}, Lnw1;-><init>(Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;)V
+
+    .line 60
+    .line 61
+    .line 62
+    invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 63
+    .line 64
+    .line 65
+    return-void
+.end method
+
+.method public onClick(Landroid/view/View;)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    const v0, 0x7f0a00ca
+
+    .line 6
+    .line 7
+    .line 8
+    if-ne p1, v0, :cond_1
+
+    .line 9
+    .line 10
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 11
+    .line 12
+    if-eqz p1, :cond_0
+
+    .line 13
+    .line 14
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    xor-int/lit8 v0, v0, 0x1
+
+    .line 19
+    .line 20
+    invoke-virtual {p1, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
+
+    .line 21
+    .line 22
+    .line 23
+    :cond_0
+    invoke-virtual {p0}, Loc;->v2()Z
+
+    .line 24
+    .line 25
+    .line 26
+    :try_start_0
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->s0()Landroid/view/View;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p1
+
+    .line 30
+    const v0, 0x7f0a02aa
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object p1
+
+    .line 37
+    check-cast p1, Landroid/widget/TextView;
+
+    .line 38
+    .line 39
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object p1
+
+    .line 43
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p1
+
+    .line 47
+    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-wide v0
+
+    .line 51
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 52
+    .line 53
+    if-eqz p1, :cond_2
+
+    .line 54
+    .line 55
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 56
+    .line 57
+    .line 58
+    move-result p1
+
+    .line 59
+    iget-object v2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->G0:Lnet/metaquotes/metatrader4/types/ServerRecord;
+
+    .line 60
+    .line 61
+    invoke-direct {p0, p1, v0, v1, v2}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->Y2(ZJLnet/metaquotes/metatrader4/types/ServerRecord;)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 62
+    .line 63
+    .line 64
+    return-void
+
+    .line 65
+    :cond_1
+    const v0, 0x7f0a0156
+
+    .line 66
+    .line 67
+    .line 68
+    if-ne p1, v0, :cond_2
+
+    .line 69
+    .line 70
+    new-instance p1, Landroid/os/Bundle;
+
+    .line 71
+    .line 72
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+
+    .line 73
+    .line 74
+    .line 75
+    invoke-direct {p0, p1}, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->T2(Landroid/os/Bundle;)V
+
+    .line 76
+    .line 77
+    .line 78
+    invoke-static {p0}, Landroidx/navigation/fragment/NavHostFragment;->o2(Landroidx/fragment/app/Fragment;)Lop1;
+
+    .line 79
+    .line 80
+    .line 81
+    move-result-object v0
+
+    .line 82
+    const v1, 0x7f0a0392
+
+    .line 83
+    .line 84
+    .line 85
+    invoke-virtual {v0, v1, p1}, Lop1;->K(ILandroid/os/Bundle;)V
+
+    .line 86
+    .line 87
+    .line 88
+    :catch_0
+    :cond_2
+    return-void
+.end method
+
+.method public x2(Landroid/view/Menu;Landroid/view/MenuInflater;)V
+    .locals 3
+
+    .line 1
+    invoke-super {p0, p1, p2}, Loc;->x2(Landroid/view/Menu;Landroid/view/MenuInflater;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->I0:Landroid/widget/CheckBox;
+
+    .line 5
+    .line 6
+    const/4 v0, 0x1
+
+    .line 7
+    if-eqz p2, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p2}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p2
+
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    move p2, v0
+
+    .line 15
+    :goto_0
+    if-eqz p2, :cond_1
+
+    .line 16
+    .line 17
+    const p2, 0x7f130330
+
+    .line 18
+    .line 19
+    .line 20
+    goto :goto_1
+
+    .line 21
+    :cond_1
+    const p2, 0x7f130343
+
+    .line 22
+    .line 23
+    .line 24
+    :goto_1
+    const/4 v1, 0x0
+
+    .line 25
+    const v2, 0x7f0a02e0
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-interface {p1, v1, v2, v1, p2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p1
+
+    .line 32
+    const/4 p2, 0x6
+
+    .line 33
+    invoke-interface {p1, p2}, Landroid/view/MenuItem;->setShowAsAction(I)V
+
+    .line 34
+    .line 35
+    .line 36
+    iget-boolean p2, p0, Lnet/metaquotes/metatrader4/ui/otp/OTPBindFragment;->H0:Z
+
+    .line 37
+    .line 38
+    xor-int/2addr p2, v0
+
+    .line 39
+    invoke-interface {p1, p2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    .line 40
+    .line 41
+    .line 42
+    return-void
+.end method

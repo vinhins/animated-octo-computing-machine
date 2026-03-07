@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.metaquotes.common.ui.MetaTraderSpinner android:gravity="right|bottom" android:id="@id/param_value" android:paddingRight="12.0dp" android:layout_width="0.0px" android:layout_height="44.0dp" android:layout_marginRight="6.0dp" android:layout_weight="1.0" style="@style/MQSpinner" />
+    <net.metaquotes.metatrader4.ui.indicators.view.LineStyleView android:id="@id/param_line" android:layout_width="30.0dp" android:layout_height="30.0dp" android:layout_marginTop="15.0dp" />
+</LinearLayout>

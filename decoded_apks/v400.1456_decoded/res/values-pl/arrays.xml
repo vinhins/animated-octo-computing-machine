@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Wykres słupkowy</item>
+        <item>Candlestick</item>
+        <item>Wykres liniowy</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>Nie pokazuj wolumenów</item>
+        <item>Pokaż objętości ticków</item>
+        <item>Pokaż rzeczywiste wolumeny</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Nigdy</item>
+        <item>Tylko, gdy wyciszony</item>
+        <item>Zawsze</item>
+    </string-array>
+</resources>

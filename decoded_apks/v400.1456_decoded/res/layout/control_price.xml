@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/root" android:background="@drawable/gray_underline" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="36.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/back" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/ic_minus" android:adjustViewBounds="false" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+        <net.metaquotes.common.ui.RobotoTextView android:textSize="14.0sp" android:textColor="@color/hint_text" android:gravity="right|bottom" android:layout_gravity="center" android:id="@id/price_hint" android:paddingRight="8.0dp" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <net.metaquotes.metatrader4.ui.trade.widgets.AmountEdit android:textSize="14.0sp" android:textColor="@color/control_text_color" android:textColorHint="@color/hint_text" android:gravity="center|bottom" android:layout_gravity="center" android:id="@id/price_edit" android:background="@null" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/forward" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/ic_plus" android:adjustViewBounds="false" />
+</LinearLayout>

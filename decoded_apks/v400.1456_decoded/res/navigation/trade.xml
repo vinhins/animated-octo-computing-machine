@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/trade"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:label="TradeFragment" android:name="net.metaquotes.metatrader4.ui.trade.TradeFragment" android:id="@id/nav_trade" />
+    <fragment android:label="HistoryFragment" android:name="net.metaquotes.metatrader4.ui.history.HistoryFragment" android:id="@id/nav_history" />
+    <fragment android:label="OrderFragment" android:name="net.metaquotes.metatrader4.ui.trade.OrderFragment" android:id="@id/nav_order" />
+    <fragment android:label="OrderCloseByFragment" android:name="net.metaquotes.metatrader4.ui.trade.OrderCloseByFragment" android:id="@id/nav_order_close_by" />
+    <fragment android:label="OrderSendFragment" android:name="net.metaquotes.metatrader4.ui.trade.OrderSendFragment" android:id="@id/nav_order_send" />
+    <fragment android:label="RiskWarningDisclaimerDialog" android:name="net.metaquotes.metatrader4.ui.trade.RiskWarningDisclaimerDialog" android:id="@id/nav_risk_warning" />
+</navigation>
