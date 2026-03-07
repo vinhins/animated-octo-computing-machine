@@ -73,6 +73,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p build
+          framework_source="tools/apktool/framework/1.apk"
+          framework_dir="build/apktool-framework"
+
           decoded_dir="${{ inputs.decoded_dir }}"
           if [[ ! -d "$decoded_dir" ]]; then
             echo "Decoded directory not found: $decoded_dir"
@@ -88,11 +91,20 @@ jobs:
           fi
 
           echo "decoded_dir=$decoded_dir" >> "$GITHUB_OUTPUT"
+          echo "framework_source=$framework_source" >> "$GITHUB_OUTPUT"
+          echo "framework_dir=$framework_dir" >> "$GITHUB_OUTPUT"
           echo "safe_base_name=$safe_base_name" >> "$GITHUB_OUTPUT"
           echo "unsigned_apk=build/${safe_base_name}-patched-unsigned.apk" >> "$GITHUB_OUTPUT"
           echo "signed_apk=build/${safe_base_name}-patched-signed.apk" >> "$GITHUB_OUTPUT"
           echo "patch_log=build/${safe_base_name}-patch.log" >> "$GITHUB_OUTPUT"
           echo "artifact_name=patched-apk-output-${safe_base_name}" >> "$GITHUB_OUTPUT"
+
+      - name: Install Framework
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${{ steps.prepare.outputs.framework_dir }}"
+          apktool if "${{ steps.prepare.outputs.framework_source }}" -p "${{ steps.prepare.outputs.framework_dir }}"
 
       - name: Apply smali patch
         shell: bash
@@ -108,7 +120,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          apktool b "${{ steps.prepare.outputs.decoded_dir }}" -o "${{ steps.prepare.outputs.unsigned_apk }}"
+          apktool b -p "${{ steps.prepare.outputs.framework_dir }}" "${{ steps.prepare.outputs.decoded_dir }}" -o "${{ steps.prepare.outputs.unsigned_apk }}"
 
       - name: Sign APK
         if: ${{ inputs.sign_apk }}
