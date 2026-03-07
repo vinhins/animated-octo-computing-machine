@@ -46,6 +46,20 @@
     .line 4
     .line 5
     return-void
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -205,6 +219,23 @@
     .line 2
     .line 3
     return-object p0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method static synthetic f(Lcom/google/android/material/chip/ChipGroup;)Lj00;
@@ -216,6 +247,23 @@
     .line 2
     .line 3
     return-object p0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method private getVisibleChipCount()I
@@ -283,6 +331,44 @@
     .line 28
     :cond_1
     return v1
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
 .end method
 
 .method private h(I)Z
@@ -320,6 +406,12 @@
 
     .line 14
     return p1
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 
@@ -337,6 +429,20 @@
 
     .line 5
     return v0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
@@ -374,6 +480,12 @@
 
     .line 14
     return p1
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method g(Landroid/view/View;)I
@@ -468,6 +580,24 @@
     .line 39
     :cond_3
     return v1
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method
 
 .method protected generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -487,6 +617,18 @@
     .line 6
     .line 7
     return-object v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
@@ -532,6 +674,18 @@
 
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getCheckedChipIds()Ljava/util/List;
@@ -559,6 +713,18 @@
 
     .line 7
     return-object v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getChipSpacingHorizontal()I
@@ -570,6 +736,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getChipSpacingVertical()I
@@ -581,6 +763,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public i()Z
@@ -600,6 +798,18 @@
 
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method protected onFinishInflate()V
@@ -633,6 +843,11 @@
     .line 14
     :cond_0
     return-void
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
@@ -728,6 +943,22 @@
     .line 40
     .line 41
     return-void
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method
 
 .method public setChipSpacing(I)V
@@ -745,6 +976,19 @@
     .line 6
     .line 7
     return-void
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setChipSpacingHorizontal(I)V
@@ -775,6 +1019,13 @@
     .line 13
     :cond_0
     return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setChipSpacingHorizontalResource(I)V
@@ -803,6 +1054,14 @@
     .line 11
     .line 12
     return-void
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setChipSpacingResource(I)V
@@ -831,6 +1090,14 @@
     .line 11
     .line 12
     return-void
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setChipSpacingVertical(I)V
@@ -861,6 +1128,13 @@
     .line 13
     :cond_0
     return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setChipSpacingVerticalResource(I)V
@@ -889,6 +1163,14 @@
     .line 11
     .line 12
     return-void
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerDrawableHorizontal(Landroid/graphics/drawable/Drawable;)V
@@ -911,6 +1193,18 @@
     .line 7
     .line 8
     throw p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerDrawableVertical(Landroid/graphics/drawable/Drawable;)V
@@ -933,6 +1227,18 @@
     .line 7
     .line 8
     throw p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setFlexWrap(I)V
@@ -955,6 +1261,18 @@
     .line 7
     .line 8
     throw p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setOnCheckedChangeListener(Lcom/google/android/material/chip/ChipGroup$c;)V
@@ -994,6 +1312,10 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setOnCheckedStateChangeListener(Lcom/google/android/material/chip/ChipGroup$d;)V
@@ -1005,6 +1327,23 @@
     .line 2
     .line 3
     return-void
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
@@ -1021,6 +1360,20 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setSelectionRequired(Z)V
@@ -1037,6 +1390,20 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setShowDividerHorizontal(I)V
@@ -1059,6 +1426,18 @@
     .line 7
     .line 8
     throw p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setShowDividerVertical(I)V
@@ -1081,6 +1460,18 @@
     .line 7
     .line 8
     throw p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setSingleLine(I)V

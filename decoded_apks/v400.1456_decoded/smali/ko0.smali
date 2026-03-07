@@ -31,6 +31,14 @@
     .line 10
     .line 11
     return-void
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -52,6 +60,19 @@
 
     .line 7
     return p1
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method protected d(Ljava/lang/Object;)Lki2$c;
@@ -75,6 +96,17 @@
     .line 8
     .line 9
     return-object p1
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public k(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -122,6 +154,20 @@
 
     .line 20
     return-object p1
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public m(Ljava/lang/Object;)Ljava/lang/Object;
@@ -146,6 +192,16 @@
     .line 9
     .line 10
     return-object v0
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public n(Ljava/lang/Object;)Ljava/util/Map$Entry;
@@ -192,4 +248,5 @@
 
     .line 19
     return-object p1
+    .line 20
 .end method

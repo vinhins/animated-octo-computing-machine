@@ -49,6 +49,8 @@
     .line 17
     .line 18
     return-void
+    .line 19
+    .line 20
 .end method
 
 
@@ -66,6 +68,21 @@
 
     .line 5
     return-object p1
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public b(Lsh3;)Los2;
@@ -117,6 +134,7 @@
 
     .line 19
     throw p1
+    .line 20
 .end method
 
 .method public c(Lsh3;)Los2;
@@ -168,6 +186,7 @@
 
     .line 19
     throw p1
+    .line 20
 .end method
 
 .method public d(Lsh3;)Z
@@ -219,6 +238,7 @@
 
     .line 19
     throw p1
+    .line 20
 .end method
 
 .method public remove(Ljava/lang/String;)Ljava/util/List;
@@ -270,4 +290,5 @@
 
     .line 19
     throw p1
+    .line 20
 .end method

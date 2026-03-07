@@ -294,4 +294,9 @@
 
     .line 128
     throw p0
+    .line 129
+    .line 130
+    .line 131
+    .line 132
+    .line 133
 .end method

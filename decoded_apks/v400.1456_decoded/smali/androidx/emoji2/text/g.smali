@@ -50,4 +50,7 @@
 
     .line 16
     return-object v0
+    .line 17
+    .line 18
+    .line 19
 .end method

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="?android:textColorPrimary" android:id="@id/label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10.0dp" />
-    <View android:id="@id/line" android:background="?android:dividerHorizontal" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/label" />
-    <Button android:id="@id/button_ok" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ok" android:layout_below="@id/line" android:layout_centerHorizontal="true" style="?android:borderlessButtonStyle" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="?android:textColorPrimary" android:id="@id/label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+    <View android:id="@id/line" android:background="?android:dividerHorizontal" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/label" />
+    <Button android:id="@id/button_ok" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ok" android:layout_below="@id/line" android:layout_centerHorizontal="true" style="?android:borderlessButtonStyle" />
 </RelativeLayout>

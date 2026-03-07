@@ -52,6 +52,8 @@
     .line 17
     .line 18
     throw p1
+    .line 19
+    .line 20
 .end method
 
 
@@ -97,6 +99,10 @@
 
     .line 16
     return p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public b()Ljava/lang/Object;
@@ -209,4 +215,12 @@
     .line 26
     :cond_2
     return-void
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

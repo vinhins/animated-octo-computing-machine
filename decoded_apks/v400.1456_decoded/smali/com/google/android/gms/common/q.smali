@@ -46,4 +46,7 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
 .end method

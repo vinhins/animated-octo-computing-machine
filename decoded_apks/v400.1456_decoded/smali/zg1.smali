@@ -31,6 +31,15 @@
     .line 10
     .line 11
     return-void
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 
@@ -52,6 +61,18 @@
 
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public bridge synthetic add(Ljava/lang/Object;)Z
@@ -71,6 +92,19 @@
 
     .line 7
     return p1
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
@@ -96,6 +130,15 @@
     .line 10
     .line 11
     throw p1
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public clear()V
@@ -112,6 +155,19 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
@@ -140,6 +196,14 @@
 
     .line 12
     return p1
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public h(Ljava/util/Map$Entry;)Z
@@ -168,6 +232,14 @@
 
     .line 12
     return p1
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public i(Ljava/util/Map$Entry;)Z
@@ -196,6 +268,14 @@
 
     .line 12
     return p1
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public isEmpty()Z
@@ -215,6 +295,18 @@
 
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public iterator()Ljava/util/Iterator;
@@ -234,6 +326,18 @@
 
     .line 7
     return-object v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public k(Ljava/util/Map$Entry;)Z
@@ -259,6 +363,15 @@
     .line 10
     .line 11
     throw p1
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
@@ -292,6 +405,11 @@
 
     .line 15
     return p1
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
@@ -325,4 +443,9 @@
 
     .line 15
     return p1
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

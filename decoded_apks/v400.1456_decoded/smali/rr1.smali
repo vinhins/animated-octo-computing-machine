@@ -40,4 +40,6 @@
 
     .line 18
     return-object p0
+    .line 19
+    .line 20
 .end method

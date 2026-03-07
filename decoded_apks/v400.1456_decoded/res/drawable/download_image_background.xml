@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:gravity="bottom">
         <shape android:shape="rectangle">
-            <corners android:radius="16.0dp" />
+            <corners android:radius="16.0dip" />
             <solid android:color="@color/chat_download_image_background_color" />
         </shape>
     </item>

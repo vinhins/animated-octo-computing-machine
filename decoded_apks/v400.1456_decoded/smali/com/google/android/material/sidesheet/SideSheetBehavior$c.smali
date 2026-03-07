@@ -52,6 +52,13 @@
     .line 12
     .line 13
     return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static synthetic a(Lcom/google/android/material/sidesheet/SideSheetBehavior$c;)V
@@ -155,6 +162,16 @@
     .line 47
     :cond_1
     return-void
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method
 
 
@@ -262,4 +279,13 @@
     :cond_1
     :goto_0
     return-void
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method

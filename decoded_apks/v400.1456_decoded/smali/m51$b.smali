@@ -80,4 +80,5 @@
     .line 17
     .line 18
     throw v0
+    .line 19
 .end method

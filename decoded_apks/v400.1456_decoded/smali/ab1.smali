@@ -42,6 +42,17 @@
     .line 8
     .line 9
     return-void
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method static bridge synthetic I(Lab1;)Landroid/view/View;
@@ -53,6 +64,23 @@
     .line 2
     .line 3
     return-object p0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 
@@ -72,6 +100,23 @@
     .line 2
     .line 3
     return-wide v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method protected abstract M(Landroid/view/ViewGroup;)Landroid/view/View;
@@ -151,6 +196,11 @@
     .line 28
     .line 29
     return-void
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public O(Landroid/view/ViewGroup;I)Lab1$b;
@@ -204,6 +254,16 @@
     .line 23
     .line 24
     return-object p2
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public P(Landroid/view/View;)V
@@ -220,6 +280,20 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public Q(I)V
@@ -236,6 +310,20 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public a()I
@@ -269,6 +357,14 @@
 
     .line 11
     return v0
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public i(I)J
@@ -306,6 +402,13 @@
 
     .line 13
     return-wide v0
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public j(I)I
@@ -351,6 +454,9 @@
 
     .line 17
     return p1
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public bridge synthetic w(Landroidx/recyclerview/widget/RecyclerView$d0;I)V
@@ -367,6 +473,34 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public bridge synthetic y(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$d0;
@@ -382,4 +516,33 @@
 
     .line 5
     return-object p1
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

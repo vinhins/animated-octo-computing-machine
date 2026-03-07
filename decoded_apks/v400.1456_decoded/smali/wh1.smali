@@ -64,6 +64,15 @@
     .line 24
     .line 25
     return-void
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public static final synthetic c(Lwh1;)Ljava/util/regex/MatchResult;
@@ -79,6 +88,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method private final d()Ljava/util/regex/MatchResult;
@@ -90,6 +114,22 @@
     .line 2
     .line 3
     return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -103,6 +143,22 @@
     .line 2
     .line 3
     return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public b()Lc61;
@@ -126,6 +182,16 @@
 
     .line 9
     return-object v0
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public next()Luh1;
@@ -267,4 +333,6 @@
 
     .line 64
     return-object v0
+    .line 65
+    .line 66
 .end method

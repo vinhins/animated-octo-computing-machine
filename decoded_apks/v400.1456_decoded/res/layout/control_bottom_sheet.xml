@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:paddingTop="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+<LinearLayout android:orientation="horizontal" android:paddingTop="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/left_padding" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="4.5" />
-    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="6.0">
-        <View android:id="@id/top_padding" android:layout_width="match_parent" android:layout_height="64.0dp" />
-        <LinearLayout android:orientation="vertical" android:id="@id/central_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/header" android:layout_width="match_parent" android:layout_height="56.0dp">
-                <TextView android:textSize="16.0sp" android:textColor="@color/text_dark" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:layout_width="match_parent" android:layout_height="56.0dp" android:maxLines="2" />
+    <View android:id="@id/left_padding" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="4.5" />
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="6.0">
+        <View android:id="@id/top_padding" android:layout_width="fill_parent" android:layout_height="64.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/central_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="56.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="@color/text_dark" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="56.0dip" android:maxLines="2" />
             </LinearLayout>
-            <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler" android:paddingBottom="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler" android:paddingBottom="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
-    <View android:id="@id/right_padding" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="4.5" />
+    <View android:id="@id/right_padding" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="4.5" />
 </LinearLayout>

@@ -157,4 +157,6 @@
 
     .line 74
     return-object p0
+    .line 75
+    .line 76
 .end method

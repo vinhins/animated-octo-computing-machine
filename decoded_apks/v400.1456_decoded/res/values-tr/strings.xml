@@ -751,7 +751,7 @@ Anlık olarak alınırlar, asla yolda kaybolmazlar ve mobil terminalinize direkt
     <string name="order_instant">Anında işlem</string>
     <string name="order_is_closed">%1$s fiyatından kapatıldı</string>
     <string name="order_is_closed_title">Emir kapatıldı</string>
-    <string name="order_is_modified">#%1$s %2$s %3$s %4$s emri değiştirildi</string>
+    <string name="order_is_modified">\#%1$s %2$s %3$s %4$s emri değiştirildi</string>
     <string name="order_is_modified_title">Emir değiştirildi</string>
     <string name="order_is_open">Emir açıldı</string>
     <string name="order_market">Piyasa işlemi</string>
@@ -802,7 +802,7 @@ Anlık olarak alınırlar, asla yolda kaybolmazlar ve mobil terminalinize direkt
     <string name="password_toggle_content_description">Şifreyi göster</string>
     <string name="password_weak">Zayıf şifre</string>
     <string name="pending_gtc">İKG bekleyen emirler:</string>
-    <string name="pending_order_is_modified">#%1$s %2$s %3$s %4$s bekleyen emri değiştirildi</string>
+    <string name="pending_order_is_modified">\#%1$s %2$s %3$s %4$s bekleyen emri değiştirildi</string>
     <string name="period">Periyot</string>
     <string name="personal_info">Kişisel bilgiler</string>
     <string name="phone">Telefon</string>
@@ -863,7 +863,7 @@ Anlık olarak alınırlar, asla yolda kaybolmazlar ve mobil terminalinize direkt
     <string name="request">Talep et</string>
     <string name="request_accepted">Talep sunucu tarafından kabul edildi…</string>
     <string name="request_cancel">Müşteri tarafından iptal edildi</string>
-    <string name="request_close_by">#%1$d pozisyonunu #%2$d ile kapat</string>
+    <string name="request_close_by">\#%1$d pozisyonunu #%2$d ile kapat</string>
     <string name="request_common_error">Genel hata</string>
     <string name="request_context_busy">İşlem akışı yoğun</string>
     <string name="request_done">Hazır</string>

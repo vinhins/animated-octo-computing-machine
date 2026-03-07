@@ -42,6 +42,15 @@
     .line 10
     .line 11
     return-void
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method private f()Z
@@ -61,6 +70,18 @@
     .line 6
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -98,6 +119,12 @@
 
     .line 14
     return-object p1
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public b()Z
@@ -117,6 +144,18 @@
 
     .line 7
     return v0
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method c(Z)V
@@ -149,6 +188,13 @@
     .line 12
     .line 13
     return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method d(Z)V
@@ -190,6 +236,8 @@
     .line 17
     .line 18
     return-void
+    .line 19
+    .line 20
 .end method
 
 .method e(Landroid/text/method/TransformationMethod;)Landroid/text/method/TransformationMethod;
@@ -225,4 +273,10 @@
 
     .line 14
     return-object p1
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

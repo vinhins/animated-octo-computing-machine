@@ -226,4 +226,11 @@
     .line 84
     .line 85
     return-wide p1
+    .line 86
+    .line 87
+    .line 88
+    .line 89
+    .line 90
+    .line 91
+    .line 92
 .end method

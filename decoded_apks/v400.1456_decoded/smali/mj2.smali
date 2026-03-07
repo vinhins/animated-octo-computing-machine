@@ -43,4 +43,6 @@
     .line 17
     .line 18
     return-object v0
+    .line 19
+    .line 20
 .end method

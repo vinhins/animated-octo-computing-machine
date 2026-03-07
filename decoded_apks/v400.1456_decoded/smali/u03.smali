@@ -37,6 +37,27 @@
     .line 12
     .line 13
     return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public static b(Landroid/widget/TextView;Ljava/lang/Integer;)V
@@ -82,6 +103,20 @@
     .line 19
     .line 20
     return-void
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public static c(Landroid/widget/TextView;Ljava/lang/String;)V
@@ -127,4 +162,18 @@
     .line 19
     .line 20
     return-void
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

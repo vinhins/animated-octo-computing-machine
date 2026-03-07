@@ -114,6 +114,14 @@
 
     .line 49
     return-wide v0
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method
 
 .method public static b(Lnet/metaquotes/metatrader4/types/TradeRecord;)D
@@ -226,4 +234,12 @@
 
     .line 49
     return-wide v0
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method

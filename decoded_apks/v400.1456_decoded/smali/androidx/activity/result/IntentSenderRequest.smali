@@ -80,6 +80,9 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public constructor <init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
@@ -169,6 +172,22 @@
     .line 2
     .line 3
     return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public final b()I
@@ -180,6 +199,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public final c()I
@@ -191,6 +226,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public final d()Landroid/content/IntentSender;
@@ -202,6 +253,22 @@
     .line 2
     .line 3
     return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public describeContents()I
@@ -212,6 +279,23 @@
 
     .line 2
     return v0
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
@@ -264,4 +348,12 @@
     .line 25
     .line 26
     return-void
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

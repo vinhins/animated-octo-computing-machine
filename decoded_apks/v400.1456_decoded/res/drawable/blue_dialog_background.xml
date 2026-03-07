@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:top="3.0dp">
+    <item android:top="3.0dip">
         <shape android:shape="rectangle">
             <solid android:color="@color/dialog_blue_bar" />
-            <corners android:radius="3.0dp" />
+            <corners android:radius="3.0dip" />
         </shape>
     </item>
-    <item android:bottom="3.0dp">
+    <item android:bottom="3.0dip">
         <shape android:shape="rectangle">
             <solid android:color="@color/dialog_blue_bar" />
         </shape>

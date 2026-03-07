@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="24.0dp" android:paddingTop="32.0dp" android:paddingRight="24.0dp" android:paddingBottom="40.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+<LinearLayout android:orientation="vertical" android:paddingLeft="24.0dip" android:paddingTop="32.0dip" android:paddingRight="24.0dip" android:paddingBottom="40.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <net.metaquotes.common.ui.RobotoTextView android:textSize="20.0sp" android:textStyle="bold" android:gravity="center" android:id="@id/main_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/opening_auto_account" />
-        <View android:layout_width="match_parent" android:layout_height="24.0dp" />
-        <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0sp" android:textColor="@color/hint_text" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/wait_for_demo" />
+        <net.metaquotes.common.ui.RobotoTextView android:textSize="20.0sp" android:textStyle="bold" android:gravity="center" android:id="@id/main_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/opening_auto_account" />
+        <View android:layout_width="fill_parent" android:layout_height="24.0dip" />
+        <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0sp" android:textColor="@color/hint_text" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wait_for_demo" />
     </LinearLayout>
-    <View android:layout_width="match_parent" android:layout_height="32.0dp" />
+    <View android:layout_width="fill_parent" android:layout_height="32.0dip" />
     <LinearLayout android:layout_gravity="center" android:id="@id/animation" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ImageView android:id="@id/logo" android:layout_width="60.0dp" android:layout_height="60.0dp" android:layout_marginLeft="20.0dp" android:layout_marginTop="18.0dp" android:layout_marginRight="20.0dp" android:layout_marginBottom="22.0dp" android:src="@drawable/ic_logo_small_version" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/logo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="18.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="22.0dip" android:src="@drawable/ic_logo_small_version" android:scaleType="fitCenter" />
     </LinearLayout>
 </LinearLayout>

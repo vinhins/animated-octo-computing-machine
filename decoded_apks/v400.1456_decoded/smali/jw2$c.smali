@@ -62,6 +62,19 @@
     .line 20
     .line 21
     return-void
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 
@@ -94,6 +107,26 @@
     .line 13
     .line 14
     return-void
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public Q(I)Ljava/lang/String;
@@ -128,6 +161,10 @@
     .line 15
     .line 16
     throw p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public a(IJ)V
@@ -149,6 +186,31 @@
     .line 8
     .line 9
     return-void
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public close()V
@@ -173,6 +235,15 @@
     .line 9
     .line 10
     return-void
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public d(I[B)V
@@ -203,6 +274,26 @@
     .line 13
     .line 14
     return-void
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public f(I)V
@@ -224,6 +315,17 @@
     .line 8
     .line 9
     return-void
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public getBlob(I)[B
@@ -258,6 +360,10 @@
     .line 15
     .line 16
     throw p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public getColumnCount()I
@@ -273,6 +379,20 @@
 
     .line 5
     return v0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getColumnName(I)Ljava/lang/String;
@@ -307,6 +427,10 @@
     .line 15
     .line 16
     throw p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public getLong(I)J
@@ -341,6 +465,10 @@
     .line 15
     .line 16
     throw p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public isNull(I)Z
@@ -375,6 +503,10 @@
     .line 15
     .line 16
     throw p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public k0()Z
@@ -399,6 +531,15 @@
 
     .line 10
     return v0
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public reset()V
@@ -406,4 +547,22 @@
 
     .line 1
     return-void
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method

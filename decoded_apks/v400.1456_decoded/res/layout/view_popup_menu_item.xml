@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/popup_menu_padding_hrz" android:paddingTop="@dimen/popup_menu_padding_vrt" android:paddingRight="@dimen/popup_menu_padding_hrz" android:paddingBottom="@dimen/popup_menu_padding_vrt" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/popup_menu_min_height" android:paddingHorizontal="@dimen/popup_menu_padding_hrz" android:paddingVertical="@dimen/popup_menu_padding_vrt"
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/popup_menu_padding_hrz" android:paddingTop="@dimen/popup_menu_padding_vrt" android:paddingRight="@dimen/popup_menu_padding_hrz" android:paddingBottom="@dimen/popup_menu_padding_vrt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/popup_menu_min_height" android:paddingHorizontal="@dimen/popup_menu_padding_hrz" android:paddingVertical="@dimen/popup_menu_padding_vrt"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView android:textColor="@color/popup_menu_text_color" android:id="@id/title" android:focusable="false" android:singleLine="true" style="@style/Text" />
-    <Space android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <Space android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
     <ImageView android:id="@id/image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="@color/blue_3" android:layout_marginStart="@dimen/popup_menu_margin" />
 </LinearLayout>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ViewFlipper android:id="@id/stub_view_flipper" android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+<ViewFlipper android:id="@id/stub_view_flipper" android:background="@color/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="match_parent">
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:padding="1.0dp" android:layout_width="52.0dp" android:layout_height="52.0dp" android:src="@drawable/ic_plus_in_circle" />
-        <TextView android:textSize="@dimen/text_size_regular" android:textColor="@color/text_color_default" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:layout_marginBottom="16.0dp" android:text="@string/no_accounts" android:layout_marginVertical="16.0dp" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:padding="1.0dip" android:layout_width="52.0dip" android:layout_height="52.0dip" android:src="@drawable/ic_plus_in_circle" />
+        <TextView android:textSize="@dimen/text_size_regular" android:textColor="@color/text_color_default" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="16.0dip" android:text="@string/no_accounts" android:layout_marginVertical="16.0dip" />
         <androidx.appcompat.widget.AppCompatButton android:layout_gravity="center" android:id="@id/btn_add_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_trading_account" style="@style/ConfirmButton" />
     </LinearLayout>
-    <TextView android:textSize="14.0sp" android:textColor="@color/trade_hint" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/tv_stub_text" android:padding="16.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:drawablePadding="6.0dp" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/trade_hint" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/tv_stub_text" android:padding="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:drawablePadding="6.0dip" />
 </ViewFlipper>

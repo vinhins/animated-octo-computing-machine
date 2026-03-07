@@ -31,6 +31,21 @@
     .line 3
     .line 4
     return-void
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -160,6 +175,9 @@
     .line 62
     .line 63
     throw v0
+    .line 64
+    .line 65
+    .line 66
 .end method
 
 .method public b(Ljava/lang/Iterable;)Lnb$a;
@@ -192,6 +210,13 @@
     .line 12
     .line 13
     throw p1
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public c([B)Lnb$a;
@@ -203,4 +228,21 @@
     .line 2
     .line 3
     return-object p0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

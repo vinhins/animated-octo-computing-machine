@@ -64,6 +64,12 @@
 
     .line 28
     return-object p0
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public static final b(Lt02;)Landroidx/lifecycle/q;
@@ -109,4 +115,5 @@
 
     .line 19
     return-object p0
+    .line 20
 .end method

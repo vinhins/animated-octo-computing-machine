@@ -191,4 +191,10 @@
 
     .line 51
     throw p1
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method

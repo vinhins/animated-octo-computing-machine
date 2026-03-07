@@ -66,4 +66,6 @@
 
     .line 32
     return-object p0
+    .line 33
+    .line 34
 .end method

@@ -62,6 +62,14 @@
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
     .end array-data
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public constructor <init>()V
@@ -111,6 +119,10 @@
         0x7f130406
         0x7f130372
     .end array-data
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -127,6 +139,21 @@
 
     .line 4
     return v0
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public c(I[I)V
@@ -188,6 +215,15 @@
     .line 24
     .line 25
     return-void
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public f(I)I
@@ -209,6 +245,20 @@
 
     .line 6
     return p1
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public g(I)F
@@ -224,4 +274,19 @@
     .line 4
     .line 5
     return p1
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

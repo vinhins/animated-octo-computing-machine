@@ -48,6 +48,11 @@
     .line 14
     .line 15
     return-void
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 
@@ -164,4 +169,15 @@
 
     .line 46
     return v2
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method

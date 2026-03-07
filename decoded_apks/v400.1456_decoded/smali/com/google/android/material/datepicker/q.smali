@@ -30,6 +30,20 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method static synthetic I(Lcom/google/android/material/datepicker/q;)Lcom/google/android/material/datepicker/h;
@@ -41,6 +55,23 @@
     .line 2
     .line 3
     return-object p0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method private J(I)Landroid/view/View$OnClickListener;
@@ -57,6 +88,20 @@
     .line 5
     .line 6
     return-object v0
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 
@@ -93,6 +138,12 @@
 
     .line 14
     return p1
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method L(I)I
@@ -127,6 +178,12 @@
 
     .line 14
     return v0
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public M(Lcom/google/android/material/datepicker/q$b;I)V
@@ -401,6 +458,8 @@
     .line 130
     .line 131
     return-void
+    .line 132
+    .line 133
 .end method
 
 .method public N(Landroid/view/ViewGroup;I)Lcom/google/android/material/datepicker/q$b;
@@ -452,6 +511,17 @@
     .line 22
     .line 23
     return-object p2
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public a()I
@@ -479,6 +549,14 @@
 
     .line 11
     return v0
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public bridge synthetic w(Landroidx/recyclerview/widget/RecyclerView$d0;I)V
@@ -495,6 +573,34 @@
     .line 5
     .line 6
     return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public bridge synthetic y(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$d0;
@@ -510,4 +616,33 @@
 
     .line 5
     return-object p1
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

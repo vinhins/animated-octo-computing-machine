@@ -65,4 +65,6 @@
 
     .line 18
     return p1
+    .line 19
+    .line 20
 .end method

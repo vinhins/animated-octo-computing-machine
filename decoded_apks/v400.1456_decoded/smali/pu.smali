@@ -9,6 +9,24 @@
 
     .line 1
     return-void
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public static a(Lnet/metaquotes/channels/ChatDialog;Ljava/lang/String;)Ljava/lang/String;
@@ -253,4 +271,14 @@
 
     .line 123
     return-object p0
+    .line 124
+    .line 125
+    .line 126
+    .line 127
+    .line 128
+    .line 129
+    .line 130
+    .line 131
+    .line 132
+    .line 133
 .end method

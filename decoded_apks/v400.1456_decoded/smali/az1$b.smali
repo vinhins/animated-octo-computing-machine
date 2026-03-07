@@ -70,4 +70,7 @@
     .line 16
     .line 17
     return-object p1
+    .line 18
+    .line 19
+    .line 20
 .end method

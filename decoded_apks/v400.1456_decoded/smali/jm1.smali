@@ -45,6 +45,16 @@
     .line 8
     .line 9
     return-void
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public constructor <init>(Lbg2;Lbg2;)V
@@ -99,6 +109,14 @@
     .line 25
     .line 26
     return-void
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 
@@ -405,4 +423,8 @@
 
     .line 143
     return-object v1
+    .line 144
+    .line 145
+    .line 146
+    .line 147
 .end method

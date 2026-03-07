@@ -63,4 +63,10 @@
 
     .line 28
     return p0
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

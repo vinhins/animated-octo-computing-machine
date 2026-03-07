@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent"
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <net.metaquotes.metatrader4.ui.indicators.view.ColorsPallet android:id="@id/colors" android:layout_width="wrap_content" android:layout_height="400.0dp" android:layout_margin="10.0dp" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <net.metaquotes.metatrader4.ui.indicators.view.ColorsPallet android:id="@id/colors" android:layout_width="wrap_content" android:layout_height="400.0dip" android:layout_margin="10.0dip" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

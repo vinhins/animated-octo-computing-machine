@@ -51,6 +51,23 @@
 
     .line 17
     return-object p0
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method public static b(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/f0$c;)Landroidx/lifecycle/f0$c;
@@ -90,4 +107,21 @@
 
     .line 17
     return-object p0
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

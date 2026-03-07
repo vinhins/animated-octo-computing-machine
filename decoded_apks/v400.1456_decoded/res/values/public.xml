@@ -1942,16 +1942,6 @@
     <public type="color" name="m3_dark_primary_text_disable_only" id="0x7f060170" />
     <public type="color" name="m3_default_color_primary_text" id="0x7f060171" />
     <public type="color" name="m3_default_color_secondary_text" id="0x7f060172" />
-    <public type="color" name="m3_dynamic_dark_default_color_primary_text" id="0x7f060173" />
-    <public type="color" name="m3_dynamic_dark_default_color_secondary_text" id="0x7f060174" />
-    <public type="color" name="m3_dynamic_dark_highlighted_text" id="0x7f060175" />
-    <public type="color" name="m3_dynamic_dark_hint_foreground" id="0x7f060176" />
-    <public type="color" name="m3_dynamic_dark_primary_text_disable_only" id="0x7f060177" />
-    <public type="color" name="m3_dynamic_default_color_primary_text" id="0x7f060178" />
-    <public type="color" name="m3_dynamic_default_color_secondary_text" id="0x7f060179" />
-    <public type="color" name="m3_dynamic_highlighted_text" id="0x7f06017a" />
-    <public type="color" name="m3_dynamic_hint_foreground" id="0x7f06017b" />
-    <public type="color" name="m3_dynamic_primary_text_disable_only" id="0x7f06017c" />
     <public type="color" name="m3_efab_ripple_color_selector" id="0x7f06017d" />
     <public type="color" name="m3_elevated_chip_background_color" id="0x7f06017e" />
     <public type="color" name="m3_fab_efab_background_color_selector" id="0x7f06017f" />
@@ -2017,96 +2007,6 @@
     <public type="color" name="m3_ref_palette_cyan90" id="0x7f0601bb" />
     <public type="color" name="m3_ref_palette_cyan95" id="0x7f0601bc" />
     <public type="color" name="m3_ref_palette_cyan98" id="0x7f0601bd" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral0" id="0x7f0601be" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral10" id="0x7f0601bf" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral100" id="0x7f0601c0" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral12" id="0x7f0601c1" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral17" id="0x7f0601c2" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral20" id="0x7f0601c3" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral22" id="0x7f0601c4" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral24" id="0x7f0601c5" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral30" id="0x7f0601c6" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral4" id="0x7f0601c7" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral40" id="0x7f0601c8" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral50" id="0x7f0601c9" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral6" id="0x7f0601ca" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral60" id="0x7f0601cb" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral70" id="0x7f0601cc" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral80" id="0x7f0601cd" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral87" id="0x7f0601ce" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral90" id="0x7f0601cf" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral92" id="0x7f0601d0" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral94" id="0x7f0601d1" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral95" id="0x7f0601d2" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral96" id="0x7f0601d3" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral98" id="0x7f0601d4" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral99" id="0x7f0601d5" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant0" id="0x7f0601d6" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant10" id="0x7f0601d7" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant100" id="0x7f0601d8" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant12" id="0x7f0601d9" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant17" id="0x7f0601da" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant20" id="0x7f0601db" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant22" id="0x7f0601dc" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant24" id="0x7f0601dd" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant30" id="0x7f0601de" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant4" id="0x7f0601df" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant40" id="0x7f0601e0" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant50" id="0x7f0601e1" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant6" id="0x7f0601e2" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant60" id="0x7f0601e3" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant70" id="0x7f0601e4" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant80" id="0x7f0601e5" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant87" id="0x7f0601e6" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant90" id="0x7f0601e7" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant92" id="0x7f0601e8" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant94" id="0x7f0601e9" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant95" id="0x7f0601ea" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant96" id="0x7f0601eb" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant98" id="0x7f0601ec" />
-    <public type="color" name="m3_ref_palette_dynamic_neutral_variant99" id="0x7f0601ed" />
-    <public type="color" name="m3_ref_palette_dynamic_primary0" id="0x7f0601ee" />
-    <public type="color" name="m3_ref_palette_dynamic_primary10" id="0x7f0601ef" />
-    <public type="color" name="m3_ref_palette_dynamic_primary100" id="0x7f0601f0" />
-    <public type="color" name="m3_ref_palette_dynamic_primary20" id="0x7f0601f1" />
-    <public type="color" name="m3_ref_palette_dynamic_primary30" id="0x7f0601f2" />
-    <public type="color" name="m3_ref_palette_dynamic_primary40" id="0x7f0601f3" />
-    <public type="color" name="m3_ref_palette_dynamic_primary50" id="0x7f0601f4" />
-    <public type="color" name="m3_ref_palette_dynamic_primary60" id="0x7f0601f5" />
-    <public type="color" name="m3_ref_palette_dynamic_primary70" id="0x7f0601f6" />
-    <public type="color" name="m3_ref_palette_dynamic_primary80" id="0x7f0601f7" />
-    <public type="color" name="m3_ref_palette_dynamic_primary90" id="0x7f0601f8" />
-    <public type="color" name="m3_ref_palette_dynamic_primary95" id="0x7f0601f9" />
-    <public type="color" name="m3_ref_palette_dynamic_primary98" id="0x7f0601fa" />
-    <public type="color" name="m3_ref_palette_dynamic_primary99" id="0x7f0601fb" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary0" id="0x7f0601fc" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary10" id="0x7f0601fd" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary100" id="0x7f0601fe" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary20" id="0x7f0601ff" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary30" id="0x7f060200" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary40" id="0x7f060201" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary50" id="0x7f060202" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary60" id="0x7f060203" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary70" id="0x7f060204" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary80" id="0x7f060205" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary90" id="0x7f060206" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary95" id="0x7f060207" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary98" id="0x7f060208" />
-    <public type="color" name="m3_ref_palette_dynamic_secondary99" id="0x7f060209" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary0" id="0x7f06020a" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary10" id="0x7f06020b" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary100" id="0x7f06020c" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary20" id="0x7f06020d" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary30" id="0x7f06020e" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary40" id="0x7f06020f" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary50" id="0x7f060210" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary60" id="0x7f060211" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary70" id="0x7f060212" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary80" id="0x7f060213" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary90" id="0x7f060214" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary95" id="0x7f060215" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary98" id="0x7f060216" />
-    <public type="color" name="m3_ref_palette_dynamic_tertiary99" id="0x7f060217" />
     <public type="color" name="m3_ref_palette_error0" id="0x7f060218" />
     <public type="color" name="m3_ref_palette_error10" id="0x7f060219" />
     <public type="color" name="m3_ref_palette_error100" id="0x7f06021a" />
@@ -2357,86 +2257,6 @@
     <public type="color" name="m3_sys_color_dark_surface_variant" id="0x7f06030f" />
     <public type="color" name="m3_sys_color_dark_tertiary" id="0x7f060310" />
     <public type="color" name="m3_sys_color_dark_tertiary_container" id="0x7f060311" />
-    <public type="color" name="m3_sys_color_dynamic_dark_background" id="0x7f060312" />
-    <public type="color" name="m3_sys_color_dynamic_dark_error" id="0x7f060313" />
-    <public type="color" name="m3_sys_color_dynamic_dark_error_container" id="0x7f060314" />
-    <public type="color" name="m3_sys_color_dynamic_dark_inverse_on_surface" id="0x7f060315" />
-    <public type="color" name="m3_sys_color_dynamic_dark_inverse_primary" id="0x7f060316" />
-    <public type="color" name="m3_sys_color_dynamic_dark_inverse_surface" id="0x7f060317" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_background" id="0x7f060318" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_error" id="0x7f060319" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_error_container" id="0x7f06031a" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_primary" id="0x7f06031b" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_primary_container" id="0x7f06031c" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_secondary" id="0x7f06031d" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_secondary_container" id="0x7f06031e" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_surface" id="0x7f06031f" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_surface_variant" id="0x7f060320" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_tertiary" id="0x7f060321" />
-    <public type="color" name="m3_sys_color_dynamic_dark_on_tertiary_container" id="0x7f060322" />
-    <public type="color" name="m3_sys_color_dynamic_dark_outline" id="0x7f060323" />
-    <public type="color" name="m3_sys_color_dynamic_dark_outline_variant" id="0x7f060324" />
-    <public type="color" name="m3_sys_color_dynamic_dark_primary" id="0x7f060325" />
-    <public type="color" name="m3_sys_color_dynamic_dark_primary_container" id="0x7f060326" />
-    <public type="color" name="m3_sys_color_dynamic_dark_secondary" id="0x7f060327" />
-    <public type="color" name="m3_sys_color_dynamic_dark_secondary_container" id="0x7f060328" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface" id="0x7f060329" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_bright" id="0x7f06032a" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_container" id="0x7f06032b" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_high" id="0x7f06032c" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_highest" id="0x7f06032d" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_low" id="0x7f06032e" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_lowest" id="0x7f06032f" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_dim" id="0x7f060330" />
-    <public type="color" name="m3_sys_color_dynamic_dark_surface_variant" id="0x7f060331" />
-    <public type="color" name="m3_sys_color_dynamic_dark_tertiary" id="0x7f060332" />
-    <public type="color" name="m3_sys_color_dynamic_dark_tertiary_container" id="0x7f060333" />
-    <public type="color" name="m3_sys_color_dynamic_light_background" id="0x7f060334" />
-    <public type="color" name="m3_sys_color_dynamic_light_error" id="0x7f060335" />
-    <public type="color" name="m3_sys_color_dynamic_light_error_container" id="0x7f060336" />
-    <public type="color" name="m3_sys_color_dynamic_light_inverse_on_surface" id="0x7f060337" />
-    <public type="color" name="m3_sys_color_dynamic_light_inverse_primary" id="0x7f060338" />
-    <public type="color" name="m3_sys_color_dynamic_light_inverse_surface" id="0x7f060339" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_background" id="0x7f06033a" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_error" id="0x7f06033b" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_error_container" id="0x7f06033c" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_primary" id="0x7f06033d" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_primary_container" id="0x7f06033e" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_secondary" id="0x7f06033f" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_secondary_container" id="0x7f060340" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_surface" id="0x7f060341" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_surface_variant" id="0x7f060342" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_tertiary" id="0x7f060343" />
-    <public type="color" name="m3_sys_color_dynamic_light_on_tertiary_container" id="0x7f060344" />
-    <public type="color" name="m3_sys_color_dynamic_light_outline" id="0x7f060345" />
-    <public type="color" name="m3_sys_color_dynamic_light_outline_variant" id="0x7f060346" />
-    <public type="color" name="m3_sys_color_dynamic_light_primary" id="0x7f060347" />
-    <public type="color" name="m3_sys_color_dynamic_light_primary_container" id="0x7f060348" />
-    <public type="color" name="m3_sys_color_dynamic_light_secondary" id="0x7f060349" />
-    <public type="color" name="m3_sys_color_dynamic_light_secondary_container" id="0x7f06034a" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface" id="0x7f06034b" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_bright" id="0x7f06034c" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_container" id="0x7f06034d" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_container_high" id="0x7f06034e" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_container_highest" id="0x7f06034f" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_container_low" id="0x7f060350" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_container_lowest" id="0x7f060351" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_dim" id="0x7f060352" />
-    <public type="color" name="m3_sys_color_dynamic_light_surface_variant" id="0x7f060353" />
-    <public type="color" name="m3_sys_color_dynamic_light_tertiary" id="0x7f060354" />
-    <public type="color" name="m3_sys_color_dynamic_light_tertiary_container" id="0x7f060355" />
-    <public type="color" name="m3_sys_color_dynamic_on_primary_fixed" id="0x7f060356" />
-    <public type="color" name="m3_sys_color_dynamic_on_primary_fixed_variant" id="0x7f060357" />
-    <public type="color" name="m3_sys_color_dynamic_on_secondary_fixed" id="0x7f060358" />
-    <public type="color" name="m3_sys_color_dynamic_on_secondary_fixed_variant" id="0x7f060359" />
-    <public type="color" name="m3_sys_color_dynamic_on_tertiary_fixed" id="0x7f06035a" />
-    <public type="color" name="m3_sys_color_dynamic_on_tertiary_fixed_variant" id="0x7f06035b" />
-    <public type="color" name="m3_sys_color_dynamic_primary_fixed" id="0x7f06035c" />
-    <public type="color" name="m3_sys_color_dynamic_primary_fixed_dim" id="0x7f06035d" />
-    <public type="color" name="m3_sys_color_dynamic_secondary_fixed" id="0x7f06035e" />
-    <public type="color" name="m3_sys_color_dynamic_secondary_fixed_dim" id="0x7f06035f" />
-    <public type="color" name="m3_sys_color_dynamic_tertiary_fixed" id="0x7f060360" />
-    <public type="color" name="m3_sys_color_dynamic_tertiary_fixed_dim" id="0x7f060361" />
     <public type="color" name="m3_sys_color_light_background" id="0x7f060362" />
     <public type="color" name="m3_sys_color_light_error" id="0x7f060363" />
     <public type="color" name="m3_sys_color_light_error_container" id="0x7f060364" />
@@ -2531,79 +2351,6 @@
     <public type="color" name="material_deep_teal_200" id="0x7f0603bd" />
     <public type="color" name="material_deep_teal_500" id="0x7f0603be" />
     <public type="color" name="material_divider_color" id="0x7f0603bf" />
-    <public type="color" name="material_dynamic_color_dark_error" id="0x7f0603c0" />
-    <public type="color" name="material_dynamic_color_dark_error_container" id="0x7f0603c1" />
-    <public type="color" name="material_dynamic_color_dark_on_error" id="0x7f0603c2" />
-    <public type="color" name="material_dynamic_color_dark_on_error_container" id="0x7f0603c3" />
-    <public type="color" name="material_dynamic_color_light_error" id="0x7f0603c4" />
-    <public type="color" name="material_dynamic_color_light_error_container" id="0x7f0603c5" />
-    <public type="color" name="material_dynamic_color_light_on_error" id="0x7f0603c6" />
-    <public type="color" name="material_dynamic_color_light_on_error_container" id="0x7f0603c7" />
-    <public type="color" name="material_dynamic_neutral0" id="0x7f0603c8" />
-    <public type="color" name="material_dynamic_neutral10" id="0x7f0603c9" />
-    <public type="color" name="material_dynamic_neutral100" id="0x7f0603ca" />
-    <public type="color" name="material_dynamic_neutral20" id="0x7f0603cb" />
-    <public type="color" name="material_dynamic_neutral30" id="0x7f0603cc" />
-    <public type="color" name="material_dynamic_neutral40" id="0x7f0603cd" />
-    <public type="color" name="material_dynamic_neutral50" id="0x7f0603ce" />
-    <public type="color" name="material_dynamic_neutral60" id="0x7f0603cf" />
-    <public type="color" name="material_dynamic_neutral70" id="0x7f0603d0" />
-    <public type="color" name="material_dynamic_neutral80" id="0x7f0603d1" />
-    <public type="color" name="material_dynamic_neutral90" id="0x7f0603d2" />
-    <public type="color" name="material_dynamic_neutral95" id="0x7f0603d3" />
-    <public type="color" name="material_dynamic_neutral99" id="0x7f0603d4" />
-    <public type="color" name="material_dynamic_neutral_variant0" id="0x7f0603d5" />
-    <public type="color" name="material_dynamic_neutral_variant10" id="0x7f0603d6" />
-    <public type="color" name="material_dynamic_neutral_variant100" id="0x7f0603d7" />
-    <public type="color" name="material_dynamic_neutral_variant20" id="0x7f0603d8" />
-    <public type="color" name="material_dynamic_neutral_variant30" id="0x7f0603d9" />
-    <public type="color" name="material_dynamic_neutral_variant40" id="0x7f0603da" />
-    <public type="color" name="material_dynamic_neutral_variant50" id="0x7f0603db" />
-    <public type="color" name="material_dynamic_neutral_variant60" id="0x7f0603dc" />
-    <public type="color" name="material_dynamic_neutral_variant70" id="0x7f0603dd" />
-    <public type="color" name="material_dynamic_neutral_variant80" id="0x7f0603de" />
-    <public type="color" name="material_dynamic_neutral_variant90" id="0x7f0603df" />
-    <public type="color" name="material_dynamic_neutral_variant95" id="0x7f0603e0" />
-    <public type="color" name="material_dynamic_neutral_variant99" id="0x7f0603e1" />
-    <public type="color" name="material_dynamic_primary0" id="0x7f0603e2" />
-    <public type="color" name="material_dynamic_primary10" id="0x7f0603e3" />
-    <public type="color" name="material_dynamic_primary100" id="0x7f0603e4" />
-    <public type="color" name="material_dynamic_primary20" id="0x7f0603e5" />
-    <public type="color" name="material_dynamic_primary30" id="0x7f0603e6" />
-    <public type="color" name="material_dynamic_primary40" id="0x7f0603e7" />
-    <public type="color" name="material_dynamic_primary50" id="0x7f0603e8" />
-    <public type="color" name="material_dynamic_primary60" id="0x7f0603e9" />
-    <public type="color" name="material_dynamic_primary70" id="0x7f0603ea" />
-    <public type="color" name="material_dynamic_primary80" id="0x7f0603eb" />
-    <public type="color" name="material_dynamic_primary90" id="0x7f0603ec" />
-    <public type="color" name="material_dynamic_primary95" id="0x7f0603ed" />
-    <public type="color" name="material_dynamic_primary99" id="0x7f0603ee" />
-    <public type="color" name="material_dynamic_secondary0" id="0x7f0603ef" />
-    <public type="color" name="material_dynamic_secondary10" id="0x7f0603f0" />
-    <public type="color" name="material_dynamic_secondary100" id="0x7f0603f1" />
-    <public type="color" name="material_dynamic_secondary20" id="0x7f0603f2" />
-    <public type="color" name="material_dynamic_secondary30" id="0x7f0603f3" />
-    <public type="color" name="material_dynamic_secondary40" id="0x7f0603f4" />
-    <public type="color" name="material_dynamic_secondary50" id="0x7f0603f5" />
-    <public type="color" name="material_dynamic_secondary60" id="0x7f0603f6" />
-    <public type="color" name="material_dynamic_secondary70" id="0x7f0603f7" />
-    <public type="color" name="material_dynamic_secondary80" id="0x7f0603f8" />
-    <public type="color" name="material_dynamic_secondary90" id="0x7f0603f9" />
-    <public type="color" name="material_dynamic_secondary95" id="0x7f0603fa" />
-    <public type="color" name="material_dynamic_secondary99" id="0x7f0603fb" />
-    <public type="color" name="material_dynamic_tertiary0" id="0x7f0603fc" />
-    <public type="color" name="material_dynamic_tertiary10" id="0x7f0603fd" />
-    <public type="color" name="material_dynamic_tertiary100" id="0x7f0603fe" />
-    <public type="color" name="material_dynamic_tertiary20" id="0x7f0603ff" />
-    <public type="color" name="material_dynamic_tertiary30" id="0x7f060400" />
-    <public type="color" name="material_dynamic_tertiary40" id="0x7f060401" />
-    <public type="color" name="material_dynamic_tertiary50" id="0x7f060402" />
-    <public type="color" name="material_dynamic_tertiary60" id="0x7f060403" />
-    <public type="color" name="material_dynamic_tertiary70" id="0x7f060404" />
-    <public type="color" name="material_dynamic_tertiary80" id="0x7f060405" />
-    <public type="color" name="material_dynamic_tertiary90" id="0x7f060406" />
-    <public type="color" name="material_dynamic_tertiary95" id="0x7f060407" />
-    <public type="color" name="material_dynamic_tertiary99" id="0x7f060408" />
     <public type="color" name="material_grey_100" id="0x7f060409" />
     <public type="color" name="material_grey_300" id="0x7f06040a" />
     <public type="color" name="material_grey_50" id="0x7f06040b" />
@@ -2951,6 +2698,259 @@
     <public type="color" name="white_alpha_70" id="0x7f060561" />
     <public type="color" name="yellow_1" id="0x7f060562" />
     <public type="color" name="yellow_2" id="0x7f060563" />
+    <public type="color" name="m3_dynamic_dark_default_color_primary_text" id="0x7f060173" />
+    <public type="color" name="m3_dynamic_dark_default_color_secondary_text" id="0x7f060174" />
+    <public type="color" name="m3_dynamic_dark_highlighted_text" id="0x7f060175" />
+    <public type="color" name="m3_dynamic_dark_hint_foreground" id="0x7f060176" />
+    <public type="color" name="m3_dynamic_dark_primary_text_disable_only" id="0x7f060177" />
+    <public type="color" name="m3_dynamic_default_color_primary_text" id="0x7f060178" />
+    <public type="color" name="m3_dynamic_default_color_secondary_text" id="0x7f060179" />
+    <public type="color" name="m3_dynamic_highlighted_text" id="0x7f06017a" />
+    <public type="color" name="m3_dynamic_hint_foreground" id="0x7f06017b" />
+    <public type="color" name="m3_dynamic_primary_text_disable_only" id="0x7f06017c" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral0" id="0x7f0601be" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral10" id="0x7f0601bf" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral100" id="0x7f0601c0" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral12" id="0x7f0601c1" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral17" id="0x7f0601c2" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral20" id="0x7f0601c3" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral22" id="0x7f0601c4" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral24" id="0x7f0601c5" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral30" id="0x7f0601c6" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral4" id="0x7f0601c7" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral40" id="0x7f0601c8" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral50" id="0x7f0601c9" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral6" id="0x7f0601ca" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral60" id="0x7f0601cb" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral70" id="0x7f0601cc" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral80" id="0x7f0601cd" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral87" id="0x7f0601ce" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral90" id="0x7f0601cf" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral92" id="0x7f0601d0" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral94" id="0x7f0601d1" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral95" id="0x7f0601d2" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral96" id="0x7f0601d3" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral98" id="0x7f0601d4" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral99" id="0x7f0601d5" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant0" id="0x7f0601d6" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant10" id="0x7f0601d7" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant100" id="0x7f0601d8" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant12" id="0x7f0601d9" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant17" id="0x7f0601da" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant20" id="0x7f0601db" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant22" id="0x7f0601dc" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant24" id="0x7f0601dd" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant30" id="0x7f0601de" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant4" id="0x7f0601df" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant40" id="0x7f0601e0" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant50" id="0x7f0601e1" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant6" id="0x7f0601e2" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant60" id="0x7f0601e3" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant70" id="0x7f0601e4" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant80" id="0x7f0601e5" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant87" id="0x7f0601e6" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant90" id="0x7f0601e7" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant92" id="0x7f0601e8" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant94" id="0x7f0601e9" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant95" id="0x7f0601ea" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant96" id="0x7f0601eb" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant98" id="0x7f0601ec" />
+    <public type="color" name="m3_ref_palette_dynamic_neutral_variant99" id="0x7f0601ed" />
+    <public type="color" name="m3_ref_palette_dynamic_primary0" id="0x7f0601ee" />
+    <public type="color" name="m3_ref_palette_dynamic_primary10" id="0x7f0601ef" />
+    <public type="color" name="m3_ref_palette_dynamic_primary100" id="0x7f0601f0" />
+    <public type="color" name="m3_ref_palette_dynamic_primary20" id="0x7f0601f1" />
+    <public type="color" name="m3_ref_palette_dynamic_primary30" id="0x7f0601f2" />
+    <public type="color" name="m3_ref_palette_dynamic_primary40" id="0x7f0601f3" />
+    <public type="color" name="m3_ref_palette_dynamic_primary50" id="0x7f0601f4" />
+    <public type="color" name="m3_ref_palette_dynamic_primary60" id="0x7f0601f5" />
+    <public type="color" name="m3_ref_palette_dynamic_primary70" id="0x7f0601f6" />
+    <public type="color" name="m3_ref_palette_dynamic_primary80" id="0x7f0601f7" />
+    <public type="color" name="m3_ref_palette_dynamic_primary90" id="0x7f0601f8" />
+    <public type="color" name="m3_ref_palette_dynamic_primary95" id="0x7f0601f9" />
+    <public type="color" name="m3_ref_palette_dynamic_primary98" id="0x7f0601fa" />
+    <public type="color" name="m3_ref_palette_dynamic_primary99" id="0x7f0601fb" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary0" id="0x7f0601fc" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary10" id="0x7f0601fd" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary100" id="0x7f0601fe" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary20" id="0x7f0601ff" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary30" id="0x7f060200" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary40" id="0x7f060201" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary50" id="0x7f060202" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary60" id="0x7f060203" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary70" id="0x7f060204" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary80" id="0x7f060205" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary90" id="0x7f060206" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary95" id="0x7f060207" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary98" id="0x7f060208" />
+    <public type="color" name="m3_ref_palette_dynamic_secondary99" id="0x7f060209" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary0" id="0x7f06020a" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary10" id="0x7f06020b" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary100" id="0x7f06020c" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary20" id="0x7f06020d" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary30" id="0x7f06020e" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary40" id="0x7f06020f" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary50" id="0x7f060210" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary60" id="0x7f060211" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary70" id="0x7f060212" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary80" id="0x7f060213" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary90" id="0x7f060214" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary95" id="0x7f060215" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary98" id="0x7f060216" />
+    <public type="color" name="m3_ref_palette_dynamic_tertiary99" id="0x7f060217" />
+    <public type="color" name="m3_sys_color_dynamic_dark_background" id="0x7f060312" />
+    <public type="color" name="m3_sys_color_dynamic_dark_inverse_on_surface" id="0x7f060315" />
+    <public type="color" name="m3_sys_color_dynamic_dark_inverse_primary" id="0x7f060316" />
+    <public type="color" name="m3_sys_color_dynamic_dark_inverse_surface" id="0x7f060317" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_background" id="0x7f060318" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_primary" id="0x7f06031b" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_primary_container" id="0x7f06031c" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_secondary" id="0x7f06031d" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_secondary_container" id="0x7f06031e" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_surface" id="0x7f06031f" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_surface_variant" id="0x7f060320" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_tertiary" id="0x7f060321" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_tertiary_container" id="0x7f060322" />
+    <public type="color" name="m3_sys_color_dynamic_dark_outline" id="0x7f060323" />
+    <public type="color" name="m3_sys_color_dynamic_dark_outline_variant" id="0x7f060324" />
+    <public type="color" name="m3_sys_color_dynamic_dark_primary" id="0x7f060325" />
+    <public type="color" name="m3_sys_color_dynamic_dark_primary_container" id="0x7f060326" />
+    <public type="color" name="m3_sys_color_dynamic_dark_secondary" id="0x7f060327" />
+    <public type="color" name="m3_sys_color_dynamic_dark_secondary_container" id="0x7f060328" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface" id="0x7f060329" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_bright" id="0x7f06032a" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_container" id="0x7f06032b" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_high" id="0x7f06032c" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_highest" id="0x7f06032d" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_low" id="0x7f06032e" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_container_lowest" id="0x7f06032f" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_dim" id="0x7f060330" />
+    <public type="color" name="m3_sys_color_dynamic_dark_surface_variant" id="0x7f060331" />
+    <public type="color" name="m3_sys_color_dynamic_dark_tertiary" id="0x7f060332" />
+    <public type="color" name="m3_sys_color_dynamic_dark_tertiary_container" id="0x7f060333" />
+    <public type="color" name="m3_sys_color_dynamic_light_background" id="0x7f060334" />
+    <public type="color" name="m3_sys_color_dynamic_light_inverse_on_surface" id="0x7f060337" />
+    <public type="color" name="m3_sys_color_dynamic_light_inverse_primary" id="0x7f060338" />
+    <public type="color" name="m3_sys_color_dynamic_light_inverse_surface" id="0x7f060339" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_background" id="0x7f06033a" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_primary" id="0x7f06033d" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_primary_container" id="0x7f06033e" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_secondary" id="0x7f06033f" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_secondary_container" id="0x7f060340" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_surface" id="0x7f060341" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_surface_variant" id="0x7f060342" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_tertiary" id="0x7f060343" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_tertiary_container" id="0x7f060344" />
+    <public type="color" name="m3_sys_color_dynamic_light_outline" id="0x7f060345" />
+    <public type="color" name="m3_sys_color_dynamic_light_outline_variant" id="0x7f060346" />
+    <public type="color" name="m3_sys_color_dynamic_light_primary" id="0x7f060347" />
+    <public type="color" name="m3_sys_color_dynamic_light_primary_container" id="0x7f060348" />
+    <public type="color" name="m3_sys_color_dynamic_light_secondary" id="0x7f060349" />
+    <public type="color" name="m3_sys_color_dynamic_light_secondary_container" id="0x7f06034a" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface" id="0x7f06034b" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_bright" id="0x7f06034c" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_container" id="0x7f06034d" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_container_high" id="0x7f06034e" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_container_highest" id="0x7f06034f" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_container_low" id="0x7f060350" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_container_lowest" id="0x7f060351" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_dim" id="0x7f060352" />
+    <public type="color" name="m3_sys_color_dynamic_light_surface_variant" id="0x7f060353" />
+    <public type="color" name="m3_sys_color_dynamic_light_tertiary" id="0x7f060354" />
+    <public type="color" name="m3_sys_color_dynamic_light_tertiary_container" id="0x7f060355" />
+    <public type="color" name="m3_sys_color_dynamic_on_primary_fixed" id="0x7f060356" />
+    <public type="color" name="m3_sys_color_dynamic_on_primary_fixed_variant" id="0x7f060357" />
+    <public type="color" name="m3_sys_color_dynamic_on_secondary_fixed" id="0x7f060358" />
+    <public type="color" name="m3_sys_color_dynamic_on_secondary_fixed_variant" id="0x7f060359" />
+    <public type="color" name="m3_sys_color_dynamic_on_tertiary_fixed" id="0x7f06035a" />
+    <public type="color" name="m3_sys_color_dynamic_on_tertiary_fixed_variant" id="0x7f06035b" />
+    <public type="color" name="m3_sys_color_dynamic_primary_fixed" id="0x7f06035c" />
+    <public type="color" name="m3_sys_color_dynamic_primary_fixed_dim" id="0x7f06035d" />
+    <public type="color" name="m3_sys_color_dynamic_secondary_fixed" id="0x7f06035e" />
+    <public type="color" name="m3_sys_color_dynamic_secondary_fixed_dim" id="0x7f06035f" />
+    <public type="color" name="m3_sys_color_dynamic_tertiary_fixed" id="0x7f060360" />
+    <public type="color" name="m3_sys_color_dynamic_tertiary_fixed_dim" id="0x7f060361" />
+    <public type="color" name="material_dynamic_color_dark_error" id="0x7f0603c0" />
+    <public type="color" name="material_dynamic_color_dark_error_container" id="0x7f0603c1" />
+    <public type="color" name="material_dynamic_color_dark_on_error" id="0x7f0603c2" />
+    <public type="color" name="material_dynamic_color_dark_on_error_container" id="0x7f0603c3" />
+    <public type="color" name="material_dynamic_color_light_error" id="0x7f0603c4" />
+    <public type="color" name="material_dynamic_color_light_error_container" id="0x7f0603c5" />
+    <public type="color" name="material_dynamic_color_light_on_error" id="0x7f0603c6" />
+    <public type="color" name="material_dynamic_color_light_on_error_container" id="0x7f0603c7" />
+    <public type="color" name="material_dynamic_neutral0" id="0x7f0603c8" />
+    <public type="color" name="material_dynamic_neutral10" id="0x7f0603c9" />
+    <public type="color" name="material_dynamic_neutral100" id="0x7f0603ca" />
+    <public type="color" name="material_dynamic_neutral20" id="0x7f0603cb" />
+    <public type="color" name="material_dynamic_neutral30" id="0x7f0603cc" />
+    <public type="color" name="material_dynamic_neutral40" id="0x7f0603cd" />
+    <public type="color" name="material_dynamic_neutral50" id="0x7f0603ce" />
+    <public type="color" name="material_dynamic_neutral60" id="0x7f0603cf" />
+    <public type="color" name="material_dynamic_neutral70" id="0x7f0603d0" />
+    <public type="color" name="material_dynamic_neutral80" id="0x7f0603d1" />
+    <public type="color" name="material_dynamic_neutral90" id="0x7f0603d2" />
+    <public type="color" name="material_dynamic_neutral95" id="0x7f0603d3" />
+    <public type="color" name="material_dynamic_neutral99" id="0x7f0603d4" />
+    <public type="color" name="material_dynamic_neutral_variant0" id="0x7f0603d5" />
+    <public type="color" name="material_dynamic_neutral_variant10" id="0x7f0603d6" />
+    <public type="color" name="material_dynamic_neutral_variant100" id="0x7f0603d7" />
+    <public type="color" name="material_dynamic_neutral_variant20" id="0x7f0603d8" />
+    <public type="color" name="material_dynamic_neutral_variant30" id="0x7f0603d9" />
+    <public type="color" name="material_dynamic_neutral_variant40" id="0x7f0603da" />
+    <public type="color" name="material_dynamic_neutral_variant50" id="0x7f0603db" />
+    <public type="color" name="material_dynamic_neutral_variant60" id="0x7f0603dc" />
+    <public type="color" name="material_dynamic_neutral_variant70" id="0x7f0603dd" />
+    <public type="color" name="material_dynamic_neutral_variant80" id="0x7f0603de" />
+    <public type="color" name="material_dynamic_neutral_variant90" id="0x7f0603df" />
+    <public type="color" name="material_dynamic_neutral_variant95" id="0x7f0603e0" />
+    <public type="color" name="material_dynamic_neutral_variant99" id="0x7f0603e1" />
+    <public type="color" name="material_dynamic_primary0" id="0x7f0603e2" />
+    <public type="color" name="material_dynamic_primary10" id="0x7f0603e3" />
+    <public type="color" name="material_dynamic_primary100" id="0x7f0603e4" />
+    <public type="color" name="material_dynamic_primary20" id="0x7f0603e5" />
+    <public type="color" name="material_dynamic_primary30" id="0x7f0603e6" />
+    <public type="color" name="material_dynamic_primary40" id="0x7f0603e7" />
+    <public type="color" name="material_dynamic_primary50" id="0x7f0603e8" />
+    <public type="color" name="material_dynamic_primary60" id="0x7f0603e9" />
+    <public type="color" name="material_dynamic_primary70" id="0x7f0603ea" />
+    <public type="color" name="material_dynamic_primary80" id="0x7f0603eb" />
+    <public type="color" name="material_dynamic_primary90" id="0x7f0603ec" />
+    <public type="color" name="material_dynamic_primary95" id="0x7f0603ed" />
+    <public type="color" name="material_dynamic_primary99" id="0x7f0603ee" />
+    <public type="color" name="material_dynamic_secondary0" id="0x7f0603ef" />
+    <public type="color" name="material_dynamic_secondary10" id="0x7f0603f0" />
+    <public type="color" name="material_dynamic_secondary100" id="0x7f0603f1" />
+    <public type="color" name="material_dynamic_secondary20" id="0x7f0603f2" />
+    <public type="color" name="material_dynamic_secondary30" id="0x7f0603f3" />
+    <public type="color" name="material_dynamic_secondary40" id="0x7f0603f4" />
+    <public type="color" name="material_dynamic_secondary50" id="0x7f0603f5" />
+    <public type="color" name="material_dynamic_secondary60" id="0x7f0603f6" />
+    <public type="color" name="material_dynamic_secondary70" id="0x7f0603f7" />
+    <public type="color" name="material_dynamic_secondary80" id="0x7f0603f8" />
+    <public type="color" name="material_dynamic_secondary90" id="0x7f0603f9" />
+    <public type="color" name="material_dynamic_secondary95" id="0x7f0603fa" />
+    <public type="color" name="material_dynamic_secondary99" id="0x7f0603fb" />
+    <public type="color" name="material_dynamic_tertiary0" id="0x7f0603fc" />
+    <public type="color" name="material_dynamic_tertiary10" id="0x7f0603fd" />
+    <public type="color" name="material_dynamic_tertiary100" id="0x7f0603fe" />
+    <public type="color" name="material_dynamic_tertiary20" id="0x7f0603ff" />
+    <public type="color" name="material_dynamic_tertiary30" id="0x7f060400" />
+    <public type="color" name="material_dynamic_tertiary40" id="0x7f060401" />
+    <public type="color" name="material_dynamic_tertiary50" id="0x7f060402" />
+    <public type="color" name="material_dynamic_tertiary60" id="0x7f060403" />
+    <public type="color" name="material_dynamic_tertiary70" id="0x7f060404" />
+    <public type="color" name="material_dynamic_tertiary80" id="0x7f060405" />
+    <public type="color" name="material_dynamic_tertiary90" id="0x7f060406" />
+    <public type="color" name="material_dynamic_tertiary95" id="0x7f060407" />
+    <public type="color" name="material_dynamic_tertiary99" id="0x7f060408" />
+    <public type="color" name="m3_sys_color_dynamic_dark_error" id="0x7f060313" />
+    <public type="color" name="m3_sys_color_dynamic_dark_error_container" id="0x7f060314" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_error" id="0x7f060319" />
+    <public type="color" name="m3_sys_color_dynamic_dark_on_error_container" id="0x7f06031a" />
+    <public type="color" name="m3_sys_color_dynamic_light_error" id="0x7f060335" />
+    <public type="color" name="m3_sys_color_dynamic_light_error_container" id="0x7f060336" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_error" id="0x7f06033b" />
+    <public type="color" name="m3_sys_color_dynamic_light_on_error_container" id="0x7f06033c" />
     <public type="dimen" name="abc_action_bar_content_inset_material" id="0x7f070000" />
     <public type="dimen" name="abc_action_bar_content_inset_with_nav" id="0x7f070001" />
     <public type="dimen" name="abc_action_bar_default_height_material" id="0x7f070002" />
@@ -4091,31 +4091,22 @@
     <public type="drawable" name="$mtrl_switch_thumb_unchecked_checked__0" id="0x7f080025" />
     <public type="drawable" name="$mtrl_switch_thumb_unchecked_checked__1" id="0x7f080026" />
     <public type="drawable" name="$mtrl_switch_thumb_unchecked_pressed__0" id="0x7f080027" />
-    <public type="drawable" name="abc_ab_share_pack_mtrl_alpha" id="0x7f080028" />
     <public type="drawable" name="abc_action_bar_item_background_material" id="0x7f080029" />
     <public type="drawable" name="abc_btn_borderless_material" id="0x7f08002a" />
     <public type="drawable" name="abc_btn_check_material" id="0x7f08002b" />
     <public type="drawable" name="abc_btn_check_material_anim" id="0x7f08002c" />
-    <public type="drawable" name="abc_btn_check_to_on_mtrl_000" id="0x7f08002d" />
-    <public type="drawable" name="abc_btn_check_to_on_mtrl_015" id="0x7f08002e" />
     <public type="drawable" name="abc_btn_colored_material" id="0x7f08002f" />
     <public type="drawable" name="abc_btn_default_mtrl_shape" id="0x7f080030" />
     <public type="drawable" name="abc_btn_radio_material" id="0x7f080031" />
     <public type="drawable" name="abc_btn_radio_material_anim" id="0x7f080032" />
-    <public type="drawable" name="abc_btn_radio_to_on_mtrl_000" id="0x7f080033" />
-    <public type="drawable" name="abc_btn_radio_to_on_mtrl_015" id="0x7f080034" />
-    <public type="drawable" name="abc_btn_switch_to_on_mtrl_00001" id="0x7f080035" />
-    <public type="drawable" name="abc_btn_switch_to_on_mtrl_00012" id="0x7f080036" />
     <public type="drawable" name="abc_cab_background_internal_bg" id="0x7f080037" />
     <public type="drawable" name="abc_cab_background_top_material" id="0x7f080038" />
-    <public type="drawable" name="abc_cab_background_top_mtrl_alpha" id="0x7f080039" />
     <public type="drawable" name="abc_control_background_material" id="0x7f08003a" />
     <public type="drawable" name="abc_dialog_material_background" id="0x7f08003b" />
     <public type="drawable" name="abc_edit_text_material" id="0x7f08003c" />
     <public type="drawable" name="abc_ic_ab_back_material" id="0x7f08003d" />
     <public type="drawable" name="abc_ic_arrow_drop_right_black_24dp" id="0x7f08003e" />
     <public type="drawable" name="abc_ic_clear_material" id="0x7f08003f" />
-    <public type="drawable" name="abc_ic_commit_search_api_mtrl_alpha" id="0x7f080040" />
     <public type="drawable" name="abc_ic_go_search_api_material" id="0x7f080041" />
     <public type="drawable" name="abc_ic_menu_copy_mtrl_am_alpha" id="0x7f080042" />
     <public type="drawable" name="abc_ic_menu_cut_mtrl_alpha" id="0x7f080043" />
@@ -4128,46 +4119,22 @@
     <public type="drawable" name="abc_item_background_holo_dark" id="0x7f08004a" />
     <public type="drawable" name="abc_item_background_holo_light" id="0x7f08004b" />
     <public type="drawable" name="abc_list_divider_material" id="0x7f08004c" />
-    <public type="drawable" name="abc_list_divider_mtrl_alpha" id="0x7f08004d" />
-    <public type="drawable" name="abc_list_focused_holo" id="0x7f08004e" />
-    <public type="drawable" name="abc_list_longpressed_holo" id="0x7f08004f" />
-    <public type="drawable" name="abc_list_pressed_holo_dark" id="0x7f080050" />
-    <public type="drawable" name="abc_list_pressed_holo_light" id="0x7f080051" />
     <public type="drawable" name="abc_list_selector_background_transition_holo_dark" id="0x7f080052" />
     <public type="drawable" name="abc_list_selector_background_transition_holo_light" id="0x7f080053" />
-    <public type="drawable" name="abc_list_selector_disabled_holo_dark" id="0x7f080054" />
-    <public type="drawable" name="abc_list_selector_disabled_holo_light" id="0x7f080055" />
     <public type="drawable" name="abc_list_selector_holo_dark" id="0x7f080056" />
     <public type="drawable" name="abc_list_selector_holo_light" id="0x7f080057" />
-    <public type="drawable" name="abc_menu_hardkey_panel_mtrl_mult" id="0x7f080058" />
-    <public type="drawable" name="abc_popup_background_mtrl_mult" id="0x7f080059" />
     <public type="drawable" name="abc_ratingbar_indicator_material" id="0x7f08005a" />
     <public type="drawable" name="abc_ratingbar_material" id="0x7f08005b" />
     <public type="drawable" name="abc_ratingbar_small_material" id="0x7f08005c" />
-    <public type="drawable" name="abc_scrubber_control_off_mtrl_alpha" id="0x7f08005d" />
-    <public type="drawable" name="abc_scrubber_control_to_pressed_mtrl_000" id="0x7f08005e" />
-    <public type="drawable" name="abc_scrubber_control_to_pressed_mtrl_005" id="0x7f08005f" />
-    <public type="drawable" name="abc_scrubber_primary_mtrl_alpha" id="0x7f080060" />
-    <public type="drawable" name="abc_scrubber_track_mtrl_alpha" id="0x7f080061" />
     <public type="drawable" name="abc_seekbar_thumb_material" id="0x7f080062" />
     <public type="drawable" name="abc_seekbar_tick_mark_material" id="0x7f080063" />
     <public type="drawable" name="abc_seekbar_track_material" id="0x7f080064" />
-    <public type="drawable" name="abc_spinner_mtrl_am_alpha" id="0x7f080065" />
     <public type="drawable" name="abc_spinner_textfield_background_material" id="0x7f080066" />
     <public type="drawable" name="abc_star_black_48dp" id="0x7f080067" />
     <public type="drawable" name="abc_star_half_black_48dp" id="0x7f080068" />
     <public type="drawable" name="abc_switch_thumb_material" id="0x7f080069" />
-    <public type="drawable" name="abc_switch_track_mtrl_alpha" id="0x7f08006a" />
     <public type="drawable" name="abc_tab_indicator_material" id="0x7f08006b" />
-    <public type="drawable" name="abc_tab_indicator_mtrl_alpha" id="0x7f08006c" />
     <public type="drawable" name="abc_text_cursor_material" id="0x7f08006d" />
-    <public type="drawable" name="abc_text_select_handle_left_mtrl" id="0x7f08006e" />
-    <public type="drawable" name="abc_text_select_handle_middle_mtrl" id="0x7f08006f" />
-    <public type="drawable" name="abc_text_select_handle_right_mtrl" id="0x7f080070" />
-    <public type="drawable" name="abc_textfield_activated_mtrl_alpha" id="0x7f080071" />
-    <public type="drawable" name="abc_textfield_default_mtrl_alpha" id="0x7f080072" />
-    <public type="drawable" name="abc_textfield_search_activated_mtrl_alpha" id="0x7f080073" />
-    <public type="drawable" name="abc_textfield_search_default_mtrl_alpha" id="0x7f080074" />
     <public type="drawable" name="abc_textfield_search_material" id="0x7f080075" />
     <public type="drawable" name="abc_vector_test" id="0x7f080076" />
     <public type="drawable" name="about_background" id="0x7f080077" />
@@ -4182,8 +4149,6 @@
     <public type="drawable" name="actionbar_back" id="0x7f080080" />
     <public type="drawable" name="actionbar_background" id="0x7f080081" />
     <public type="drawable" name="actionbar_command" id="0x7f080082" />
-    <public type="drawable" name="actionbar_command_normal" id="0x7f080083" />
-    <public type="drawable" name="actionbar_command_selected" id="0x7f080084" />
     <public type="drawable" name="actionbar_dark" id="0x7f080085" />
     <public type="drawable" name="actionbar_divider" id="0x7f080086" />
     <public type="drawable" name="actionbar_gold" id="0x7f080087" />
@@ -4205,7 +4170,6 @@
     <public type="drawable" name="bg_chat_create_empty_avatar" id="0x7f080097" />
     <public type="drawable" name="bg_chat_dialogs_selector" id="0x7f080098" />
     <public type="drawable" name="bg_chat_download_button" id="0x7f080099" />
-    <public type="drawable" name="bg_chat_left_line_blue" id="0x7f08009a" />
     <public type="drawable" name="bg_chat_list_button_divider" id="0x7f08009b" />
     <public type="drawable" name="bg_chat_message" id="0x7f08009c" />
     <public type="drawable" name="bg_chat_quote_reply_bg" id="0x7f08009d" />
@@ -4220,8 +4184,6 @@
     <public type="drawable" name="btn_checkbox_checked_to_unchecked_mtrl_animation" id="0x7f0800a6" />
     <public type="drawable" name="btn_checkbox_unchecked_mtrl" id="0x7f0800a7" />
     <public type="drawable" name="btn_checkbox_unchecked_to_checked_mtrl_animation" id="0x7f0800a8" />
-    <public type="drawable" name="btn_keyboard_action_key_normal" id="0x7f0800a9" />
-    <public type="drawable" name="btn_keyboard_action_key_pressed" id="0x7f0800aa" />
     <public type="drawable" name="btn_radio_off_mtrl" id="0x7f0800ab" />
     <public type="drawable" name="btn_radio_off_to_on_mtrl_animation" id="0x7f0800ac" />
     <public type="drawable" name="btn_radio_on_mtrl" id="0x7f0800ad" />
@@ -4229,9 +4191,6 @@
     <public type="drawable" name="button_background" id="0x7f0800af" />
     <public type="drawable" name="button_background_pressed" id="0x7f0800b0" />
     <public type="drawable" name="button_blue" id="0x7f0800b1" />
-    <public type="drawable" name="button_blue_disabled" id="0x7f0800b2" />
-    <public type="drawable" name="button_blue_normal" id="0x7f0800b3" />
-    <public type="drawable" name="button_blue_pressed" id="0x7f0800b4" />
     <public type="drawable" name="button_buy_normal" id="0x7f0800b5" />
     <public type="drawable" name="button_buy_pressed" id="0x7f0800b6" />
     <public type="drawable" name="button_buy_text" id="0x7f0800b7" />
@@ -4240,16 +4199,13 @@
     <public type="drawable" name="button_edit" id="0x7f0800ba" />
     <public type="drawable" name="button_keyboard_action" id="0x7f0800bb" />
     <public type="drawable" name="button_normal" id="0x7f0800bc" />
-    <public type="drawable" name="button_normal_normal" id="0x7f0800bd" />
     <public type="drawable" name="button_red" id="0x7f0800be" />
-    <public type="drawable" name="button_red_normal" id="0x7f0800bf" />
     <public type="drawable" name="button_sell_normal" id="0x7f0800c0" />
     <public type="drawable" name="button_sell_pressed" id="0x7f0800c1" />
     <public type="drawable" name="button_sell_text" id="0x7f0800c2" />
     <public type="drawable" name="button_text" id="0x7f0800c3" />
     <public type="drawable" name="channel_unread" id="0x7f0800c4" />
     <public type="drawable" name="chart_button_background" id="0x7f0800c5" />
-    <public type="drawable" name="chart_button_selected" id="0x7f0800c6" />
     <public type="drawable" name="chat_attach_background" id="0x7f0800c7" />
     <public type="drawable" name="chat_button_text_color_selector" id="0x7f0800c8" />
     <public type="drawable" name="chat_create_edit_text_search_bg" id="0x7f0800c9" />
@@ -4260,28 +4216,21 @@
     <public type="drawable" name="chat_image_stub" id="0x7f0800ce" />
     <public type="drawable" name="chat_list_separator" id="0x7f0800cf" />
     <public type="drawable" name="chat_popup_background" id="0x7f0800d0" />
-    <public type="drawable" name="chat_service_message" id="0x7f0800d1" />
-    <public type="drawable" name="chat_underline_gray" id="0x7f0800d2" />
     <public type="drawable" name="circle_mask" id="0x7f0800d3" />
-    <public type="drawable" name="common_full_open_on_phone" id="0x7f0800d4" />
     <public type="drawable" name="common_google_signin_btn_icon_dark" id="0x7f0800d5" />
     <public type="drawable" name="common_google_signin_btn_icon_dark_focused" id="0x7f0800d6" />
     <public type="drawable" name="common_google_signin_btn_icon_dark_normal" id="0x7f0800d7" />
-    <public type="drawable" name="common_google_signin_btn_icon_dark_normal_background" id="0x7f0800d8" />
     <public type="drawable" name="common_google_signin_btn_icon_disabled" id="0x7f0800d9" />
     <public type="drawable" name="common_google_signin_btn_icon_light" id="0x7f0800da" />
     <public type="drawable" name="common_google_signin_btn_icon_light_focused" id="0x7f0800db" />
     <public type="drawable" name="common_google_signin_btn_icon_light_normal" id="0x7f0800dc" />
-    <public type="drawable" name="common_google_signin_btn_icon_light_normal_background" id="0x7f0800dd" />
     <public type="drawable" name="common_google_signin_btn_text_dark" id="0x7f0800de" />
     <public type="drawable" name="common_google_signin_btn_text_dark_focused" id="0x7f0800df" />
     <public type="drawable" name="common_google_signin_btn_text_dark_normal" id="0x7f0800e0" />
-    <public type="drawable" name="common_google_signin_btn_text_dark_normal_background" id="0x7f0800e1" />
     <public type="drawable" name="common_google_signin_btn_text_disabled" id="0x7f0800e2" />
     <public type="drawable" name="common_google_signin_btn_text_light" id="0x7f0800e3" />
     <public type="drawable" name="common_google_signin_btn_text_light_focused" id="0x7f0800e4" />
     <public type="drawable" name="common_google_signin_btn_text_light_normal" id="0x7f0800e5" />
-    <public type="drawable" name="common_google_signin_btn_text_light_normal_background" id="0x7f0800e6" />
     <public type="drawable" name="context_menu_background" id="0x7f0800e7" />
     <public type="drawable" name="create_account_shadow_left" id="0x7f0800e8" />
     <public type="drawable" name="create_account_shadow_right" id="0x7f0800e9" />
@@ -4293,46 +4242,20 @@
     <public type="drawable" name="design_ic_visibility_off" id="0x7f0800ef" />
     <public type="drawable" name="design_password_eye" id="0x7f0800f0" />
     <public type="drawable" name="design_snackbar_background" id="0x7f0800f1" />
-    <public type="drawable" name="dialog_error" id="0x7f0800f2" />
-    <public type="drawable" name="dialog_ok" id="0x7f0800f3" />
     <public type="drawable" name="dialog_window_bg" id="0x7f0800f4" />
     <public type="drawable" name="download_image_background" id="0x7f0800f5" />
     <public type="drawable" name="drag_list_background" id="0x7f0800f6" />
     <public type="drawable" name="edit_text_hint_selector" id="0x7f0800f7" />
     <public type="drawable" name="eula_button_background" id="0x7f0800f8" />
     <public type="drawable" name="facebook_button_background" id="0x7f0800f9" />
-    <public type="drawable" name="facebook_button_icon" id="0x7f0800fa" />
-    <public type="drawable" name="googleg_disabled_color_18" id="0x7f0800fb" />
-    <public type="drawable" name="googleg_standard_color_18" id="0x7f0800fc" />
     <public type="drawable" name="gray_footer" id="0x7f0800fd" />
     <public type="drawable" name="gray_underline" id="0x7f0800fe" />
     <public type="drawable" name="green_underline" id="0x7f0800ff" />
-    <public type="drawable" name="ic_account_change" id="0x7f080100" />
-    <public type="drawable" name="ic_account_delete" id="0x7f080101" />
-    <public type="drawable" name="ic_account_demo" id="0x7f080102" />
-    <public type="drawable" name="ic_account_info" id="0x7f080103" />
-    <public type="drawable" name="ic_account_investor" id="0x7f080104" />
-    <public type="drawable" name="ic_account_real" id="0x7f080105" />
-    <public type="drawable" name="ic_action_mode_edit" id="0x7f080106" />
-    <public type="drawable" name="ic_actionbar_back" id="0x7f080107" />
     <public type="drawable" name="ic_actionbar_cross" id="0x7f080108" />
-    <public type="drawable" name="ic_actionbar_cross_disabled" id="0x7f080109" />
-    <public type="drawable" name="ic_actionbar_cross_normal" id="0x7f08010a" />
     <public type="drawable" name="ic_actionbar_indicators" id="0x7f08010b" />
-    <public type="drawable" name="ic_actionbar_indicators_disabled" id="0x7f08010c" />
-    <public type="drawable" name="ic_actionbar_indicators_normal" id="0x7f08010d" />
     <public type="drawable" name="ic_actionbar_move" id="0x7f08010e" />
-    <public type="drawable" name="ic_actionbar_move_disabled" id="0x7f08010f" />
-    <public type="drawable" name="ic_actionbar_move_normal" id="0x7f080110" />
-    <public type="drawable" name="ic_actionbar_new_order" id="0x7f080111" />
     <public type="drawable" name="ic_actionbar_period" id="0x7f080112" />
-    <public type="drawable" name="ic_actionbar_period_disabled" id="0x7f080113" />
-    <public type="drawable" name="ic_actionbar_period_normal" id="0x7f080114" />
     <public type="drawable" name="ic_actionbar_scale" id="0x7f080115" />
-    <public type="drawable" name="ic_actionbar_scale_disabled" id="0x7f080116" />
-    <public type="drawable" name="ic_actionbar_scale_normal" id="0x7f080117" />
-    <public type="drawable" name="ic_add" id="0x7f080118" />
-    <public type="drawable" name="ic_add_indicator" id="0x7f080119" />
     <public type="drawable" name="ic_add_rounded" id="0x7f08011a" />
     <public type="drawable" name="ic_add_rounded_blue" id="0x7f08011b" />
     <public type="drawable" name="ic_add_rounded_white" id="0x7f08011c" />
@@ -4341,24 +4264,8 @@
     <public type="drawable" name="ic_arrow_downward" id="0x7f08011f" />
     <public type="drawable" name="ic_arrow_forward" id="0x7f080120" />
     <public type="drawable" name="ic_arrow_right" id="0x7f080121" />
-    <public type="drawable" name="ic_attachent" id="0x7f080122" />
-    <public type="drawable" name="ic_attachment_file" id="0x7f080123" />
     <public type="drawable" name="ic_authorization" id="0x7f080124" />
-    <public type="drawable" name="ic_back" id="0x7f080125" />
-    <public type="drawable" name="ic_background_accounts" id="0x7f080126" />
-    <public type="drawable" name="ic_background_add_symbol" id="0x7f080127" />
-    <public type="drawable" name="ic_background_charts" id="0x7f080128" />
-    <public type="drawable" name="ic_background_history" id="0x7f080129" />
-    <public type="drawable" name="ic_background_mail" id="0x7f08012a" />
-    <public type="drawable" name="ic_background_messages" id="0x7f08012b" />
-    <public type="drawable" name="ic_background_quotes" id="0x7f08012c" />
-    <public type="drawable" name="ic_background_trade" id="0x7f08012d" />
     <public type="drawable" name="ic_block" id="0x7f08012e" />
-    <public type="drawable" name="ic_blue_minus" id="0x7f08012f" />
-    <public type="drawable" name="ic_blue_plus" id="0x7f080130" />
-    <public type="drawable" name="ic_bottom_expand" id="0x7f080131" />
-    <public type="drawable" name="ic_bottom_hide" id="0x7f080132" />
-    <public type="drawable" name="ic_btn_search" id="0x7f080133" />
     <public type="drawable" name="ic_call_answer" id="0x7f080134" />
     <public type="drawable" name="ic_call_answer_low" id="0x7f080135" />
     <public type="drawable" name="ic_call_answer_video" id="0x7f080136" />
@@ -4367,303 +4274,89 @@
     <public type="drawable" name="ic_call_decline_low" id="0x7f080139" />
     <public type="drawable" name="ic_camera" id="0x7f08013a" />
     <public type="drawable" name="ic_camera_alt" id="0x7f08013b" />
-    <public type="drawable" name="ic_change_symbol" id="0x7f08013c" />
-    <public type="drawable" name="ic_channel_andrews_pitchfork" id="0x7f08013d" />
     <public type="drawable" name="ic_channel_equidistant" id="0x7f08013e" />
     <public type="drawable" name="ic_channel_regression" id="0x7f08013f" />
-    <public type="drawable" name="ic_channel_stddev" id="0x7f080140" />
-    <public type="drawable" name="ic_channels_account_delete" id="0x7f080141" />
     <public type="drawable" name="ic_channels_logout" id="0x7f080142" />
     <public type="drawable" name="ic_channels_profile" id="0x7f080143" />
     <public type="drawable" name="ic_channels_user_black_list" id="0x7f080144" />
-    <public type="drawable" name="ic_chart" id="0x7f080145" />
     <public type="drawable" name="ic_chart_bars" id="0x7f080146" />
-    <public type="drawable" name="ic_chart_bars_disabled" id="0x7f080147" />
-    <public type="drawable" name="ic_chart_bars_normal" id="0x7f080148" />
     <public type="drawable" name="ic_chart_candles" id="0x7f080149" />
-    <public type="drawable" name="ic_chart_candles_disabled" id="0x7f08014a" />
-    <public type="drawable" name="ic_chart_candles_normal" id="0x7f08014b" />
-    <public type="drawable" name="ic_chart_cross" id="0x7f08014c" />
-    <public type="drawable" name="ic_chart_indicator" id="0x7f08014d" />
-    <public type="drawable" name="ic_chart_lines" id="0x7f08014e" />
-    <public type="drawable" name="ic_chart_move" id="0x7f08014f" />
     <public type="drawable" name="ic_chart_order" id="0x7f080150" />
-    <public type="drawable" name="ic_chart_order_disabled" id="0x7f080151" />
-    <public type="drawable" name="ic_chart_order_normal" id="0x7f080152" />
     <public type="drawable" name="ic_chart_period" id="0x7f080153" />
     <public type="drawable" name="ic_chart_refresh" id="0x7f080154" />
-    <public type="drawable" name="ic_chart_refresh_disabled" id="0x7f080155" />
-    <public type="drawable" name="ic_chart_refresh_normal" id="0x7f080156" />
     <public type="drawable" name="ic_chat_attachment" id="0x7f080157" />
-    <public type="drawable" name="ic_chat_mute" id="0x7f080158" />
     <public type="drawable" name="ic_chat_quote_reply" id="0x7f080159" />
-    <public type="drawable" name="ic_chat_readed" id="0x7f08015a" />
-    <public type="drawable" name="ic_chat_reded" id="0x7f08015b" />
     <public type="drawable" name="ic_chat_send" id="0x7f08015c" />
-    <public type="drawable" name="ic_chat_send_disable" id="0x7f08015d" />
-    <public type="drawable" name="ic_chat_send_enable" id="0x7f08015e" />
     <public type="drawable" name="ic_chat_send_old" id="0x7f08015f" />
-    <public type="drawable" name="ic_chat_sended" id="0x7f080160" />
-    <public type="drawable" name="ic_check" id="0x7f080161" />
-    <public type="drawable" name="ic_check_action_mode" id="0x7f080162" />
-    <public type="drawable" name="ic_check_actionmode" id="0x7f080163" />
-    <public type="drawable" name="ic_check_color" id="0x7f080164" />
     <public type="drawable" name="ic_check_cycle" id="0x7f080165" />
-    <public type="drawable" name="ic_choose_chat" id="0x7f080166" />
     <public type="drawable" name="ic_clear_black_24" id="0x7f080167" />
     <public type="drawable" name="ic_clock_black_24dp" id="0x7f080168" />
-    <public type="drawable" name="ic_close" id="0x7f080169" />
-    <public type="drawable" name="ic_close_button" id="0x7f08016a" />
-    <public type="drawable" name="ic_close_order" id="0x7f08016b" />
-    <public type="drawable" name="ic_color_selector_arrow" id="0x7f08016c" />
-    <public type="drawable" name="ic_copy" id="0x7f08016d" />
-    <public type="drawable" name="ic_create_mail" id="0x7f08016e" />
-    <public type="drawable" name="ic_cross_white" id="0x7f08016f" />
-    <public type="drawable" name="ic_delete" id="0x7f080170" />
-    <public type="drawable" name="ic_delete_cross" id="0x7f080171" />
     <public type="drawable" name="ic_delete_rounded_blue" id="0x7f080172" />
-    <public type="drawable" name="ic_demo_account_mark" id="0x7f080173" />
-    <public type="drawable" name="ic_demo_account_title" id="0x7f080174" />
-    <public type="drawable" name="ic_dialog_error" id="0x7f080175" />
-    <public type="drawable" name="ic_dir_down" id="0x7f080176" />
-    <public type="drawable" name="ic_done" id="0x7f080177" />
     <public type="drawable" name="ic_download" id="0x7f080178" />
-    <public type="drawable" name="ic_drag" id="0x7f080179" />
     <public type="drawable" name="ic_drag_indicator" id="0x7f08017a" />
-    <public type="drawable" name="ic_drawer_demo" id="0x7f08017b" />
-    <public type="drawable" name="ic_drawer_investor" id="0x7f08017c" />
-    <public type="drawable" name="ic_drawer_noconnection" id="0x7f08017d" />
-    <public type="drawable" name="ic_drawer_real" id="0x7f08017e" />
     <public type="drawable" name="ic_edit" id="0x7f08017f" />
-    <public type="drawable" name="ic_edit_disabled" id="0x7f080180" />
-    <public type="drawable" name="ic_edit_period" id="0x7f080181" />
     <public type="drawable" name="ic_elliott_corrective_wave" id="0x7f080182" />
     <public type="drawable" name="ic_elliott_motive_wave" id="0x7f080183" />
     <public type="drawable" name="ic_error" id="0x7f080184" />
     <public type="drawable" name="ic_expand_less_22px" id="0x7f080185" />
     <public type="drawable" name="ic_expand_more_22px" id="0x7f080186" />
     <public type="drawable" name="ic_expand_plus" id="0x7f080187" />
-    <public type="drawable" name="ic_facebook" id="0x7f080188" />
-    <public type="drawable" name="ic_falling" id="0x7f080189" />
-    <public type="drawable" name="ic_favorite" id="0x7f08018a" />
     <public type="drawable" name="ic_fibonacci_arcs" id="0x7f08018b" />
     <public type="drawable" name="ic_fibonacci_channel" id="0x7f08018c" />
     <public type="drawable" name="ic_fibonacci_expansion" id="0x7f08018d" />
-    <public type="drawable" name="ic_fibonacci_fan" id="0x7f08018e" />
     <public type="drawable" name="ic_fibonacci_retracement" id="0x7f08018f" />
     <public type="drawable" name="ic_fibonacci_time_zones" id="0x7f080190" />
-    <public type="drawable" name="ic_file_attach" id="0x7f080191" />
-    <public type="drawable" name="ic_file_category_audio" id="0x7f080192" />
-    <public type="drawable" name="ic_file_category_downloads" id="0x7f080193" />
-    <public type="drawable" name="ic_file_category_images" id="0x7f080194" />
-    <public type="drawable" name="ic_file_category_storage" id="0x7f080195" />
-    <public type="drawable" name="ic_file_category_video" id="0x7f080196" />
     <public type="drawable" name="ic_file_download" id="0x7f080197" />
-    <public type="drawable" name="ic_folder" id="0x7f080198" />
     <public type="drawable" name="ic_forward" id="0x7f080199" />
     <public type="drawable" name="ic_gann_fan" id="0x7f08019a" />
-    <public type="drawable" name="ic_gann_grid" id="0x7f08019b" />
     <public type="drawable" name="ic_gann_line" id="0x7f08019c" />
-    <public type="drawable" name="ic_generic_dir" id="0x7f08019d" />
-    <public type="drawable" name="ic_generic_file" id="0x7f08019e" />
-    <public type="drawable" name="ic_google" id="0x7f08019f" />
-    <public type="drawable" name="ic_growth" id="0x7f0801a0" />
-    <public type="drawable" name="ic_indicator_white" id="0x7f0801a1" />
-    <public type="drawable" name="ic_info" id="0x7f0801a2" />
-    <public type="drawable" name="ic_info_tip" id="0x7f0801a3" />
-    <public type="drawable" name="ic_key_delete" id="0x7f0801a4" />
-    <public type="drawable" name="ic_keyboard_arrow_down_white_36dp" id="0x7f0801a5" />
     <public type="drawable" name="ic_keyboard_black_24dp" id="0x7f0801a6" />
-    <public type="drawable" name="ic_line_angle" id="0x7f0801a7" />
     <public type="drawable" name="ic_line_arrowed" id="0x7f0801a8" />
-    <public type="drawable" name="ic_line_cycle" id="0x7f0801a9" />
-    <public type="drawable" name="ic_line_horisontal" id="0x7f0801aa" />
-    <public type="drawable" name="ic_line_trend" id="0x7f0801ab" />
-    <public type="drawable" name="ic_line_vertical" id="0x7f0801ac" />
-    <public type="drawable" name="ic_list_folder" id="0x7f0801ad" />
-    <public type="drawable" name="ic_list_folder_selected" id="0x7f0801ae" />
-    <public type="drawable" name="ic_load_error" id="0x7f0801af" />
     <public type="drawable" name="ic_lock" id="0x7f0801b0" />
-    <public type="drawable" name="ic_lock_small" id="0x7f0801b1" />
-    <public type="drawable" name="ic_logo" id="0x7f0801b2" />
-    <public type="drawable" name="ic_logo_about" id="0x7f0801b3" />
-    <public type="drawable" name="ic_logo_small" id="0x7f0801b4" />
-    <public type="drawable" name="ic_logo_small_rounded" id="0x7f0801b5" />
-    <public type="drawable" name="ic_logo_small_version" id="0x7f0801b6" />
     <public type="drawable" name="ic_m3_chip_check" id="0x7f0801b7" />
     <public type="drawable" name="ic_m3_chip_checked_circle" id="0x7f0801b8" />
     <public type="drawable" name="ic_m3_chip_close" id="0x7f0801b9" />
-    <public type="drawable" name="ic_mail" id="0x7f0801ba" />
-    <public type="drawable" name="ic_mail_reply" id="0x7f0801bb" />
     <public type="drawable" name="ic_manage_search" id="0x7f0801bc" />
     <public type="drawable" name="ic_menu_about" id="0x7f0801bd" />
-    <public type="drawable" name="ic_menu_about_black" id="0x7f0801be" />
-    <public type="drawable" name="ic_menu_about_gray" id="0x7f0801bf" />
-    <public type="drawable" name="ic_menu_account_demo" id="0x7f0801c0" />
-    <public type="drawable" name="ic_menu_account_demo_selected" id="0x7f0801c1" />
-    <public type="drawable" name="ic_menu_account_empty" id="0x7f0801c2" />
-    <public type="drawable" name="ic_menu_account_empty_selected" id="0x7f0801c3" />
-    <public type="drawable" name="ic_menu_account_investor" id="0x7f0801c4" />
-    <public type="drawable" name="ic_menu_account_investor_selected" id="0x7f0801c5" />
-    <public type="drawable" name="ic_menu_account_offline" id="0x7f0801c6" />
-    <public type="drawable" name="ic_menu_account_offline_selected" id="0x7f0801c7" />
-    <public type="drawable" name="ic_menu_account_real" id="0x7f0801c8" />
-    <public type="drawable" name="ic_menu_account_real_selected" id="0x7f0801c9" />
-    <public type="drawable" name="ic_menu_accounts" id="0x7f0801ca" />
-    <public type="drawable" name="ic_menu_add" id="0x7f0801cb" />
-    <public type="drawable" name="ic_menu_calendar" id="0x7f0801cc" />
-    <public type="drawable" name="ic_menu_certificates" id="0x7f0801cd" />
     <public type="drawable" name="ic_menu_chart" id="0x7f0801ce" />
-    <public type="drawable" name="ic_menu_chart_black" id="0x7f0801cf" />
-    <public type="drawable" name="ic_menu_chart_blue" id="0x7f0801d0" />
-    <public type="drawable" name="ic_menu_chart_gray" id="0x7f0801d1" />
-    <public type="drawable" name="ic_menu_chart_white" id="0x7f0801d2" />
-    <public type="drawable" name="ic_menu_delete" id="0x7f0801d3" />
     <public type="drawable" name="ic_menu_history" id="0x7f0801d4" />
-    <public type="drawable" name="ic_menu_history_black" id="0x7f0801d5" />
-    <public type="drawable" name="ic_menu_history_blue" id="0x7f0801d6" />
-    <public type="drawable" name="ic_menu_history_gray" id="0x7f0801d7" />
     <public type="drawable" name="ic_menu_journal" id="0x7f0801d8" />
-    <public type="drawable" name="ic_menu_journal_black" id="0x7f0801d9" />
-    <public type="drawable" name="ic_menu_journal_gray" id="0x7f0801da" />
     <public type="drawable" name="ic_menu_mail" id="0x7f0801db" />
-    <public type="drawable" name="ic_menu_mail_black" id="0x7f0801dc" />
-    <public type="drawable" name="ic_menu_mail_blue" id="0x7f0801dd" />
-    <public type="drawable" name="ic_menu_mail_gray" id="0x7f0801de" />
     <public type="drawable" name="ic_menu_mail_wide" id="0x7f0801df" />
     <public type="drawable" name="ic_menu_messages" id="0x7f0801e0" />
-    <public type="drawable" name="ic_menu_messages_black" id="0x7f0801e1" />
-    <public type="drawable" name="ic_menu_messages_blue" id="0x7f0801e2" />
-    <public type="drawable" name="ic_menu_messages_gray" id="0x7f0801e3" />
     <public type="drawable" name="ic_menu_messages_wide" id="0x7f0801e4" />
-    <public type="drawable" name="ic_menu_more" id="0x7f0801e5" />
-    <public type="drawable" name="ic_menu_moreoverflow_normal_holo_dark" id="0x7f0801e6" />
     <public type="drawable" name="ic_menu_news" id="0x7f0801e7" />
-    <public type="drawable" name="ic_menu_news_black" id="0x7f0801e8" />
-    <public type="drawable" name="ic_menu_news_blue" id="0x7f0801e9" />
-    <public type="drawable" name="ic_menu_news_gray" id="0x7f0801ea" />
     <public type="drawable" name="ic_menu_news_wide" id="0x7f0801eb" />
-    <public type="drawable" name="ic_menu_period_custom" id="0x7f0801ec" />
-    <public type="drawable" name="ic_menu_period_day" id="0x7f0801ed" />
-    <public type="drawable" name="ic_menu_period_month" id="0x7f0801ee" />
-    <public type="drawable" name="ic_menu_period_three_months" id="0x7f0801ef" />
-    <public type="drawable" name="ic_menu_period_week" id="0x7f0801f0" />
     <public type="drawable" name="ic_menu_quotes" id="0x7f0801f1" />
-    <public type="drawable" name="ic_menu_quotes_black" id="0x7f0801f2" />
-    <public type="drawable" name="ic_menu_quotes_blue" id="0x7f0801f3" />
-    <public type="drawable" name="ic_menu_quotes_gray" id="0x7f0801f4" />
     <public type="drawable" name="ic_menu_quotes_wide" id="0x7f0801f5" />
-    <public type="drawable" name="ic_menu_refresh" id="0x7f0801f6" />
-    <public type="drawable" name="ic_menu_search" id="0x7f0801f7" />
     <public type="drawable" name="ic_menu_settings" id="0x7f0801f8" />
-    <public type="drawable" name="ic_menu_settings_black" id="0x7f0801f9" />
-    <public type="drawable" name="ic_menu_settings_gray" id="0x7f0801fa" />
-    <public type="drawable" name="ic_menu_sort" id="0x7f0801fb" />
     <public type="drawable" name="ic_menu_trade" id="0x7f0801fc" />
-    <public type="drawable" name="ic_menu_trade_black" id="0x7f0801fd" />
-    <public type="drawable" name="ic_menu_trade_blue" id="0x7f0801fe" />
-    <public type="drawable" name="ic_menu_trade_gray" id="0x7f0801ff" />
     <public type="drawable" name="ic_menu_traders_community" id="0x7f080200" />
-    <public type="drawable" name="ic_menu_traders_community_gray" id="0x7f080201" />
-    <public type="drawable" name="ic_message_cut" id="0x7f080202" />
     <public type="drawable" name="ic_minus" id="0x7f080203" />
-    <public type="drawable" name="ic_minus_disabled" id="0x7f080204" />
-    <public type="drawable" name="ic_mqid" id="0x7f080205" />
-    <public type="drawable" name="ic_mql_community" id="0x7f080206" />
-    <public type="drawable" name="ic_mt5" id="0x7f080207" />
     <public type="drawable" name="ic_mtrl_arrow_circle" id="0x7f080208" />
     <public type="drawable" name="ic_mtrl_checked_circle" id="0x7f080209" />
     <public type="drawable" name="ic_mtrl_chip_checked_black" id="0x7f08020a" />
     <public type="drawable" name="ic_mtrl_chip_checked_circle" id="0x7f08020b" />
     <public type="drawable" name="ic_mtrl_chip_close_circle" id="0x7f08020c" />
-    <public type="drawable" name="ic_mute" id="0x7f08020d" />
     <public type="drawable" name="ic_navigation" id="0x7f08020e" />
-    <public type="drawable" name="ic_navigation_drawer" id="0x7f08020f" />
-    <public type="drawable" name="ic_news" id="0x7f080210" />
-    <public type="drawable" name="ic_news_next" id="0x7f080211" />
-    <public type="drawable" name="ic_news_previous" id="0x7f080212" />
-    <public type="drawable" name="ic_no_message" id="0x7f080213" />
-    <public type="drawable" name="ic_no_news" id="0x7f080214" />
-    <public type="drawable" name="ic_not_done" id="0x7f080215" />
-    <public type="drawable" name="ic_notify" id="0x7f080216" />
-    <public type="drawable" name="ic_notify_blue" id="0x7f080217" />
-    <public type="drawable" name="ic_notify_blue_small" id="0x7f080218" />
-    <public type="drawable" name="ic_notify_mql5" id="0x7f080219" />
-    <public type="drawable" name="ic_notify_mql5_small" id="0x7f08021a" />
-    <public type="drawable" name="ic_objects" id="0x7f08021b" />
-    <public type="drawable" name="ic_objects_white" id="0x7f08021c" />
-    <public type="drawable" name="ic_onboarding_page_1" id="0x7f08021d" />
-    <public type="drawable" name="ic_onboarding_page_2" id="0x7f08021e" />
-    <public type="drawable" name="ic_onboarding_page_3" id="0x7f08021f" />
-    <public type="drawable" name="ic_onboarding_page_4" id="0x7f080220" />
-    <public type="drawable" name="ic_otp" id="0x7f080221" />
-    <public type="drawable" name="ic_otp_bind" id="0x7f080222" />
-    <public type="drawable" name="ic_otp_change_password" id="0x7f080223" />
-    <public type="drawable" name="ic_otp_dialog" id="0x7f080224" />
-    <public type="drawable" name="ic_otp_logo" id="0x7f080225" />
-    <public type="drawable" name="ic_otp_menu" id="0x7f080226" />
-    <public type="drawable" name="ic_otp_sync_time" id="0x7f080227" />
-    <public type="drawable" name="ic_password_tip" id="0x7f080228" />
-    <public type="drawable" name="ic_pencil" id="0x7f080229" />
     <public type="drawable" name="ic_photo_library" id="0x7f08022a" />
     <public type="drawable" name="ic_plus" id="0x7f08022b" />
-    <public type="drawable" name="ic_plus_disabled" id="0x7f08022c" />
     <public type="drawable" name="ic_plus_in_circle" id="0x7f08022d" />
-    <public type="drawable" name="ic_processing" id="0x7f08022e" />
-    <public type="drawable" name="ic_profile" id="0x7f08022f" />
-    <public type="drawable" name="ic_push_category_broker" id="0x7f080230" />
-    <public type="drawable" name="ic_push_category_chat" id="0x7f080231" />
-    <public type="drawable" name="ic_push_category_community" id="0x7f080232" />
-    <public type="drawable" name="ic_push_category_hosting" id="0x7f080233" />
-    <public type="drawable" name="ic_push_category_other" id="0x7f080234" />
-    <public type="drawable" name="ic_push_category_storage" id="0x7f080235" />
-    <public type="drawable" name="ic_push_category_terminal" id="0x7f080236" />
-    <public type="drawable" name="ic_rate" id="0x7f080237" />
-    <public type="drawable" name="ic_rate_app" id="0x7f080238" />
-    <public type="drawable" name="ic_rate_app_wide" id="0x7f080239" />
-    <public type="drawable" name="ic_readonly_account_mark" id="0x7f08023a" />
-    <public type="drawable" name="ic_real_account_mark" id="0x7f08023b" />
-    <public type="drawable" name="ic_real_account_title" id="0x7f08023c" />
     <public type="drawable" name="ic_registration" id="0x7f08023d" />
     <public type="drawable" name="ic_reply" id="0x7f08023e" />
     <public type="drawable" name="ic_report" id="0x7f08023f" />
     <public type="drawable" name="ic_resend" id="0x7f080240" />
-    <public type="drawable" name="ic_right_arrow" id="0x7f080241" />
     <public type="drawable" name="ic_search" id="0x7f080242" />
     <public type="drawable" name="ic_search_black_24" id="0x7f080243" />
     <public type="drawable" name="ic_search_close" id="0x7f080244" />
-    <public type="drawable" name="ic_select_all" id="0x7f080245" />
-    <public type="drawable" name="ic_select_none" id="0x7f080246" />
-    <public type="drawable" name="ic_send_mail" id="0x7f080247" />
-    <public type="drawable" name="ic_server_default" id="0x7f080248" />
     <public type="drawable" name="ic_shape_ellipse" id="0x7f080249" />
     <public type="drawable" name="ic_shape_rectangle" id="0x7f08024a" />
     <public type="drawable" name="ic_shape_triangle" id="0x7f08024b" />
     <public type="drawable" name="ic_share" id="0x7f08024c" />
-    <public type="drawable" name="ic_sort_down" id="0x7f08024d" />
-    <public type="drawable" name="ic_sort_down_phone" id="0x7f08024e" />
-    <public type="drawable" name="ic_sort_up" id="0x7f08024f" />
-    <public type="drawable" name="ic_sort_up_phone" id="0x7f080250" />
-    <public type="drawable" name="ic_sound_off" id="0x7f080251" />
     <public type="drawable" name="ic_spinner_account" id="0x7f080252" />
-    <public type="drawable" name="ic_spinner_account_connect_1" id="0x7f080253" />
-    <public type="drawable" name="ic_spinner_account_connect_2" id="0x7f080254" />
-    <public type="drawable" name="ic_spinner_account_connect_3" id="0x7f080255" />
-    <public type="drawable" name="ic_spinner_account_connect_4" id="0x7f080256" />
-    <public type="drawable" name="ic_spinner_account_connected" id="0x7f080257" />
-    <public type="drawable" name="ic_spinner_account_disconnected" id="0x7f080258" />
-    <public type="drawable" name="ic_stat_message" id="0x7f080259" />
-    <public type="drawable" name="ic_status_notify" id="0x7f08025a" />
     <public type="drawable" name="ic_symbol_group" id="0x7f08025b" />
-    <public type="drawable" name="ic_tap_hand" id="0x7f08025c" />
-    <public type="drawable" name="ic_telegram" id="0x7f08025d" />
-    <public type="drawable" name="ic_text_arrow" id="0x7f08025e" />
     <public type="drawable" name="ic_time" id="0x7f08025f" />
-    <public type="drawable" name="ic_toolbar_back" id="0x7f080260" />
     <public type="drawable" name="ic_trash" id="0x7f080261" />
-    <public type="drawable" name="ic_unlock" id="0x7f080262" />
-    <public type="drawable" name="ic_update" id="0x7f080263" />
-    <public type="drawable" name="ic_verified" id="0x7f080264" />
     <public type="drawable" name="if_file" id="0x7f080265" />
     <public type="drawable" name="image_attachment_generic" id="0x7f080266" />
     <public type="drawable" name="input_chat_message" id="0x7f080267" />
@@ -4674,7 +4367,6 @@
     <public type="drawable" name="list_selector" id="0x7f08026c" />
     <public type="drawable" name="list_selector_normal" id="0x7f08026d" />
     <public type="drawable" name="list_selector_pressed" id="0x7f08026e" />
-    <public type="drawable" name="login_background" id="0x7f08026f" />
     <public type="drawable" name="m3_avd_hide_password" id="0x7f080270" />
     <public type="drawable" name="m3_avd_show_password" id="0x7f080271" />
     <public type="drawable" name="m3_bottom_sheet_drag_handle" id="0x7f080272" />
@@ -4744,30 +4436,15 @@
     <public type="drawable" name="notification_action_background" id="0x7f0802b2" />
     <public type="drawable" name="notification_bg" id="0x7f0802b3" />
     <public type="drawable" name="notification_bg_low" id="0x7f0802b4" />
-    <public type="drawable" name="notification_bg_low_normal" id="0x7f0802b5" />
-    <public type="drawable" name="notification_bg_low_pressed" id="0x7f0802b6" />
-    <public type="drawable" name="notification_bg_normal" id="0x7f0802b7" />
-    <public type="drawable" name="notification_bg_normal_pressed" id="0x7f0802b8" />
     <public type="drawable" name="notification_icon_background" id="0x7f0802b9" />
-    <public type="drawable" name="notification_oversize_large_icon_bg" id="0x7f0802ba" />
     <public type="drawable" name="notification_template_icon_bg" id="0x7f0802bb" />
     <public type="drawable" name="notification_template_icon_low_bg" id="0x7f0802bc" />
     <public type="drawable" name="notification_tile_bg" id="0x7f0802bd" />
-    <public type="drawable" name="notify_panel_notification_icon_bg" id="0x7f0802be" />
-    <public type="drawable" name="param_spinner" id="0x7f0802bf" />
     <public type="drawable" name="popup_menu_background" id="0x7f0802c0" />
-    <public type="drawable" name="popup_right" id="0x7f0802c1" />
     <public type="drawable" name="red_underline" id="0x7f0802c2" />
     <public type="drawable" name="search_bg" id="0x7f0802c3" />
     <public type="drawable" name="search_view_background" id="0x7f0802c4" />
     <public type="drawable" name="selected_edit_chosen_background_normal" id="0x7f0802c5" />
-    <public type="drawable" name="sym_keyboard_cursor_left" id="0x7f0802c6" />
-    <public type="drawable" name="sym_keyboard_cursor_right" id="0x7f0802c7" />
-    <public type="drawable" name="sym_keyboard_delete" id="0x7f0802c8" />
-    <public type="drawable" name="sym_keyboard_down" id="0x7f0802c9" />
-    <public type="drawable" name="sym_keyboard_feedback_delete" id="0x7f0802ca" />
-    <public type="drawable" name="sym_keyboard_hide" id="0x7f0802cb" />
-    <public type="drawable" name="sym_keyboard_up" id="0x7f0802cc" />
     <public type="drawable" name="symbol_group_background" id="0x7f0802cd" />
     <public type="drawable" name="symbol_group_selected_background" id="0x7f0802ce" />
     <public type="drawable" name="tabs_tab_normal" id="0x7f0802cf" />
@@ -4779,10 +4456,333 @@
     <public type="drawable" name="tooltip_frame_dark" id="0x7f0802d5" />
     <public type="drawable" name="tooltip_frame_light" id="0x7f0802d6" />
     <public type="drawable" name="underline_gray" id="0x7f0802d7" />
-    <public type="drawable" name="user_icon" id="0x7f0802d8" />
     <public type="drawable" name="volume_edit_color" id="0x7f0802d9" />
     <public type="drawable" name="white_round_rect" id="0x7f0802da" />
     <public type="drawable" name="white_round_top_rect" id="0x7f0802db" />
+    <public type="drawable" name="actionbar_command_normal" id="0x7f080083" />
+    <public type="drawable" name="actionbar_command_selected" id="0x7f080084" />
+    <public type="drawable" name="btn_keyboard_action_key_normal" id="0x7f0800a9" />
+    <public type="drawable" name="btn_keyboard_action_key_pressed" id="0x7f0800aa" />
+    <public type="drawable" name="button_blue_disabled" id="0x7f0800b2" />
+    <public type="drawable" name="button_blue_normal" id="0x7f0800b3" />
+    <public type="drawable" name="button_blue_pressed" id="0x7f0800b4" />
+    <public type="drawable" name="button_normal_normal" id="0x7f0800bd" />
+    <public type="drawable" name="button_red_normal" id="0x7f0800bf" />
+    <public type="drawable" name="chart_button_selected" id="0x7f0800c6" />
+    <public type="drawable" name="dialog_error" id="0x7f0800f2" />
+    <public type="drawable" name="dialog_ok" id="0x7f0800f3" />
+    <public type="drawable" name="facebook_button_icon" id="0x7f0800fa" />
+    <public type="drawable" name="ic_account_change" id="0x7f080100" />
+    <public type="drawable" name="ic_account_delete" id="0x7f080101" />
+    <public type="drawable" name="ic_account_demo" id="0x7f080102" />
+    <public type="drawable" name="ic_account_info" id="0x7f080103" />
+    <public type="drawable" name="ic_account_investor" id="0x7f080104" />
+    <public type="drawable" name="ic_account_real" id="0x7f080105" />
+    <public type="drawable" name="ic_action_mode_edit" id="0x7f080106" />
+    <public type="drawable" name="ic_actionbar_cross_disabled" id="0x7f080109" />
+    <public type="drawable" name="ic_actionbar_cross_normal" id="0x7f08010a" />
+    <public type="drawable" name="ic_actionbar_indicators_disabled" id="0x7f08010c" />
+    <public type="drawable" name="ic_actionbar_indicators_normal" id="0x7f08010d" />
+    <public type="drawable" name="ic_actionbar_move_disabled" id="0x7f08010f" />
+    <public type="drawable" name="ic_actionbar_move_normal" id="0x7f080110" />
+    <public type="drawable" name="ic_actionbar_new_order" id="0x7f080111" />
+    <public type="drawable" name="ic_actionbar_period_disabled" id="0x7f080113" />
+    <public type="drawable" name="ic_actionbar_period_normal" id="0x7f080114" />
+    <public type="drawable" name="ic_actionbar_scale_disabled" id="0x7f080116" />
+    <public type="drawable" name="ic_actionbar_scale_normal" id="0x7f080117" />
+    <public type="drawable" name="ic_add" id="0x7f080118" />
+    <public type="drawable" name="ic_add_indicator" id="0x7f080119" />
+    <public type="drawable" name="ic_attachent" id="0x7f080122" />
+    <public type="drawable" name="ic_attachment_file" id="0x7f080123" />
+    <public type="drawable" name="ic_back" id="0x7f080125" />
+    <public type="drawable" name="ic_background_accounts" id="0x7f080126" />
+    <public type="drawable" name="ic_background_add_symbol" id="0x7f080127" />
+    <public type="drawable" name="ic_background_charts" id="0x7f080128" />
+    <public type="drawable" name="ic_background_history" id="0x7f080129" />
+    <public type="drawable" name="ic_background_mail" id="0x7f08012a" />
+    <public type="drawable" name="ic_background_messages" id="0x7f08012b" />
+    <public type="drawable" name="ic_background_quotes" id="0x7f08012c" />
+    <public type="drawable" name="ic_background_trade" id="0x7f08012d" />
+    <public type="drawable" name="ic_blue_minus" id="0x7f08012f" />
+    <public type="drawable" name="ic_blue_plus" id="0x7f080130" />
+    <public type="drawable" name="ic_bottom_expand" id="0x7f080131" />
+    <public type="drawable" name="ic_bottom_hide" id="0x7f080132" />
+    <public type="drawable" name="ic_btn_search" id="0x7f080133" />
+    <public type="drawable" name="ic_change_symbol" id="0x7f08013c" />
+    <public type="drawable" name="ic_channel_andrews_pitchfork" id="0x7f08013d" />
+    <public type="drawable" name="ic_channel_stddev" id="0x7f080140" />
+    <public type="drawable" name="ic_channels_account_delete" id="0x7f080141" />
+    <public type="drawable" name="ic_chart" id="0x7f080145" />
+    <public type="drawable" name="ic_chart_bars_disabled" id="0x7f080147" />
+    <public type="drawable" name="ic_chart_bars_normal" id="0x7f080148" />
+    <public type="drawable" name="ic_chart_candles_disabled" id="0x7f08014a" />
+    <public type="drawable" name="ic_chart_candles_normal" id="0x7f08014b" />
+    <public type="drawable" name="ic_chart_cross" id="0x7f08014c" />
+    <public type="drawable" name="ic_chart_indicator" id="0x7f08014d" />
+    <public type="drawable" name="ic_chart_lines" id="0x7f08014e" />
+    <public type="drawable" name="ic_chart_move" id="0x7f08014f" />
+    <public type="drawable" name="ic_chart_order_disabled" id="0x7f080151" />
+    <public type="drawable" name="ic_chart_order_normal" id="0x7f080152" />
+    <public type="drawable" name="ic_chart_refresh_disabled" id="0x7f080155" />
+    <public type="drawable" name="ic_chart_refresh_normal" id="0x7f080156" />
+    <public type="drawable" name="ic_chat_mute" id="0x7f080158" />
+    <public type="drawable" name="ic_chat_readed" id="0x7f08015a" />
+    <public type="drawable" name="ic_chat_reded" id="0x7f08015b" />
+    <public type="drawable" name="ic_chat_send_disable" id="0x7f08015d" />
+    <public type="drawable" name="ic_chat_send_enable" id="0x7f08015e" />
+    <public type="drawable" name="ic_chat_sended" id="0x7f080160" />
+    <public type="drawable" name="ic_check" id="0x7f080161" />
+    <public type="drawable" name="ic_check_action_mode" id="0x7f080162" />
+    <public type="drawable" name="ic_check_actionmode" id="0x7f080163" />
+    <public type="drawable" name="ic_check_color" id="0x7f080164" />
+    <public type="drawable" name="ic_choose_chat" id="0x7f080166" />
+    <public type="drawable" name="ic_close_order" id="0x7f08016b" />
+    <public type="drawable" name="ic_color_selector_arrow" id="0x7f08016c" />
+    <public type="drawable" name="ic_copy" id="0x7f08016d" />
+    <public type="drawable" name="ic_create_mail" id="0x7f08016e" />
+    <public type="drawable" name="ic_cross_white" id="0x7f08016f" />
+    <public type="drawable" name="ic_delete" id="0x7f080170" />
+    <public type="drawable" name="ic_delete_cross" id="0x7f080171" />
+    <public type="drawable" name="ic_demo_account_mark" id="0x7f080173" />
+    <public type="drawable" name="ic_demo_account_title" id="0x7f080174" />
+    <public type="drawable" name="ic_dialog_error" id="0x7f080175" />
+    <public type="drawable" name="ic_dir_down" id="0x7f080176" />
+    <public type="drawable" name="ic_done" id="0x7f080177" />
+    <public type="drawable" name="ic_drag" id="0x7f080179" />
+    <public type="drawable" name="ic_drawer_demo" id="0x7f08017b" />
+    <public type="drawable" name="ic_drawer_investor" id="0x7f08017c" />
+    <public type="drawable" name="ic_drawer_noconnection" id="0x7f08017d" />
+    <public type="drawable" name="ic_drawer_real" id="0x7f08017e" />
+    <public type="drawable" name="ic_edit_disabled" id="0x7f080180" />
+    <public type="drawable" name="ic_edit_period" id="0x7f080181" />
+    <public type="drawable" name="ic_falling" id="0x7f080189" />
+    <public type="drawable" name="ic_favorite" id="0x7f08018a" />
+    <public type="drawable" name="ic_fibonacci_fan" id="0x7f08018e" />
+    <public type="drawable" name="ic_file_attach" id="0x7f080191" />
+    <public type="drawable" name="ic_file_category_audio" id="0x7f080192" />
+    <public type="drawable" name="ic_file_category_downloads" id="0x7f080193" />
+    <public type="drawable" name="ic_file_category_images" id="0x7f080194" />
+    <public type="drawable" name="ic_file_category_storage" id="0x7f080195" />
+    <public type="drawable" name="ic_file_category_video" id="0x7f080196" />
+    <public type="drawable" name="ic_folder" id="0x7f080198" />
+    <public type="drawable" name="ic_gann_grid" id="0x7f08019b" />
+    <public type="drawable" name="ic_generic_dir" id="0x7f08019d" />
+    <public type="drawable" name="ic_generic_file" id="0x7f08019e" />
+    <public type="drawable" name="ic_growth" id="0x7f0801a0" />
+    <public type="drawable" name="ic_indicator_white" id="0x7f0801a1" />
+    <public type="drawable" name="ic_info" id="0x7f0801a2" />
+    <public type="drawable" name="ic_info_tip" id="0x7f0801a3" />
+    <public type="drawable" name="ic_key_delete" id="0x7f0801a4" />
+    <public type="drawable" name="ic_line_angle" id="0x7f0801a7" />
+    <public type="drawable" name="ic_line_cycle" id="0x7f0801a9" />
+    <public type="drawable" name="ic_line_horisontal" id="0x7f0801aa" />
+    <public type="drawable" name="ic_line_trend" id="0x7f0801ab" />
+    <public type="drawable" name="ic_line_vertical" id="0x7f0801ac" />
+    <public type="drawable" name="ic_list_folder" id="0x7f0801ad" />
+    <public type="drawable" name="ic_list_folder_selected" id="0x7f0801ae" />
+    <public type="drawable" name="ic_load_error" id="0x7f0801af" />
+    <public type="drawable" name="ic_lock_small" id="0x7f0801b1" />
+    <public type="drawable" name="ic_logo" id="0x7f0801b2" />
+    <public type="drawable" name="ic_logo_about" id="0x7f0801b3" />
+    <public type="drawable" name="ic_logo_small" id="0x7f0801b4" />
+    <public type="drawable" name="ic_logo_small_version" id="0x7f0801b6" />
+    <public type="drawable" name="ic_mail_reply" id="0x7f0801bb" />
+    <public type="drawable" name="ic_menu_about_black" id="0x7f0801be" />
+    <public type="drawable" name="ic_menu_about_gray" id="0x7f0801bf" />
+    <public type="drawable" name="ic_menu_account_demo" id="0x7f0801c0" />
+    <public type="drawable" name="ic_menu_account_demo_selected" id="0x7f0801c1" />
+    <public type="drawable" name="ic_menu_account_empty" id="0x7f0801c2" />
+    <public type="drawable" name="ic_menu_account_empty_selected" id="0x7f0801c3" />
+    <public type="drawable" name="ic_menu_account_investor" id="0x7f0801c4" />
+    <public type="drawable" name="ic_menu_account_investor_selected" id="0x7f0801c5" />
+    <public type="drawable" name="ic_menu_account_offline" id="0x7f0801c6" />
+    <public type="drawable" name="ic_menu_account_offline_selected" id="0x7f0801c7" />
+    <public type="drawable" name="ic_menu_account_real" id="0x7f0801c8" />
+    <public type="drawable" name="ic_menu_account_real_selected" id="0x7f0801c9" />
+    <public type="drawable" name="ic_menu_accounts" id="0x7f0801ca" />
+    <public type="drawable" name="ic_menu_add" id="0x7f0801cb" />
+    <public type="drawable" name="ic_menu_chart_black" id="0x7f0801cf" />
+    <public type="drawable" name="ic_menu_chart_blue" id="0x7f0801d0" />
+    <public type="drawable" name="ic_menu_chart_gray" id="0x7f0801d1" />
+    <public type="drawable" name="ic_menu_chart_white" id="0x7f0801d2" />
+    <public type="drawable" name="ic_menu_delete" id="0x7f0801d3" />
+    <public type="drawable" name="ic_menu_history_black" id="0x7f0801d5" />
+    <public type="drawable" name="ic_menu_history_blue" id="0x7f0801d6" />
+    <public type="drawable" name="ic_menu_history_gray" id="0x7f0801d7" />
+    <public type="drawable" name="ic_menu_journal_black" id="0x7f0801d9" />
+    <public type="drawable" name="ic_menu_journal_gray" id="0x7f0801da" />
+    <public type="drawable" name="ic_menu_mail_black" id="0x7f0801dc" />
+    <public type="drawable" name="ic_menu_mail_blue" id="0x7f0801dd" />
+    <public type="drawable" name="ic_menu_mail_gray" id="0x7f0801de" />
+    <public type="drawable" name="ic_menu_messages_black" id="0x7f0801e1" />
+    <public type="drawable" name="ic_menu_messages_blue" id="0x7f0801e2" />
+    <public type="drawable" name="ic_menu_messages_gray" id="0x7f0801e3" />
+    <public type="drawable" name="ic_menu_news_black" id="0x7f0801e8" />
+    <public type="drawable" name="ic_menu_news_blue" id="0x7f0801e9" />
+    <public type="drawable" name="ic_menu_news_gray" id="0x7f0801ea" />
+    <public type="drawable" name="ic_menu_period_custom" id="0x7f0801ec" />
+    <public type="drawable" name="ic_menu_period_day" id="0x7f0801ed" />
+    <public type="drawable" name="ic_menu_period_month" id="0x7f0801ee" />
+    <public type="drawable" name="ic_menu_period_three_months" id="0x7f0801ef" />
+    <public type="drawable" name="ic_menu_period_week" id="0x7f0801f0" />
+    <public type="drawable" name="ic_menu_quotes_black" id="0x7f0801f2" />
+    <public type="drawable" name="ic_menu_quotes_blue" id="0x7f0801f3" />
+    <public type="drawable" name="ic_menu_quotes_gray" id="0x7f0801f4" />
+    <public type="drawable" name="ic_menu_search" id="0x7f0801f7" />
+    <public type="drawable" name="ic_menu_settings_black" id="0x7f0801f9" />
+    <public type="drawable" name="ic_menu_settings_gray" id="0x7f0801fa" />
+    <public type="drawable" name="ic_menu_sort" id="0x7f0801fb" />
+    <public type="drawable" name="ic_menu_trade_black" id="0x7f0801fd" />
+    <public type="drawable" name="ic_menu_trade_blue" id="0x7f0801fe" />
+    <public type="drawable" name="ic_menu_trade_gray" id="0x7f0801ff" />
+    <public type="drawable" name="ic_menu_traders_community_gray" id="0x7f080201" />
+    <public type="drawable" name="ic_message_cut" id="0x7f080202" />
+    <public type="drawable" name="ic_minus_disabled" id="0x7f080204" />
+    <public type="drawable" name="ic_mqid" id="0x7f080205" />
+    <public type="drawable" name="ic_mql_community" id="0x7f080206" />
+    <public type="drawable" name="ic_mt5" id="0x7f080207" />
+    <public type="drawable" name="ic_mute" id="0x7f08020d" />
+    <public type="drawable" name="ic_news" id="0x7f080210" />
+    <public type="drawable" name="ic_news_next" id="0x7f080211" />
+    <public type="drawable" name="ic_news_previous" id="0x7f080212" />
+    <public type="drawable" name="ic_no_message" id="0x7f080213" />
+    <public type="drawable" name="ic_no_news" id="0x7f080214" />
+    <public type="drawable" name="ic_not_done" id="0x7f080215" />
+    <public type="drawable" name="ic_notify" id="0x7f080216" />
+    <public type="drawable" name="ic_notify_blue" id="0x7f080217" />
+    <public type="drawable" name="ic_notify_blue_small" id="0x7f080218" />
+    <public type="drawable" name="ic_notify_mql5" id="0x7f080219" />
+    <public type="drawable" name="ic_notify_mql5_small" id="0x7f08021a" />
+    <public type="drawable" name="ic_objects" id="0x7f08021b" />
+    <public type="drawable" name="ic_objects_white" id="0x7f08021c" />
+    <public type="drawable" name="ic_otp_bind" id="0x7f080222" />
+    <public type="drawable" name="ic_otp_change_password" id="0x7f080223" />
+    <public type="drawable" name="ic_otp_dialog" id="0x7f080224" />
+    <public type="drawable" name="ic_otp_logo" id="0x7f080225" />
+    <public type="drawable" name="ic_otp_menu" id="0x7f080226" />
+    <public type="drawable" name="ic_otp_sync_time" id="0x7f080227" />
+    <public type="drawable" name="ic_password_tip" id="0x7f080228" />
+    <public type="drawable" name="ic_pencil" id="0x7f080229" />
+    <public type="drawable" name="ic_plus_disabled" id="0x7f08022c" />
+    <public type="drawable" name="ic_processing" id="0x7f08022e" />
+    <public type="drawable" name="ic_profile" id="0x7f08022f" />
+    <public type="drawable" name="ic_push_category_broker" id="0x7f080230" />
+    <public type="drawable" name="ic_push_category_chat" id="0x7f080231" />
+    <public type="drawable" name="ic_push_category_community" id="0x7f080232" />
+    <public type="drawable" name="ic_push_category_hosting" id="0x7f080233" />
+    <public type="drawable" name="ic_push_category_other" id="0x7f080234" />
+    <public type="drawable" name="ic_push_category_storage" id="0x7f080235" />
+    <public type="drawable" name="ic_push_category_terminal" id="0x7f080236" />
+    <public type="drawable" name="ic_rate" id="0x7f080237" />
+    <public type="drawable" name="ic_rate_app" id="0x7f080238" />
+    <public type="drawable" name="ic_rate_app_wide" id="0x7f080239" />
+    <public type="drawable" name="ic_readonly_account_mark" id="0x7f08023a" />
+    <public type="drawable" name="ic_real_account_mark" id="0x7f08023b" />
+    <public type="drawable" name="ic_real_account_title" id="0x7f08023c" />
+    <public type="drawable" name="ic_right_arrow" id="0x7f080241" />
+    <public type="drawable" name="ic_select_all" id="0x7f080245" />
+    <public type="drawable" name="ic_select_none" id="0x7f080246" />
+    <public type="drawable" name="ic_send_mail" id="0x7f080247" />
+    <public type="drawable" name="ic_server_default" id="0x7f080248" />
+    <public type="drawable" name="ic_sort_down" id="0x7f08024d" />
+    <public type="drawable" name="ic_sort_down_phone" id="0x7f08024e" />
+    <public type="drawable" name="ic_sort_up" id="0x7f08024f" />
+    <public type="drawable" name="ic_sort_up_phone" id="0x7f080250" />
+    <public type="drawable" name="ic_sound_off" id="0x7f080251" />
+    <public type="drawable" name="ic_spinner_account_connect_1" id="0x7f080253" />
+    <public type="drawable" name="ic_spinner_account_connect_2" id="0x7f080254" />
+    <public type="drawable" name="ic_spinner_account_connect_3" id="0x7f080255" />
+    <public type="drawable" name="ic_spinner_account_connect_4" id="0x7f080256" />
+    <public type="drawable" name="ic_spinner_account_connected" id="0x7f080257" />
+    <public type="drawable" name="ic_spinner_account_disconnected" id="0x7f080258" />
+    <public type="drawable" name="ic_status_notify" id="0x7f08025a" />
+    <public type="drawable" name="ic_tap_hand" id="0x7f08025c" />
+    <public type="drawable" name="ic_telegram" id="0x7f08025d" />
+    <public type="drawable" name="ic_text_arrow" id="0x7f08025e" />
+    <public type="drawable" name="ic_toolbar_back" id="0x7f080260" />
+    <public type="drawable" name="ic_unlock" id="0x7f080262" />
+    <public type="drawable" name="ic_update" id="0x7f080263" />
+    <public type="drawable" name="ic_verified" id="0x7f080264" />
+    <public type="drawable" name="param_spinner" id="0x7f0802bf" />
+    <public type="drawable" name="popup_right" id="0x7f0802c1" />
+    <public type="drawable" name="sym_keyboard_cursor_left" id="0x7f0802c6" />
+    <public type="drawable" name="sym_keyboard_cursor_right" id="0x7f0802c7" />
+    <public type="drawable" name="sym_keyboard_delete" id="0x7f0802c8" />
+    <public type="drawable" name="sym_keyboard_down" id="0x7f0802c9" />
+    <public type="drawable" name="sym_keyboard_feedback_delete" id="0x7f0802ca" />
+    <public type="drawable" name="sym_keyboard_up" id="0x7f0802cc" />
+    <public type="drawable" name="user_icon" id="0x7f0802d8" />
+    <public type="drawable" name="abc_ab_share_pack_mtrl_alpha" id="0x7f080028" />
+    <public type="drawable" name="abc_btn_check_to_on_mtrl_000" id="0x7f08002d" />
+    <public type="drawable" name="abc_btn_check_to_on_mtrl_015" id="0x7f08002e" />
+    <public type="drawable" name="abc_btn_radio_to_on_mtrl_000" id="0x7f080033" />
+    <public type="drawable" name="abc_btn_radio_to_on_mtrl_015" id="0x7f080034" />
+    <public type="drawable" name="abc_btn_switch_to_on_mtrl_00001" id="0x7f080035" />
+    <public type="drawable" name="abc_btn_switch_to_on_mtrl_00012" id="0x7f080036" />
+    <public type="drawable" name="abc_cab_background_top_mtrl_alpha" id="0x7f080039" />
+    <public type="drawable" name="abc_ic_commit_search_api_mtrl_alpha" id="0x7f080040" />
+    <public type="drawable" name="abc_list_divider_mtrl_alpha" id="0x7f08004d" />
+    <public type="drawable" name="abc_list_focused_holo" id="0x7f08004e" />
+    <public type="drawable" name="abc_list_longpressed_holo" id="0x7f08004f" />
+    <public type="drawable" name="abc_list_pressed_holo_dark" id="0x7f080050" />
+    <public type="drawable" name="abc_list_pressed_holo_light" id="0x7f080051" />
+    <public type="drawable" name="abc_list_selector_disabled_holo_dark" id="0x7f080054" />
+    <public type="drawable" name="abc_list_selector_disabled_holo_light" id="0x7f080055" />
+    <public type="drawable" name="abc_menu_hardkey_panel_mtrl_mult" id="0x7f080058" />
+    <public type="drawable" name="abc_popup_background_mtrl_mult" id="0x7f080059" />
+    <public type="drawable" name="abc_scrubber_control_off_mtrl_alpha" id="0x7f08005d" />
+    <public type="drawable" name="abc_scrubber_control_to_pressed_mtrl_000" id="0x7f08005e" />
+    <public type="drawable" name="abc_scrubber_control_to_pressed_mtrl_005" id="0x7f08005f" />
+    <public type="drawable" name="abc_scrubber_primary_mtrl_alpha" id="0x7f080060" />
+    <public type="drawable" name="abc_scrubber_track_mtrl_alpha" id="0x7f080061" />
+    <public type="drawable" name="abc_spinner_mtrl_am_alpha" id="0x7f080065" />
+    <public type="drawable" name="abc_switch_track_mtrl_alpha" id="0x7f08006a" />
+    <public type="drawable" name="abc_tab_indicator_mtrl_alpha" id="0x7f08006c" />
+    <public type="drawable" name="abc_text_select_handle_left_mtrl" id="0x7f08006e" />
+    <public type="drawable" name="abc_text_select_handle_middle_mtrl" id="0x7f08006f" />
+    <public type="drawable" name="abc_text_select_handle_right_mtrl" id="0x7f080070" />
+    <public type="drawable" name="abc_textfield_activated_mtrl_alpha" id="0x7f080071" />
+    <public type="drawable" name="abc_textfield_default_mtrl_alpha" id="0x7f080072" />
+    <public type="drawable" name="abc_textfield_search_activated_mtrl_alpha" id="0x7f080073" />
+    <public type="drawable" name="abc_textfield_search_default_mtrl_alpha" id="0x7f080074" />
+    <public type="drawable" name="common_google_signin_btn_icon_dark_normal_background" id="0x7f0800d8" />
+    <public type="drawable" name="common_google_signin_btn_icon_light_normal_background" id="0x7f0800dd" />
+    <public type="drawable" name="common_google_signin_btn_text_dark_normal_background" id="0x7f0800e1" />
+    <public type="drawable" name="common_google_signin_btn_text_light_normal_background" id="0x7f0800e6" />
+    <public type="drawable" name="googleg_disabled_color_18" id="0x7f0800fb" />
+    <public type="drawable" name="googleg_standard_color_18" id="0x7f0800fc" />
+    <public type="drawable" name="ic_actionbar_back" id="0x7f080107" />
+    <public type="drawable" name="ic_facebook" id="0x7f080188" />
+    <public type="drawable" name="ic_google" id="0x7f08019f" />
+    <public type="drawable" name="ic_keyboard_arrow_down_white_36dp" id="0x7f0801a5" />
+    <public type="drawable" name="ic_logo_small_rounded" id="0x7f0801b5" />
+    <public type="drawable" name="ic_menu_calendar" id="0x7f0801cc" />
+    <public type="drawable" name="ic_menu_certificates" id="0x7f0801cd" />
+    <public type="drawable" name="ic_menu_moreoverflow_normal_holo_dark" id="0x7f0801e6" />
+    <public type="drawable" name="ic_menu_refresh" id="0x7f0801f6" />
+    <public type="drawable" name="ic_navigation_drawer" id="0x7f08020f" />
+    <public type="drawable" name="ic_onboarding_page_1" id="0x7f08021d" />
+    <public type="drawable" name="ic_onboarding_page_2" id="0x7f08021e" />
+    <public type="drawable" name="ic_onboarding_page_3" id="0x7f08021f" />
+    <public type="drawable" name="ic_onboarding_page_4" id="0x7f080220" />
+    <public type="drawable" name="ic_otp" id="0x7f080221" />
+    <public type="drawable" name="ic_stat_message" id="0x7f080259" />
+    <public type="drawable" name="notification_bg_low_normal" id="0x7f0802b5" />
+    <public type="drawable" name="notification_bg_low_pressed" id="0x7f0802b6" />
+    <public type="drawable" name="notification_bg_normal" id="0x7f0802b7" />
+    <public type="drawable" name="notification_bg_normal_pressed" id="0x7f0802b8" />
+    <public type="drawable" name="notify_panel_notification_icon_bg" id="0x7f0802be" />
+    <public type="drawable" name="bg_chat_left_line_blue" id="0x7f08009a" />
+    <public type="drawable" name="chat_service_message" id="0x7f0800d1" />
+    <public type="drawable" name="chat_underline_gray" id="0x7f0800d2" />
+    <public type="drawable" name="common_full_open_on_phone" id="0x7f0800d4" />
+    <public type="drawable" name="ic_close" id="0x7f080169" />
+    <public type="drawable" name="ic_close_button" id="0x7f08016a" />
+    <public type="drawable" name="ic_mail" id="0x7f0801ba" />
+    <public type="drawable" name="notification_oversize_large_icon_bg" id="0x7f0802ba" />
+    <public type="drawable" name="sym_keyboard_hide" id="0x7f0802cb" />
+    <public type="drawable" name="ic_menu_more" id="0x7f0801e5" />
+    <public type="drawable" name="login_background" id="0x7f08026f" />
     <public type="font" name="roboto_bold" id="0x7f090000" />
     <public type="font" name="roboto_condensed_bold" id="0x7f090001" />
     <public type="font" name="roboto_condensed_regular" id="0x7f090002" />
@@ -6530,7 +6530,6 @@
     <public type="layout" name="material_clock_display" id="0x7f0d00aa" />
     <public type="layout" name="material_clock_display_divider" id="0x7f0d00ab" />
     <public type="layout" name="material_clock_period_toggle" id="0x7f0d00ac" />
-    <public type="layout" name="material_clock_period_toggle_land" id="0x7f0d00ad" />
     <public type="layout" name="material_clockface_textview" id="0x7f0d00ae" />
     <public type="layout" name="material_clockface_view" id="0x7f0d00af" />
     <public type="layout" name="material_radial_view_group" id="0x7f0d00b0" />
@@ -6679,6 +6678,7 @@
     <public type="layout" name="view_popup_menu" id="0x7f0d013f" />
     <public type="layout" name="view_popup_menu_item" id="0x7f0d0140" />
     <public type="layout" name="view_spinner_item" id="0x7f0d0141" />
+    <public type="layout" name="material_clock_period_toggle_land" id="0x7f0d00ad" />
     <public type="mipmap" name="ic_launcher" id="0x7f0f0000" />
     <public type="mipmap" name="ic_launcher_foreground" id="0x7f0f0001" />
     <public type="mipmap" name="ic_launcher_round" id="0x7f0f0002" />
@@ -7982,15 +7982,6 @@
     <public type="style" name="Base.V22.Theme.AppCompat.Light" id="0x7f1400b6" />
     <public type="style" name="Base.V23.Theme.AppCompat" id="0x7f1400b7" />
     <public type="style" name="Base.V23.Theme.AppCompat.Light" id="0x7f1400b8" />
-    <public type="style" name="Base.V24.Theme.Material3.Dark" id="0x7f1400b9" />
-    <public type="style" name="Base.V24.Theme.Material3.Dark.Dialog" id="0x7f1400ba" />
-    <public type="style" name="Base.V24.Theme.Material3.Light" id="0x7f1400bb" />
-    <public type="style" name="Base.V24.Theme.Material3.Light.Dialog" id="0x7f1400bc" />
-    <public type="style" name="Base.V26.Theme.AppCompat" id="0x7f1400bd" />
-    <public type="style" name="Base.V26.Theme.AppCompat.Light" id="0x7f1400be" />
-    <public type="style" name="Base.V26.Widget.AppCompat.Toolbar" id="0x7f1400bf" />
-    <public type="style" name="Base.V28.Theme.AppCompat" id="0x7f1400c0" />
-    <public type="style" name="Base.V28.Theme.AppCompat.Light" id="0x7f1400c1" />
     <public type="style" name="Base.V7.Theme.AppCompat" id="0x7f1400c2" />
     <public type="style" name="Base.V7.Theme.AppCompat.Dialog" id="0x7f1400c3" />
     <public type="style" name="Base.V7.Theme.AppCompat.Light" id="0x7f1400c4" />
@@ -8215,8 +8206,6 @@
     <public type="style" name="Platform.ThemeOverlay.AppCompat.Light" id="0x7f14019f" />
     <public type="style" name="Platform.V21.AppCompat" id="0x7f1401a0" />
     <public type="style" name="Platform.V21.AppCompat.Light" id="0x7f1401a1" />
-    <public type="style" name="Platform.V25.AppCompat" id="0x7f1401a2" />
-    <public type="style" name="Platform.V25.AppCompat.Light" id="0x7f1401a3" />
     <public type="style" name="Platform.Widget.AppCompat.Spinner" id="0x7f1401a4" />
     <public type="style" name="PopupPanel" id="0x7f1401a5" />
     <public type="style" name="Price" id="0x7f1401a6" />
@@ -9134,6 +9123,17 @@
     <public type="style" name="Widget.MaterialComponents.Toolbar.Surface" id="0x7f140536" />
     <public type="style" name="Widget.MaterialComponents.Tooltip" id="0x7f140537" />
     <public type="style" name="Widget.Support.CoordinatorLayout" id="0x7f140538" />
+    <public type="style" name="Base.V24.Theme.Material3.Dark" id="0x7f1400b9" />
+    <public type="style" name="Base.V24.Theme.Material3.Dark.Dialog" id="0x7f1400ba" />
+    <public type="style" name="Base.V24.Theme.Material3.Light" id="0x7f1400bb" />
+    <public type="style" name="Base.V24.Theme.Material3.Light.Dialog" id="0x7f1400bc" />
+    <public type="style" name="Platform.V25.AppCompat" id="0x7f1401a2" />
+    <public type="style" name="Platform.V25.AppCompat.Light" id="0x7f1401a3" />
+    <public type="style" name="Base.V26.Theme.AppCompat" id="0x7f1400bd" />
+    <public type="style" name="Base.V26.Theme.AppCompat.Light" id="0x7f1400be" />
+    <public type="style" name="Base.V26.Widget.AppCompat.Toolbar" id="0x7f1400bf" />
+    <public type="style" name="Base.V28.Theme.AppCompat" id="0x7f1400c0" />
+    <public type="style" name="Base.V28.Theme.AppCompat.Light" id="0x7f1400c1" />
     <public type="xml" name="m3_button_group_child_size_change" id="0x7f160000" />
     <public type="xml" name="m3_split_button_inner_corner_size_state_list" id="0x7f160001" />
     <public type="xml" name="m3expressive_button_shape_state_list" id="0x7f160002" />

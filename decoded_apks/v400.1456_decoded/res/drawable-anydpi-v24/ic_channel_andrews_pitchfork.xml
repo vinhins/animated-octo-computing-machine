@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:height="24.0dp" android:width="24.0dp" android:viewportWidth="24.0" android:viewportHeight="24.0"
+<vector android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#419cff" android:pathData="M19.707,4.293C20.098,4.683 20.098,5.317 19.707,5.707L5.707,19.707C5.317,20.098 4.683,20.098 4.293,19.707C3.902,19.317 3.902,18.683 4.293,18.293L18.293,4.293C18.683,3.902 19.317,3.902 19.707,4.293Z" android:fillType="evenOdd" />
-    <path android:fillColor="#419cff" android:pathData="M20.707,11.293C21.098,11.683 21.098,12.317 20.707,12.707L12.707,20.707C12.317,21.098 11.683,21.098 11.293,20.707C10.902,20.317 10.902,19.683 11.293,19.293L19.293,11.293C19.683,10.902 20.317,10.902 20.707,11.293Z" android:fillType="evenOdd" />
-    <path android:fillColor="#419cff" android:pathData="M12.707,3.293C13.098,3.683 13.098,4.317 12.707,4.707L4.707,12.707C4.317,13.098 3.683,13.098 3.293,12.707C2.902,12.317 2.902,11.683 3.293,11.293L11.293,3.293C11.683,2.902 12.317,2.902 12.707,3.293Z" android:fillType="evenOdd" />
+    <path android:fillColor="#ff419cff" android:pathData="M19.707,4.293C20.098,4.683 20.098,5.317 19.707,5.707L5.707,19.707C5.317,20.098 4.683,20.098 4.293,19.707C3.902,19.317 3.902,18.683 4.293,18.293L18.293,4.293C18.683,3.902 19.317,3.902 19.707,4.293Z" android:fillType="evenOdd" />
+    <path android:fillColor="#ff419cff" android:pathData="M20.707,11.293C21.098,11.683 21.098,12.317 20.707,12.707L12.707,20.707C12.317,21.098 11.683,21.098 11.293,20.707C10.902,20.317 10.902,19.683 11.293,19.293L19.293,11.293C19.683,10.902 20.317,10.902 20.707,11.293Z" android:fillType="evenOdd" />
+    <path android:fillColor="#ff419cff" android:pathData="M12.707,3.293C13.098,3.683 13.098,4.317 12.707,4.707L4.707,12.707C4.317,13.098 3.683,13.098 3.293,12.707C2.902,12.317 2.902,11.683 3.293,11.293L11.293,3.293C11.683,2.902 12.317,2.902 12.707,3.293Z" android:fillType="evenOdd" />
 </vector>

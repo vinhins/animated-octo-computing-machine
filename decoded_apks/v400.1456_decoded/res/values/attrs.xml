@@ -27,7 +27,7 @@
     <attr name="actionDropDownStyle" format="reference" />
     <attr name="actionLayout" format="reference" />
     <attr name="actionMenuTextAppearance" format="reference" />
-    <attr name="actionMenuTextColor" format="color|reference" />
+    <attr name="actionMenuTextColor" format="reference|color" />
     <attr name="actionModeBackground" format="reference" />
     <attr name="actionModeCloseButtonStyle" format="reference" />
     <attr name="actionModeCloseContentDescription" format="string" />
@@ -60,12 +60,12 @@
     <attr name="allowStacking" format="boolean" />
     <attr name="alpha" format="float" />
     <attr name="alphabeticModifiers">
-        <flag name="META" value="0x10000" />
-        <flag name="CTRL" value="0x1000" />
-        <flag name="ALT" value="0x2" />
-        <flag name="SHIFT" value="0x1" />
-        <flag name="SYM" value="0x4" />
-        <flag name="FUNCTION" value="0x8" />
+        <flag name="META" value="0x00010000" />
+        <flag name="CTRL" value="0x00001000" />
+        <flag name="ALT" value="0x00000002" />
+        <flag name="SHIFT" value="0x00000001" />
+        <flag name="SYM" value="0x00000004" />
+        <flag name="FUNCTION" value="0x00000008" />
     </attr>
     <attr name="altSrc" format="reference" />
     <attr name="alwaysExpand" format="boolean" />
@@ -124,8 +124,8 @@
     <attr name="backgroundInsetStart" format="dimension" />
     <attr name="backgroundInsetTop" format="dimension" />
     <attr name="backgroundOverlayColorAlpha" format="float" />
-    <attr name="backgroundSplit" format="color|reference" />
-    <attr name="backgroundStacked" format="color|reference" />
+    <attr name="backgroundSplit" format="reference|color" />
+    <attr name="backgroundStacked" format="reference|color" />
     <attr name="backgroundTint" format="color" />
     <attr name="backgroundTintMode">
         <enum name="src_over" value="3" />
@@ -176,21 +176,21 @@
     <attr name="behavior_autoShrink" format="boolean" />
     <attr name="behavior_draggable" format="boolean" />
     <attr name="behavior_draggableOnNestedScroll" format="boolean" />
-    <attr name="behavior_expandedOffset" format="dimension|reference" />
+    <attr name="behavior_expandedOffset" format="reference|dimension" />
     <attr name="behavior_fitToContents" format="boolean" />
-    <attr name="behavior_halfExpandedRatio" format="float|reference" />
+    <attr name="behavior_halfExpandedRatio" format="reference|float" />
     <attr name="behavior_hideable" format="boolean" />
     <attr name="behavior_overlapTop" format="dimension" />
     <attr name="behavior_peekHeight" format="dimension">
         <enum name="auto" value="-1" />
     </attr>
     <attr name="behavior_saveFlags">
-        <flag name="peekHeight" value="0x1" />
-        <flag name="fitToContents" value="0x2" />
-        <flag name="hideable" value="0x4" />
-        <flag name="skipCollapsed" value="0x8" />
-        <flag name="all" value="-1" />
-        <flag name="none" value="0" />
+        <flag name="peekHeight" value="0x00000001" />
+        <flag name="fitToContents" value="0x00000002" />
+        <flag name="hideable" value="0x00000004" />
+        <flag name="skipCollapsed" value="0x00000008" />
+        <flag name="all" value="0xffffffff" />
+        <flag name="none" value="0x00000000" />
     </attr>
     <attr name="behavior_significantVelocityThreshold" format="dimension" />
     <attr name="behavior_skipCollapsed" format="boolean" />
@@ -228,13 +228,13 @@
     <attr name="buttonBarStyle" format="reference" />
     <attr name="buttonCompat" format="reference" />
     <attr name="buttonGravity">
-        <flag name="center_vertical" value="0x10" />
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
     </attr>
     <attr name="buttonIcon" format="reference" />
     <attr name="buttonIconDimen" format="dimension" />
-    <attr name="buttonIconTint" format="color|reference" />
+    <attr name="buttonIconTint" format="reference|color" />
     <attr name="buttonIconTintMode">
         <enum name="src_over" value="3" />
         <enum name="src_in" value="5" />
@@ -367,11 +367,11 @@
     <attr name="clearTop" format="boolean" />
     <attr name="clearsTag" format="reference" />
     <attr name="clickAction">
-        <flag name="toggle" value="0x11" />
-        <flag name="transitionToEnd" value="0x1" />
-        <flag name="transitionToStart" value="0x10" />
-        <flag name="jumpToEnd" value="0x100" />
-        <flag name="jumpToStart" value="0x1000" />
+        <flag name="toggle" value="0x00000011" />
+        <flag name="transitionToEnd" value="0x00000001" />
+        <flag name="transitionToStart" value="0x00000010" />
+        <flag name="jumpToEnd" value="0x00000100" />
+        <flag name="jumpToStart" value="0x00001000" />
     </attr>
     <attr name="clockFaceBackgroundColor" format="color" />
     <attr name="clockHandColor" format="color" />
@@ -390,25 +390,25 @@
     <attr name="collapsedItemMinHeight" format="dimension" />
     <attr name="collapsedSize" format="dimension" />
     <attr name="collapsedSubtitleTextAppearance" format="reference" />
-    <attr name="collapsedSubtitleTextColor" format="color|reference" />
+    <attr name="collapsedSubtitleTextColor" format="reference|color" />
     <attr name="collapsedTitleGravity">
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
-        <flag name="left" value="0x3" />
-        <flag name="right" value="0x5" />
-        <flag name="center_vertical" value="0x10" />
-        <flag name="fill_vertical" value="0x70" />
-        <flag name="center_horizontal" value="0x1" />
-        <flag name="center" value="0x11" />
-        <flag name="start" value="0x800003" />
-        <flag name="end" value="0x800005" />
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="fill_vertical" value="0x00000070" />
+        <flag name="center_horizontal" value="0x00000001" />
+        <flag name="center" value="0x00000011" />
+        <flag name="start" value="0x00800003" />
+        <flag name="end" value="0x00800005" />
     </attr>
     <attr name="collapsedTitleGravityMode">
         <enum name="entireSpace" value="0" />
         <enum name="availableSpace" value="1" />
     </attr>
     <attr name="collapsedTitleTextAppearance" format="reference" />
-    <attr name="collapsedTitleTextColor" format="color|reference" />
+    <attr name="collapsedTitleTextColor" format="reference|color" />
     <attr name="collapsingToolbarLayoutLargeSize" format="reference" />
     <attr name="collapsingToolbarLayoutLargeStyle" format="reference" />
     <attr name="collapsingToolbarLayoutMediumSize" format="reference" />
@@ -424,9 +424,9 @@
     <attr name="colorControlActivated" format="color" />
     <attr name="colorControlHighlight" format="color" />
     <attr name="colorControlNormal" format="color" />
-    <attr name="colorError" format="color|reference" />
+    <attr name="colorError" format="reference|color" />
     <attr name="colorErrorContainer" format="color" />
-    <attr name="colorOnBackground" />
+    <attr name="colorOnBackground" format="reference|string|integer|boolean|color|float|dimension|fraction" />
     <attr name="colorOnContainer" format="color" />
     <attr name="colorOnContainerChecked" format="color" />
     <attr name="colorOnContainerUnchecked" format="color" />
@@ -600,16 +600,16 @@
     <attr name="dialogPreferredPadding" format="dimension" />
     <attr name="dialogTheme" format="reference" />
     <attr name="displayOptions">
-        <flag name="none" value="0" />
-        <flag name="useLogo" value="0x1" />
-        <flag name="showHome" value="0x2" />
-        <flag name="homeAsUp" value="0x4" />
-        <flag name="showTitle" value="0x8" />
-        <flag name="showCustom" value="0x10" />
-        <flag name="disableHome" value="0x20" />
+        <flag name="none" value="0x00000000" />
+        <flag name="useLogo" value="0x00000001" />
+        <flag name="showHome" value="0x00000002" />
+        <flag name="homeAsUp" value="0x00000004" />
+        <flag name="showTitle" value="0x00000008" />
+        <flag name="showCustom" value="0x00000010" />
+        <flag name="disableHome" value="0x00000020" />
     </attr>
     <attr name="divider" format="reference" />
-    <attr name="dividerColor" format="color|reference" />
+    <attr name="dividerColor" format="reference|color" />
     <attr name="dividerHorizontal" format="reference" />
     <attr name="dividerInsetEnd" format="dimension" />
     <attr name="dividerInsetStart" format="dimension" />
@@ -629,10 +629,10 @@
         <enum name="dragAnticlockwise" value="7" />
     </attr>
     <attr name="dragEdge">
-        <flag name="left" value="1" />
-        <flag name="right" value="2" />
-        <flag name="top" value="4" />
-        <flag name="bottom" value="8" />
+        <flag name="left" value="0x00000001" />
+        <flag name="right" value="0x00000002" />
+        <flag name="top" value="0x00000004" />
+        <flag name="bottom" value="0x00000008" />
     </attr>
     <attr name="dragScale" format="float" />
     <attr name="dragThreshold" format="float" />
@@ -669,7 +669,7 @@
     <attr name="duration" format="integer" />
     <attr name="dynamicColorThemeOverlay" format="reference" />
     <attr name="editTextBackground" format="reference" />
-    <attr name="editTextColor" format="color|reference" />
+    <attr name="editTextColor" format="reference|color" />
     <attr name="editTextStyle" format="reference" />
     <attr name="elevation" format="dimension" />
     <attr name="elevationOverlayAccentColor" format="color" />
@@ -740,18 +740,18 @@
     <attr name="expandedMaxWidth" format="dimension" />
     <attr name="expandedMinWidth" format="dimension" />
     <attr name="expandedSubtitleTextAppearance" format="reference" />
-    <attr name="expandedSubtitleTextColor" format="color|reference" />
+    <attr name="expandedSubtitleTextColor" format="reference|color" />
     <attr name="expandedTitleGravity">
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
-        <flag name="left" value="0x3" />
-        <flag name="right" value="0x5" />
-        <flag name="center_vertical" value="0x10" />
-        <flag name="fill_vertical" value="0x70" />
-        <flag name="center_horizontal" value="0x1" />
-        <flag name="center" value="0x11" />
-        <flag name="start" value="0x800003" />
-        <flag name="end" value="0x800005" />
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="fill_vertical" value="0x00000070" />
+        <flag name="center_horizontal" value="0x00000001" />
+        <flag name="center" value="0x00000011" />
+        <flag name="start" value="0x00800003" />
+        <flag name="end" value="0x00800005" />
     </attr>
     <attr name="expandedTitleMargin" format="dimension" />
     <attr name="expandedTitleMarginBottom" format="dimension" />
@@ -760,7 +760,7 @@
     <attr name="expandedTitleMarginTop" format="dimension" />
     <attr name="expandedTitleSpacing" format="dimension" />
     <attr name="expandedTitleTextAppearance" format="reference" />
-    <attr name="expandedTitleTextColor" format="color|reference" />
+    <attr name="expandedTitleTextColor" format="reference|color" />
     <attr name="expandedWidth" format="dimension">
         <enum name="match_parent" value="-1" />
         <enum name="wrap_content" value="-2" />
@@ -933,7 +933,7 @@
     <attr name="hideNavigationIcon" format="boolean" />
     <attr name="hideOnContentScroll" format="boolean" />
     <attr name="hideOnScroll" format="boolean" />
-    <attr name="hint" format="string|reference" />
+    <attr name="hint" format="reference|string" />
     <attr name="hintAnimationEnabled" format="boolean" />
     <attr name="hintEnabled" format="boolean" />
     <attr name="hintLeft" format="string" />
@@ -952,12 +952,12 @@
     <attr name="icon" format="reference" />
     <attr name="iconEndPadding" format="dimension" />
     <attr name="iconGravity">
-        <flag name="start" value="0x1" />
-        <flag name="textStart" value="0x2" />
-        <flag name="end" value="0x3" />
-        <flag name="textEnd" value="0x4" />
-        <flag name="top" value="0x10" />
-        <flag name="textTop" value="0x20" />
+        <flag name="start" value="0x00000001" />
+        <flag name="textStart" value="0x00000002" />
+        <flag name="end" value="0x00000003" />
+        <flag name="textEnd" value="0x00000004" />
+        <flag name="top" value="0x00000010" />
+        <flag name="textTop" value="0x00000020" />
     </attr>
     <attr name="iconLabelHorizontalSpacing" format="dimension" />
     <attr name="iconPadding" format="dimension" />
@@ -997,7 +997,7 @@
     <attr name="indeterminateAnimatorDurationScale" format="float" />
     <attr name="indeterminateProgressStyle" format="reference" />
     <attr name="indeterminateTrackVisible" format="boolean" />
-    <attr name="indicatorColor" format="color|reference" />
+    <attr name="indicatorColor" format="reference|color" />
     <attr name="indicatorDirectionCircular">
         <enum name="clockwise" value="0" />
         <enum name="counterclockwise" value="1" />
@@ -1012,7 +1012,7 @@
     <attr name="indicatorSize" format="dimension" />
     <attr name="indicatorTrackGapSize" format="dimension" />
     <attr name="initialActivityCount" format="string" />
-    <attr name="innerCornerSize" format="dimension|fraction|reference" />
+    <attr name="innerCornerSize" format="reference|dimension|fraction" />
     <attr name="inputType">
         <enum name="text" value="1" />
         <enum name="number" value="2" />
@@ -1022,7 +1022,7 @@
         <enum name="textPassword" value="129" />
         <enum name="textVisiblePassword" value="145" />
     </attr>
-    <attr name="insetForeground" format="color|reference" />
+    <attr name="insetForeground" format="reference|color" />
     <attr name="isLightTheme" format="boolean" />
     <attr name="isMaterial3DynamicColorApplied" format="boolean" />
     <attr name="isMaterial3Theme" format="boolean" />
@@ -1103,20 +1103,20 @@
     <attr name="layoutManager" format="string" />
     <attr name="layout_anchor" format="reference" />
     <attr name="layout_anchorGravity">
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
-        <flag name="left" value="0x3" />
-        <flag name="right" value="0x5" />
-        <flag name="center_vertical" value="0x10" />
-        <flag name="fill_vertical" value="0x70" />
-        <flag name="center_horizontal" value="0x1" />
-        <flag name="fill_horizontal" value="0x7" />
-        <flag name="center" value="0x11" />
-        <flag name="fill" value="0x77" />
-        <flag name="clip_vertical" value="0x80" />
-        <flag name="clip_horizontal" value="0x8" />
-        <flag name="start" value="0x800003" />
-        <flag name="end" value="0x800005" />
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="fill_vertical" value="0x00000070" />
+        <flag name="center_horizontal" value="0x00000001" />
+        <flag name="fill_horizontal" value="0x00000007" />
+        <flag name="center" value="0x00000011" />
+        <flag name="fill" value="0x00000077" />
+        <flag name="clip_vertical" value="0x00000080" />
+        <flag name="clip_horizontal" value="0x00000008" />
+        <flag name="start" value="0x00800003" />
+        <flag name="end" value="0x00800005" />
     </attr>
     <attr name="layout_behavior" format="string" />
     <attr name="layout_collapseMode">
@@ -1236,14 +1236,14 @@
     </attr>
     <attr name="layout_constraintWidth_percent" format="float" />
     <attr name="layout_dodgeInsetEdges">
-        <flag name="none" value="0x0" />
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
-        <flag name="left" value="0x3" />
-        <flag name="right" value="0x5" />
-        <flag name="start" value="0x800003" />
-        <flag name="end" value="0x800005" />
-        <flag name="all" value="0x77" />
+        <flag name="none" value="0x00000000" />
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="start" value="0x00800003" />
+        <flag name="end" value="0x00800005" />
+        <flag name="all" value="0x00000077" />
     </attr>
     <attr name="layout_editor_absoluteX" format="dimension" />
     <attr name="layout_editor_absoluteY" format="dimension" />
@@ -1255,44 +1255,44 @@
     <attr name="layout_goneMarginStart" format="dimension" />
     <attr name="layout_goneMarginTop" format="dimension" />
     <attr name="layout_insetEdge">
-        <enum name="none" value="0x0" />
-        <enum name="top" value="0x30" />
-        <enum name="bottom" value="0x50" />
-        <enum name="left" value="0x3" />
-        <enum name="right" value="0x5" />
-        <enum name="start" value="0x800003" />
-        <enum name="end" value="0x800005" />
+        <enum name="none" value="0" />
+        <enum name="top" value="48" />
+        <enum name="bottom" value="80" />
+        <enum name="left" value="3" />
+        <enum name="right" value="5" />
+        <enum name="start" value="8388611" />
+        <enum name="end" value="8388613" />
     </attr>
     <attr name="layout_keyline" format="integer" />
     <attr name="layout_marginBaseline" format="dimension" />
     <attr name="layout_optimizationLevel">
-        <flag name="none" value="0" />
-        <flag name="legacy" value="0" />
-        <flag name="standard" value="257" />
-        <flag name="direct" value="1" />
-        <flag name="barrier" value="2" />
-        <flag name="chains" value="4" />
-        <flag name="dimensions" value="8" />
-        <flag name="ratio" value="16" />
-        <flag name="groups" value="32" />
-        <flag name="graph" value="64" />
-        <flag name="graph_wrap" value="128" />
-        <flag name="cache_measures" value="256" />
-        <flag name="dependency_ordering" value="512" />
-        <flag name="grouping" value="1024" />
+        <flag name="none" value="0x00000000" />
+        <flag name="legacy" value="0x00000000" />
+        <flag name="standard" value="0x00000101" />
+        <flag name="direct" value="0x00000001" />
+        <flag name="barrier" value="0x00000002" />
+        <flag name="chains" value="0x00000004" />
+        <flag name="dimensions" value="0x00000008" />
+        <flag name="ratio" value="0x00000010" />
+        <flag name="groups" value="0x00000020" />
+        <flag name="graph" value="0x00000040" />
+        <flag name="graph_wrap" value="0x00000080" />
+        <flag name="cache_measures" value="0x00000100" />
+        <flag name="dependency_ordering" value="0x00000200" />
+        <flag name="grouping" value="0x00000400" />
     </attr>
     <attr name="layout_scrollEffect">
         <enum name="none" value="0" />
         <enum name="compress" value="1" />
     </attr>
     <attr name="layout_scrollFlags">
-        <flag name="noScroll" value="0x0" />
-        <flag name="scroll" value="0x1" />
-        <flag name="exitUntilCollapsed" value="0x2" />
-        <flag name="enterAlways" value="0x4" />
-        <flag name="enterAlwaysCollapsed" value="0x8" />
-        <flag name="snap" value="0x10" />
-        <flag name="snapMargins" value="0x20" />
+        <flag name="noScroll" value="0x00000000" />
+        <flag name="scroll" value="0x00000001" />
+        <flag name="exitUntilCollapsed" value="0x00000002" />
+        <flag name="enterAlways" value="0x00000004" />
+        <flag name="enterAlwaysCollapsed" value="0x00000008" />
+        <flag name="snap" value="0x00000010" />
+        <flag name="snapMargins" value="0x00000020" />
     </attr>
     <attr name="layout_scrollInterpolator" format="reference" />
     <attr name="layout_wrapBehaviorInParent">
@@ -1376,8 +1376,8 @@
     <attr name="materialCircleRadius" format="dimension" />
     <attr name="materialClockStyle" format="reference" />
     <attr name="materialDisplayDividerStyle" format="reference" />
-    <attr name="materialDividerHeavyStyle" />
-    <attr name="materialDividerStyle" />
+    <attr name="materialDividerHeavyStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
+    <attr name="materialDividerStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
     <attr name="materialIconButtonFilledStyle" format="reference" />
     <attr name="materialIconButtonFilledTonalStyle" format="reference" />
     <attr name="materialIconButtonOutlinedStyle" format="reference" />
@@ -1393,7 +1393,7 @@
     <attr name="materialSplitButtonLeadingFilledStyle" format="reference" />
     <attr name="materialSplitButtonLeadingFilledTonalStyle" format="reference" />
     <attr name="materialSplitButtonStyle" format="reference" />
-    <attr name="materialSwitchStyle" />
+    <attr name="materialSwitchStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
     <attr name="materialThemeOverlay" format="reference" />
     <attr name="materialTimePickerStyle" format="reference" />
     <attr name="materialTimePickerTheme" format="reference" />
@@ -1486,7 +1486,7 @@
     <attr name="motionEffect_translationX" format="dimension" />
     <attr name="motionEffect_translationY" format="dimension" />
     <attr name="motionEffect_viewTransition" format="reference" />
-    <attr name="motionInterpolator" format="string|reference">
+    <attr name="motionInterpolator" format="reference|string">
         <enum name="easeInOut" value="0" />
         <enum name="easeIn" value="1" />
         <enum name="easeOut" value="2" />
@@ -1508,7 +1508,7 @@
     <attr name="motionSpringSlowEffects" format="reference" />
     <attr name="motionSpringSlowSpatial" format="reference" />
     <attr name="motionStagger" format="float" />
-    <attr name="motionTarget" format="string|reference" />
+    <attr name="motionTarget" format="reference|string" />
     <attr name="motion_postLayoutCollision" format="boolean" />
     <attr name="motion_triggerOnCollision" format="reference" />
     <attr name="moveWhenScrollAtTop" format="boolean" />
@@ -1525,22 +1525,22 @@
     <attr name="navigationRailStyle" format="reference" />
     <attr name="navigationViewStyle" format="reference" />
     <attr name="nestedScrollFlags">
-        <flag name="none" value="0" />
-        <flag name="disablePostScroll" value="1" />
-        <flag name="disableScroll" value="2" />
-        <flag name="supportScrollUp" value="4" />
+        <flag name="none" value="0x00000000" />
+        <flag name="disablePostScroll" value="0x00000001" />
+        <flag name="disableScroll" value="0x00000002" />
+        <flag name="supportScrollUp" value="0x00000004" />
     </attr>
     <attr name="nestedScrollViewStyle" format="reference" />
     <attr name="nestedScrollable" format="boolean" />
     <attr name="nullable" format="boolean" />
     <attr name="number" format="integer" />
     <attr name="numericModifiers">
-        <flag name="META" value="0x10000" />
-        <flag name="CTRL" value="0x1000" />
-        <flag name="ALT" value="0x2" />
-        <flag name="SHIFT" value="0x1" />
-        <flag name="SYM" value="0x4" />
-        <flag name="FUNCTION" value="0x8" />
+        <flag name="META" value="0x00010000" />
+        <flag name="CTRL" value="0x00001000" />
+        <flag name="ALT" value="0x00000002" />
+        <flag name="SHIFT" value="0x00000001" />
+        <flag name="SYM" value="0x00000004" />
+        <flag name="FUNCTION" value="0x00000008" />
     </attr>
     <attr name="offsetAlignmentMode">
         <enum name="edge" value="0" />
@@ -1637,7 +1637,7 @@
     <attr name="primaryActivityName" format="string" />
     <attr name="progressBarPadding" format="dimension" />
     <attr name="progressBarStyle" format="reference" />
-    <attr name="quantizeMotionInterpolator" format="string|reference">
+    <attr name="quantizeMotionInterpolator" format="reference|string">
         <enum name="easeInOut" value="0" />
         <enum name="easeIn" value="1" />
         <enum name="easeOut" value="2" />
@@ -1676,9 +1676,9 @@
     <attr name="route" format="string" />
     <attr name="saturation" format="float" />
     <attr name="scaleFromTextSize" format="dimension" />
-    <attr name="scopeUris" format="string|reference" />
+    <attr name="scopeUris" format="reference|string" />
     <attr name="scrimAnimationDuration" format="integer" />
-    <attr name="scrimBackground" format="color|reference" />
+    <attr name="scrimBackground" format="reference|color" />
     <attr name="scrimVisibleHeightTrigger" format="dimension" />
     <attr name="scrollingEnabled" format="boolean" />
     <attr name="searchHintIcon" format="reference" />
@@ -1726,18 +1726,18 @@
         <enum name="inward" value="2" />
     </attr>
     <attr name="showAsAction">
-        <flag name="never" value="0" />
-        <flag name="ifRoom" value="1" />
-        <flag name="always" value="2" />
-        <flag name="withText" value="4" />
-        <flag name="collapseActionView" value="8" />
+        <flag name="never" value="0x00000000" />
+        <flag name="ifRoom" value="0x00000001" />
+        <flag name="always" value="0x00000002" />
+        <flag name="withText" value="0x00000004" />
+        <flag name="collapseActionView" value="0x00000008" />
     </attr>
     <attr name="showDelay" format="integer" />
     <attr name="showDividers">
-        <flag name="none" value="0" />
-        <flag name="beginning" value="1" />
-        <flag name="middle" value="2" />
-        <flag name="end" value="4" />
+        <flag name="none" value="0x00000000" />
+        <flag name="beginning" value="0x00000001" />
+        <flag name="middle" value="0x00000002" />
+        <flag name="end" value="0x00000004" />
     </attr>
     <attr name="showMarker" format="boolean" />
     <attr name="showMotionSpec" format="reference" />
@@ -1773,10 +1773,10 @@
     <attr name="splitRatio" format="float" />
     <attr name="splitTrack" format="boolean" />
     <attr name="springBoundary">
-        <flag name="overshoot" value="0" />
-        <flag name="bounceStart" value="1" />
-        <flag name="bounceEnd" value="2" />
-        <flag name="bounceBoth" value="3" />
+        <flag name="overshoot" value="0x00000000" />
+        <flag name="bounceStart" value="0x00000001" />
+        <flag name="bounceEnd" value="0x00000002" />
+        <flag name="bounceBoth" value="0x00000003" />
     </attr>
     <attr name="springDamping" format="float" />
     <attr name="springMass" format="float" />
@@ -1817,14 +1817,14 @@
     <attr name="state_liftable" format="boolean" />
     <attr name="state_lifted" format="boolean" />
     <attr name="state_with_icon" format="boolean" />
-    <attr name="statusBarBackground" format="color|reference" />
+    <attr name="statusBarBackground" format="reference|color" />
     <attr name="statusBarForeground" format="color" />
     <attr name="statusBarScrim" format="color" />
     <attr name="stiffness" format="float" />
     <attr name="strokeColor" format="color" />
     <attr name="strokeWidth" format="dimension" />
     <attr name="subMenuArrow" format="reference" />
-    <attr name="subheaderColor" format="color|reference" />
+    <attr name="subheaderColor" format="reference|color" />
     <attr name="subheaderInsetEnd" format="dimension" />
     <attr name="subheaderInsetStart" format="dimension" />
     <attr name="subheaderTextAppearance" format="reference" />
@@ -1908,8 +1908,8 @@
         <enum name="staticPostLayout" value="2" />
         <enum name="staticLayout" value="3" />
     </attr>
-    <attr name="text" format="string|reference" />
-    <attr name="textAllCaps" format="boolean|reference" />
+    <attr name="text" format="reference|string" />
+    <attr name="textAllCaps" format="reference|boolean" />
     <attr name="textAppearanceBody1" format="reference" />
     <attr name="textAppearanceBody2" format="reference" />
     <attr name="textAppearanceBodyLarge" format="reference" />
@@ -1968,8 +1968,8 @@
     <attr name="textBackgroundRotate" format="float" />
     <attr name="textBackgroundZoom" format="float" />
     <attr name="textCentered" format="boolean" />
-    <attr name="textColorAlertDialogListItem" format="color|reference" />
-    <attr name="textColorSearchUrl" format="color|reference" />
+    <attr name="textColorAlertDialogListItem" format="reference|color" />
+    <attr name="textColorSearchUrl" format="reference|color" />
     <attr name="textEndPadding" format="dimension" />
     <attr name="textFillColor" format="color" />
     <attr name="textInputFilledDenseStyle" format="reference" />
@@ -2084,7 +2084,7 @@
     <attr name="toolbarNavigationButtonStyle" format="reference" />
     <attr name="toolbarStyle" format="reference" />
     <attr name="toolbarSurfaceStyle" format="reference" />
-    <attr name="tooltipForegroundColor" format="color|reference" />
+    <attr name="tooltipForegroundColor" format="reference|color" />
     <attr name="tooltipFrameBackground" format="reference" />
     <attr name="tooltipStyle" format="reference" />
     <attr name="tooltipText" format="string" />
@@ -2147,9 +2147,9 @@
         <enum name="linear" value="3" />
     </attr>
     <attr name="transitionFlags">
-        <flag name="none" value="0" />
-        <flag name="beginOnFirstDraw" value="1" />
-        <flag name="disableIntraAutoTransition" value="2" />
+        <flag name="none" value="0x00000000" />
+        <flag name="beginOnFirstDraw" value="0x00000001" />
+        <flag name="disableIntraAutoTransition" value="0x00000002" />
     </attr>
     <attr name="transitionPathRotate" format="float" />
     <attr name="transitionShapeAppearance" format="reference" />

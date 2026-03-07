@@ -4,10 +4,10 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@color/underline_gray" />
-            <size android:height="2.0dp" />
+            <size android:height="2.0dip" />
         </shape>
     </item>
-    <item android:left="0.0dp" android:top="0.0dp" android:right="0.0dp" android:bottom="1.0dp">
+    <item android:left="0.0dip" android:top="0.0dip" android:right="0.0dip" android:bottom="1.0dip">
         <shape android:shape="rectangle">
             <solid android:color="@color/underline_background" />
         </shape>

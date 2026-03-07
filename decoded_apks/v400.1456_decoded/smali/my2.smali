@@ -38,6 +38,15 @@
     .line 9
     .line 10
     return-void
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 
@@ -62,6 +71,18 @@
 
     .line 8
     return p1
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method protected b(I)I
@@ -103,6 +124,10 @@
 
     .line 16
     return p1
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method protected c(ILjava/nio/ByteBuffer;)V
@@ -172,6 +197,10 @@
     .line 29
     .line 30
     return-void
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method
 
 .method protected d(I)I
@@ -205,6 +234,13 @@
     .line 12
     .line 13
     return p1
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method protected e(I)I
@@ -246,4 +282,7 @@
 
     .line 17
     return p1
+    .line 18
+    .line 19
+    .line 20
 .end method

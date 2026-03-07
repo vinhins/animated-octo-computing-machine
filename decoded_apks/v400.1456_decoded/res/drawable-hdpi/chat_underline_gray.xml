@@ -7,7 +7,7 @@
             <size android:height="2.0px" />
         </shape>
     </item>
-    <item android:left="0.0dp" android:top="0.0px" android:right="0.0dp" android:bottom="1.0dp">
+    <item android:left="0.0dip" android:top="0.0px" android:right="0.0dip" android:bottom="1.0dip">
         <shape android:shape="rectangle">
             <solid android:color="?channelsColorBackground" />
         </shape>

@@ -167,6 +167,21 @@
     :cond_9
     :goto_2
     return v1
+    .line 62
+    .line 63
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+    .line 70
+    .line 71
+    .line 72
+    .line 73
+    .line 74
+    .line 75
+    .line 76
 .end method
 
 .method static b(Ljava/lang/CharSequence;II)I
@@ -329,4 +344,15 @@
     :cond_9
     :goto_2
     return v1
+    .line 66
+    .line 67
+    .line 68
+    .line 69
+    .line 70
+    .line 71
+    .line 72
+    .line 73
+    .line 74
+    .line 75
+    .line 76
 .end method

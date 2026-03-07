@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8.0dp"
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
         <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <ImageView android:id="@id/result_ic" android:padding="8.0dp" android:visibility="invisible" android:layout_width="48.0dp" android:layout_height="48.0dp" android:src="@drawable/ic_account_real" />
-            <ProgressBar android:id="@id/progress" android:padding="4.0dp" android:layout_width="48.0dp" android:layout_height="48.0dp" />
+            <ImageView android:id="@id/result_ic" android:padding="8.0dip" android:visibility="invisible" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_account_real" />
+            <ProgressBar android:id="@id/progress" android:padding="4.0dip" android:layout_width="48.0dip" android:layout_height="48.0dip" />
         </RelativeLayout>
-        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0dp" android:id="@id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Progress" />
-            <net.metaquotes.common.ui.RobotoTextView android:textSize="14.0dp" android:id="@id/description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Progress" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0dip" android:id="@id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Progress" />
+            <net.metaquotes.common.ui.RobotoTextView android:textSize="14.0dip" android:id="@id/description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Progress" />
         </LinearLayout>
     </LinearLayout>
-    <View android:background="@color/color_list_divider" android:layout_width="match_parent" android:layout_height="1.0dp" />
-    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <net.metaquotes.common.ui.RobotoTextView android:gravity="center" android:id="@id/button_ok" android:layout_width="0.0dp" android:layout_height="48.0dp" android:text="@string/ok" android:layout_weight="1.0" />
-        <View android:id="@id/divider" android:background="@color/color_list_divider" android:layout_width="1.0dp" android:layout_height="match_parent" />
-        <net.metaquotes.common.ui.RobotoTextView android:gravity="center" android:id="@id/button_cancel" android:layout_width="0.0dp" android:layout_height="48.0dp" android:text="@string/cancel" android:layout_weight="1.0" />
+    <View android:background="@color/color_list_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <net.metaquotes.common.ui.RobotoTextView android:gravity="center" android:id="@id/button_ok" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/ok" android:layout_weight="1.0" />
+        <View android:id="@id/divider" android:background="@color/color_list_divider" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <net.metaquotes.common.ui.RobotoTextView android:gravity="center" android:id="@id/button_cancel" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/cancel" android:layout_weight="1.0" />
     </LinearLayout>
 </LinearLayout>

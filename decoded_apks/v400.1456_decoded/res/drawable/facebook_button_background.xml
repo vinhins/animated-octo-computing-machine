@@ -3,19 +3,19 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_focused="false" android:state_enabled="false">
         <shape android:shape="rectangle">
-            <corners android:radius="4.0dp" />
-            <solid android:color="#ebedf0" />
+            <corners android:radius="4.0dip" />
+            <solid android:color="#ffebedf0" />
         </shape>
     </item>
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <corners android:radius="4.0dp" />
-            <solid android:color="#186bda" />
+            <corners android:radius="4.0dip" />
+            <solid android:color="#ff186bda" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="4.0dp" />
+            <corners android:radius="4.0dip" />
             <solid android:color="@color/btn_facebook_blue" />
         </shape>
     </item>

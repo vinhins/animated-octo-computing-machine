@@ -43,6 +43,7 @@
     .line 18
     .line 19
     return-object p0
+    .line 20
 .end method
 
 .method public static final b(Ljava/util/Map;)Ljava/util/Map;
@@ -76,4 +77,9 @@
     .line 14
     .line 15
     return-object p0
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

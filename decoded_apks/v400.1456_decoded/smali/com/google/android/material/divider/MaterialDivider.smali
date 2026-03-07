@@ -33,6 +33,20 @@
     .line 4
     .line 5
     return-void
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -159,6 +173,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getDividerInsetEnd()I
@@ -170,6 +200,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getDividerInsetStart()I
@@ -181,6 +227,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public getDividerThickness()I
@@ -192,6 +254,22 @@
     .line 2
     .line 3
     return v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
@@ -444,6 +522,7 @@
     .line 19
     :cond_0
     return-void
+    .line 20
 .end method
 
 .method public setDividerColorResource(I)V
@@ -472,6 +551,14 @@
     .line 11
     .line 12
     return-void
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerInsetEnd(I)V
@@ -483,6 +570,23 @@
     .line 2
     .line 3
     return-void
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerInsetEndResource(I)V
@@ -519,6 +623,10 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerInsetStart(I)V
@@ -530,6 +638,23 @@
     .line 2
     .line 3
     return-void
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerInsetStartResource(I)V
@@ -566,6 +691,10 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerThickness(I)V
@@ -591,6 +720,16 @@
     .line 10
     :cond_0
     return-void
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public setDividerThicknessResource(I)V
@@ -627,4 +766,8 @@
     .line 15
     .line 16
     return-void
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method

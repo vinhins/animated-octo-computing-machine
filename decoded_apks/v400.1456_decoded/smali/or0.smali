@@ -52,4 +52,15 @@
     .line 23
     :cond_0
     return-object p0
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
 .end method

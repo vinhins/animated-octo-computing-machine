@@ -38,6 +38,11 @@
     .line 13
     .line 14
     return-void
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method public static final synthetic a([Z)[Ljava/lang/Boolean;
@@ -53,6 +58,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic b([B)[Ljava/lang/Byte;
@@ -68,6 +88,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic c([D)[Ljava/lang/Double;
@@ -83,6 +118,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic d([F)[Ljava/lang/Float;
@@ -98,6 +148,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic e([I)[Ljava/lang/Integer;
@@ -113,6 +178,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic f([J)[Ljava/lang/Long;
@@ -128,6 +208,21 @@
 
     .line 5
     return-object p0
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
 .end method
 
 .method public static final synthetic g()Ljava/lang/String;
@@ -139,6 +234,22 @@
     .line 2
     .line 3
     return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
 .end method
 
 .method private static final h([Z)[Ljava/lang/Boolean;
@@ -185,6 +296,8 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method
 
 .method private static final i([B)[Ljava/lang/Byte;
@@ -231,6 +344,8 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method
 
 .method private static final j([D)[Ljava/lang/Double;
@@ -277,6 +392,8 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method
 
 .method private static final k([F)[Ljava/lang/Float;
@@ -323,6 +440,8 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method
 
 .method private static final l([I)[Ljava/lang/Integer;
@@ -369,6 +488,8 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method
 
 .method private static final m([J)[Ljava/lang/Long;
@@ -415,4 +536,6 @@
     .line 18
     :cond_0
     return-object v1
+    .line 19
+    .line 20
 .end method

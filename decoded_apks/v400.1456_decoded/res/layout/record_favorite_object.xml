@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="48.0dp"
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="48.0dip"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="48.0dp">
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/first_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_line_trend" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/second_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_line_arrowed" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/third_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_fibonacci_channel" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/fourth_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_motive_wave" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/fifth_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_corrective_wave" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/six_fav" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_corrective_wave" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="48.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/first_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_line_trend" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/second_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_line_arrowed" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/third_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_fibonacci_channel" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/fourth_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_motive_wave" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/fifth_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_corrective_wave" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/six_fav" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_elliott_corrective_wave" />
     </LinearLayout>
 </LinearLayout>

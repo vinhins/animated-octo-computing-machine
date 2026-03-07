@@ -105,4 +105,13 @@
     .line 47
     .line 48
     throw v0
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
 .end method
