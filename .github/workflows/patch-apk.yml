@@ -1,0 +1,126 @@
+name: Patch APK Broker Logs
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: "Direct download URL to APK"
+        required: true
+        type: string
+      preferFallback:
+        description: "Patch TerminalServers first"
+        required: true
+        default: false
+        type: boolean
+      sign_apk:
+        description: "Sign output APK using repository secrets"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  patch-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install apktool
+        shell: bash
+        run: |
+          set -euo pipefail
+          APKTOOL_VERSION="3.0.1"
+          APKTOOL_TAG="v${APKTOOL_VERSION}"
+          curl -fsSL "https://github.com/iBotPeaches/Apktool/releases/download/${APKTOOL_TAG}/apktool_${APKTOOL_VERSION}.jar" -o /tmp/apktool.jar
+          curl -fsSL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -o /tmp/apktool
+          chmod +x /tmp/apktool
+          sudo mv /tmp/apktool /usr/local/bin/apktool
+          sudo mv /tmp/apktool.jar /usr/local/bin/apktool.jar
+          apktool --version
+
+      - name: Install build tools for signing
+        if: ${{ inputs.sign_apk }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null
+          sdkmanager "build-tools;35.0.0"
+          echo "APKSIGNER=$ANDROID_HOME/build-tools/35.0.0/apksigner" >> "$GITHUB_ENV"
+
+      - name: Download source APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build decoded_apks
+          curl -fL "${{ inputs.apk_url }}" -o build/source.apk
+
+      - name: Decode APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          apktool d -f build/source.apk -o decoded_apks/patched_workdir
+
+      - name: Apply smali patch
+        shell: pwsh
+        run: |
+          $prefer = "${{ inputs.preferFallback }}"
+          if ($prefer -eq "true") {
+            ./tools/patch_servers_logging.ps1 -RootPath "decoded_apks/patched_workdir" -PreferFallback 2>&1 | Tee-Object -FilePath "build/patch.log"
+          }
+          else {
+            ./tools/patch_servers_logging.ps1 -RootPath "decoded_apks/patched_workdir" 2>&1 | Tee-Object -FilePath "build/patch.log"
+          }
+
+      - name: Rebuild patched APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          apktool b decoded_apks/patched_workdir -o build/patched-unsigned.apk
+
+      - name: Sign APK
+        if: ${{ inputs.sign_apk }}
+        shell: bash
+        env:
+          APK_KEYSTORE_BASE64: ${{ secrets.APK_KEYSTORE_BASE64 }}
+          APK_KEYSTORE_PASSWORD: ${{ secrets.APK_KEYSTORE_PASSWORD }}
+          APK_KEY_ALIAS: ${{ secrets.APK_KEY_ALIAS }}
+          APK_KEY_PASSWORD: ${{ secrets.APK_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${APK_KEYSTORE_BASE64}" || -z "${APK_KEYSTORE_PASSWORD}" || -z "${APK_KEY_ALIAS}" || -z "${APK_KEY_PASSWORD}" ]]; then
+            echo "Signing requested but one or more required secrets are missing."
+            exit 1
+          fi
+
+          echo "$APK_KEYSTORE_BASE64" | base64 --decode > build/signing.keystore
+
+          "$APKSIGNER" sign \
+            --ks build/signing.keystore \
+            --ks-pass "pass:${APK_KEYSTORE_PASSWORD}" \
+            --ks-key-alias "${APK_KEY_ALIAS}" \
+            --key-pass "pass:${APK_KEY_PASSWORD}" \
+            --out build/patched-signed.apk \
+            build/patched-unsigned.apk
+
+      - name: Upload patched artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: patched-apk-output
+          if-no-files-found: error
+          path: |
+            build/patched-unsigned.apk
+            build/patched-signed.apk
+            build/patch.log
