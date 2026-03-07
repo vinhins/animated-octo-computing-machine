@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingBottom="1.0dp" android:layout_width="match_parent" android:layout_height="48.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0sp" android:textColor="@color/property_title" android:ellipsize="none" android:id="@id/param_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    <net.metaquotes.common.ui.RobotoTextView android:textSize="16.0sp" android:textColor="@color/property_value" android:ellipsize="end" android:gravity="right" android:id="@id/param_title" android:layout_width="0.0dp" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
-    <ImageView android:layout_gravity="center_vertical" android:layout_width="32.0dp" android:layout_height="match_parent" android:src="@drawable/ic_dir_down" android:scaleType="center" android:tint="@color/property_title" />
-</LinearLayout>

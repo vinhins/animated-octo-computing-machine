@@ -3,9 +3,10 @@ name: Patch APK Broker Logs
 on:
   workflow_dispatch:
     inputs:
-      apk_url:
-        description: "Direct download URL to APK"
+      decoded_dir:
+        description: "Path to an already decoded APK directory in the repository"
         required: true
+        default: "decoded_apks/v400.1456_decoded"
         type: string
       preferFallback:
         description: "Patch TerminalServers first"
@@ -60,34 +61,34 @@ jobs:
           sdkmanager "build-tools;35.0.0"
           echo "APKSIGNER=$ANDROID_HOME/build-tools/35.0.0/apksigner" >> "$GITHUB_ENV"
 
-      - name: Download source APK
+      - name: Prepare patch target
+        id: prepare
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p build decoded_apks
-          curl -fL "${{ inputs.apk_url }}" -o build/source.apk
-
-      - name: Decode APK
-        shell: bash
-        run: |
-          set -euo pipefail
-          apktool d -f build/source.apk -o decoded_apks/patched_workdir
+          mkdir -p build
+          decoded_dir="${{ inputs.decoded_dir }}"
+          if [[ ! -d "$decoded_dir" ]]; then
+            echo "Decoded directory not found: $decoded_dir"
+            exit 1
+          fi
+          echo "decoded_dir=$decoded_dir" >> "$GITHUB_OUTPUT"
 
       - name: Apply smali patch
         shell: bash
         run: |
           set -euo pipefail
           if [[ "${{ inputs.preferFallback }}" == "true" ]]; then
-            python3 tools/patch_servers_logging.py --root-path decoded_apks/patched_workdir --prefer-fallback 2>&1 | tee build/patch.log
+            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" --prefer-fallback 2>&1 | tee build/patch.log
           else
-            python3 tools/patch_servers_logging.py --root-path decoded_apks/patched_workdir 2>&1 | tee build/patch.log
+            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee build/patch.log
           fi
 
       - name: Rebuild patched APK
         shell: bash
         run: |
           set -euo pipefail
-          apktool b decoded_apks/patched_workdir -o build/patched-unsigned.apk
+          apktool b "${{ steps.prepare.outputs.decoded_dir }}" -o build/patched-unsigned.apk
 
       - name: Sign APK
         if: ${{ inputs.sign_apk }}
