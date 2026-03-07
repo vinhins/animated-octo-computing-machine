@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/color_list_divider" android:layout_width="match_parent" android:layout_height="1.0dp" />
+    <RelativeLayout android:background="@color/panel_background" android:padding="8.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <net.metaquotes.common.ui.RobotoTextView android:textSize="14.0sp" android:textColor="@color/hint_text" android:paddingLeft="2.0dp" android:paddingRight="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/chart_indicator_long_tap" android:layout_toRightOf="@id/long_tap_icon" android:layout_alignParentTop="true" />
+        <ImageView android:id="@id/long_tap_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_tap_hand" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+</LinearLayout>

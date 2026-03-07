@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/panel_background" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/color_list_divider" android:layout_width="match_parent" android:layout_height="1.0dp" />
+    <net.metaquotes.common.ui.RobotoTextView android:gravity="center" android:id="@id/button_expand" android:layout_width="match_parent" android:layout_height="46.0dp" android:text="@string/mail_expand_message" />
+    <View android:background="@color/color_list_divider" android:layout_width="match_parent" android:layout_height="1.0dp" />
+</LinearLayout>

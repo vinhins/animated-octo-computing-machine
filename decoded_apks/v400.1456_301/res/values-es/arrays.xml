@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Barras</item>
+        <item>Velas japonesas</item>
+        <item>Líneas</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>No mostrar volúmenes</item>
+        <item>Mostrar volúmenes de tick</item>
+        <item>Mostrar volúmenes reales</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Nunca</item>
+        <item>Solo con Wi-Fi</item>
+        <item>Siempre</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Nunca</item>
+        <item>Sólo en modo silencioso</item>
+        <item>Siempre</item>
+    </string-array>
+</resources>

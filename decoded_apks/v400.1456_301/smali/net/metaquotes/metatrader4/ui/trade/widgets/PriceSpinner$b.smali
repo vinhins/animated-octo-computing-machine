@@ -1,0 +1,116 @@
+.class Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;->setupUI(Landroid/content/Context;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic m:Landroid/content/Context;
+
+.field final synthetic n:Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;
+
+
+# direct methods
+.method constructor <init>(Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;Landroid/content/Context;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;->n:Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;
+
+    .line 2
+    .line 3
+    iput-object p2, p0, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;->m:Landroid/content/Context;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+
+    .line 1
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;->n:Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;->a(Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;)Lnet/metaquotes/metatrader4/ui/trade/widgets/AmountEdit;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object p1, p0, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;->m:Landroid/content/Context;
+
+    .line 11
+    .line 12
+    const-string v0, "input_method"
+
+    .line 13
+    .line 14
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p1
+
+    .line 18
+    check-cast p1, Landroid/view/inputmethod/InputMethodManager;
+
+    .line 19
+    .line 20
+    if-eqz p1, :cond_0
+
+    .line 21
+    .line 22
+    iget-object v0, p0, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner$b;->n:Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;
+
+    .line 23
+    .line 24
+    invoke-static {v0}, Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;->a(Lnet/metaquotes/metatrader4/ui/trade/widgets/PriceSpinner;)Lnet/metaquotes/metatrader4/ui/trade/widgets/AmountEdit;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v0
+
+    .line 28
+    const/4 v1, 0x1
+
+    .line 29
+    invoke-virtual {p1, v0, v1}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
+
+    .line 30
+    .line 31
+    .line 32
+    :cond_0
+    return-void
+.end method

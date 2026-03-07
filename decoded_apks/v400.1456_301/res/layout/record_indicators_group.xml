@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="16.0dp" android:layout_width="match_parent" android:layout_height="47.5dp" android:minHeight="47.5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.metaquotes.common.ui.RobotoTextView android:gravity="bottom" android:id="@id/caption" android:paddingRight="16.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" style="@style/ExpandedListHeader" />
+    <View android:background="@color/color_list_divider" android:layout_width="match_parent" android:layout_height="2.0dp" />
+</LinearLayout>

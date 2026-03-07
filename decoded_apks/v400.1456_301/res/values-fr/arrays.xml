@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Barres</item>
+        <item>Сhandeliers japonais</item>
+        <item>Lignes</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>Ne pas afficher les volumes</item>
+        <item>Afficher les volumes de tick</item>
+        <item>Afficher les volumes réels</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Jamais</item>
+        <item>Seulement en mode silencieux</item>
+        <item>Toujours</item>
+    </string-array>
+</resources>

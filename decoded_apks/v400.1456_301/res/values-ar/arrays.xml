@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>شريط الرسم البياني</item>
+        <item>عصا الشمعه</item>
+        <item>خط الرسم البياني</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>لا تظهر القيمه</item>
+        <item>اظهار حجم الحركه</item>
+        <item>تظهر الحجم الحقيقي</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>أبدا</item>
+        <item>فقط عندما يكون صامت</item>
+        <item>دائما</item>
+    </string-array>
+</resources>
