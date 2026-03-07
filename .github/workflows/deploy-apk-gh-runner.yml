@@ -1,4 +1,4 @@
-name: Deploy Patched APK (Linux ARM ADB Target)
+name: Deploy Patched APK (Ubuntu Emulator)
 
 on:
   workflow_dispatch:
@@ -22,15 +22,10 @@ on:
         required: false
         default: "net.metaquotes.metatrader4.ui.MainActivity"
         type: string
-      adb_endpoint:
-        description: "ADB endpoint for ARM device/emulator (host:port)"
-        required: true
-        default: "127.0.0.1:5555"
-        type: string
-      adb_connect_timeout_seconds:
-        description: "How long to wait for ADB target connection"
+      api_level:
+        description: "Android API level for emulator system image"
         required: false
-        default: "180"
+        default: "31"
         type: string
       logcat_wait_seconds:
         description: "How long to wait while capturing patched-tag logcat output"
@@ -44,7 +39,7 @@ permissions:
 
 jobs:
   deploy-to-emulator:
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -81,59 +76,44 @@ jobs:
 
           echo "apk_path=$selected" >> "$GITHUB_OUTPUT"
 
-      - name: Install ADB tools
+      - name: Enable KVM
         shell: bash
         run: |
           set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y adb
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
 
-      - name: Connect to ARM ADB target
-        shell: bash
-        run: |
-          set -euo pipefail
-          serial="${{ inputs.adb_endpoint }}"
-          timeout_s="${{ inputs.adb_connect_timeout_seconds }}"
-          deadline=$((SECONDS + timeout_s))
+      - name: Run Android Emulator Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ inputs.api_level }}
+          target: default
+          arch: arm64-v8a
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics
+          script: |
+            set -euo pipefail
+            mkdir -p build
+            apk_path="${{ steps.apk.outputs.apk_path }}"
+            pkg="${{ inputs.package_name }}"
+            act="${{ inputs.launch_activity }}"
+            wait_s="${{ inputs.logcat_wait_seconds }}"
+            out_file="build/emulator-logcat-linux.txt"
 
-          adb start-server
-          while (( SECONDS < deadline )); do
-            adb connect "$serial" >/dev/null 2>&1 || true
-            if [[ "$(adb -s "$serial" get-state 2>/dev/null || true)" == "device" ]]; then
-              echo "ADB target connected: $serial"
-              exit 0
-            fi
-            sleep 5
-          done
-
-          echo "Failed to connect to ADB target $serial within ${timeout_s}s"
-          adb devices -l || true
-          exit 1
-
-      - name: Install APK and capture logs
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p build
-          serial="${{ inputs.adb_endpoint }}"
-          apk_path="${{ steps.apk.outputs.apk_path }}"
-          pkg="${{ inputs.package_name }}"
-          act="${{ inputs.launch_activity }}"
-          wait_s="${{ inputs.logcat_wait_seconds }}"
-          out_file="build/emulator-logcat-linux-arm.txt"
-
-          adb -s "$serial" install -r "$apk_path"
-          adb -s "$serial" logcat -c || true
-          adb -s "$serial" shell am start -n "${pkg}/${act}" || true
-          adb -s "$serial" shell pidof "$pkg" || true
-          timeout "${wait_s}s" adb -s "$serial" logcat -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' > "$out_file" || true
-          adb -s "$serial" logcat -d -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' >> "$out_file" || true
+            adb devices
+            adb install -r "$apk_path"
+            adb logcat -c || true
+            adb shell am start -n "${pkg}/${act}" || true
+            adb shell pidof "$pkg" || true
+            timeout "${wait_s}s" adb logcat -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' > "$out_file" || true
+            adb logcat -d -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' >> "$out_file" || true
 
       - name: Upload deploy logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: deploy-emulator-logs-${{ github.run_id }}-linux-arm
+          name: deploy-emulator-logs-${{ github.run_id }}-linux
           if-no-files-found: warn
           path: |
-            build/emulator-logcat-linux-arm.txt
+            build/emulator-logcat-linux.txt
