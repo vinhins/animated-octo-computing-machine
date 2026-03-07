@@ -1,4 +1,4 @@
-name: Deploy Patched APK (Ubuntu Emulator)
+name: Deploy Patched APK (Firebase Test Lab)
 
 on:
   workflow_dispatch:
@@ -12,33 +12,48 @@ on:
         required: true
         default: "patched-apk-output-v400.1456"
         type: string
-      package_name:
-        description: "Android package name (optional override)"
-        required: false
-        default: "net.metaquotes.metatrader4"
+      gcp_project_id:
+        description: "Google Cloud project id with Firebase enabled"
+        required: true
         type: string
-      launch_activity:
-        description: "Launcher activity full class name (optional override)"
+      device_model:
+        description: "Firebase Test Lab device model"
         required: false
-        default: "net.metaquotes.metatrader4.ui.MainActivity"
+        default: "redfin"
         type: string
-      api_level:
-        description: "Android API level for emulator system image"
+      device_version:
+        description: "Android API level for selected device"
         required: false
-        default: "31"
+        default: "30"
         type: string
-      logcat_wait_seconds:
-        description: "How long to wait while capturing patched-tag logcat output"
+      locale:
+        description: "Device locale"
         required: false
-        default: "300"
+        default: "en"
+        type: string
+      orientation:
+        description: "Device orientation"
+        required: false
+        default: "portrait"
+        type: string
+      test_timeout:
+        description: "Firebase Test Lab timeout (for example 10m)"
+        required: false
+        default: "10m"
+        type: string
+      results_bucket:
+        description: "Optional GCS bucket for results (gs://bucket-name)"
+        required: false
+        default: ""
         type: string
 
 permissions:
   actions: read
   contents: read
+  id-token: write
 
 jobs:
-  deploy-to-emulator:
+  deploy-to-ftl:
     runs-on: ubuntu-latest
 
     steps:
@@ -76,44 +91,51 @@ jobs:
 
           echo "apk_path=$selected" >> "$GITHUB_OUTPUT"
 
-      - name: Enable KVM
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Setup gcloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Run Firebase Test Lab Robo test
         shell: bash
         run: |
           set -euo pipefail
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
+          mkdir -p build
+          out_file="build/firebase-test-lab-output.txt"
+          results_dir="patched-apk-${{ github.run_id }}-${{ github.run_attempt }}"
 
-      - name: Run Android Emulator Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ inputs.api_level }}
-          target: default
-          arch: arm64-v8a
-          force-avd-creation: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics
-          script: |
-            set -euo pipefail
-            mkdir -p build
-            apk_path="${{ steps.apk.outputs.apk_path }}"
-            pkg="${{ inputs.package_name }}"
-            act="${{ inputs.launch_activity }}"
-            wait_s="${{ inputs.logcat_wait_seconds }}"
-            out_file="build/emulator-logcat-linux.txt"
+          args=(
+            firebase test android run
+            --project "${{ inputs.gcp_project_id }}"
+            --type robo
+            --app "${{ steps.apk.outputs.apk_path }}"
+            --device "model=${{ inputs.device_model }},version=${{ inputs.device_version }},locale=${{ inputs.locale }},orientation=${{ inputs.orientation }}"
+            --timeout "${{ inputs.test_timeout }}"
+            --results-dir "$results_dir"
+          )
 
-            adb devices
-            adb install -r "$apk_path"
-            adb logcat -c || true
-            adb shell am start -n "${pkg}/${act}" || true
-            adb shell pidof "$pkg" || true
-            timeout "${wait_s}s" adb logcat -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' > "$out_file" || true
-            adb logcat -d -v time -s MT4-BROKER:I MT4-BROKER-FALLBACK:I '*:S' >> "$out_file" || true
+          if [[ -n "${{ inputs.results_bucket }}" ]]; then
+            args+=(--results-bucket "${{ inputs.results_bucket }}")
+          fi
+
+          set +e
+          gcloud "${args[@]}" 2>&1 | tee "$out_file"
+          status=${PIPESTATUS[0]}
+          set -e
+
+          if [[ $status -ne 0 ]]; then
+            echo "Firebase Test Lab run failed with exit code $status" | tee -a "$out_file"
+            exit $status
+          fi
 
       - name: Upload deploy logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: deploy-emulator-logs-${{ github.run_id }}-linux
+          name: deploy-ftl-logs-${{ github.run_id }}
           if-no-files-found: warn
           path: |
-            build/emulator-logcat-linux.txt
+            build/firebase-test-lab-output.txt
