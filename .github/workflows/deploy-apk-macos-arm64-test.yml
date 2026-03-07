@@ -77,8 +77,10 @@ jobs:
           api-level: 31
           target: default
           arch: arm64-v8a
-          profile: Nexus 6
-          emulator-boot-timeout: 900
+          force-avd-creation: false
+          emulator-boot-timeout: 1200
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -no-metrics
           script: |
             set -euo pipefail
             mkdir -p build
@@ -88,6 +90,8 @@ jobs:
             wait_s="${{ inputs.logcat_wait_seconds }}"
             out_file="build/emulator-logcat-macos-arm64.txt"
 
+            adb kill-server || true
+            adb start-server
             adb devices
             adb install -r "$apk_path"
             adb logcat -c || true
