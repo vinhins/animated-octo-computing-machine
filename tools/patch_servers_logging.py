@@ -26,6 +26,66 @@ def iter_smali(root: Path) -> list[Path]:
     return [p for p in root.rglob("*.smali") if p.is_file()]
 
 
+def find_server_record_file(root: Path) -> Path:
+    expected_rel = Path("net/metaquotes/metatrader4/types/ServerRecord.smali")
+
+    # Prefer canonical package path under any smali* directory.
+    for parent in root.glob("smali*"):
+        candidate = parent / expected_rel
+        if candidate.is_file():
+            return candidate
+
+    # Fallback for non-standard folder layout.
+    for candidate in root.rglob("ServerRecord.smali"):
+        raw = candidate.read_text(encoding="utf-8", errors="ignore")
+        if "Lnet/metaquotes/metatrader4/types/ServerRecord;" in raw:
+            return candidate
+
+    raise RuntimeError("ServerRecord.smali not found under decoded root")
+
+
+def resolve_server_record_string_fields(root: Path) -> list[str]:
+    server_record_file = find_server_record_file(root)
+    raw = server_record_file.read_text(encoding="utf-8", errors="ignore")
+    fields: list[str] = []
+
+    # Capture instance string fields only (exclude static constants).
+    for match in re.finditer(r"(?m)^\.field\s+([^\n:]+)\s+(\w+):Ljava/lang/String;\s*$", raw):
+        modifiers = {m for m in match.group(1).split() if m}
+        field_name = match.group(2)
+        if "static" in modifiers:
+            continue
+        fields.append(field_name)
+
+    if not fields:
+        raise RuntimeError(f"No instance String fields found in {server_record_file}")
+
+    return fields
+
+
+def build_server_record_dump_block(
+    field_names: list[str],
+    *,
+    sb_reg: str,
+    label_reg: str,
+    record_reg: str,
+    value_reg: str,
+) -> str:
+    lines: list[str] = []
+    for field in field_names:
+        lines.extend(
+            [
+                f'    const-string {label_reg}, ";{field}="',
+                f"    invoke-virtual {{{sb_reg}, {label_reg}}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+                f"    iget-object {value_reg}, {record_reg}, Lnet/metaquotes/metatrader4/types/ServerRecord;->{field}:Ljava/lang/String;",
+                f"    invoke-virtual {{{sb_reg}, {value_reg}}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+                "",
+            ]
+        )
+
+    return "\n".join(lines).rstrip()
+
+
 def find_candidates(root: Path) -> list[Path]:
     all_smali = iter_smali(root)
     candidates: list[Path] = []
@@ -51,17 +111,11 @@ def find_candidates(root: Path) -> list[Path]:
             has_server_record_call = (
                 "filteredAt(I)Lnet/metaquotes/metatrader4/types/ServerRecord;" in raw
             )
-            has_name_field = (
-                "Lnet/metaquotes/metatrader4/types/ServerRecord;->a:Ljava/lang/String;" in raw
-            )
-            has_company_field = (
-                "Lnet/metaquotes/metatrader4/types/ServerRecord;->b:Ljava/lang/String;" in raw
-            )
             has_get_view = (
                 ".method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;"
                 in raw
             )
-            if has_server_record_call and has_name_field and has_company_field and has_get_view:
+            if has_server_record_call and has_get_view:
                 candidates.append(f)
 
     return candidates
@@ -106,7 +160,7 @@ def normalize_newlines(text: str) -> str:
     return text.replace("\r\n", "\n")
 
 
-def apply_patch(file_path: Path) -> bool:
+def apply_patch(file_path: Path, server_record_fields: list[str]) -> bool:
     raw_original = file_path.read_text(encoding="utf-8", errors="ignore")
     raw = normalize_newlines(raw_original)
 
@@ -135,6 +189,14 @@ def apply_patch(file_path: Path) -> bool:
         raise RuntimeError(
             f"Anchor ':goto_0' not found inside getView; method layout changed: {file_path}"
         )
+
+    field_dump_block = build_server_record_dump_block(
+        server_record_fields,
+        sb_reg="v0",
+        label_reg="v4",
+        record_reg="p3",
+        value_reg="v2",
+    )
 
     insert_template = """    :goto_0
 
@@ -168,20 +230,7 @@ def apply_patch(file_path: Path) -> bool:
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, ";name="
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v2, p3, Lnet/metaquotes/metatrader4/types/ServerRecord;->a:Ljava/lang/String;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, ";company="
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v2, p3, Lnet/metaquotes/metatrader4/types/ServerRecord;->b:Ljava/lang/String;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, ";website="
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v2, p3, Lnet/metaquotes/metatrader4/types/ServerRecord;->g:Ljava/lang/String;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+{{FIELD_DUMP_BLOCK}}
 
     const-string v4, "MT4-BROKER"
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -196,7 +245,9 @@ def apply_patch(file_path: Path) -> bool:
     # [AUTO_PATCH_END]
 """
 
-    insert = insert_template.replace("{{CLASS_DESC}}", class_desc)
+    insert = insert_template.replace("{{CLASS_DESC}}", class_desc).replace(
+        "{{FIELD_DUMP_BLOCK}}", field_dump_block
+    )
     anchor_end = anchor_in_method + len(anchor)
     updated_method = method_body[:anchor_end] + insert[len(anchor) :] + method_body[anchor_end:]
     updated = raw[:method_start] + updated_method + raw[method_end:]
@@ -211,7 +262,9 @@ def apply_patch(file_path: Path) -> bool:
     return True
 
 
-def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
+def apply_terminal_servers_fallback_patch(
+    file_path: Path, server_record_fields: list[str]
+) -> bool:
     raw_original = file_path.read_text(encoding="utf-8", errors="ignore")
     raw = normalize_newlines(raw_original)
 
@@ -283,6 +336,14 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
     method_body = method_body.replace(entry_anchor, entry_insert, 1)
 
     return_anchor = "    return p1"
+    field_dump_block = build_server_record_dump_block(
+        server_record_fields,
+        sb_reg="v3",
+        label_reg="v4",
+        record_reg="v2",
+        value_reg="v5",
+    )
+
     return_insert_template = """    # [AUTO_PATCH_FALLBACK_RESULT] log filter result + dump records
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -330,20 +391,7 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, ";name="
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v5, v2, Lnet/metaquotes/metatrader4/types/ServerRecord;->a:Ljava/lang/String;
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, ";company="
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v5, v2, Lnet/metaquotes/metatrader4/types/ServerRecord;->b:Ljava/lang/String;
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, ";website="
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v5, v2, Lnet/metaquotes/metatrader4/types/ServerRecord;->g:Ljava/lang/String;
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+{{FIELD_DUMP_BLOCK}}
 
     const-string v4, "MT4-BROKER-FALLBACK"
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -356,6 +404,10 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
 
     :after_dump_{{SUFFIX}}
 """
+
+    return_insert_template = return_insert_template.replace(
+        "{{FIELD_DUMP_BLOCK}}", field_dump_block
+    )
 
     first_return_pos = method_body.find(return_anchor)
     if first_return_pos < 0:
@@ -394,13 +446,20 @@ def run(root_path: str, prefer_fallback: bool) -> int:
         raise RuntimeError(f"Root path does not exist: {root}")
 
     info(f"Scanning smali under: {root}")
+    server_record_fields = resolve_server_record_string_fields(root)
+    info(
+        "Resolved ServerRecord string fields: "
+        + ", ".join(server_record_fields)
+    )
 
     if prefer_fallback:
         info("Mode enabled: PreferFallback")
         fallback_target = find_terminal_servers_candidate(root)
         if fallback_target is not None:
             info(f"Using fallback target: {fallback_target}")
-            changed = apply_terminal_servers_fallback_patch(fallback_target)
+            changed = apply_terminal_servers_fallback_patch(
+                fallback_target, server_record_fields
+            )
             if changed:
                 info(
                     "Done (TerminalServers fallback). Next: rebuild APK and check logcat with: adb logcat -s MT4-BROKER-FALLBACK"
@@ -419,7 +478,7 @@ def run(root_path: str, prefer_fallback: bool) -> int:
 
         target = candidates[0]
         info(f"Using candidate: {target}")
-        changed = apply_patch(target)
+        changed = apply_patch(target, server_record_fields)
         if changed:
             info("Done (UI adapter). Next: rebuild APK and check logcat with: adb logcat -s MT4-BROKER")
         else:
@@ -434,7 +493,9 @@ def run(root_path: str, prefer_fallback: bool) -> int:
         )
 
     info(f"Using fallback target: {fallback_target}")
-    changed = apply_terminal_servers_fallback_patch(fallback_target)
+    changed = apply_terminal_servers_fallback_patch(
+        fallback_target, server_record_fields
+    )
     if changed:
         info(
             "Done (TerminalServers fallback). Next: rebuild APK and check logcat with: adb logcat -s MT4-BROKER-FALLBACK"
