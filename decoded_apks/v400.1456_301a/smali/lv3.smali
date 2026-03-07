@@ -1,0 +1,64 @@
+.class final Llv3;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+# interfaces
+.implements Lnv3;
+
+
+# instance fields
+.field private final a:Lt14;
+
+.field private final b:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Lt14;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Llv3;->a:Lt14;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Llv3;->b:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lpt3;)Lt14;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Llv3;->a:Lt14;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lt14;->a()Lt14;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-object v1, p0, Llv3;->b:Ljava/lang/String;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1, p1}, Lt14;->e(Ljava/lang/String;Lpt3;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-object v0
+.end method
