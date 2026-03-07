@@ -32,7 +32,6 @@ def find_candidates(root: Path) -> list[Path]:
 
     for f in all_smali:
         raw = f.read_text(encoding="utf-8", errors="ignore")
-        is_servers_adapter = '.source "ServersListAdapter.java"' in raw
         has_server_record_call = (
             "filteredAt(I)Lnet/metaquotes/metatrader4/types/ServerRecord;" in raw
         )
@@ -41,7 +40,8 @@ def find_candidates(root: Path) -> list[Path]:
             in raw
         )
 
-        if is_servers_adapter and has_server_record_call and has_get_view:
+        # Newer builds may strip original source file names, so source marker is optional.
+        if has_server_record_call and has_get_view:
             candidates.append(f)
 
     if not candidates:
@@ -68,17 +68,33 @@ def find_candidates(root: Path) -> list[Path]:
 
 
 def find_terminal_servers_candidate(root: Path) -> Path | None:
+    best_match: Path | None = None
     for f in iter_smali(root):
         raw = f.read_text(encoding="utf-8", errors="ignore")
-        is_terminal_servers = '.source "TerminalServers.java"' in raw
         has_native_filter = (
             ".method public final native serversFilter(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Z)Z"
             in raw
         )
-        has_wrapper_call = "->serversFilter(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Z)Z" in raw
-        if is_terminal_servers and has_native_filter and has_wrapper_call:
+        has_wrapper_call = (
+            "->serversFilter(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Z)Z" in raw
+        )
+        has_filtered_at_native = (
+            ".method public final native filteredAt(I)Lnet/metaquotes/metatrader4/types/ServerRecord;"
+            in raw
+        )
+        looks_like_terminal_servers_class = (
+            "Lnet/metaquotes/metatrader4/terminal/TerminalServers;" in raw
+            or f.name == "TerminalServers.smali"
+        )
+
+        if has_native_filter and has_wrapper_call and looks_like_terminal_servers_class:
             return f
-    return None
+
+        # Keep a fallback candidate when class/source names are heavily obfuscated.
+        if has_native_filter and has_wrapper_call and has_filtered_at_native and best_match is None:
+            best_match = f
+
+    return best_match
 
 
 def backup_file(path: Path) -> None:
@@ -221,7 +237,17 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
         )
 
     method_body = raw[method_start:method_end]
-    method_body = method_body.replace(".locals 4", ".locals 6")
+
+    locals_match = re.search(r"(?m)^\s*\.locals\s+(\d+)\s*$", method_body)
+    if locals_match:
+        current_locals = int(locals_match.group(1))
+        if current_locals < 6:
+            method_body = re.sub(
+                r"(?m)^\s*\.locals\s+\d+\s*$",
+                "    .locals 6",
+                method_body,
+                count=1,
+            )
 
     entry_anchor = '    const-string v0, ""'
     if entry_anchor not in method_body:
@@ -256,10 +282,9 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
 
     method_body = method_body.replace(entry_anchor, entry_insert, 1)
 
-    return_anchor = "    move-result p1\n\n    return p1\n"
-    return_insert_template = """    move-result p1
+    return_anchor = "    return p1"
+    return_insert_template = """    # [AUTO_PATCH_FALLBACK_RESULT] log filter result + dump records
 
-    # [AUTO_PATCH_FALLBACK_RESULT] log filter result + dump records
     new-instance v0, Ljava/lang/StringBuilder;
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
@@ -330,8 +355,6 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
     goto :loop_dump_{{SUFFIX}}
 
     :after_dump_{{SUFFIX}}
-
-    return p1
 """
 
     first_return_pos = method_body.find(return_anchor)
@@ -339,23 +362,15 @@ def apply_terminal_servers_fallback_patch(file_path: Path) -> bool:
         raise RuntimeError(f"First serversFilter return anchor not found in wrapper: {file_path}")
 
     first_insert = return_insert_template.replace("{{SUFFIX}}", "null_query")
-    method_body = (
-        method_body[:first_return_pos]
-        + first_insert
-        + method_body[first_return_pos + len(return_anchor) :]
-    )
+    method_body = method_body[:first_return_pos] + first_insert + method_body[first_return_pos:]
 
-    second_search_start = first_return_pos + len(first_insert)
+    second_search_start = first_return_pos + len(first_insert) + len(return_anchor)
     second_return_pos = method_body.find(return_anchor, second_search_start)
     if second_return_pos < 0:
         raise RuntimeError(f"Second serversFilter return anchor not found in wrapper: {file_path}")
 
     second_insert = return_insert_template.replace("{{SUFFIX}}", "norm_query")
-    method_body = (
-        method_body[:second_return_pos]
-        + second_insert
-        + method_body[second_return_pos + len(return_anchor) :]
-    )
+    method_body = method_body[:second_return_pos] + second_insert + method_body[second_return_pos:]
 
     if "MT4-BROKER-FALLBACK" not in method_body:
         raise RuntimeError(
