@@ -14,7 +14,7 @@ on:
         default: false
         type: boolean
       sign_apk:
-        description: "Sign output APK using repository secrets"
+        description: "Sign output APK (uses repo secrets if present, else auto-generates dummy key)"
         required: true
         default: false
         type: boolean
@@ -72,23 +72,37 @@ jobs:
             echo "Decoded directory not found: $decoded_dir"
             exit 1
           fi
+
+          decoded_name="$(basename "$decoded_dir")"
+          base_name="${decoded_name%_decoded}"
+          # Normalize for safe file/artifact names.
+          safe_base_name="$(echo "$base_name" | tr ' /:' '---' | tr -cd '[:alnum:]._-')"
+          if [[ -z "$safe_base_name" ]]; then
+            safe_base_name="patched_apk"
+          fi
+
           echo "decoded_dir=$decoded_dir" >> "$GITHUB_OUTPUT"
+          echo "safe_base_name=$safe_base_name" >> "$GITHUB_OUTPUT"
+          echo "unsigned_apk=build/${safe_base_name}-patched-unsigned.apk" >> "$GITHUB_OUTPUT"
+          echo "signed_apk=build/${safe_base_name}-patched-signed.apk" >> "$GITHUB_OUTPUT"
+          echo "patch_log=build/${safe_base_name}-patch.log" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=patched-apk-output-${safe_base_name}" >> "$GITHUB_OUTPUT"
 
       - name: Apply smali patch
         shell: bash
         run: |
           set -euo pipefail
           if [[ "${{ inputs.preferFallback }}" == "true" ]]; then
-            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" --prefer-fallback 2>&1 | tee build/patch.log
+            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" --prefer-fallback 2>&1 | tee "${{ steps.prepare.outputs.patch_log }}"
           else
-            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee build/patch.log
+            python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee "${{ steps.prepare.outputs.patch_log }}"
           fi
 
       - name: Rebuild patched APK
         shell: bash
         run: |
           set -euo pipefail
-          apktool b "${{ steps.prepare.outputs.decoded_dir }}" -o build/patched-unsigned.apk
+          apktool b "${{ steps.prepare.outputs.decoded_dir }}" -o "${{ steps.prepare.outputs.unsigned_apk }}"
 
       - name: Sign APK
         if: ${{ inputs.sign_apk }}
@@ -100,27 +114,44 @@ jobs:
           APK_KEY_PASSWORD: ${{ secrets.APK_KEY_PASSWORD }}
         run: |
           set -euo pipefail
-          if [[ -z "${APK_KEYSTORE_BASE64}" || -z "${APK_KEYSTORE_PASSWORD}" || -z "${APK_KEY_ALIAS}" || -z "${APK_KEY_PASSWORD}" ]]; then
-            echo "Signing requested but one or more required secrets are missing."
-            exit 1
+          keystore_path="build/signing.keystore"
+          key_alias="${APK_KEY_ALIAS:-androiddebugkey}"
+          key_password="${APK_KEY_PASSWORD:-android}"
+          ks_password="${APK_KEYSTORE_PASSWORD:-android}"
+
+          if [[ -n "${APK_KEYSTORE_BASE64}" && -n "${APK_KEYSTORE_PASSWORD}" && -n "${APK_KEY_ALIAS}" && -n "${APK_KEY_PASSWORD}" ]]; then
+            echo "Using repository-provided keystore secrets for signing."
+            echo "$APK_KEYSTORE_BASE64" | base64 --decode > "$keystore_path"
+            key_alias="$APK_KEY_ALIAS"
+            key_password="$APK_KEY_PASSWORD"
+            ks_password="$APK_KEYSTORE_PASSWORD"
+          else
+            echo "Keystore secrets not fully set. Generating dummy debug keystore for local/test signing."
+            keytool -genkeypair -v \
+              -keystore "$keystore_path" \
+              -storepass "$ks_password" \
+              -alias "$key_alias" \
+              -keypass "$key_password" \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -dname "CN=Android Debug,O=Debug,C=US"
           fi
 
-          echo "$APK_KEYSTORE_BASE64" | base64 --decode > build/signing.keystore
-
           "$APKSIGNER" sign \
-            --ks build/signing.keystore \
-            --ks-pass "pass:${APK_KEYSTORE_PASSWORD}" \
-            --ks-key-alias "${APK_KEY_ALIAS}" \
-            --key-pass "pass:${APK_KEY_PASSWORD}" \
-            --out build/patched-signed.apk \
-            build/patched-unsigned.apk
+            --ks "$keystore_path" \
+            --ks-pass "pass:${ks_password}" \
+            --ks-key-alias "${key_alias}" \
+            --key-pass "pass:${key_password}" \
+            --out "${{ steps.prepare.outputs.signed_apk }}" \
+            "${{ steps.prepare.outputs.unsigned_apk }}"
 
       - name: Upload patched artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: patched-apk-output
+          name: ${{ steps.prepare.outputs.artifact_name }}
           if-no-files-found: error
           path: |
-            build/patched-unsigned.apk
-            build/patched-signed.apk
-            build/patch.log
+            ${{ steps.prepare.outputs.unsigned_apk }}
+            ${{ steps.prepare.outputs.signed_apk }}
+            ${{ steps.prepare.outputs.patch_log }}
