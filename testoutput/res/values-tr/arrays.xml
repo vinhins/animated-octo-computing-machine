@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Çubuk grafiği</item>
+        <item>Mum grafiği</item>
+        <item>Çizgi grafiği</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>Hacim gösterme</item>
+        <item>Tik hacmini göster</item>
+        <item>Gerçek hacmi göster</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Asla</item>
+        <item>Yalnızca sessizken</item>
+        <item>Her zaman</item>
+    </string-array>
+</resources>

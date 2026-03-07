@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:orientation="vertical" android:id="@id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/container" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.fragment.app.FragmentContainerView android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/content" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" app:defaultNavHost="true" />
+            <LinearLayout android:id="@id/bottom_bar" android:background="@color/bottom_bar_background" android:layout_width="match_parent" android:layout_height="49.0dp">
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/bottom_bar_quotes" android:paddingLeft="16.0dp" android:paddingTop="8.0dp" android:paddingRight="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_quotes" android:layout_weight="1.0" />
+                <ImageView android:id="@id/bottom_bar_chart" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_chart" android:layout_weight="1.0" />
+                <ImageView android:id="@id/bottom_bar_trade" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_trade" android:layout_weight="1.0" />
+                <ImageView android:id="@id/bottom_bar_history" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_history" android:layout_weight="1.0" />
+                <ImageView android:id="@id/bottom_bar_news" android:paddingLeft="8.0dp" android:paddingTop="8.0dp" android:paddingRight="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_news" android:layout_weight="1.0" />
+                <FrameLayout android:orientation="vertical" android:paddingLeft="8.0dp" android:paddingTop="8.0dp" android:paddingRight="16.0dp" android:paddingBottom="8.0dp" android:layout_width="55.0dp" android:layout_height="55.0dp" android:layout_weight="1.0">
+                    <ImageView android:id="@id/bottom_bar_chat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_messages" />
+                    <net.metaquotes.common.ui.RobotoTextView android:textSize="11.5sp" android:textColor="#fff" android:gravity="center" android:layout_gravity="right|bottom" android:id="@id/chat_numeric_indicator" android:background="@drawable/messages_unread" android:paddingLeft="3.0dp" android:paddingRight="3.0dp" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="17.0dp" android:layout_marginRight="8.0dp" android:layout_marginBottom="8.0dp" android:minWidth="16.5dp" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.fragment.app.FragmentContainerView android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/content_dialog" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="start" android:orientation="vertical" android:id="@id/drawer" android:layout_width="wrap_content" android:layout_height="match_parent" android:maxWidth="280.0dp">
+        <include layout="@layout/drawer_header" />
+        <net.metaquotes.common.ui.MQListView android:id="@id/menu_list" android:background="@color/drawer_background_normal" android:paddingBottom="8.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="@null" android:choiceMode="singleChoice" />
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

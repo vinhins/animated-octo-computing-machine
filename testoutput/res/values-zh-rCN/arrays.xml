@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>柱形图</item>
+        <item>蜡烛图</item>
+        <item>线型图</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>不显示交易量</item>
+        <item>显示最小交易量</item>
+        <item>显示真实交易量</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>从不</item>
+        <item>仅使用Wi-Fi</item>
+        <item>总是</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>从不</item>
+        <item>只在静默时</item>
+        <item>总是</item>
+    </string-array>
+</resources>

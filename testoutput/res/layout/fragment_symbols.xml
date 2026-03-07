@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.metaquotes.common.ui.Toolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="0.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <ListView android:id="@id/symbols_list" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@drawable/list_selector" />
+        <ProgressBar android:id="@id/search_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <net.metaquotes.common.ui.RobotoTextView android:textSize="14.0sp" android:textColor="@color/trade_hint" android:gravity="center" android:id="@id/empty_content_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dp" android:layout_marginRight="15.0dp" android:text="@string/all_symbols_added" android:drawableTop="@drawable/ic_background_add_symbol" android:drawablePadding="7.0dp" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

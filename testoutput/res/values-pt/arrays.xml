@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Gráfico de barras</item>
+        <item>Candles</item>
+        <item>Linhas</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>Não mostrar volumes</item>
+        <item>Mostrar volumes de ticks</item>
+        <item>Mostra volume real</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Nunca</item>
+        <item>Use Wi-Fi apenas</item>
+        <item>Sempre</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Nunca</item>
+        <item>Só quando em silêncio</item>
+        <item>Sempre</item>
+    </string-array>
+</resources>
