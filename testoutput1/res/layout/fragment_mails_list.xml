@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.metaquotes.common.ui.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
-    <ViewFlipper android:id="@id/view_flipper" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
-        <net.metaquotes.metatrader4.ui.common.EmptyDataStub android:id="@id/empty_data_stub" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <ListView android:orientation="vertical" android:id="@id/content_list" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/list_selector" android:groupIndicator="@null" android:divider="@drawable/mail_list_separator" />
-    </ViewFlipper>
-</androidx.constraintlayout.widget.ConstraintLayout>

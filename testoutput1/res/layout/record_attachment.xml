@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@drawable/attachment_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="6.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/thumbnail" android:layout_width="32.0dip" android:layout_height="32.0dip" />
-    <TextView android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/file_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:maxWidth="72.0dip" android:lines="1" />
-    <ImageButton android:layout_gravity="center" android:id="@id/delete_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_delete_cross" android:backgroundTint="@android:color/transparent" android:backgroundTintMode="multiply" />
-</LinearLayout>
