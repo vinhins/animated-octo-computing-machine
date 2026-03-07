@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/enrich_container" android:background="@drawable/bg_chat_left_line_blue" android:paddingLeft="@dimen/chat_enrich_container_padding_left" android:paddingTop="@dimen/chat_enrich_container_padding" android:paddingRight="@dimen/chat_enrich_container_padding" android:paddingBottom="@dimen/chat_enrich_container_padding" android:visibility="gone" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/chat_enrich_container_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/chat_enrich_image_corner_radius" app:cardElevation="0.0dip">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/enrich_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/chat_image_stub" android:scaleType="centerInside" android:adjustViewBounds="true" android:contentDescription="@string/content_desc_chat_enrich_image" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/panel_try_again" android:padding="16.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_load_error" />
+            <TextView android:textSize="@dimen/text_size_regular" android:textColor="@color/text_color_default" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="16.0dip" android:text="@string/could_not_load_try_again" android:layout_marginVertical="16.0dip" />
+            <androidx.appcompat.widget.AppCompatButton android:layout_gravity="center" android:id="@id/btn_try_again" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/ChatTryAgainButton" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView android:id="@id/enrich_title" android:visibility="gone" android:layout_marginTop="@dimen/chat_enrich_title_margin_top" style="@style/TitleBold" />
+    <TextView android:id="@id/enrich_text" android:visibility="gone" android:layout_marginTop="@dimen/chat_enrich_text_margin_top" android:layout_marginEnd="@dimen/chat_enrich_text_margin_right" style="@style/Text" />
+</LinearLayout>

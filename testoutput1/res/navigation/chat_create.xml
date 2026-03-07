@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/chat_create" app:startDestination="@id/nav_chat_create"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/chat_create" android:name="net.metaquotes.channels.ChatCreateFragment" android:id="@id/nav_chat_create">
+        <action android:id="@id/action_chatCreateFragment_to_chatCropDialog" app:destination="@id/nav_crop_image" />
+        <action android:id="@id/action_chatCreateFragment_to_chatGroupConstructor" app:destination="@id/nav_chat_group_constructor" />
+    </fragment>
+    <fragment android:label="Crop image" android:name="net.metaquotes.channels.ChatCropDialog" android:id="@id/nav_crop_image" />
+    <fragment android:label="Add users" android:name="net.metaquotes.channels.ChatGroupConstructor" android:id="@id/nav_chat_group_constructor" />
+    <fragment android:label="@string/language" android:name="net.metaquotes.channels.LanguageListFragment" android:id="@id/nav_language_list" />
+</navigation>

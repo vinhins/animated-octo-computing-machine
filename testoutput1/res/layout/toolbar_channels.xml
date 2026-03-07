@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/action_mode_left" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0" android:paddingStart="8.0dip">
+            <ImageView android:id="@id/button_done" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_check_actionmode" android:tint="@color/toolbar_icon_selector" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/nav_bar_text" android:gravity="center_vertical" android:id="@id/button_done_text" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/action_buttons" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/action_bar_phone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/actionbar_left" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <LinearLayout android:id="@id/actionbar_back" android:background="@drawable/customtitle_icon" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingStart="8.0dip">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/actionbar_back_icon" android:layout_width="32.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_toolbar_back" android:scaleType="centerInside" android:tint="?channelsColorIconNormal" />
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/title_holder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+                        <net.metaquotes.common.ui.RobotoTextView android:textSize="18.0sp" android:textColor="@color/nav_bar_text" android:ellipsize="end" android:id="@id/left_title" android:singleLine="true" android:drawablePadding="4.0dip" style="@style/Title" />
+                        <net.metaquotes.common.ui.RobotoTextView android:textColor="?channelsColorSecondary" android:ellipsize="end" android:id="@id/left_subtitle" android:visibility="gone" android:singleLine="true" style="@style/Text" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:layout_gravity="end|center" android:id="@id/actionbar_back_right_image" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:scaleType="centerInside" android:contentDescription="@string/channels_open_chat_properties_screen_button" android:layout_marginHorizontal="16.0dip" />
+            <LinearLayout android:id="@id/left_header" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/left_menu" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/action_bar_hrz_container" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="4.0dip" />
+    </FrameLayout>
+</LinearLayout>

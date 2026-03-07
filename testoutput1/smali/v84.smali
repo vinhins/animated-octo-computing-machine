@@ -1,0 +1,219 @@
+.class final Lv84;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+
+# static fields
+.field private static final c:Lv84;
+
+
+# instance fields
+.field private final a:Lz84;
+
+.field private final b:Ljava/util/concurrent/ConcurrentMap;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lv84;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lv84;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lv84;->c:Lv84;
+
+    .line 7
+    .line 8
+    return-void
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 5
+    .line 6
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lv84;->b:Ljava/util/concurrent/ConcurrentMap;
+
+    .line 10
+    .line 11
+    new-instance v0, Lf84;
+
+    .line 12
+    .line 13
+    invoke-direct {v0}, Lf84;-><init>()V
+
+    .line 14
+    .line 15
+    .line 16
+    iput-object v0, p0, Lv84;->a:Lz84;
+
+    .line 17
+    .line 18
+    return-void
+    .line 19
+.end method
+
+.method public static a()Lv84;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lv84;->c:Lv84;
+
+    .line 2
+    .line 3
+    return-object v0
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+.end method
+
+
+# virtual methods
+.method public final b(Ljava/lang/Class;)Ly84;
+    .locals 2
+
+    .line 1
+    const-string v0, "messageType"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lj74;->f(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, p0, Lv84;->b:Ljava/util/concurrent/ConcurrentMap;
+
+    .line 7
+    .line 8
+    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v1
+
+    .line 12
+    check-cast v1, Ly84;
+
+    .line 13
+    .line 14
+    if-nez v1, :cond_1
+
+    .line 15
+    .line 16
+    iget-object v1, p0, Lv84;->a:Lz84;
+
+    .line 17
+    .line 18
+    invoke-interface {v1, p1}, Lz84;->a(Ljava/lang/Class;)Ly84;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v1
+
+    .line 22
+    invoke-static {p1, v0}, Lj74;->f(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    const-string v0, "schema"
+
+    .line 26
+    .line 27
+    invoke-static {v1, v0}, Lj74;->f(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    .line 30
+    iget-object v0, p0, Lv84;->b:Ljava/util/concurrent/ConcurrentMap;
+
+    .line 31
+    .line 32
+    invoke-interface {v0, p1, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p1
+
+    .line 36
+    check-cast p1, Ly84;
+
+    .line 37
+    .line 38
+    if-nez p1, :cond_0
+
+    .line 39
+    .line 40
+    return-object v1
+
+    .line 41
+    :cond_0
+    return-object p1
+
+    .line 42
+    :cond_1
+    return-object v1
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    .line 48
+    .line 49
+    .line 50
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+.end method

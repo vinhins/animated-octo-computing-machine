@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/fragment_chat_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.metaquotes.channels.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/empty_list_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip">
+                <ImageButton android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_background_messages" android:tint="@color/gray_10" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/trade_hint" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/empty_messages_list" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/content_list" android:paddingBottom="8.0dip" android:focusable="false" android:clipToPadding="false" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:stackFromBottom="true" android:transcriptMode="disabled" android:divider="@null" android:dividerHeight="0.0dip" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    <net.metaquotes.channels.ChatTimeSpacer android:id="@id/top_message_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:alpha="0.0" />
+                    <include layout="@layout/fast_scroll" />
+                </FrameLayout>
+                <View android:background="?channelsColorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <Button android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/text_color_default" android:id="@id/button_subscribe" android:background="@drawable/chat_dialog_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/chat_subscribe" />
+                <include android:id="@id/record_chat_quote" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/chat_quote_margin_start" layout="@layout/record_chat_quote" />
+                <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/attachment_list" android:tag="binding_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="6.0dip" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/bottom_bar" android:background="?channelsColorBackgroundSecondary" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageButton android:gravity="center" android:layout_gravity="center" android:id="@id/attach" android:background="@null" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_chat_attachment" android:scaleType="center" android:tint="@color/blue_button_selector" android:contentDescription="@string/content_desc_button_attach" />
+                    <EditText android:textSize="16.0sp" android:layout_gravity="center_vertical" android:id="@id/message_input" android:tag="binding_4" android:background="@drawable/input_chat_message" android:padding="8.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="48.0dip" android:hint="@string/write_message" android:layout_weight="1.0" android:inputType="textCapSentences|textMultiLine" android:imeOptions="actionSend" />
+                    <ImageButton android:gravity="center" android:layout_gravity="center" android:id="@id/send" android:tag="binding_5" android:background="@null" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_chat_send" android:scaleType="center" android:tint="@color/blue_button_selector" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+        <View android:id="@id/bottom_spacer" android:layout_width="wrap_content" android:layout_height="0.0dip" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
