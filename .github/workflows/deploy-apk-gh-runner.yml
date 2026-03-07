@@ -12,14 +12,10 @@ on:
         required: true
         default: "patched-apk-output-v400.1456"
         type: string
-      gcp_project_id:
-        description: "Google Cloud project id with Firebase enabled"
-        required: true
-        type: string
       device_model:
         description: "Firebase Test Lab device model"
         required: false
-        default: "redfin"
+        default: "MediumPhone.arm"
         type: string
       device_version:
         description: "Android API level for selected device"
@@ -109,7 +105,7 @@ jobs:
 
           args=(
             firebase test android run
-            --project "${{ inputs.gcp_project_id }}"
+            --project "${{ secrets.GCP_PROJECT_ID }}"
             --type robo
             --app "${{ steps.apk.outputs.apk_path }}"
             --device "model=${{ inputs.device_model }},version=${{ inputs.device_version }},locale=${{ inputs.locale }},orientation=${{ inputs.orientation }}"
