@@ -11,6 +11,10 @@ on:
         description: "Output decode directory (leave empty to auto-generate)"
         required: false
         default: ""
+      push_to_repo:
+        description: "Commit and push decoded output to repository"
+        required: true
+        default: "true"
 
 permissions:
   contents: write
@@ -70,6 +74,7 @@ jobs:
           echo "output_dir=$output_dir" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push decoded output
+        if: ${{ github.event.inputs.push_to_repo == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -88,3 +93,9 @@ jobs:
 
           git commit -m "Decode $(basename "$apk_path") into $output_dir"
           git push
+
+      - name: Skip push notice
+        if: ${{ github.event.inputs.push_to_repo != 'true' }}
+        shell: bash
+        run: |
+          echo "Decoded output created, but push_to_repo=false so no commit/push was performed."
