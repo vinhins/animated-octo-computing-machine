@@ -8,6 +8,11 @@ on:
         required: true
         default: "decoded_apks/v400.1456_decoded"
         type: string
+      apktool_version:
+        description: "Apktool version to install"
+        required: true
+        default: "2.6.1"
+        type: string
       preferFallback:
         description: "Patch TerminalServers first"
         required: true
@@ -43,7 +48,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          APKTOOL_VERSION="3.0.1"
+          APKTOOL_VERSION="${{ inputs.apktool_version }}"
           APKTOOL_TAG="v${APKTOOL_VERSION}"
           curl -fsSL "https://github.com/iBotPeaches/Apktool/releases/download/${APKTOOL_TAG}/apktool_${APKTOOL_VERSION}.jar" -o /tmp/apktool.jar
           curl -fsSL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -o /tmp/apktool
