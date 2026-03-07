@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/menu_footer_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/settings" android:layout_width="55.0dip" android:layout_height="55.0dip" android:src="@drawable/ic_menu_settings_gray" style="@android:style/Widget.Holo.Button.Borderless" />
+    <ImageButton android:id="@id/about" android:layout_width="55.0dip" android:layout_height="55.0dip" android:src="@drawable/ic_menu_about_gray" style="@android:style/Widget.Holo.Button.Borderless" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>نمودار میله ای</item>
+        <item>شمعدان</item>
+        <item>نمودار خطی</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>عدم نمایش حجم</item>
+        <item>نمایش حجم تیک</item>
+        <item>نمایش حجم حقیقی</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>هرگز</item>
+        <item>فقط وقتی ساکت هست</item>
+        <item>همیشه</item>
+    </string-array>
+</resources>

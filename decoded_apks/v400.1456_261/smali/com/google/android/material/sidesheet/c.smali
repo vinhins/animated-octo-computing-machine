@@ -1,0 +1,82 @@
+.class abstract Lcom/google/android/material/sidesheet/c;
+.super Ljava/lang/Object;
+.source "r8-map-id-9e89f40f732e8b5985ab198f0f521a01a490e7e5d26a8f514407fc34e16b186f"
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+.end method
+
+
+# virtual methods
+.method abstract a(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.end method
+
+.method abstract b(I)F
+.end method
+
+.method abstract c(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.end method
+
+.method abstract d()I
+.end method
+
+.method abstract e()I
+.end method
+
+.method abstract f()I
+.end method
+
+.method abstract g()I
+.end method
+
+.method abstract h(Landroid/view/View;)I
+.end method
+
+.method abstract i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)I
+.end method
+
+.method abstract j()I
+.end method
+
+.method abstract k(F)Z
+.end method
+
+.method abstract l(Landroid/view/View;)Z
+.end method
+
+.method abstract m(FF)Z
+.end method
+
+.method abstract n(Landroid/view/View;F)Z
+.end method
+
+.method abstract o(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.end method
+
+.method abstract p(Landroid/view/ViewGroup$MarginLayoutParams;II)V
+.end method

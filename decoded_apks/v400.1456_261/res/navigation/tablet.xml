@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/tablet"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:name="net.metaquotes.metatrader4.ui.news.TabletNewsFragment" android:id="@id/nav_tablet_news" />
+    <fragment android:name="net.metaquotes.metatrader4.ui.mail.TabletMailboxFragment" android:id="@id/nav_tablet_mailbox" />
+    <fragment android:name="net.metaquotes.metatrader4.ui.accounts.TabletAccountsFragment" android:id="@id/nav_tablet_accounts" />
+    <fragment android:name="net.metaquotes.metatrader4.ui.TabletChannelsFragment" android:id="@id/nav_tablet_channels" />
+    <fragment android:name="net.metaquotes.metatrader4.ui.charts.TabletChartsFragment" android:id="@id/nav_tablet_quotes" />
+</navigation>

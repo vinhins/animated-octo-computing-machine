@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.metaquotes.channels.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <com.google.android.material.tabs.TabLayout android:id="@id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" app:tabGravity="fill" app:tabMaxWidth="0.0dip" app:tabTextAppearance="@style/ChatCreateTab" style="@style/ChatCreateTabsLayout">
+            <com.google.android.material.tabs.TabItem android:id="@id/private_chat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_private_chat" />
+            <com.google.android.material.tabs.TabItem android:id="@id/group_chat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_group_chat" />
+            <com.google.android.material.tabs.TabItem android:id="@id/channel_chat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_channel_chat" />
+        </com.google.android.material.tabs.TabLayout>
+        <View android:background="?channelsColorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="8.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/page_private_chat" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip">
+            <RelativeLayout android:background="@drawable/chat_create_edit_text_search_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:textSize="16.0sp" android:textColorHint="@drawable/edit_text_hint_selector" android:ellipsize="start" android:id="@id/edit_search" android:background="@null" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="40.0dip" android:hint="@string/find_friend" android:singleLine="true" android:paddingHorizontal="8.0dip" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/search_close" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_search_close" android:tint="@color/edit_search_close_color" android:layout_centerVertical="true" android:layout_alignParentEnd="true" android:tintMode="src_in" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/logo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="8.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_background_accounts" android:tint="@color/blue_1" />
+                <TextView android:textSize="14.0sp" android:textColor="?channelsColorSecondary" android:gravity="center" android:layout_gravity="center" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mql5_search" />
+            </LinearLayout>
+            <net.metaquotes.channels.ChatSearchView android:orientation="vertical" android:id="@id/content_list" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="?channelsColorBorder" android:dividerHeight="1.0dip" />
+        </LinearLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="0.0px" android:fillViewport="true" android:layout_weight="1.0">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/page_group_chat" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="8.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/avatar" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:src="@drawable/bg_chat_create_empty_avatar" android:layout_marginVertical="12.0dip" />
+                    <EditText android:id="@id/group_name" android:background="@null" android:hint="@string/name" android:layout_marginStart="16.0dip" style="@style/RegistrationTextInput" />
+                </LinearLayout>
+                <View android:background="?channelsColorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <EditText android:id="@id/description" android:background="@null" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_height="wrap_content" android:hint="@string/chat_description" android:maxLength="1024" android:paddingVertical="12.0dip" app:inputType="textPersonName" style="@style/RegistrationTextInput" />
+                <View android:background="?channelsColorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <EditText android:id="@id/links" android:background="@null" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:hint="@string/chat_links" android:maxLength="1024" android:paddingVertical="12.0dip" app:inputType="textPersonName" style="@style/RegistrationTextInput" />
+                <View android:background="?channelsColorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <LinearLayout android:orientation="vertical" android:id="@id/invite_link_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/chat_create_invite_link_margin_top" android:layout_marginBottom="@dimen/chat_create_invite_link_margin_top" android:layout_marginVertical="@dimen/chat_create_invite_link_margin_top">
+                    <TextView android:textSize="@dimen/text_size_regular" android:textColor="@color/gray_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/chat_channel_link" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/chat_underline_gray" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="11.0sp" android:id="@id/invite_link_prefix" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="https://www.mql5.com/en/channels/" />
+                        <EditText android:id="@id/invite_link_edit" android:background="@null" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:includeFontPadding="false" android:maxLength="1024" android:layout_marginStart="@dimen/chat_create_invite_link_margin_start" android:paddingVertical="12.0dip" app:inputType="textPersonName" style="@style/RegistrationTextInput" />
+                    </LinearLayout>
+                    <TextView android:textSize="13.0sp" android:textColor="@color/red_1" android:id="@id/invite_link_error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/chat_link_error" />
+                </LinearLayout>
+                <net.metaquotes.channels.MaterialCheckedView android:gravity="center_vertical" android:id="@id/limited" android:checked="true" android:text="@string/chat_limited" style="@style/RegistrationCheckView" />
+                <net.metaquotes.channels.MaterialCheckedView android:id="@id/public_mark" android:checked="true" android:text="@string/chat_public" style="@style/RegistrationCheckView" />
+                <net.metaquotes.channels.ValueField android:id="@id/language" app:hint="@string/language" app:text="English" style="@style/RegistrationTextInput" />
+                <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="32.0dip" android:text="@string/mandatory_fields_hint" />
+            </LinearLayout>
+        </ScrollView>
+        <Button android:enabled="false" android:id="@id/create_group" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:layout_marginBottom="16.0dip" android:text="@string/next" android:layout_marginHorizontal="12.0dip" style="@style/ChatButton" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

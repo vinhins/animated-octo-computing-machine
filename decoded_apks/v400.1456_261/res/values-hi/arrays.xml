@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>बार चार्ट</item>
+        <item>कैंडल्सस्टिक्स</item>
+        <item>रेखा चार्ट</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>आयतन ना दिखाएँ</item>
+        <item>टिक्क आयतन दिखाएँ</item>
+        <item>वास्तविक आयतन दिखाएँ</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>कभीनहीं</item>
+        <item>केवल जब शांत हो</item>
+        <item>हमेशा</item>
+    </string-array>
+</resources>

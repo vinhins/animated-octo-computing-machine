@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_line_types">
+        <item>Bieu do thanh</item>
+        <item>Bieu do nen</item>
+        <item>Bieu do duong ke</item>
+    </string-array>
+    <string-array name="chart_volumes">
+        <item>Khong hien thi khoi luong</item>
+        <item>Hien thi khoi luong tick</item>
+        <item>Hien thi khoi luong that</item>
+    </string-array>
+    <string-array name="download_modes">
+        <item>Never</item>
+        <item>Use Wi-Fi only</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="vibration_modes">
+        <item>Khong bao gio</item>
+        <item>Chi khi im lang</item>
+        <item>Luon luon</item>
+    </string-array>
+</resources>
