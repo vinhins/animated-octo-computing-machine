@@ -15,6 +15,10 @@ on:
         description: "Apktool version to install"
         required: true
         default: "2.6.1"
+      skip_resources:
+        description: "Skip decoding resources.arsc and res/"
+        required: true
+        default: "false"
       push_to_repo:
         description: "Commit and push decoded output to repository"
         required: true
@@ -52,6 +56,15 @@ jobs:
           sudo mv /tmp/apktool.jar /usr/local/bin/apktool.jar
           apktool --version
 
+      - name: Install Framework
+        shell: bash
+        run: |
+          set -euo pipefail
+          framework_source="tools/apktool/framework/1.apk"
+          framework_dir="build/apktool-framework"
+          mkdir -p "$framework_dir"
+          apktool if "$framework_source" -p "$framework_dir"
+
       - name: Decode APK
         id: decode
         shell: bash
@@ -63,11 +76,7 @@ jobs:
             exit 1
           fi
 
-          framework_dir="tools/apktool/framework"
-          if [[ ! -d "$framework_dir" ]]; then
-            echo "Framework directory not found: $framework_dir"
-            exit 1
-          fi
+          framework_dir="build/apktool-framework"
 
           requested_output="${{ github.event.inputs.output_dir }}"
           if [[ -n "$requested_output" ]]; then
@@ -78,7 +87,12 @@ jobs:
           fi
 
           mkdir -p decoded_apks
-          apktool d -f -p "$framework_dir" "$apk_path" -o "$output_dir"
+          decode_args=(d -f -p "$framework_dir")
+          if [[ "${{ github.event.inputs.skip_resources }}" == "true" ]]; then
+            decode_args+=(-r)
+          fi
+          decode_args+=("$apk_path" -o "$output_dir")
+          apktool "${decode_args[@]}"
 
           echo "apk_path=$apk_path" >> "$GITHUB_OUTPUT"
           echo "output_dir=$output_dir" >> "$GITHUB_OUTPUT"
