@@ -43,6 +43,11 @@ on:
         required: false
         default: ""
         type: string
+      terminal_delay_seconds:
+        description: "Delay between serversGet(combo) calls in seconds"
+        required: false
+        default: "3"
+        type: string
 
 permissions:
   contents: read
@@ -156,6 +161,10 @@ jobs:
 
           if [[ -n "${{ inputs.terminal_max_combos }}" ]]; then
             cmd+=(--max-combos "${{ inputs.terminal_max_combos }}")
+          fi
+
+          if [[ -n "${{ inputs.terminal_delay_seconds }}" ]]; then
+            cmd+=(--delay-seconds "${{ inputs.terminal_delay_seconds }}")
           fi
 
           "${cmd[@]}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"

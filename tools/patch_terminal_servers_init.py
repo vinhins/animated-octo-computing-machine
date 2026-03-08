@@ -93,6 +93,7 @@ def apply_patch(
     max_combos: int | None,
     combo_length: int,
     charset: str,
+    delay_seconds: int,
 ) -> bool:
     raw = normalize_newlines(file_path.read_text(encoding="utf-8", errors="ignore"))
 
@@ -177,6 +178,14 @@ def apply_patch(
     add-int/lit8 v11, v11, 0x1
 """
 
+    delay_block = ""
+    if delay_seconds > 0:
+        delay_ms = delay_seconds * 1000
+        delay_block = f"""
+    const-wide/32 v0, {delay_ms}
+    invoke-static {{v0, v1}}, Landroid/os/SystemClock;->sleep(J)V
+"""
+
     insert_template = """
 
     # [AUTO_PATCH_Z_A2Z_START] use serversGet overloads directly
@@ -249,6 +258,7 @@ __PREFIX_BLOCK__
     move-result-object v1
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 __MAX_BLOCK_INC__
+__DELAY_BLOCK__
 
     :mt4_z_get_combo_next
     add-int/lit8 v2, v2, 0x1
@@ -322,6 +332,7 @@ __MAX_BLOCK_INC__
         .replace("__MAX_BLOCK_CHECK__", max_block_check)
         .replace("__PREFIX_BLOCK__", prefix_block)
         .replace("__MAX_BLOCK_INC__", max_block_inc)
+        .replace("__DELAY_BLOCK__", delay_block)
         .replace("__COMBO_LENGTH__", str(combo_length))
         .replace("__CHARSET__", charset)
     )
@@ -330,7 +341,7 @@ __MAX_BLOCK_INC__
     updated = raw[:method_start] + method_body + raw[method_end:]
 
     file_path.write_text(updated, encoding="utf-8", newline="")
-    info(f"Patched TerminalServers z(Context) with 3-char combo iterator: {file_path}")
+    info(f"Patched TerminalServers z(Context) with configurable combo iterator: {file_path}")
     return True
 
 
@@ -340,6 +351,7 @@ def run(
     max_combos: int | None,
     combo_length: int,
     charset: str,
+    delay_seconds: int,
 ) -> int:
     root = Path(root_path).resolve()
     if not root.exists():
@@ -349,18 +361,28 @@ def run(
     norm_charset = _normalize_charset(charset)
     if combo_length <= 0:
         raise RuntimeError("--combo-length must be > 0")
+    if delay_seconds < 0:
+        raise RuntimeError("--delay-seconds must be >= 0")
     norm_prefixes = _normalize_prefixes(prefixes, combo_length, norm_charset)
     if max_combos is not None and max_combos <= 0:
         raise RuntimeError("--max-combos must be > 0 when provided")
 
     info(f"Using combo length: {combo_length}")
     info(f"Using charset: {norm_charset}")
+    info(f"Using delay between calls (seconds): {delay_seconds}")
     if norm_prefixes:
         info(f"Using prefixes: {','.join(norm_prefixes)}")
     if max_combos is not None:
         info(f"Using max combo calls: {max_combos}")
 
-    changed = apply_patch(target, norm_prefixes, max_combos, combo_length, norm_charset)
+    changed = apply_patch(
+        target,
+        norm_prefixes,
+        max_combos,
+        combo_length,
+        norm_charset,
+        delay_seconds,
+    )
     if changed:
         info("Done. Rebuild APK and check logcat with: adb logcat -s MT4-BROKER-GET")
     else:
@@ -394,6 +416,12 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Maximum number of serversGet(combo) calls before stopping combo loop",
     )
+    parser.add_argument(
+        "--delay-seconds",
+        type=int,
+        default=3,
+        help="Delay in seconds between combo serversGet(String) calls (0 disables delay)",
+    )
     return parser.parse_args()
 
 
@@ -407,6 +435,7 @@ if __name__ == "__main__":
                 args.max_combos,
                 args.combo_length,
                 args.charset,
+                args.delay_seconds,
             )
         )
     except Exception as exc:  # pylint: disable=broad-except
