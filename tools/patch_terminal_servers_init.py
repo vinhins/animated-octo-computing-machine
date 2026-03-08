@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Patch TerminalServers z(Context) to run A(letter, list, false) for a..z.
+"""Patch TerminalServers z(Context) to compare A(letter, list, bool) for a..z.
 
 This patch injects code into method z(Landroid/content/Context;)Z after
 servers.dat initialization success and before returning true:
 - iterate from 'a' to 'z'
-- call A(letter, resultList, false)
-- if found==true, dump each item in resultList to logcat
+- call A(letter, resultListFalse, false) and A(letter, resultListTrue, true)
+- log side-by-side result/count metrics
+- dump each item from both result lists to logcat
 """
 
 from __future__ import annotations
@@ -42,7 +43,7 @@ def normalize_newlines(text: str) -> str:
 def apply_patch(file_path: Path) -> bool:
     raw = normalize_newlines(file_path.read_text(encoding="utf-8", errors="ignore"))
 
-    if "MT4-BROKER-A2Z-Z" in raw and "mt4_z_a2z_loop" in raw:
+    if "MT4-BROKER-A2Z-CMP" in raw and "mt4_z_a2z_loop" in raw:
         info(f"z(Context) a-z patch already present: {file_path}")
         return False
 
@@ -57,16 +58,16 @@ def apply_patch(file_path: Path) -> bool:
 
     method_body = raw[method_start:method_end]
 
-    # The method uses at least v0/v1; bump to v7 for iterator/list/log loop.
+    # The method uses at least v0/v1; bump to v10 for compare mode.
     locals_match = re.search(r"(?m)^\s*\.locals\s+(\d+)\s*$", method_body)
     if not locals_match:
         raise RuntimeError(".locals declaration not found in method z")
 
     current_locals = int(locals_match.group(1))
-    if current_locals < 8:
+    if current_locals < 11:
         method_body = re.sub(
             r"(?m)^\s*\.locals\s+\d+\s*$",
-            "    .locals 8",
+            "    .locals 11",
             method_body,
             count=1,
         )
@@ -79,7 +80,7 @@ def apply_patch(file_path: Path) -> bool:
 
     insert = """
 
-    # [AUTO_PATCH_Z_A2Z_START] iterate a..z using A(letter, list, false)
+    # [AUTO_PATCH_Z_A2Z_START] compare A(letter, list, false) vs A(letter, list, true)
     const/16 v2, 0x61
 
     :mt4_z_a2z_loop
@@ -89,6 +90,9 @@ def apply_patch(file_path: Path) -> bool:
     new-instance v3, Ljava/util/ArrayList;
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
+    new-instance v8, Ljava/util/ArrayList;
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+
     invoke-static {v2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
     move-result-object v4
 
@@ -96,15 +100,50 @@ def apply_patch(file_path: Path) -> bool:
     invoke-virtual {p0, v4, v3, v5}, Lnet/metaquotes/metatrader4/terminal/TerminalServers;->A(Ljava/lang/String;Ljava/util/List;Z)Z
     move-result v5
 
-    if-eqz v5, :mt4_z_next_letter
+    const/4 v9, 0x1
+    invoke-virtual {p0, v4, v8, v9}, Lnet/metaquotes/metatrader4/terminal/TerminalServers;->A(Ljava/lang/String;Ljava/util/List;Z)Z
+    move-result v9
 
     invoke-interface {v3}, Ljava/util/List;->size()I
     move-result v6
 
+    invoke-interface {v8}, Ljava/util/List;->size()I
+    move-result v10
+
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "letter="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ";fRes="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ";fCount="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ";tRes="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ";tCount="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "MT4-BROKER-A2Z-CMP"
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     const/4 v7, 0x0
 
-    :mt4_z_dump_loop
-    if-ge v7, v6, :mt4_z_next_letter
+    :mt4_z_dump_false_loop
+    if-ge v7, v6, :mt4_z_dump_true_prep
 
     invoke-interface {v3, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
     move-result-object v5
@@ -118,7 +157,7 @@ def apply_patch(file_path: Path) -> bool:
     move-result-object v0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ";idx="
+    const-string v0, ";mode=false;idx="
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -132,13 +171,53 @@ def apply_patch(file_path: Path) -> bool:
     move-result-object v0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "MT4-BROKER-A2Z-Z"
+    const-string v0, "MT4-BROKER-A2Z-CMP"
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v1
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     add-int/lit8 v7, v7, 0x1
-    goto :mt4_z_dump_loop
+    goto :mt4_z_dump_false_loop
+
+    :mt4_z_dump_true_prep
+    const/4 v7, 0x0
+
+    :mt4_z_dump_true_loop
+    if-ge v7, v10, :mt4_z_next_letter
+
+    invoke-interface {v8, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v5
+
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "letter="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ";mode=true;idx="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "/"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ";item="
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "MT4-BROKER-A2Z-CMP"
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    add-int/lit8 v7, v7, 0x1
+    goto :mt4_z_dump_true_loop
 
     :mt4_z_next_letter
     add-int/lit8 v2, v2, 0x1
@@ -164,7 +243,7 @@ def run(root_path: str) -> int:
     target = find_terminal_servers_file(root)
     changed = apply_patch(target)
     if changed:
-        info("Done. Rebuild APK and check logcat with: adb logcat -s MT4-BROKER-A2Z-Z")
+        info("Done. Rebuild APK and check logcat with: adb logcat -s MT4-BROKER-A2Z-CMP")
     else:
         info("No changes applied.")
     return 0
