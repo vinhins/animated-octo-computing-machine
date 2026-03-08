@@ -75,7 +75,7 @@ def build_server_record_dump_block(
     for field in field_names:
         lines.extend(
             [
-                f'    const-string {label_reg}, ";{field}="',
+                f'    const-string {label_reg}, ";"',
                 f"    invoke-virtual {{{sb_reg}, {label_reg}}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
                 f"    iget-object {value_reg}, {record_reg}, Lnet/metaquotes/metatrader4/types/ServerRecord;->{field}:Ljava/lang/String;",
                 f"    invoke-virtual {{{sb_reg}, {value_reg}}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
