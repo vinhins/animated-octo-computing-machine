@@ -33,6 +33,16 @@ on:
         required: false
         default: ""
         type: string
+      terminal_combo_length:
+        description: "Optional combo length for serversGet(String) generation (for example: 3,4,5,6)"
+        required: false
+        default: ""
+        type: string
+      terminal_charset:
+        description: "Optional charset for combo generation (for example: abcdef123)"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: read
@@ -134,6 +144,14 @@ jobs:
 
           if [[ -n "${{ inputs.terminal_prefixes }}" ]]; then
             cmd+=(--prefix "${{ inputs.terminal_prefixes }}")
+          fi
+
+          if [[ -n "${{ inputs.terminal_combo_length }}" ]]; then
+            cmd+=(--combo-length "${{ inputs.terminal_combo_length }}")
+          fi
+
+          if [[ -n "${{ inputs.terminal_charset }}" ]]; then
+            cmd+=(--charset "${{ inputs.terminal_charset }}")
           fi
 
           if [[ -n "${{ inputs.terminal_max_combos }}" ]]; then

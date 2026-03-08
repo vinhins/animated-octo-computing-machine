@@ -3,7 +3,7 @@
 
 This patch injects code into method z(Landroid/content/Context;)Z after
 servers.dat initialization success and before returning true:
-- iterate 3-char combos from alphabet+digits
+- iterate N-char combos from configurable charset
 - call serversGet(combo) and log the returned item
 - call serversGet(list) and log result/count
 - dump each item from list overload to logcat
@@ -40,7 +40,24 @@ def normalize_newlines(text: str) -> str:
     return text.replace("\r\n", "\n")
 
 
-def _normalize_prefixes(prefixes: list[str]) -> list[str]:
+def _normalize_charset(charset: str) -> str:
+    value = charset.strip().lower()
+    if not value:
+        raise RuntimeError("Character set cannot be empty")
+    if not re.fullmatch(r"[a-z0-9]+", value):
+        raise RuntimeError("Invalid charset. Use lowercase alnum chars only (a-z, 0-9).")
+
+    deduped = ""
+    seen: set[str] = set()
+    for ch in value:
+        if ch in seen:
+            continue
+        seen.add(ch)
+        deduped += ch
+    return deduped
+
+
+def _normalize_prefixes(prefixes: list[str], combo_length: int, charset: str) -> list[str]:
     normalized: list[str] = []
     seen: set[str] = set()
 
@@ -49,10 +66,19 @@ def _normalize_prefixes(prefixes: list[str]) -> list[str]:
             p = item.strip().lower()
             if not p:
                 continue
-            if not re.fullmatch(r"[a-z0-9]{1,3}", p):
+            if not re.fullmatch(r"[a-z0-9]+", p):
                 raise RuntimeError(
-                    f"Invalid prefix '{p}'. Use 1..3 lowercase alnum chars (a-z, 0-9)."
+                    f"Invalid prefix '{p}'. Use lowercase alnum chars only (a-z, 0-9)."
                 )
+            if len(p) > combo_length:
+                raise RuntimeError(
+                    f"Invalid prefix '{p}'. Prefix length must be <= combo length ({combo_length})."
+                )
+            for ch in p:
+                if ch not in charset:
+                    raise RuntimeError(
+                        f"Invalid prefix '{p}'. Character '{ch}' is not in charset '{charset}'."
+                    )
             if p in seen:
                 continue
             seen.add(p)
@@ -61,7 +87,13 @@ def _normalize_prefixes(prefixes: list[str]) -> list[str]:
     return normalized
 
 
-def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) -> bool:
+def apply_patch(
+    file_path: Path,
+    prefixes: list[str],
+    max_combos: int | None,
+    combo_length: int,
+    charset: str,
+) -> bool:
     raw = normalize_newlines(file_path.read_text(encoding="utf-8", errors="ignore"))
 
     if "MT4-BROKER-GET" in raw and (
@@ -81,16 +113,16 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
 
     method_body = raw[method_start:method_end]
 
-    # The method uses at least v0/v1; bump to v13 for filter/limit diagnostics.
+    # The method uses at least v0/v1; bump to v15 for dynamic combo generation.
     locals_match = re.search(r"(?m)^\s*\.locals\s+(\d+)\s*$", method_body)
     if not locals_match:
         raise RuntimeError(".locals declaration not found in method z")
 
     current_locals = int(locals_match.group(1))
-    if current_locals < 14:
+    if current_locals < 16:
         method_body = re.sub(
             r"(?m)^\s*\.locals\s+\d+\s*$",
-            "    .locals 14",
+            "    .locals 16",
             method_body,
             count=1,
         )
@@ -111,7 +143,7 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     invoke-virtual {{v10, v0}}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
     move-result v0
     if-eqz v0, :mt4_z_prefix_next_{i}
-    const/4 v13, 0x1
+    const/4 v14, 0x1
     goto :mt4_z_prefix_done
     :mt4_z_prefix_next_{i}
 """
@@ -119,12 +151,12 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
 
         prefix_block = (
             """
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 """
             + "".join(prefix_checks)
             + """
     :mt4_z_prefix_done
-    if-eqz v13, :mt4_z_get_combo_k_next
+    if-eqz v14, :mt4_z_get_combo_next
 """
         )
 
@@ -132,14 +164,14 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     if max_combos is not None:
         max_block_start = f"""
     const/4 v11, 0x0
-    const v12, {max_combos}
+    const v15, {max_combos}
 """
 
     max_block_check = ""
     max_block_inc = ""
     if max_combos is not None:
         max_block_check = """
-    if-ge v11, v12, :mt4_z_get_list_start
+    if-ge v11, v15, :mt4_z_get_list_start
 """
         max_block_inc = """
     add-int/lit8 v11, v11, 0x1
@@ -148,41 +180,49 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     insert_template = """
 
     # [AUTO_PATCH_Z_A2Z_START] use serversGet overloads directly
-    const-string v8, "abcdefghijklmnopqrstuvwxyz0123456789"
+    const-string v8, "__CHARSET__"
     invoke-virtual {v8}, Ljava/lang/String;->length()I
     move-result v9
+    const/16 v12, __COMBO_LENGTH__
+
+    const/4 v13, 0x1
+    const/4 v3, 0x0
+
+    :mt4_z_pow_loop
+    if-ge v3, v12, :mt4_z_pow_done
+    mul-int/2addr v13, v9
+    add-int/lit8 v3, v3, 0x1
+    goto :mt4_z_pow_loop
+
+    :mt4_z_pow_done
 __MAX_BLOCK_START__
 
     const/4 v2, 0x0
 
-    :mt4_z_get_combo_i
-    if-ge v2, v9, :mt4_z_get_list_start
-
-    const/4 v3, 0x0
-
-    :mt4_z_get_combo_j
-    if-ge v3, v9, :mt4_z_get_combo_i_next
-
-    const/4 v4, 0x0
-
-    :mt4_z_get_combo_k
-    if-ge v4, v9, :mt4_z_get_combo_j_next
+    :mt4_z_get_combo_loop
+    if-ge v2, v13, :mt4_z_get_list_start
 __MAX_BLOCK_CHECK__
+
+    move v4, v2
+    const/4 v5, 0x0
 
     new-instance v1, Ljava/lang/StringBuilder;
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v2}, Ljava/lang/String;->charAt(I)C
-    move-result v5
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :mt4_z_build_combo_loop
+    if-ge v5, v12, :mt4_z_build_combo_done
 
-    invoke-virtual {v8, v3}, Ljava/lang/String;->charAt(I)C
-    move-result v6
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    rem-int v6, v4, v9
+    div-int/2addr v4, v9
 
-    invoke-virtual {v8, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v8, v6}, Ljava/lang/String;->charAt(I)C
     move-result v7
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, v5, 0x1
+    goto :mt4_z_build_combo_loop
+
+    :mt4_z_build_combo_done
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v10
@@ -210,17 +250,9 @@ __PREFIX_BLOCK__
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 __MAX_BLOCK_INC__
 
-    :mt4_z_get_combo_k_next
-    add-int/lit8 v4, v4, 0x1
-    goto :mt4_z_get_combo_k
-
-    :mt4_z_get_combo_j_next
-    add-int/lit8 v3, v3, 0x1
-    goto :mt4_z_get_combo_j
-
-    :mt4_z_get_combo_i_next
+    :mt4_z_get_combo_next
     add-int/lit8 v2, v2, 0x1
-    goto :mt4_z_get_combo_i
+    goto :mt4_z_get_combo_loop
 
     :mt4_z_get_list_start
     new-instance v3, Ljava/util/ArrayList;
@@ -290,6 +322,8 @@ __MAX_BLOCK_INC__
         .replace("__MAX_BLOCK_CHECK__", max_block_check)
         .replace("__PREFIX_BLOCK__", prefix_block)
         .replace("__MAX_BLOCK_INC__", max_block_inc)
+        .replace("__COMBO_LENGTH__", str(combo_length))
+        .replace("__CHARSET__", charset)
     )
 
     method_body = method_body[:success_pos] + insert + method_body[success_pos:]
@@ -300,22 +334,33 @@ __MAX_BLOCK_INC__
     return True
 
 
-def run(root_path: str, prefixes: list[str], max_combos: int | None) -> int:
+def run(
+    root_path: str,
+    prefixes: list[str],
+    max_combos: int | None,
+    combo_length: int,
+    charset: str,
+) -> int:
     root = Path(root_path).resolve()
     if not root.exists():
         raise RuntimeError(f"Root path does not exist: {root}")
 
     target = find_terminal_servers_file(root)
-    norm_prefixes = _normalize_prefixes(prefixes)
+    norm_charset = _normalize_charset(charset)
+    if combo_length <= 0:
+        raise RuntimeError("--combo-length must be > 0")
+    norm_prefixes = _normalize_prefixes(prefixes, combo_length, norm_charset)
     if max_combos is not None and max_combos <= 0:
         raise RuntimeError("--max-combos must be > 0 when provided")
 
+    info(f"Using combo length: {combo_length}")
+    info(f"Using charset: {norm_charset}")
     if norm_prefixes:
         info(f"Using prefixes: {','.join(norm_prefixes)}")
     if max_combos is not None:
         info(f"Using max combo calls: {max_combos}")
 
-    changed = apply_patch(target, norm_prefixes, max_combos)
+    changed = apply_patch(target, norm_prefixes, max_combos, combo_length, norm_charset)
     if changed:
         info("Done. Rebuild APK and check logcat with: adb logcat -s MT4-BROKER-GET")
     else:
@@ -327,10 +372,21 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Patch TerminalServers z(Context) iterator")
     parser.add_argument("--root-path", default=".", help="Decoded APK root path")
     parser.add_argument(
+        "--combo-length",
+        type=int,
+        default=3,
+        help="Combo length for serversGet(String) generation (for example: 3, 4, 5, 6)",
+    )
+    parser.add_argument(
+        "--charset",
+        default="abcdefghijklmnopqrstuvwxyz0123456789",
+        help="Characters used for combo generation (lowercase alnum only)",
+    )
+    parser.add_argument(
         "--prefix",
         action="append",
         default=[],
-        help="Prefix filter for 3-char combos (repeatable or comma-separated), e.g. --prefix abc --prefix d1",
+        help="Prefix filter for generated combos (repeatable or comma-separated), e.g. --prefix abc --prefix d1",
     )
     parser.add_argument(
         "--max-combos",
@@ -344,7 +400,15 @@ def parse_args() -> argparse.Namespace:
 if __name__ == "__main__":
     args = parse_args()
     try:
-        raise SystemExit(run(args.root_path, args.prefix, args.max_combos))
+        raise SystemExit(
+            run(
+                args.root_path,
+                args.prefix,
+                args.max_combos,
+                args.combo_length,
+                args.charset,
+            )
+        )
     except Exception as exc:  # pylint: disable=broad-except
         print(f"[ERROR] {exc}", file=sys.stderr)
         raise SystemExit(1)
