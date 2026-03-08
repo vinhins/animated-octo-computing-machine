@@ -116,6 +116,12 @@ jobs:
             python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee "${{ steps.prepare.outputs.patch_log }}"
           fi
 
+      - name: Patch TerminalServers serversBaseInitialize tail
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/patch_terminal_servers_init.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
+
       - name: Rebuild patched APK
         shell: bash
         run: |
