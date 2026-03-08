@@ -100,7 +100,7 @@ def apply_patch(
     if "MT4-BROKER-GET" in raw and (
         "mt4_z_get_by_name_loop" in raw or "mt4_z_get_combo_i" in raw
     ):
-        info(f"z(Context) a-z patch already present: {file_path}")
+        info(f"z(Context) combo patch already present: {file_path}")
         return False
 
     method_sig = ".method public z(Landroid/content/Context;)Z"
@@ -114,16 +114,16 @@ def apply_patch(
 
     method_body = raw[method_start:method_end]
 
-    # The method uses at least v0/v1; bump to v15 for dynamic combo generation.
+    # Keep .locals <=14 so p0/p1 remain encodable in non-range invoke forms.
     locals_match = re.search(r"(?m)^\s*\.locals\s+(\d+)\s*$", method_body)
     if not locals_match:
         raise RuntimeError(".locals declaration not found in method z")
 
     current_locals = int(locals_match.group(1))
-    if current_locals < 16:
+    if current_locals < 14:
         method_body = re.sub(
             r"(?m)^\s*\.locals\s+\d+\s*$",
-            "    .locals 16",
+            "    .locals 14",
             method_body,
             count=1,
         )
@@ -137,42 +137,34 @@ def apply_patch(
     prefix_block = ""
     if prefixes:
         prefix_checks = []
-        for i, p in enumerate(prefixes):
+        for p in prefixes:
             prefix_checks.append(
                 f"""
     const-string v0, \"{p}\"
     invoke-virtual {{v10, v0}}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
     move-result v0
-    if-eqz v0, :mt4_z_prefix_next_{i}
-    const/4 v14, 0x1
-    goto :mt4_z_prefix_done
-    :mt4_z_prefix_next_{i}
+    if-nez v0, :mt4_z_prefix_ok
 """
             )
 
-        prefix_block = (
-            """
-    const/4 v14, 0x0
+        prefix_block = "".join(prefix_checks) + """
+    goto :mt4_z_get_combo_next
+
+    :mt4_z_prefix_ok
 """
-            + "".join(prefix_checks)
-            + """
-    :mt4_z_prefix_done
-    if-eqz v14, :mt4_z_get_combo_next
-"""
-        )
 
     max_block_start = ""
     if max_combos is not None:
-        max_block_start = f"""
+        max_block_start = """
     const/4 v11, 0x0
-    const v15, {max_combos}
 """
 
     max_block_check = ""
     max_block_inc = ""
     if max_combos is not None:
-        max_block_check = """
-    if-ge v11, v15, :mt4_z_get_list_start
+        max_block_check = f"""
+    const v0, {max_combos}
+    if-ge v11, v0, :mt4_z_get_list_start
 """
         max_block_inc = """
     add-int/lit8 v11, v11, 0x1
