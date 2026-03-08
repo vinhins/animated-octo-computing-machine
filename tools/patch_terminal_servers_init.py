@@ -145,13 +145,13 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     add-int/lit8 v11, v11, 0x1
 """
 
-    insert = f"""
+    insert_template = """
 
     # [AUTO_PATCH_Z_A2Z_START] use serversGet overloads directly
     const-string v8, "abcdefghijklmnopqrstuvwxyz0123456789"
     invoke-virtual {v8}, Ljava/lang/String;->length()I
     move-result v9
-{max_block_start}
+__MAX_BLOCK_START__
 
     const/4 v2, 0x0
 
@@ -167,7 +167,7 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
 
     :mt4_z_get_combo_k
     if-ge v4, v9, :mt4_z_get_combo_j_next
-{max_block_check}
+__MAX_BLOCK_CHECK__
 
     new-instance v1, Ljava/lang/StringBuilder;
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -186,7 +186,7 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v10
-{prefix_block}
+__PREFIX_BLOCK__
 
     invoke-virtual {p0, v10}, Lnet/metaquotes/metatrader4/terminal/TerminalServers;->serversGet(Ljava/lang/String;)Lnet/metaquotes/metatrader4/types/ServerRecord;
     move-result-object v5
@@ -208,7 +208,7 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v1
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-{max_block_inc}
+__MAX_BLOCK_INC__
 
     :mt4_z_get_combo_k_next
     add-int/lit8 v4, v4, 0x1
@@ -284,6 +284,13 @@ def apply_patch(file_path: Path, prefixes: list[str], max_combos: int | None) ->
     :mt4_z_a2z_end
     # [AUTO_PATCH_Z_A2Z_END]
 """
+
+    insert = (
+        insert_template.replace("__MAX_BLOCK_START__", max_block_start)
+        .replace("__MAX_BLOCK_CHECK__", max_block_check)
+        .replace("__PREFIX_BLOCK__", prefix_block)
+        .replace("__MAX_BLOCK_INC__", max_block_inc)
+    )
 
     method_body = method_body[:success_pos] + insert + method_body[success_pos:]
     updated = raw[:method_start] + method_body + raw[method_end:]
