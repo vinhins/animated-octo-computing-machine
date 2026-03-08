@@ -23,6 +23,16 @@ on:
         required: true
         default: false
         type: boolean
+      terminal_prefixes:
+        description: "Optional combo prefixes for serversGet(String), comma-separated (for example: abc,m1,z9)"
+        required: false
+        default: ""
+        type: string
+      terminal_max_combos:
+        description: "Optional max serversGet(combo) calls before stopping combo loop"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: read
@@ -120,7 +130,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 tools/patch_terminal_servers_init.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
+          cmd=(python3 tools/patch_terminal_servers_init.py --root-path "${{ steps.prepare.outputs.decoded_dir }}")
+
+          if [[ -n "${{ inputs.terminal_prefixes }}" ]]; then
+            cmd+=(--prefix "${{ inputs.terminal_prefixes }}")
+          fi
+
+          if [[ -n "${{ inputs.terminal_max_combos }}" ]]; then
+            cmd+=(--max-combos "${{ inputs.terminal_max_combos }}")
+          fi
+
+          "${cmd[@]}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
 
       - name: Rebuild patched APK
         shell: bash
