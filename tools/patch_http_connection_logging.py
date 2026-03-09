@@ -166,24 +166,21 @@ def patch_rk2_smali(smali_path):
 
 def main():
     """Main entry point"""
-    base_path = "C:/data/github/personal/animated-octo-computing-machine/decoded_apks"
+    if len(sys.argv) < 2:
+        print(f"Usage: {sys.argv[0]} <decoded_apk_root>")
+        print("Example: python {script} decoded_apks/v400.1456_301a".format(script=sys.argv[0]))
+        sys.exit(1)
     
-    # Patch all versions
-    versions = ["v400.1456_261", "v400.1456_261a", "v400.1456_301", 
-                "v400.1456_301a", "v400.1456_decoded"]
+    decoded_root = sys.argv[1]
+    smali_file = os.path.join(decoded_root, "smali", "rk2.smali")
     
-    patched_count = 0
-    for version in versions:
-        smali_file = os.path.join(base_path, version, "smali", "rk2.smali")
-        if os.path.exists(smali_file):
-            if patch_rk2_smali(smali_file):
-                patched_count += 1
-        else:
-            print(f"[SKIP] Version not found: {version}")
+    if not os.path.isdir(decoded_root):
+        print(f"[ERROR] Decoded APK root not found: {decoded_root}")
+        sys.exit(1)
     
-    print(f"\n[RESULT] Patched {patched_count} version(s)")
-    return 0 if patched_count > 0 else 1
+    success = patch_rk2_smali(smali_file)
+    sys.exit(0 if success else 1)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
