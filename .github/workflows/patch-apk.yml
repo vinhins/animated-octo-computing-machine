@@ -145,34 +145,10 @@ jobs:
           # Then run the new RecyclerView/Search/Signature patcher for v400+
           echo "Applying v400+ RecyclerView and Signature patches..." | tee -a "${{ steps.prepare.outputs.patch_log }}"
           python3 tools/patch_servers_rv.py "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
-
-      - name: Patch TerminalServers serversBaseInitialize tail
-        shell: bash
-        run: |
-          set -euo pipefail
-          cmd=(python3 tools/patch_terminal_servers_init.py --root-path "${{ steps.prepare.outputs.decoded_dir }}")
-
-          if [[ -n "${{ inputs.terminal_prefixes }}" ]]; then
-            cmd+=(--prefix "${{ inputs.terminal_prefixes }}")
-          fi
-
-          if [[ -n "${{ inputs.terminal_combo_length }}" ]]; then
-            cmd+=(--combo-length "${{ inputs.terminal_combo_length }}")
-          fi
-
-          if [[ -n "${{ inputs.terminal_charset }}" ]]; then
-            cmd+=(--charset "${{ inputs.terminal_charset }}")
-          fi
-
-          if [[ -n "${{ inputs.terminal_max_combos }}" ]]; then
-            cmd+=(--max-combos "${{ inputs.terminal_max_combos }}")
-          fi
-
-          if [[ -n "${{ inputs.terminal_delay_seconds }}" ]]; then
-            cmd+=(--delay-seconds "${{ inputs.terminal_delay_seconds }}")
-          fi
-
-          "${cmd[@]}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
+          
+          # Apply HttpURLConnection logging instrumentation
+          echo "Applying HttpURLConnection request logging..." | tee -a "${{ steps.prepare.outputs.patch_log }}"
+          python3 tools/patch_http_connection_logging.py 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
 
       - name: Rebuild patched APK
         shell: bash
