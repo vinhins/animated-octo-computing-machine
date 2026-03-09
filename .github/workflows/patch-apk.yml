@@ -148,7 +148,7 @@ jobs:
           
           # Apply HttpURLConnection logging instrumentation
           echo "Applying HttpURLConnection request logging..." | tee -a "${{ steps.prepare.outputs.patch_log }}"
-          python3 tools/patch_http_connection_logging.py 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
+          python3 tools/patch_http_connection_logging.py "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
 
       - name: Rebuild patched APK
         shell: bash
