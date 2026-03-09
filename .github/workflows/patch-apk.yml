@@ -135,11 +135,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # First run the standard patchers
           if [[ "${{ inputs.preferFallback }}" == "true" ]]; then
             python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" --prefer-fallback 2>&1 | tee "${{ steps.prepare.outputs.patch_log }}"
           else
             python3 tools/patch_servers_logging.py --root-path "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee "${{ steps.prepare.outputs.patch_log }}"
           fi
+          
+          # Then run the new RecyclerView/Search/Signature patcher for v400+
+          echo "Applying v400+ RecyclerView and Signature patches..." | tee -a "${{ steps.prepare.outputs.patch_log }}"
+          python3 tools/patch_servers_rv.py "${{ steps.prepare.outputs.decoded_dir }}" 2>&1 | tee -a "${{ steps.prepare.outputs.patch_log }}"
 
       - name: Patch TerminalServers serversBaseInitialize tail
         shell: bash

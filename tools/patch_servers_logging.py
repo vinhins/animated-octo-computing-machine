@@ -90,7 +90,16 @@ def find_candidates(root: Path) -> list[Path]:
     all_smali = iter_smali(root)
     candidates: list[Path] = []
 
+    ui_path = "net/metaquotes/metatrader4/ui/accounts"
+
     for f in all_smali:
+        # Check for path or class name pattern
+        is_in_ui_path = ui_path in f.as_posix()
+        is_server_list_name = "ServerList" in f.name
+
+        if not (is_in_ui_path or is_server_list_name):
+            continue
+
         raw = f.read_text(encoding="utf-8", errors="ignore")
         has_server_record_call = (
             "filteredAt(I)Lnet/metaquotes/metatrader4/types/ServerRecord;" in raw
@@ -105,7 +114,7 @@ def find_candidates(root: Path) -> list[Path]:
             candidates.append(f)
 
     if not candidates:
-        warn("No exact ServersListAdapter fingerprint found. Trying fallback fingerprint...")
+        warn("No exact ServersListAdapter fingerprint found using path/name hints. Trying global fallback fingerprint...")
         for f in all_smali:
             raw = f.read_text(encoding="utf-8", errors="ignore")
             has_server_record_call = (
