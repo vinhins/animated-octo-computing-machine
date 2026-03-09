@@ -54,7 +54,7 @@ def patch_rk2_smali(smali_path):
     move-result-object v1
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     
-    # Log the request method
+    # Log the request method and timeouts
     new-instance v1, Ljava/lang/StringBuilder;
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
     const-string v2, "Method: "
@@ -76,55 +76,34 @@ def patch_rk2_smali(smali_path):
     move-result-object v1
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     
-    # Log all request headers by iterating through getRequestProperties Map
-    invoke-virtual {p1}, Ljava/net/URLConnection;->getRequestProperties()Ljava/util/Map;
+    # Log User-Agent header
+    invoke-virtual {p1, "User-Agent"}, Ljava/net/URLConnection;->getRequestProperty(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v1
-    if-eqz v1, :skip_headers
-    
-    # Get iterator from entry set
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-    move-result-object v1
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    if-eqz v1, :skip_ua
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "Header [User-Agent]: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v2
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :skip_ua
     
-    :header_loop
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-    move-result v3
-    if-eqz v3, :skip_headers
+    # Log Cookie header
+    invoke-virtual {p1, "Cookie"}, Ljava/net/URLConnection;->getRequestProperty(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    if-eqz v1, :skip_cookie
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "Header [Cookie]: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :skip_cookie
     
-    :process_header
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-    move-result-object v3
-    check-cast v3, Ljava/util/Map$Entry;
-    
-    # Get header name
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-    move-result-object v4
-    check-cast v4, Ljava/lang/String;
-    
-    # Get header value list
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-    move-result-object v3
-    check-cast v3, Ljava/util/List;
-    
-    # Create log entry for this header
-    new-instance v5, Ljava/lang/StringBuilder;
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-    const-string v6, "Header ["
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v6, "]: "
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-    move-result-object v3
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v3
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    
-    goto :header_loop
-    
-    :skip_headers
     # Log cache setting
     new-instance v1, Ljava/lang/StringBuilder;
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
