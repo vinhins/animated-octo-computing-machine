@@ -18,11 +18,6 @@ on:
         required: true
         default: false
         type: boolean
-      sign_apk:
-        description: "Sign output APK (uses repo secrets if present, else auto-generates dummy key)"
-        required: true
-        default: false
-        type: boolean
       terminal_prefixes:
         description: "Optional combo prefixes for serversGet(String), comma-separated (for example: abc,m1,z9)"
         required: false
@@ -83,7 +78,6 @@ jobs:
           apktool --version
 
       - name: Install build tools for signing
-        if: ${{ inputs.sign_apk }}
         shell: bash
         run: |
           set -euo pipefail
