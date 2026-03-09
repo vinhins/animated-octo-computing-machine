@@ -109,44 +109,29 @@ def patch_signature(root: Path):
         info("BrokerSignature already patched.")
         return False
 
-    # Signature for public a(String)String
-    target_sig = ".method public a(Ljava/lang/String;)Ljava/lang/String;"
+    # The key is to:
+    # 1. Save generate() result to v3 (not overwriting v0)
+    # 2. Check if v3 is null
+    # 3. Call b(v3) and store String result in v0
+    # 4. Build log string and log it
+    # 5. Return v0 (String)
     
-    # We want to replace the standard implementation with one that logs
-    # Original usually looks like: 
-    # invoke-direct {p0, v0}, Lnet/metaquotes/tools/BrokerSignature;->b([B)Ljava/lang/String;
-    # move-result-object p1
-    # return-object p1
+    # Find and replace: move-result-object v0 (after generate call) -> move-result-object v3
+    # Find and replace: if-eqz v0, -> if-eqz v3,
+    # Find and replace: invoke-direct {p0, v0}, ... b([B) -> invoke-direct {p0, v3}, ... b([B)
     
-    patch_code = """
-    if-eqz v0, :cond_PATCH_SIG
-    invoke-direct {p0, v0}, Lnet/metaquotes/tools/BrokerSignature;->b([B)Ljava/lang/String;
-    move-result-object v0
-    # [PATCH_BROKER_SIG]
-    new-instance v1, Ljava/lang/StringBuilder;
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v2, ";"
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v1
-    const-string v2, "MT4-BROKER-SIG"
-    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    return-object v0
-    :cond_PATCH_SIG
-    const/4 v0, 0x0
-    return-object v0
-    """
-
-    # This regex is a bit risky but we'll try to swap the return block
-    # Finding the block between generate call and end method
-    pattern = r"(invoke-direct \{p0, v0\}, Lnet/metaquotes/tools/BrokerSignature;->b\(\[B\)Ljava/lang/String;.*?return-object p1)"
-    if not re.search(pattern, raw, re.DOTALL):
-        # Specific match for v400.1456_301a where it might use p1
-        pattern = r"(invoke-direct \{p0, p1\}, Lnet/metaquotes/tools/BrokerSignature;->b\(\[B\)Ljava/lang/String;.*?return-object p1)"
-
-    updated = re.sub(pattern, patch_code.strip(), raw, flags=re.DOTALL)
+    pattern_1 = r"(invoke-direct \{p0, v0\}, Lnet/metaquotes/tools/BrokerSignature;->generate\(\[B\)\[B.*?)(move-result-object) v0"
+    replacement_1 = r"\1\2 v3"
+    
+    pattern_2 = r"(if-eqz) v0(, :cond_0)"
+    replacement_2 = r"\1 v3\2"
+    
+    pattern_3 = r"(invoke-direct \{p0, )v0(\}, Lnet/metaquotes/tools/BrokerSignature;->b\(\[B\)Ljava/lang/String;)"
+    replacement_3 = r"\1v3\2"
+    
+    updated = re.sub(pattern_1, replacement_1, raw)
+    updated = re.sub(pattern_2, replacement_2, updated)
+    updated = re.sub(pattern_3, replacement_3, updated)
     
     sig_path.write_text(updated, encoding="utf-8")
     info("Successfully patched BrokerSignature")
