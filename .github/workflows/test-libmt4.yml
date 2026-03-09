@@ -1,0 +1,93 @@
+name: Test libmt4.so on ARM64
+
+on: [push, workflow_dispatch]
+jobs:
+  test-arm64:
+    name: Test on ARM64 Ubuntu
+    runs-on: ubuntu-24.04-arm
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      
+      - name: Verify Java installation
+        run: |
+          echo "Java version:"
+          java -version
+          echo ""
+          echo "Architecture:"
+          uname -m
+          echo ""
+          echo "OS Info:"
+          cat /etc/os-release | head -3
+      
+      - name: Create package structure
+        run: |
+          mkdir -p /tmp/broker/net/metaquotes/tools
+          cp tools/BrokerSignature.java /tmp/broker/net/metaquotes/tools/
+      
+      - name: Copy libmt4.so
+        run: |
+          cp decoded_apks/v400.1456_decoded/lib/arm64-v8a/libmt4.so /tmp/broker/
+          chmod 755 /tmp/broker/libmt4.so
+          file /tmp/broker/libmt4.so
+      
+      - name: Compile Java
+        working-directory: /tmp/broker
+        run: |
+          echo "[*] Compiling BrokerSignature.java..."
+          javac net/metaquotes/tools/BrokerSignature.java
+          echo "[✓] Compilation successful"
+          echo ""
+          echo "Compiled files:"
+          find . -name "*.class" -ls
+      
+      - name: Run libmt4.so test
+        working-directory: /tmp/broker
+        run: |
+          echo "[*] Running libmt4.so wrapper test..."
+          export LD_LIBRARY_PATH=.
+          java -cp . net.metaquotes.tools.BrokerSignature "github_workflow_test"
+      
+      - name: Test with multiple inputs
+        working-directory: /tmp/broker
+        run: |
+          echo "[*] Testing with multiple inputs..."
+          export LD_LIBRARY_PATH=.
+          
+          echo ""
+          echo "Test 1: Simple string"
+          java -cp . net.metaquotes.tools.BrokerSignature "test"
+          
+          echo ""
+          echo "Test 2: Broker format"
+          java -cp . net.metaquotes.tools.BrokerSignature "broker:@110:111:1234567"
+          
+          echo ""
+          echo "Test 3: Empty string"
+          java -cp . net.metaquotes.tools.BrokerSignature ""
+          
+          echo ""
+          echo "[✓] All tests passed!"
+      
+      - name: Verify libmt4.so properties
+        run: |
+          echo "[*] Verifying libmt4.so..."
+          file /tmp/broker/libmt4.so
+          echo ""
+          echo "[*] Exported symbols:"
+          nm -D /tmp/broker/libmt4.so | grep "Java_net_metaquotes_tools_BrokerSignature_generate" || echo "Symbol not in dynamic symbols"
+          echo ""
+          readelf -d /tmp/broker/libmt4.so | grep NEEDED | head -5
+      
+      - name: Version info
+        run: |
+          echo "Java Runtime: $(java -version 2>&1 | grep version)"
+          echo "OS: $(uname -s) $(uname -r)"
+          echo "Architecture: $(uname -m)"
