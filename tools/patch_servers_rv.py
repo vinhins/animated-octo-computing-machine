@@ -135,6 +135,8 @@ def patch_signature(root: Path):
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     return-object v0
     :cond_PATCH_SIG
+    const/4 v0, 0x0
+    return-object v0
     """
 
     # This regex is a bit risky but we'll try to swap the return block
