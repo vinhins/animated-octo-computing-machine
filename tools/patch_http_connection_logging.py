@@ -90,8 +90,7 @@ def patch_rk2_smali(smali_path):
     :header_loop
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
     move-result v3
-    if-nez v3, :process_header
-    goto :skip_headers
+    if-eqz v3, :skip_headers
     
     :process_header
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
