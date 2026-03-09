@@ -151,7 +151,6 @@ jobs:
           apktool b -p "${{ steps.prepare.outputs.framework_dir }}" "${{ steps.prepare.outputs.decoded_dir }}" -o "${{ steps.prepare.outputs.unsigned_apk }}"
 
       - name: Sign APK
-        if: ${{ inputs.sign_apk }}
         shell: bash
         env:
           APK_KEYSTORE_BASE64: ${{ secrets.APK_KEYSTORE_BASE64 }}
