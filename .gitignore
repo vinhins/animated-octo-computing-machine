@@ -1,0 +1,38 @@
+# APK directories - ignore all contents
+decoded_apks/**/*
+decoded_apks/*
+rebuilt_apks/**/*
+rebuilt_apks/*
+
+# Java build artifacts
+*.class
+*.jar
+*.log
+target/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# Gradle/Maven
+build/
+.gradle/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
