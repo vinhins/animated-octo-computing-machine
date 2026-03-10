@@ -67,36 +67,62 @@ This will create:
 
 ## Running the Application
 
-### Option 1: Using Run Script
+### Option 1: Using Bundled Release (Recommended)
+
+If you downloaded the release ZIP (e.g., `broker-signature-processor-1.0.0.zip`):
+
+```bash
+# Extract the zip
+unzip broker-signature-processor-1.0.0.zip
+cd broker-signature-processor-1.0.0
+
+# Run with bundled libraries (auto-detects ARM architecture)
+./run.sh input.json output.json
+```
+
+**The script automatically detects your system architecture and uses the correct bundled `.so` files:**
+- **arm64-v8a** - for 64-bit ARM (most modern devices)
+- **armeabi-v7a** - for 32-bit ARM
+
+### Option 2: Build from Source and Run
 
 **Linux/macOS:**
 ```bash
-cd tools/
+cd java-tools/
+./build.sh
+
+# With bundled libraries
+./run.sh input.json output.json
+
+# Or with custom library path
 ./run.sh /path/to/lib input.json output.json
 ```
 
 **Windows:**
 ```cmd
-cd tools
+cd java-tools
+build.bat
 run.bat C:\path\to\lib input.json output.json
 ```
 
-### Option 2: Direct Command
+### Option 3: Direct Command
 
 **Linux/macOS:**
 ```bash
-cd tools/
-java -Djava.library.path=/path/to/lib \
+cd java-tools/
+
+# Auto-detect architecture and use bundled lib/
+java -Djava.library.path=./lib/arm64-v8a \
      -Xmx2g \
      -cp target/broker-signature-processor-1.0.0-jar-with-dependencies.jar \
      net.metaquotes.tools.SignatureProcessor \
-     mt5_servers_search_keys_10032026.json \
+     input.json \
      output.json
 ```
 
 **Windows:**
 ```cmd
-java -Djava.library.path=C:\path\to\lib ^
+java -Djava.library.path=.\lib\arm64-v8a ^
      -Xmx2g ^
      -cp target\broker-signature-processor-1.0.0-jar-with-dependencies.jar ^
      net.metaquotes.tools.SignatureProcessor ^
@@ -197,10 +223,28 @@ This uses SHA-256 hashing and doesn't require any native libraries.
 
 ### Error: `java.lang.UnsatisfiedLinkError: libmt4.so not found`
 
-**Solution:** Specify the library path:
-```bash
-java -Djava.library.path=/path/to/library/directory ...
-```
+**Solutions:**
+
+1. **If using bundled release** - The `run.sh` script auto-detects architecture. Ensure you:
+   - Extracted the full zip (with `lib/` directory)
+   - Ran from the extracted directory: `./run.sh input.json output.json`
+
+2. **If building from source** - Use bundled libraries:
+   ```bash
+   cd java-tools
+   ./build.sh
+   ./run.sh input.json output.json  # Auto-detects and uses lib/arm64-v8a or lib/armeabi-v7a
+   ```
+
+3. **Custom library path** - Specify explicitly:
+   ```bash
+   java -Djava.library.path=/path/to/lib/arm64-v8a ...
+   ```
+
+**Key points:**
+- The `.so` files must match your system's ARM architecture (arm64-v8a for 64-bit, armeabi-v7a for 32-bit)
+- Java needs read permission on the `.so` files
+- On Linux, you may need to set `LD_LIBRARY_PATH` export: `export LD_LIBRARY_PATH=/path/to/lib:$LD_LIBRARY_PATH`
 
 ### Error: Input JSON parsing failed
 
