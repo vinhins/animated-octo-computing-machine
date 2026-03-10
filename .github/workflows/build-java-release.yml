@@ -67,6 +67,9 @@ jobs:
           cp "${JAR_SRC}" "${JAR_DEST}"
           cp java-tools/lib/arm64-v8a/*.so  "${BUNDLE_DIR}/lib/arm64-v8a/"
           cp java-tools/lib/armeabi-v7a/*.so "${BUNDLE_DIR}/lib/armeabi-v7a/"
+          cp java-tools/run.sh "${BUNDLE_DIR}/"
+          cp java-tools/run.bat "${BUNDLE_DIR}/"
+          chmod +x "${BUNDLE_DIR}/run.sh"
 
           zip -r "${ZIP_NAME}" "${BUNDLE_DIR}"
           echo "zip_name=${ZIP_NAME}" >> "$GITHUB_OUTPUT"

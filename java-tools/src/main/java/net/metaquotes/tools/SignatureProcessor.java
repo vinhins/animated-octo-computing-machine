@@ -74,8 +74,21 @@ public class SignatureProcessor {
 
                 String keyword = row.get("Keyword").getAsString();
 
+                // Extract type field (defaults to 4 for MT4)
+                int entryType = 4;
+                if (row.has("Type") || row.has("type")) {
+                    int type = row.has("Type") ? row.get("Type").getAsInt() : row.get("type").getAsInt();
+                    if (type == 5) {
+                        entryType = 5;
+                    }
+                }
+
+                // Format: company=Keyword&code=mt4 or company=Keyword&code=mt5
+                String codeType = (entryType == 5) ? "mt5" : "mt4";
+                String formattedKeyword = String.format("company=%s&code=%s", keyword, codeType);
+
                 // Generate signature
-                String signature = brokerSignature.generateSignature(keyword);
+                String signature = brokerSignature.generateSignature(formattedKeyword);
 
                 if (signature == null) {
                     System.err.println("[-] Failed to generate signature for keyword: " + keyword);
