@@ -21,16 +21,24 @@ if [ -d "$SCRIPT_DIR/lib" ]; then
     if [ -n "${1:-}" ] && [ -d "$1" ]; then
         LIB_PATH="$1"
         INPUT_FILE="${2:-mt5_servers_search_keys_10032026.json}"
-        OUTPUT_FILE="${3:-mt5_servers_search_keys_with_signatures.json}"
+        OUTPUT_FILE="${3:-}"
     else
         INPUT_FILE="${1:-mt5_servers_search_keys_10032026.json}"
-        OUTPUT_FILE="${2:-mt5_servers_search_keys_with_signatures.json}"
+        OUTPUT_FILE="${2:-}"
     fi
 else
     # No bundled lib, require explicit path
     LIB_PATH="${1:-.}"  # First argument is library path, defaults to current directory
     INPUT_FILE="${2:-mt5_servers_search_keys_10032026.json}"
-    OUTPUT_FILE="${3:-mt5_servers_search_keys_with_signatures.json}"
+    OUTPUT_FILE="${3:-}"
+fi
+
+# Generate output filename if not provided
+if [ -z "$OUTPUT_FILE" ]; then
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    INPUT_BASENAME="${INPUT_FILE%.*}"
+    INPUT_EXT="${INPUT_FILE##*.}"
+    OUTPUT_FILE="output_${INPUT_BASENAME}_${TIMESTAMP}.${INPUT_EXT}"
 fi
 
 echo "[*] Broker Signature Processor Runner"
