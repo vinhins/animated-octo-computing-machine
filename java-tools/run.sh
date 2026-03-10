@@ -40,13 +40,31 @@ echo "[*] Input file: $INPUT_FILE"
 echo "[*] Output file: $OUTPUT_FILE"
 echo ""
 
-# Check if JAR exists
-JAR_FILE="$PROJECT_DIR/target/broker-signature-processor-1.0.0-jar-with-dependencies.jar"
-if [ ! -f "$JAR_FILE" ]; then
-    echo "[-] JAR file not found: $JAR_FILE"
-    echo "[*] Please run ./build.sh first"
+# Find JAR file (check multiple naming schemes)
+JAR_FILE=""
+# 1. Release zip with renamed JAR (broker-signature-processor-1.0.0.jar)
+if [ -f "$SCRIPT_DIR/broker-signature-processor-1.0.0.jar" ]; then
+    JAR_FILE="$SCRIPT_DIR/broker-signature-processor-1.0.0.jar"
+# 2. Release zip with full name (broker-signature-processor-1.0.0-jar-with-dependencies.jar)
+elif [ -f "$SCRIPT_DIR/broker-signature-processor-1.0.0-jar-with-dependencies.jar" ]; then
+    JAR_FILE="$SCRIPT_DIR/broker-signature-processor-1.0.0-jar-with-dependencies.jar"
+# 3. Build-from-source in target/
+elif [ -f "$SCRIPT_DIR/target/broker-signature-processor-1.0.0-jar-with-dependencies.jar" ]; then
+    JAR_FILE="$SCRIPT_DIR/target/broker-signature-processor-1.0.0-jar-with-dependencies.jar"
+# 4. Fallback: find any matching JAR
+else
+    JAR_FILE=$(find "$SCRIPT_DIR" -maxdepth 2 -name "*broker-signature-processor*.jar" 2>/dev/null | grep -v target/classes | head -1)
+fi
+
+if [ -z "$JAR_FILE" ] || [ ! -f "$JAR_FILE" ]; then
+    echo "[-] JAR file not found"
+    echo "[*] Options:"
+    echo "    1. Run './build.sh' to build from source, then './run.sh'"
+    echo "    2. Ensure you extracted the full release zip with lib/ directory"
     exit 1
 fi
+
+echo "[*] Using JAR: $JAR_FILE"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
