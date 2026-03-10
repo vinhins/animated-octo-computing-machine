@@ -1,0 +1,213 @@
+{
+  "info": {
+    "name": "MetaQuote API - Dynamic Signature",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Setup & Health Check",
+      "item": [
+        {
+          "name": "Health Check - Local Signature Server",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8888",
+              "path": ["health"]
+            },
+            "description": "Check if signature server is running on localhost:8888"
+          }
+        },
+        {
+          "name": "Info - Available Endpoints",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/info",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8888",
+              "path": ["info"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Signature Generation",
+      "item": [
+        {
+          "name": "Generate Signature",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/signature?input={{signature_input}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8888",
+              "path": ["signature"],
+              "query": [
+                {
+                  "key": "input",
+                  "value": "{{signature_input}}"
+                }
+              ]
+            },
+            "description": "Generate signature for any input string\n\nSet variable 'signature_input' before calling"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MetaQuote API Calls",
+      "item": [
+        {
+          "name": "Search Broker - Auto Signature",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "// Get variables",
+                  "const broker_name = pm.variables.get('broker_name') || 'ICMarkets';",
+                  "const api_id = pm.variables.get('api_id') || '1';",
+                  "",
+                  "// Build signing string (must match: company=X&code=mt4)",
+                  "const signing_string = `company=${broker_name}&code=mt4`;",
+                  "",
+                  "console.log('[*] Broker:', broker_name);",
+                  "console.log('[*] API ID:', api_id);",
+                  "console.log('[*] Signing string:', signing_string);",
+                  "",
+                  "// Call local signature server",
+                  "pm.sendRequest({",
+                  "    url: 'http://localhost:8888/signature',",
+                  "    method: 'GET',",
+                  "    params: {",
+                  "        input: signing_string",
+                  "    }",
+                  "}, function (err, response) {",
+                  "    if (err) {",
+                  "        console.error('[!] Error calling signature server:', err);",
+                  "        console.error('[!] Make sure SignatureServer is running: java SignatureServer');",
+                  "        throw err;",
+                  "    }",
+                  "    ",
+                  "    const responseJson = response.json();",
+                  "    const signature = responseJson.signature;",
+                  "    ",
+                  "    if (!signature) {",
+                  "        console.error('[!] No signature in response:', responseJson);",
+                  "        throw new Error('Signature generation failed');",
+                  "    }",
+                  "    ",
+                  "    console.log('[+] Signature:', signature);",
+                  "    ",
+                  "    // Build request body",
+                  "    const request_body = `company=${broker_name}&signature=${signature}`;",
+                  "    ",
+                  "    // Store for use in test/verification",
+                  "    pm.variables.set('generated_signature', signature);",
+                  "    pm.variables.set('request_body', request_body);",
+                  "    ",
+                  "    console.log('[+] Request body:', request_body);",
+                  "    ",
+                  "    // Update the request body",
+                  "    pm.request.body.raw = request_body;",
+                  "}")
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://api{{api_id}}.cdnfx.net/public/mt4/network/mobile",
+              "protocol": "https",
+              "host": ["api{{api_id}}","cdnfx","net"],
+              "path": ["public","mt4","network","mobile"]
+            },
+            "description": "Search brokers with auto-generated signature\n\nVariables:\n- broker_name (default: ICMarkets)\n- api_id (default: 1, range 1-15)\n\nThe pre-request script will:\n1. Call local signature server\n2. Get signature hex\n3. Build POST body: company=X&signature=HEX\n4. Send to MetaQuote API"
+          }
+        },
+        {
+          "name": "Search Broker - Manual Signature",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "company={{broker_name}}&signature={{manual_signature}}"
+            },
+            "url": {
+              "raw": "https://api{{api_id}}.cdnfx.net/public/mt4/network/mobile",
+              "protocol": "https",
+              "host": ["api{{api_id}}","cdnfx","net"],
+              "path": ["public","mt4","network","mobile"]
+            },
+            "description": "Search brokers with manually provided signature\n\nVariables to set:\n- broker_name\n- manual_signature\n- api_id (1-15)\n\nUseful if you've already generated the signature elsewhere"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "broker_name",
+      "value": "ICMarkets",
+      "type": "string",
+      "description": "Broker name to search (e.g., ICMarkets, FxOpen, Alpari)"
+    },
+    {
+      "key": "api_id",
+      "value": "1",
+      "type": "string",
+      "description": "API server ID (1-15 for failover)"
+    },
+    {
+      "key": "signature_input",
+      "value": "company=ICMarkets&code=mt4",
+      "type": "string",
+      "description": "Raw input string for signature generation"
+    },
+    {
+      "key": "manual_signature",
+      "value": "",
+      "type": "string",
+      "description": "Pre-generated signature (hex format)"
+    },
+    {
+      "key": "generated_signature",
+      "value": "",
+      "type": "string",
+      "description": "Auto-generated signature from pre-request script"
+    },
+    {
+      "key": "request_body",
+      "value": "",
+      "type": "string",
+      "description": "Built request body with signature"
+    }
+  ]
+}

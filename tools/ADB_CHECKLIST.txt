@@ -1,0 +1,84 @@
+╔════════════════════════════════════════════════════════╗
+║  ADB Phone Connection Checklist                        ║
+╚════════════════════════════════════════════════════════╝
+
+BEFORE YOU RUN ADB SETUP SCRIPT:
+
+☐ STEP 1: Install Termux on Phone
+  ├─ Google Play Store: Search "Termux"
+  │  OR
+  └─ F-Droid: https://f-droid.org/en/packages/com.termux/
+  
+  Once installed: Open Termux app ONCE to create home directory
+
+☐ STEP 2: Enable USB Debugging on Phone
+  ├─ Settings → About Phone
+  ├─ Tap "Build Number" 7 times
+  ├─ Settings → Developer Options (should now appear)
+  ├─ Enable "USB Debugging"
+  └─ Tap "OK" on the warning dialog
+
+☐ STEP 3: Connect Phone to Computer
+  ├─ Use USB cable
+  ├─ Phone should prompt: "Allow USB debugging by this computer?"
+  ├─ Tap "Allow"
+  └─ Select "Transfer files" mode (not "Charge only")
+
+☐ STEP 4: Verify Connection on Computer
+  └─ Run: adb devices
+     Should show: [device_id]    device
+     If showing: "offline" → Unplug and reconnect
+     If showing empty → Check USB Debugging is enabled
+
+═════════════════════════════════════════════════════════
+
+ONCE PHONE IS CONNECTED:
+
+Run this command on your computer:
+  bash /workspaces/animated-octo-computing-machine/tools/android_adb_setup.sh
+
+The script will:
+  ✓ Transfer BrokerSignatureWrapper.java
+  ✓ Transfer libmt4.so
+  ✓ Install Java on phone
+  ✓ Compile wrapper
+  ✓ Run test
+
+═════════════════════════════════════════════════════════
+
+TROUBLESHOOTING IF PHONE DOESN'T SHOW UP:
+
+1. "No devices found" / Empty list
+   → Check USB Debugging is enabled
+   → Reconnect USB cable
+   → Try different USB port on computer
+   → Try: adb kill-server && adb start-server
+
+2. Shows "offline"
+   → Unplug phone
+   → Wait 5 seconds
+   → Reconnect phone
+   → Approve USB debugging dialog again
+
+3. Permission denied errors
+   → On Linux: You may need: sudo usermod -a -G plugdev $USER
+   → Then log out and back in, or:
+   → Restart ADB: adb kill-server && sudo adb start-server
+
+4. Phone asks "Allow debugging from this computer?"
+   → Tap "Allow"
+   → Check "Always allow from this computer"
+
+═════════════════════════════════════════════════════════
+
+QUICK TEST AFTER CONNECTION:
+
+When phone is connected, you should see:
+
+  $ adb devices
+  List of devices attached
+  12345abcdef         device    ← Your phone showing as "device"
+
+If you see this ✓, you're ready for the next step!
+
+═════════════════════════════════════════════════════════

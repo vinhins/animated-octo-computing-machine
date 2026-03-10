@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  libmt4-arm64:
+    image: libmt4-wrapper-arm64
+    build:
+      context: .
+      dockerfile: Dockerfile.arm64
+    volumes:
+      - .:/workspace
+    environment:
+      LD_LIBRARY_PATH: /app
+    working_dir: /app
+    command: java -cp . BrokerSignatureWrapper "test_input"
