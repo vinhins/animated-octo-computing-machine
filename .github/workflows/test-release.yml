@@ -17,7 +17,12 @@ permissions:
 
 jobs:
   test-release-arm64:
-    runs-on: ubuntu-24.04-arm64
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        runner:
+          - ubuntu-24.04-arm
+          - ubuntu-22.04-arm
 
     steps:
       - name: Checkout repository (for test input file)
