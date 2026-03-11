@@ -21,12 +21,14 @@ public class SignatureProcessor {
             // Parse command line arguments
             String inputFile = args.length > 0 ? args[0] : INPUT_JSON_PATH;
             String outputFile = args.length > 1 ? args[1] : OUTPUT_JSON_PATH;
+            int defaultType = args.length > 2 ? Integer.parseInt(args[2]) : 4;
 
             System.out.println("[*] Input file: " + inputFile);
             System.out.println("[*] Output file: " + outputFile);
+            System.out.println("[*] Default type: " + defaultType);
 
             // Process the JSON file
-            processSearchKeys(inputFile, outputFile);
+            processSearchKeys(inputFile, outputFile, defaultType);
 
             System.out.println("[+] Processing completed successfully!");
         } catch (Exception e) {
@@ -65,8 +67,11 @@ public class SignatureProcessor {
 
     /**
      * Reads the input JSON file, processes each keyword, and writes results to output JSON
+     * @param inputPath Path to input JSON file
+     * @param outputPath Path to output JSON file
+     * @param defaultType Default entry type (4 for MT4, 5 for MT5) when Type field is not present
      */
-    private static void processSearchKeys(String inputPath, String outputPath) throws Exception {
+    private static void processSearchKeys(String inputPath, String outputPath, int defaultType) throws Exception {
         // Read input JSON
         String inputContent = Files.readString(Paths.get(inputPath));
         JsonElement jsonElement = JsonParser.parseString(inputContent);
@@ -102,7 +107,7 @@ public class SignatureProcessor {
                 String keyword = row.get("Keyword").getAsString();
                 String formattedKeyword;
                 String cleanedKeyword = null;
-                int entryType = 4;  // Default to MT4
+                int entryType = defaultType;  // Use configured default type
                 
                 // Check if this is a batch request (multiple servers in one request)
                 if (isBatchRequestFormat(keyword)) {
