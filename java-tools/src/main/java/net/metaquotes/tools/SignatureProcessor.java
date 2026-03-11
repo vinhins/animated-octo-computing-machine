@@ -37,7 +37,15 @@ public class SignatureProcessor {
     }
 
     /**
+     * Detects if keyword is a batch request format (servers=key1,key2,key3 without code param)
+     */
+    private static boolean isBatchRequestFormat(String keyword) {
+        return keyword != null && keyword.contains("servers=") && keyword.startsWith("servers=");
+    }
+
+    /**
      * Cleans keyword by removing special characters and trimming to 3 characters max
+     * Only used for single keyword mode, not for batch mode
      */
     private static String cleanAndTrimKeyword(String keyword) {
         if (keyword == null || keyword.isEmpty()) {
@@ -92,27 +100,44 @@ public class SignatureProcessor {
                 }
 
                 String keyword = row.get("Keyword").getAsString();
+                String formattedKeyword;
+                String cleanedKeyword = null;
+                int entryType = 4;  // Default to MT4
                 
-                // Clean and trim keyword: remove special chars and limit to 3 chars
-                String cleanedKeyword = cleanAndTrimKeyword(keyword);
-                if (cleanedKeyword == null || cleanedKeyword.isEmpty()) {
-                    System.err.println("[-] Row " + i + " keyword became empty after cleaning: " + keyword);
-                    errorCount++;
-                    continue;
-                }
-
-                // Extract type field (defaults to 4 for MT4)
-                int entryType = 4;
-                if (row.has("Type") || row.has("type")) {
-                    int type = row.has("Type") ? row.get("Type").getAsInt() : row.get("type").getAsInt();
-                    if (type == 5) {
-                        entryType = 5;
+                // Check if this is a batch request (multiple servers in one request)
+                if (isBatchRequestFormat(keyword)) {
+                    // Batch mode: use keyword as-is (already formatted as servers=key1,key2,key3)
+                    formattedKeyword = keyword;
+                    
+                    // Extract type from Type field (default to 4 for MT4)
+                    if (row.has("Type")) {
+                        entryType = row.get("Type").getAsInt();
                     }
-                }
+                    
+                    System.out.println("[*] Row " + i + " (Batch mode): " + keyword.substring(0, Math.min(60, keyword.length())) + "... [Type: " + entryType + "]");
+                } else {
+                    // Single keyword mode: clean, trim, and format
+                    cleanedKeyword = cleanAndTrimKeyword(keyword);
+                    if (cleanedKeyword == null || cleanedKeyword.isEmpty()) {
+                        System.err.println("[-] Row " + i + " keyword became empty after cleaning: " + keyword);
+                        errorCount++;
+                        continue;
+                    }
 
-                // Format: company=CleanedKeyword&code=mt4 or company=CleanedKeyword&code=mt5
-                String codeType = (entryType == 5) ? "mt5" : "mt4";
-                String formattedKeyword = String.format("company=%s&code=%s", cleanedKeyword, codeType);
+                    // Extract type field (defaults to 4 for MT4)
+                    if (row.has("Type") || row.has("type")) {
+                        int type = row.has("Type") ? row.get("Type").getAsInt() : row.get("type").getAsInt();
+                        if (type == 5) {
+                            entryType = 5;
+                        }
+                    }
+
+                    // Format: company=CleanedKeyword&code=mt4 or company=CleanedKeyword&code=mt5
+                    String codeType = (entryType == 5) ? "mt5" : "mt4";
+                    formattedKeyword = String.format("company=%s&code=%s", cleanedKeyword, codeType);
+                    
+                    System.out.println("[*] Row " + i + " (Single mode): " + keyword + " → " + formattedKeyword);
+                }
 
                 // Generate signature
                 String signature = brokerSignature.generateSignature(formattedKeyword);
@@ -125,8 +150,12 @@ public class SignatureProcessor {
 
                 // Create output row
                 JsonObject outputRow = new JsonObject();
-                outputRow.addProperty("Keyword", keyword);  // Original keyword
-                outputRow.addProperty("CleanedKeyword", cleanedKeyword);  // Cleaned and trimmed keyword
+                outputRow.addProperty("Keyword", keyword);  // Original keyword or batch request
+                
+                if (cleanedKeyword != null) {
+                    outputRow.addProperty("CleanedKeyword", cleanedKeyword);  // Only for single mode
+                }
+                
                 outputRow.addProperty("FormattedKeyword", formattedKeyword);  // Formatted for API
                 outputRow.addProperty("EntryType", entryType);  // Type (4=MT4, 5=MT5)
                 outputRow.addProperty("Signature", signature);
@@ -134,6 +163,14 @@ public class SignatureProcessor {
                 // Add original count if it exists
                 if (row.has("Count")) {
                     outputRow.addProperty("Count", row.get("Count").getAsInt());
+                }
+                
+                // Add batch metadata if applicable
+                if (row.has("BatchID")) {
+                    outputRow.addProperty("BatchID", row.get("BatchID").getAsInt());
+                }
+                if (row.has("KeywordCount")) {
+                    outputRow.addProperty("KeywordCount", row.get("KeywordCount").getAsInt());
                 }
 
                 outputRows.add(outputRow);

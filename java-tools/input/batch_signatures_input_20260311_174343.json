@@ -1,0 +1,1019 @@
+{
+  "table": "BatchSignaturesForMultiKeywordAPI",
+  "description": "Batched keywords formatted as request strings for SignatureProcessor",
+  "platform": "MT5",
+  "totalBatches": 59,
+  "totalKeywords": 295,
+  "batchSize": 5,
+  "rows": [
+    {
+      "BatchID": 1,
+      "Keywords": [
+        "Mar",
+        "Bal",
+        "Fin",
+        "Pty",
+        "Pri"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 144,
+      "AverageCount": 28.8,
+      "Keyword": "servers=Mar,Bal,Fin,Pty,Pri",
+      "Type": 5,
+      "Count": 144,
+      "Description": "Batch 1: Mar, Bal..."
+    },
+    {
+      "BatchID": 2,
+      "Keywords": [
+        "Tra",
+        "FOR",
+        "Cap",
+        "Com",
+        "Lim"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 96,
+      "AverageCount": 19.2,
+      "Keyword": "servers=Tra,FOR,Cap,Com,Lim",
+      "Type": 5,
+      "Count": 96,
+      "Description": "Batch 2: Tra, FOR..."
+    },
+    {
+      "BatchID": 3,
+      "Keywords": [
+        "Gro",
+        "Int",
+        "Nat",
+        "ENT",
+        "LLC"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 71,
+      "AverageCount": 14.2,
+      "Keyword": "servers=Gro,Int,Nat,ENT,LLC",
+      "Type": 5,
+      "Count": 71,
+      "Description": "Batch 3: Gro, Int..."
+    },
+    {
+      "BatchID": 4,
+      "Keywords": [
+        "Sec",
+        "Ser",
+        "Tec",
+        "Cor",
+        "Bro"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 58,
+      "AverageCount": 11.6,
+      "Keyword": "servers=Sec,Ser,Tec,Cor,Bro",
+      "Type": 5,
+      "Count": 58,
+      "Description": "Batch 4: Sec, Ser..."
+    },
+    {
+      "BatchID": 5,
+      "Keywords": [
+        "ALS",
+        "One",
+        "Inv",
+        "Ema",
+        "Bul"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 47,
+      "AverageCount": 9.4,
+      "Keyword": "servers=ALS,One,Inv,Ema,Bul",
+      "Type": 5,
+      "Count": 47,
+      "Description": "Batch 5: ALS, One..."
+    },
+    {
+      "BatchID": 6,
+      "Keywords": [
+        "and",
+        "Fut",
+        "Gol",
+        "Sma",
+        "Exn"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 37,
+      "AverageCount": 7.4,
+      "Keyword": "servers=and,Fut,Gol,Sma,Exn",
+      "Type": 5,
+      "Count": 37,
+      "Description": "Batch 6: and, Fut..."
+    },
+    {
+      "BatchID": 7,
+      "Keywords": [
+        "Sol",
+        "Yat",
+        "Pro",
+        "Ber",
+        "Ban"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 24,
+      "AverageCount": 4.8,
+      "Keyword": "servers=Sol,Yat,Pro,Ber,Ban",
+      "Type": 5,
+      "Count": 24,
+      "Description": "Batch 7: Sol, Yat..."
+    },
+    {
+      "BatchID": 8,
+      "Keywords": [
+        "Eur",
+        "Etr",
+        "Der",
+        "Aur",
+        "Bla"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 20,
+      "AverageCount": 4.0,
+      "Keyword": "servers=Eur,Etr,Der,Aur,Bla",
+      "Type": 5,
+      "Count": 20,
+      "Description": "Batch 8: Eur, Etr..."
+    },
+    {
+      "BatchID": 9,
+      "Keywords": [
+        "Ant",
+        "ATF",
+        "Ing",
+        "FXC",
+        "Glo"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 19,
+      "AverageCount": 3.8,
+      "Keyword": "servers=Ant,ATF,Ing,FXC,Glo",
+      "Type": 5,
+      "Count": 19,
+      "Description": "Batch 9: Ant, ATF..."
+    },
+    {
+      "BatchID": 10,
+      "Keywords": [
+        "Rea",
+        "NCE",
+        "Inc",
+        "Str",
+        "Liq"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 15,
+      "AverageCount": 3.0,
+      "Keyword": "servers=Rea,NCE,Inc,Str,Liq",
+      "Type": 5,
+      "Count": 15,
+      "Description": "Batch 10: Rea, NCE..."
+    },
+    {
+      "BatchID": 11,
+      "Keywords": [
+        "Riv",
+        "Tri",
+        "Cen",
+        "Swi",
+        "NFX"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 15,
+      "AverageCount": 3.0,
+      "Keyword": "servers=Riv,Tri,Cen,Swi,NFX",
+      "Type": 5,
+      "Count": 15,
+      "Description": "Batch 11: Riv, Tri..."
+    },
+    {
+      "BatchID": 12,
+      "Keywords": [
+        "Fir",
+        "ICM",
+        "Rad",
+        "Ves",
+        "Men"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 12,
+      "AverageCount": 2.4,
+      "Keyword": "servers=Fir,ICM,Rad,Ves,Men",
+      "Type": 5,
+      "Count": 12,
+      "Description": "Batch 12: Fir, ICM..."
+    },
+    {
+      "BatchID": 13,
+      "Keywords": [
+        "Hol",
+        "All",
+        "Sey",
+        "Mil",
+        "Equ"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 10,
+      "AverageCount": 2.0,
+      "Keyword": "servers=Hol,All,Sey,Mil,Equ",
+      "Type": 5,
+      "Count": 10,
+      "Description": "Batch 13: Hol, All..."
+    },
+    {
+      "BatchID": 14,
+      "Keywords": [
+        "Ste",
+        "Nex",
+        "Sta",
+        "Ark",
+        "Rob"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 10,
+      "AverageCount": 2.0,
+      "Keyword": "servers=Ste,Nex,Sta,Ark,Rob",
+      "Type": 5,
+      "Count": 10,
+      "Description": "Batch 14: Ste, Nex..."
+    },
+    {
+      "BatchID": 15,
+      "Keywords": [
+        "Jus",
+        "Alm",
+        "AMa",
+        "Ade",
+        "Onl"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 9,
+      "AverageCount": 1.8,
+      "Keyword": "servers=Jus,Alm,AMa,Ade,Onl",
+      "Type": 5,
+      "Count": 9,
+      "Description": "Batch 15: Jus, Alm..."
+    },
+    {
+      "BatchID": 16,
+      "Keywords": [
+        "Rat",
+        "Sto",
+        "MEX",
+        "Pte",
+        "Cha"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Rat,Sto,MEX,Pte,Cha",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 16: Rat, Sto..."
+    },
+    {
+      "BatchID": 17,
+      "Keywords": [
+        "Red",
+        "Ind",
+        "Era",
+        "Max",
+        "Lio"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Red,Ind,Era,Max,Lio",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 17: Red, Ind..."
+    },
+    {
+      "BatchID": 18,
+      "Keywords": [
+        "Ult",
+        "Tim",
+        "Quo",
+        "Tam",
+        "Meg"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Ult,Tim,Quo,Tam,Meg",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 18: Ult, Tim..."
+    },
+    {
+      "BatchID": 19,
+      "Keywords": [
+        "Asi",
+        "Man",
+        "Aus",
+        "Cre",
+        "Top"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Asi,Man,Aus,Cre,Top",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 19: Asi, Man..."
+    },
+    {
+      "BatchID": 20,
+      "Keywords": [
+        "Blu",
+        "Ver",
+        "Ven",
+        "Han",
+        "Big"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Blu,Ver,Ven,Han,Big",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 20: Blu, Ver..."
+    },
+    {
+      "BatchID": 21,
+      "Keywords": [
+        "Lit",
+        "Mon",
+        "Fun",
+        "TIO",
+        "FXL"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Lit,Mon,Fun,TIO,FXL",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 21: Lit, Mon..."
+    },
+    {
+      "BatchID": 22,
+      "Keywords": [
+        "Act",
+        "Met",
+        "STM",
+        "Key",
+        "Art"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Act,Met,STM,Key,Art",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 22: Act, Met..."
+    },
+    {
+      "BatchID": 23,
+      "Keywords": [
+        "Ene",
+        "JSC",
+        "Win",
+        "Van",
+        "Alp"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Ene,JSC,Win,Van,Alp",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 23: Ene, JSC..."
+    },
+    {
+      "BatchID": 24,
+      "Keywords": [
+        "Alt",
+        "NAG",
+        "Lev",
+        "Atr",
+        "Axi"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 5,
+      "AverageCount": 1.0,
+      "Keyword": "servers=Alt,NAG,Lev,Atr,Axi",
+      "Type": 5,
+      "Count": 5,
+      "Description": "Batch 24: Alt, NAG..."
+    },
+    {
+      "BatchID": 25,
+      "Keywords": [
+        "AET",
+        "Sys",
+        "Ltd",
+        "Co",
+        "PT"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 2,
+      "AverageCount": 0.4,
+      "Keyword": "servers=AET,Sys,Ltd,Co,PT",
+      "Type": 5,
+      "Count": 2,
+      "Description": "Batch 25: AET, Sys..."
+    },
+    {
+      "BatchID": 26,
+      "Keywords": [
+        "For",
+        "Liv",
+        "fin",
+        "bro",
+        "ser"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=For,Liv,fin,bro,ser",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 26: For, Liv..."
+    },
+    {
+      "BatchID": 27,
+      "Keywords": [
+        "LL",
+        "for",
+        "SA",
+        "EGl",
+        "XGL"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=LL,for,SA,EGl,XGL",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 27: LL, for..."
+    },
+    {
+      "BatchID": 28,
+      "Keywords": [
+        "Deg",
+        "Mai",
+        "Wea",
+        "Way",
+        "AFX"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Deg,Mai,Wea,Way,AFX",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 28: Deg, Mai..."
+    },
+    {
+      "BatchID": 29,
+      "Keywords": [
+        "SR",
+        "Mau",
+        "Exc",
+        "Hou",
+        "UK"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=SR,Mau,Exc,Hou,UK",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 29: SR, Mau..."
+    },
+    {
+      "BatchID": 30,
+      "Keywords": [
+        "GOL",
+        "Mer",
+        "SRL",
+        "Ins",
+        "Vel"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=GOL,Mer,SRL,Ins,Vel",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 30: GOL, Mer..."
+    },
+    {
+      "BatchID": 31,
+      "Keywords": [
+        "RL",
+        "Net",
+        "Ace",
+        "Rid",
+        "Squ"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=RL,Net,Ace,Rid,Squ",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 31: RL, Net..."
+    },
+    {
+      "BatchID": 32,
+      "Keywords": [
+        "Efx",
+        "Poi",
+        "GIC",
+        "Ass",
+        "Agl"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Efx,Poi,GIC,Ass,Agl",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 32: Efx, Poi..."
+    },
+    {
+      "BatchID": 33,
+      "Keywords": [
+        "Mul",
+        "Lin",
+        "Cle",
+        "NCM",
+        "Wor"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Mul,Lin,Cle,NCM,Wor",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 33: Mul, Lin..."
+    },
+    {
+      "BatchID": 34,
+      "Keywords": [
+        "Pod",
+        "GAI",
+        "Cyp",
+        "Per",
+        "Del"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Pod,GAI,Cyp,Per,Del",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 34: Pod, GAI..."
+    },
+    {
+      "BatchID": 35,
+      "Keywords": [
+        "Tic",
+        "Gat",
+        "Bri",
+        "Pip",
+        "Roy"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Tic,Gat,Bri,Pip,Roy",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 35: Tic, Gat..."
+    },
+    {
+      "BatchID": 36,
+      "Keywords": [
+        "Cur",
+        "V",
+        "Eve",
+        "Sev",
+        "Ris"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Cur,V,Eve,Sev,Ris",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 36: Cur, V..."
+    },
+    {
+      "BatchID": 37,
+      "Keywords": [
+        "San",
+        "Uni",
+        "Dev",
+        "Ent",
+        "Doo"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=San,Uni,Dev,Ent,Doo",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 37: San, Uni..."
+    },
+    {
+      "BatchID": 38,
+      "Keywords": [
+        "DMC",
+        "Jew",
+        "STA",
+        "Sof",
+        "Oct"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=DMC,Jew,STA,Sof,Oct",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 38: DMC, Jew..."
+    },
+    {
+      "BatchID": 39,
+      "Keywords": [
+        "Hub",
+        "Pem",
+        "Mag",
+        "Edg",
+        "Dig"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Hub,Pem,Mag,Edg,Dig",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 39: Hub, Pem..."
+    },
+    {
+      "BatchID": 40,
+      "Keywords": [
+        "Alg",
+        "TEC",
+        "Lia",
+        "Rig",
+        "The"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Alg,TEC,Lia,Rig,The",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 40: Alg, TEC..."
+    },
+    {
+      "BatchID": 41,
+      "Keywords": [
+        "Pre",
+        "DOO",
+        "Inf",
+        "Pla",
+        "Kon"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Pre,DOO,Inf,Pla,Kon",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 41: Pre, DOO..."
+    },
+    {
+      "BatchID": 42,
+      "Keywords": [
+        "Con",
+        "Sky",
+        "Eig",
+        "Plu",
+        "SKY"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Con,Sky,Eig,Plu,SKY",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 42: Con, Sky..."
+    },
+    {
+      "BatchID": 43,
+      "Keywords": [
+        "Gul",
+        "Sko",
+        "Dra",
+        "Eag",
+        "Lan"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Gul,Sko,Dra,Eag,Lan",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 43: Gul, Sko..."
+    },
+    {
+      "BatchID": 44,
+      "Keywords": [
+        "Loy",
+        "Gen",
+        "Dom",
+        "Qua",
+        "Yam"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Loy,Gen,Dom,Qua,Yam",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 44: Loy, Gen..."
+    },
+    {
+      "BatchID": 45,
+      "Keywords": [
+        "CY",
+        "Jor",
+        "Sco",
+        "Pru",
+        "Err"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=CY,Jor,Sco,Pru,Err",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 45: CY, Jor..."
+    },
+    {
+      "BatchID": 46,
+      "Keywords": [
+        "Cit",
+        "Dan",
+        "Car",
+        "EET",
+        "YaM"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Cit,Dan,Car,EET,YaM",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 46: Cit, Dan..."
+    },
+    {
+      "BatchID": 47,
+      "Keywords": [
+        "Pas",
+        "Rum",
+        "Kin",
+        "Kar",
+        "Ove"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Pas,Rum,Kin,Kar,Ove",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 47: Pas, Rum..."
+    },
+    {
+      "BatchID": 48,
+      "Keywords": [
+        "Clu",
+        "Lea",
+        "Zed",
+        "Mas",
+        "MFX"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Clu,Lea,Zed,Mas,MFX",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 48: Clu, Lea..."
+    },
+    {
+      "BatchID": 49,
+      "Keywords": [
+        "EZI",
+        "Zea",
+        "Ara",
+        "Gle",
+        "Hon"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=EZI,Zea,Ara,Gle,Hon",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 49: EZI, Zea..."
+    },
+    {
+      "BatchID": 50,
+      "Keywords": [
+        "Coi",
+        "Orc",
+        "Noo",
+        "Cas",
+        "Tru"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Coi,Orc,Noo,Cas,Tru",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 50: Coi, Orc..."
+    },
+    {
+      "BatchID": 51,
+      "Keywords": [
+        "Ico",
+        "Spa",
+        "Afr",
+        "DO",
+        "EBC"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Ico,Spa,Afr,DO,EBC",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 51: Ico, Spa..."
+    },
+    {
+      "BatchID": 52,
+      "Keywords": [
+        "CV",
+        "GCC",
+        "Acc",
+        "Sin",
+        "Dir"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=CV,GCC,Acc,Sin,Dir",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 52: CV, GCC..."
+    },
+    {
+      "BatchID": 53,
+      "Keywords": [
+        "ALB",
+        "Alc",
+        "XPr",
+        "Kiy",
+        "BDS"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=ALB,Alc,XPr,Kiy,BDS",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 53: ALB, Alc..."
+    },
+    {
+      "BatchID": 54,
+      "Keywords": [
+        "New",
+        "Tak",
+        "Har",
+        "Mat",
+        "Gre"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=New,Tak,Har,Mat,Gre",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 54: New, Tak..."
+    },
+    {
+      "BatchID": 55,
+      "Keywords": [
+        "Tre",
+        "Adm",
+        "Raz",
+        "Rai",
+        "oo"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Tre,Adm,Raz,Rai,oo",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 55: Tre, Adm..."
+    },
+    {
+      "BatchID": 56,
+      "Keywords": [
+        "FBS",
+        "CCT",
+        "Apr",
+        "Adh",
+        "Exp"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=FBS,CCT,Apr,Adh,Exp",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 56: FBS, CCT..."
+    },
+    {
+      "BatchID": 57,
+      "Keywords": [
+        "SC",
+        "BV",
+        "Par",
+        "ISE",
+        "ACY"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=SC,BV,Par,ISE,ACY",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 57: SC, BV..."
+    },
+    {
+      "BatchID": 58,
+      "Keywords": [
+        "Ubu",
+        "Fou",
+        "Hed",
+        "Dam",
+        "Phi"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=Ubu,Fou,Hed,Dam,Phi",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 58: Ubu, Fou..."
+    },
+    {
+      "BatchID": 59,
+      "Keywords": [
+        "IUX",
+        "Jap",
+        "ECN",
+        "CFI",
+        "Dup"
+      ],
+      "KeywordCount": 5,
+      "TotalCount": 0,
+      "AverageCount": 0.0,
+      "Keyword": "servers=IUX,Jap,ECN,CFI,Dup",
+      "Type": 5,
+      "Count": 0,
+      "Description": "Batch 59: IUX, Jap..."
+    }
+  ],
+  "timestamp": "2026-03-11T17:43:43.654633",
+  "usageNotes": [
+    "Each 'Keyword' field contains a request string: servers=batch,of,keywords (code param added at API call time)",
+    "SignatureProcessor will compute signatures for each batch request string",
+    "Output can be fed directly to broker_info_aggregator.py with --multi-keyword mode"
+  ]
+}
