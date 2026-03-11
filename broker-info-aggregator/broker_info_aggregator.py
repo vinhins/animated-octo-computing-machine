@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """
 Broker Info Aggregator - Fetch and deduplicate broker information from MT4 API
+Enhanced with jitter, multi-level backoff, batch processing, and smart UA rotation
 """
 
 import json
 import sys
 import os
 import time
+import random
 from pathlib import Path
 from datetime import datetime
-from collections import OrderedDict
+from enum import Enum
 import requests
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 
 # MT4 API Configuration
 API_URL = "https://download.terminal.free/public/mt4/network/mobile"
@@ -27,6 +29,18 @@ USER_AGENTS = [
     "MetaTrader 4 Android Mobile/4.1456 (Android 10)",
     "MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 15)",
 ]
+
+# Backoff levels
+class BackoffLevel(Enum):
+    LEVEL_0 = 0.0    # No backoff
+    LEVEL_1 = 2.0    # Moderate backoff
+    LEVEL_2 = 5.0    # Heavy backoff
+    LEVEL_3 = 30.0   # Emergency pause
+
+# Request zone thresholds
+SAFE_ZONE = 90
+WARNING_ZONE = 95
+DANGER_ZONE = 98
 
 
 def redact_signature(signature: str, redact_last: int = 3) -> str:
@@ -45,40 +59,91 @@ def redact_signature(signature: str, redact_last: int = 3) -> str:
     return signature[:-redact_last] + ("*" * redact_last)
 
 class BrokerInfoAggregator:
-    def __init__(self, input_file: str, output_file: str = None, max_requests: int = 0, delay: float = 1.0, max_consecutive_errors: int = 5):
+    def __init__(self, input_file: str, output_file: str = None, max_requests: int = 0, delay: float = 1.0, 
+                 max_consecutive_errors: int = 5, batch_size: int = 25, batch_pause: float = 45, 
+                 jitter_percent: float = 25):
         """
-        Initialize the aggregator
+        Initialize the aggregator with enhanced resilience
         
         Args:
             input_file: Path to JSON file with Keyword/Signature pairs
             output_file: Path to output JSON file (auto-generated if not provided)
-            max_requests: Max API requests to make (0 = unlimited)
-            delay: Delay in seconds between API requests (default 1.0)
+            max_requests: Max API calls to make (0 = unlimited) - counts ALL calls including 404/403
+            delay: Base delay in seconds between API requests (default 1.0)
             max_consecutive_errors: Stop after N consecutive 403 errors (default 5)
+            batch_size: Requests per batch before pause (default 25)
+            batch_pause: Pause duration in seconds between batches (default 45)
+            jitter_percent: Random jitter variation percentage (default 25)
         """
         self.input_file = input_file
         self.max_requests = max_requests
-        self.delay = delay
+        self.base_delay = delay
         self.output_file = output_file
         self.max_consecutive_errors = max_consecutive_errors
-        self.broker_cache = {}  # company_name -> broker_info
-        self.processed_count = 0
-        self.error_count = 0
-        self.skipped_count = 0
-        self.user_agent_index = 0  # For round-robin User-Agent rotation
-        self.consecutive_403_count = 0  # Track consecutive 403 errors
-        self.backoff_multiplier = 1.0  # Exponential backoff multiplier
+        self.batch_size = batch_size
+        self.batch_pause = batch_pause
+        self.jitter_percent = jitter_percent
         
+        self.broker_cache = {}  # company_name -> broker_info
+        self.total_api_calls = 0  # Count ALL API calls (success + 404 + 403)
+        self.successful_responses = 0  # Only non-error responses
+        self.error_responses = 0  # 404 + 403 + timeouts
+        self.skipped_count = 0  # Deduplicated brokers
+        
+        self.batch_request_count = 0
+        self.batch_user_agents = []
+        self.current_ua_index = 0
+        self.batch_num = 0
+        
+        self.consecutive_403_count = 0  # Track consecutive 403 errors
+        self.current_backoff_level = BackoffLevel.LEVEL_0
+        
+    def get_random_delay(self, base_delay: float) -> float:
+        """Add ±25% random jitter to delay"""
+        jitter_factor = 1.0 + (random.random() - 0.5) * (self.jitter_percent / 100.0)
+        return base_delay * jitter_factor
+    
+    def select_batch_user_agents(self):
+        """Select 3 random user agents for this batch"""
+        self.batch_user_agents = random.sample(USER_AGENTS, min(3, len(USER_AGENTS)))
+        self.current_ua_index = 0
+    
+    def get_batch_user_agent(self) -> str:
+        """Get next user agent from batch (round-robin within batch)"""
+        if not self.batch_user_agents:
+            self.select_batch_user_agents()
+        ua = self.batch_user_agents[self.current_ua_index % len(self.batch_user_agents)]
+        self.current_ua_index += 1
+        return ua
+    
+    def update_backoff_level(self):
+        """Update backoff level based on consecutive 403 errors"""
+        if self.consecutive_403_count == 0:
+            self.current_backoff_level = BackoffLevel.LEVEL_0
+        elif self.consecutive_403_count <= 2:
+            self.current_backoff_level = BackoffLevel.LEVEL_1
+        elif self.consecutive_403_count <= 4:
+            self.current_backoff_level = BackoffLevel.LEVEL_2
+        else:
+            self.current_backoff_level = BackoffLevel.LEVEL_3
+    
+    def check_approach_limit(self):
+        """Check and warn if approaching request limit"""
+        if self.max_requests > 0:
+            if self.total_api_calls >= DANGER_ZONE and self.total_api_calls < self.max_requests:
+                print(f"[CRITICAL] Approaching request limit: {self.total_api_calls}/{self.max_requests}")
+                self.current_backoff_level = BackoffLevel.LEVEL_3
+            elif self.total_api_calls >= WARNING_ZONE and self.total_api_calls < DANGER_ZONE:
+                print(f"[WARNING] In warning zone: {self.total_api_calls}/{self.max_requests}")
+    
     def get_next_user_agent(self) -> str:
         """
-        Get next User-Agent in round-robin fashion
+        Get next User-Agent from batch
         
         Returns:
             User-Agent string
         """
-        agent = USER_AGENTS[self.user_agent_index % len(USER_AGENTS)]
-        self.user_agent_index += 1
-        return agent
+        return self.get_batch_user_agent()
     
     def load_signatures(self) -> List[Dict[str, Any]]:
         """Load and sort signatures by Count (descending)"""
@@ -101,7 +166,7 @@ class BrokerInfoAggregator:
     
     def fetch_broker_info(self, keyword: str, signature: str) -> Dict[str, Any]:
         """
-        Fetch broker info from MT4 API with User-Agent rotation
+        Fetch broker info from MT4 API with enhanced error handling
         
         Args:
             keyword: Company keyword
@@ -110,8 +175,19 @@ class BrokerInfoAggregator:
         Returns:
             API response or None if error
         """
+        # Increment API call counter BEFORE making request
+        self.total_api_calls += 1
+        
+        # Check limit AFTER incrementing
+        if self.max_requests > 0 and self.total_api_calls > self.max_requests:
+            print(f"[STOP] Reached max requests limit ({self.max_requests})")
+            return None
+        
+        # Check approach to limit
+        self.check_approach_limit()
+        
         try:
-            # Get next User-Agent in round-robin fashion
+            # Get next User-Agent from batch
             user_agent = self.get_next_user_agent()
             
             headers = {
@@ -124,14 +200,15 @@ class BrokerInfoAggregator:
                 'signature': signature
             }
             
-            print(f"[*] Fetching: company={keyword} (UA: {user_agent.split('/')[1][:15]}...)")
+            print(f"[*] [{self.total_api_calls}] Fetching: {keyword} (UA: {user_agent.split('/')[1][:15]}...)")
             response = requests.post(API_URL, data=data, headers=headers, timeout=10)
             response.raise_for_status()
             
             result = response.json()
             # Reset 403 counter on successful response
             self.consecutive_403_count = 0
-            self.backoff_multiplier = 1.0
+            self.update_backoff_level()
+            self.successful_responses += 1
             return result
             
         except requests.exceptions.HTTPError as e:
@@ -142,31 +219,38 @@ class BrokerInfoAggregator:
                     # 404 Not Found - keyword gave no results, skip silently
                     print(f"[~] No results for {keyword} (404)")
                     self.consecutive_403_count = 0  # Reset 403 counter
+                    self.error_responses += 1
                     return {}  # Return empty response to skip
                 elif status_code == 403:
                     # 403 Forbidden - API blocking or rate limiting
                     self.consecutive_403_count += 1
-                    backoff_seconds = self.delay * 5 * self.backoff_multiplier
-                    print(f"[!] API BLOCKING for {keyword} (403 Forbidden, consecutive: {self.consecutive_403_count}/{self.max_consecutive_errors})")
-                    print(f"[!] Exponential backoff: {backoff_seconds:.1f} seconds...")
+                    self.update_backoff_level()
+                    backoff_seconds = self.base_delay + self.current_backoff_level.value
+                    backoff_seconds = self.get_random_delay(backoff_seconds)
+                    print(f"[!] API BLOCKING: {keyword} (403 Forbidden, consecutive: {self.consecutive_403_count}/{self.max_consecutive_errors})")
+                    print(f"[!] Backoff level: {self.current_backoff_level.name}. Pausing {backoff_seconds:.1f}s...")
                     time.sleep(backoff_seconds)
-                    self.backoff_multiplier += 1.0  # Increase backoff for next time
+                    self.error_responses += 1
                     return None
                 else:
                     print(f"[-] HTTP error for {keyword}: {status_code} {e}")
                     self.consecutive_403_count = 0  # Reset on other HTTP errors
+                    self.error_responses += 1
                     return None
             else:
                 print(f"[-] HTTP error for {keyword}: {e}")
                 self.consecutive_403_count = 0
+                self.error_responses += 1
                 return None
         except requests.exceptions.RequestException as e:
             print(f"[-] Request error for {keyword}: {e}")
             self.consecutive_403_count = 0
+            self.error_responses += 1
             return None
         except json.JSONDecodeError as e:
             print(f"[-] JSON parse error for {keyword}: {e}")
             self.consecutive_403_count = 0
+            self.error_responses += 1
             return None
     
     def process_api_response(self, response: Dict[str, Any], keyword: str, signature: str) -> int:
@@ -214,21 +298,26 @@ class BrokerInfoAggregator:
         return count
     
     def run(self):
-        """Main execution"""
-        print("[*] Broker Info Aggregator")
+        """Main execution with batch processing"""
+        print("[*] Broker Info Aggregator (Enhanced)")
         print(f"[*] Input: {self.input_file}")
-        print(f"[*] Max consecutive 403 errors before stopping: {self.max_consecutive_errors}")
+        print(f"[*] Max API calls: {self.max_requests if self.max_requests > 0 else 'unlimited'}")
+        print(f"[*] Batch size: {self.batch_size} requests/batch + {self.batch_pause}s pause")
+        print(f"[*] Jitter: ±{self.jitter_percent}% on delays")
+        print(f"[*] Max consecutive 403 errors: {self.max_consecutive_errors}")
         
         # Load and sort signatures
         rows = self.load_signatures()
+        self.select_batch_user_agents()  # Initialize batch UAs
         
         # Process each signature
         for i, row in enumerate(rows):
-            if self.max_requests > 0 and self.processed_count >= self.max_requests:
+            # Stop if reached max requests
+            if self.max_requests > 0 and self.total_api_calls >= self.max_requests:
                 print(f"[*] Reached request limit ({self.max_requests})")
                 break
             
-            # Check if too many consecutive 403 errors
+            # Stop if too many consecutive 403 errors
             if self.consecutive_403_count >= self.max_consecutive_errors:
                 print(f"\n[!] Reached {self.consecutive_403_count} consecutive 403 errors (threshold: {self.max_consecutive_errors})")
                 print(f"[!] API appears to be blocking all requests. Stopping gracefully.")
@@ -237,36 +326,46 @@ class BrokerInfoAggregator:
             keyword = row.get('Keyword')
             signature = row.get('Signature')
             count = row.get('Count', 0)
+            cleaned_keyword = row.get('CleanedKeyword', keyword)
             
             if not keyword or not signature:
                 print(f"[-] Row {i}: Missing Keyword or Signature")
-                self.error_count += 1
                 continue
             
-            print(f"\n[*] [{i+1}/{len(rows)}] Processing: {keyword} (Count: {count})")
+            # Check if completing a batch
+            if self.batch_request_count > 0 and self.batch_request_count % self.batch_size == 0:
+                self.batch_num += 1
+                pause_time = self.get_random_delay(self.batch_pause)
+                print(f"\n[BATCH {self.batch_num}] Completed {self.batch_size} requests. " +
+                      f"Pausing {pause_time:.1f}s before next batch...")
+                time.sleep(pause_time)
+                self.select_batch_user_agents()  # New UAs for new batch
+            
+            # Apply delay between requests (jittered)
+            if self.batch_request_count > 0:
+                delay = self.get_current_delay()
+                time.sleep(delay)
             
             # Fetch broker info from API
-            response = self.fetch_broker_info(keyword, signature)
+            response = self.fetch_broker_info(cleaned_keyword, signature)
+            self.batch_request_count += 1
             
             if response is not None:
                 # Response can be empty dict {} (404 - no results) or dict with data
-                added = self.process_api_response(response, keyword, signature)
-                if added > 0:
-                    self.processed_count += 1
-                # Don't count 404 as error, just as no results
-            else:
-                # Only count as error if response is None (actual failure like 403)
-                self.error_count += 1
+                added = self.process_api_response(response, cleaned_keyword, signature)
             
-            # Delay between requests
-            if i < len(rows) - 1 and (self.max_requests == 0 or self.processed_count < self.max_requests):
-                time.sleep(self.delay)
+            print(f"  Progress: API calls: {self.total_api_calls}, Success: {self.successful_responses}, Errors: {self.error_responses}, Brokers: {len(self.broker_cache)}")
         
         # Generate output
         self.generate_output()
     
+    def get_current_delay(self) -> float:
+        """Calculate current delay with backoff and jitter"""
+        base = self.base_delay + self.current_backoff_level.value
+        return self.get_random_delay(base)
+    
     def generate_output(self):
-        """Generate output JSON with deduplicated brokers"""
+        """Generate output JSON with deduplicated brokers and enhanced metrics"""
         # Generate filename if not provided
         if not self.output_file:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -286,11 +385,11 @@ class BrokerInfoAggregator:
         
         output_data = {
             "rows": output_rows,
-            "totalKeywords": len(output_rows) + self.error_count + self.skipped_count,
+            "totalApiCalls": self.total_api_calls,
+            "successfulResponses": self.successful_responses,
+            "errorResponses": self.error_responses,
             "uniqueBrokers": len(self.broker_cache),
-            "processedRequests": self.processed_count,
             "skippedDuplicates": self.skipped_count,
-            "failedRequests": self.error_count,
             "timestamp": datetime.now().isoformat()
         }
         
@@ -303,11 +402,14 @@ class BrokerInfoAggregator:
             print(f"\n[+] Output saved: {self.output_file} ({file_size} bytes)")
             
             # Print summary
-            print("\n[*] Summary:")
-            print(f"    Processed: {self.processed_count} requests")
+            print("\n[*] Enhancement Summary:")
+            print(f"    Total API calls: {self.total_api_calls}")
+            print(f"    Successful responses: {self.successful_responses}")
+            print(f"    Error responses: {self.error_responses}")
             print(f"    Unique brokers: {len(self.broker_cache)}")
             print(f"    Skipped duplicates: {self.skipped_count}")
-            print(f"    Errors: {self.error_count}")
+            print(f"    Batch size: {self.batch_size}")
+            print(f"    Jitter: ±{self.jitter_percent}%")
             
         except Exception as e:
             print(f"[-] Error writing output: {e}")
@@ -316,42 +418,65 @@ class BrokerInfoAggregator:
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python broker_info_aggregator.py <input_file> [output_file] [--max-requests N] [--delay SECS] [--max-consecutive-errors N]")
-        print("Example: python broker_info_aggregator.py output_servers_search_keys.json --delay 2 --max-consecutive-errors 5")
+        print("Usage: python broker_info_aggregator.py <input_file> [options]")
+        print("\nOptions:")
+        print("  --output-file FILE           Output filename")
+        print("  --max-requests N             Max total API calls (0=unlimited, default: 0)")
+        print("  --delay SECS                 Base delay between requests in seconds (default: 1.0)")
+        print("  --batch-size N               Requests per batch before pause (default: 25)")
+        print("  --batch-pause SECS           Pause duration between batches (default: 45)")
+        print("  --jitter PERCENT             Random delay jitter ±% (default: 25)")
+        print("  --max-consecutive-errors N   Stop after N consecutive 403s (default: 5)")
+        print("\nExample:")
+        print("  python broker_info_aggregator.py keys.json --max-requests 100 --delay 1.0 --batch-size 25 --jitter 25")
         sys.exit(1)
     
     input_file = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith('--') else None
-    
-    # Check for --max-requests option
+    output_file = None
     max_requests = 0
-    if '--max-requests' in sys.argv:
-        idx = sys.argv.index('--max-requests')
-        if idx + 1 < len(sys.argv):
+    delay = 1.0
+    batch_size = 25
+    batch_pause = 45
+    jitter_percent = 25
+    max_consecutive_errors = 5
+    
+    # Parse options
+    for i in range(2, len(sys.argv)):
+        if sys.argv[i] == '--output-file' and i + 1 < len(sys.argv):
+            output_file = sys.argv[i + 1]
+        elif sys.argv[i] == '--max-requests' and i + 1 < len(sys.argv):
             try:
-                max_requests = int(sys.argv[idx + 1])
+                max_requests = int(sys.argv[i + 1])
             except ValueError:
                 print("[-] Invalid --max-requests value")
                 sys.exit(1)
-    
-    # Check for --delay option
-    delay = 1.0
-    if '--delay' in sys.argv:
-        idx = sys.argv.index('--delay')
-        if idx + 1 < len(sys.argv):
+        elif sys.argv[i] == '--delay' and i + 1 < len(sys.argv):
             try:
-                delay = float(sys.argv[idx + 1])
+                delay = float(sys.argv[i + 1])
             except ValueError:
                 print("[-] Invalid --delay value")
                 sys.exit(1)
-    
-    # Check for --max-consecutive-errors option
-    max_consecutive_errors = 5
-    if '--max-consecutive-errors' in sys.argv:
-        idx = sys.argv.index('--max-consecutive-errors')
-        if idx + 1 < len(sys.argv):
+        elif sys.argv[i] == '--batch-size' and i + 1 < len(sys.argv):
             try:
-                max_consecutive_errors = int(sys.argv[idx + 1])
+                batch_size = int(sys.argv[i + 1])
+            except ValueError:
+                print("[-] Invalid --batch-size value")
+                sys.exit(1)
+        elif sys.argv[i] == '--batch-pause' and i + 1 < len(sys.argv):
+            try:
+                batch_pause = float(sys.argv[i + 1])
+            except ValueError:
+                print("[-] Invalid --batch-pause value")
+                sys.exit(1)
+        elif sys.argv[i] == '--jitter' and i + 1 < len(sys.argv):
+            try:
+                jitter_percent = float(sys.argv[i + 1])
+            except ValueError:
+                print("[-] Invalid --jitter value")
+                sys.exit(1)
+        elif sys.argv[i] == '--max-consecutive-errors' and i + 1 < len(sys.argv):
+            try:
+                max_consecutive_errors = int(sys.argv[i + 1])
             except ValueError:
                 print("[-] Invalid --max-consecutive-errors value")
                 sys.exit(1)
@@ -361,8 +486,17 @@ def main():
         print(f"[-] Input file not found: {input_file}")
         sys.exit(1)
     
-    # Run aggregator
-    aggregator = BrokerInfoAggregator(input_file, output_file, max_requests, delay, max_consecutive_errors)
+    # Run aggregator with all enhanced parameters
+    aggregator = BrokerInfoAggregator(
+        input_file=input_file,
+        output_file=output_file,
+        max_requests=max_requests,
+        delay=delay,
+        max_consecutive_errors=max_consecutive_errors,
+        batch_size=batch_size,
+        batch_pause=batch_pause,
+        jitter_percent=jitter_percent
+    )
     aggregator.run()
 
 

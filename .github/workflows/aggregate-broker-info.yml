@@ -8,13 +8,25 @@ on:
         required: true
         default: "java-tools/output/keys.json"
       delay:
-        description: "Delay between API requests (seconds)"
+        description: "Base delay between API requests (seconds)"
         required: false
         default: "1.0"
       max_requests:
-        description: "Max number of API requests (0 = unlimited)"
+        description: "Max total API calls (0 = unlimited)"
         required: false
-        default: "0"
+        default: "100"
+      batch_size:
+        description: "Requests per batch before pause"
+        required: false
+        default: "25"
+      batch_pause:
+        description: "Pause duration between batches (seconds)"
+        required: false
+        default: "45"
+      jitter_percent:
+        description: "Random delay jitter ±% (0-100)"
+        required: false
+        default: "25"
       max_consecutive_errors:
         description: "Stop after N consecutive 403 errors (API blocking detection)"
         required: false
@@ -62,22 +74,26 @@ jobs:
         run: |
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
+          BATCH_SIZE="${{ github.event.inputs.batch_size }}"
+          BATCH_PAUSE="${{ github.event.inputs.batch_pause }}"
+          JITTER="${{ github.event.inputs.jitter_percent }}"
           MAX_ERRORS="${{ github.event.inputs.max_consecutive_errors }}"
           INPUT="${{ github.event.inputs.input_file }}"
           WORK_DIR="broker-info-aggregator"
           
-          echo "[*] Starting broker info aggregation..."
+          echo "[*] Starting broker info aggregation with enhancements..."
           echo "[*] Input: $INPUT"
-          echo "[*] Delay: ${DELAY} seconds"
-          echo "[*] Max requests: $MAX_REQUESTS (0 = unlimited)"
-          echo "[*] Max consecutive 403 errors: $MAX_ERRORS"
+          echo "[*] Base delay: ${DELAY}s | Batch size: $BATCH_SIZE | Batch pause: ${BATCH_PAUSE}s"
+          echo "[*] Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
           echo ""
           
-          if [ "$MAX_REQUESTS" = "0" ] || [ -z "$MAX_REQUESTS" ]; then
-            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-consecutive-errors "$MAX_ERRORS"
-          else
-            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS" --max-consecutive-errors "$MAX_ERRORS"
-          fi
+          python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" \
+            --delay "$DELAY" \
+            --batch-size "$BATCH_SIZE" \
+            --batch-pause "$BATCH_PAUSE" \
+            --jitter "$JITTER" \
+            --max-requests "$MAX_REQUESTS" \
+            --max-consecutive-errors "$MAX_ERRORS"
           
           # Move output to work dir for artifact upload
           mv output_brokers_*.json "$WORK_DIR/" 2>/dev/null || true
@@ -108,8 +124,10 @@ jobs:
           data = json.load(open('$OUTPUT_FILE'))
           print(f'[+] Valid JSON structure')
           print(f'[*] Total rows: {len(data.get(\"rows\", []))}')
+          print(f'[*] Total API calls: {data.get(\"totalApiCalls\", 0)}')
+          print(f'[*] Successful responses: {data.get(\"successfulResponses\", 0)}')
+          print(f'[*] Error responses: {data.get(\"errorResponses\", 0)}')
           print(f'[*] Unique brokers: {data.get(\"uniqueBrokers\", 0)}')
-          print(f'[*] Requests processed: {data.get(\"processedRequests\", 0)}')
           " || exit 1
 
       - name: Upload results
