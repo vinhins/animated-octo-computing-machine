@@ -9,6 +9,7 @@ import sys
 import os
 import time
 import random
+import csv
 from pathlib import Path
 from datetime import datetime
 from enum import Enum
@@ -443,9 +444,43 @@ class BrokerInfoAggregator:
             print(f"    Batch size: {self.batch_size}")
             print(f"    Jitter: ±{self.jitter_percent}%")
             
+            # Generate CSV output alongside JSON
+            self.generate_csv_output()
+            
         except Exception as e:
             print(f"[-] Error writing output: {e}")
             sys.exit(1)
+    
+    def generate_csv_output(self):
+        """Generate CSV output with server names, company, and websites"""
+        # Create CSV filename from JSON filename
+        csv_file = self.output_file.replace('.json', '.csv')
+        
+        try:
+            with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f, delimiter=';')
+                # Write header
+                writer.writerow(['servers.name', 'company', 'website'])
+                
+                # Write data rows
+                for company, broker_info in self.broker_cache.items():
+                    website = broker_info.get('website', '')
+                    servers = broker_info.get('servers', [])
+                    
+                    if servers:
+                        # Write one row per server
+                        for server in servers:
+                            server_name = server.get('name', '')
+                            writer.writerow([server_name, company, website])
+                    else:
+                        # Write one row per broker even if no servers
+                        writer.writerow(['', company, website])
+            
+            file_size = os.path.getsize(csv_file)
+            print(f"[+] CSV output saved: {csv_file} ({file_size} bytes)")
+            
+        except Exception as e:
+            print(f"[-] Error writing CSV output: {e}")
 
 
 def main():
