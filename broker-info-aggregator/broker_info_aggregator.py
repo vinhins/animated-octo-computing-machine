@@ -85,10 +85,12 @@ class BrokerInfoAggregator:
         self.jitter_percent = jitter_percent
         
         self.broker_cache = {}  # company_name -> broker_info
+        self.processed_keywords = set()  # Track cleaned keywords already processed
         self.total_api_calls = 0  # Count ALL API calls (success + 404 + 403)
         self.successful_responses = 0  # Only non-error responses
         self.error_responses = 0  # 404 + 403 + timeouts
         self.skipped_count = 0  # Deduplicated brokers
+        self.skipped_keywords = 0  # Keywords already processed
         
         self.batch_request_count = 0
         self.batch_user_agents = []
@@ -346,6 +348,15 @@ class BrokerInfoAggregator:
                 print(f"[-] Row {i}: Missing Keyword or Signature")
                 continue
             
+            # Skip if cleaned keyword already processed in this run
+            if cleaned_keyword in self.processed_keywords:
+                self.skipped_keywords += 1
+                print(f"[~] Keyword already processed: {keyword} (cleaned: {cleaned_keyword})")
+                continue
+            
+            # Mark keyword as processed
+            self.processed_keywords.add(cleaned_keyword)
+            
             # Check if completing a batch
             if self.batch_request_count > 0 and self.batch_request_count % self.batch_size == 0:
                 self.batch_num += 1
@@ -402,9 +413,11 @@ class BrokerInfoAggregator:
             "totalApiCalls": self.total_api_calls,
             "successfulResponses": self.successful_responses,
             "errorResponses": self.error_responses,
-            "errorBreakdown": self.error_types,  # NEW: Track error types
+            "errorBreakdown": self.error_types,
             "uniqueBrokers": len(self.broker_cache),
-            "skippedDuplicates": self.skipped_count,
+            "skippedBrokerDuplicates": self.skipped_count,
+            "skippedKeywords": self.skipped_keywords,
+            "uniqueKeywordsProcessed": len(self.processed_keywords),
             "timestamp": datetime.now().isoformat()
         }
         
@@ -425,7 +438,8 @@ class BrokerInfoAggregator:
                 error_breakdown = ", ".join([f"{code}:{count}" for code, count in sorted(self.error_types.items())])
                 print(f"    Error breakdown: {error_breakdown}")
             print(f"    Unique brokers: {len(self.broker_cache)}")
-            print(f"    Skipped duplicates: {self.skipped_count}")
+            print(f"    Skipped brokers (dupes): {self.skipped_count}")
+            print(f"    Skipped keywords (already processed): {self.skipped_keywords}")
             print(f"    Batch size: {self.batch_size}")
             print(f"    Jitter: ±{self.jitter_percent}%")
             
