@@ -139,7 +139,7 @@ class BrokerInfoAggregator:
     
     def select_batch_user_agents(self):
         """Select 3 random user agents for this batch"""
-        self.batch_user_agents = random.sample(USER_AGENTS, min(3, len(USER_AGENTS)))
+        self.batch_user_agents = random.sample(self.user_agents, min(3, len(self.user_agents)))
         self.current_ua_index = 0
     
     def get_batch_user_agent(self) -> str:

@@ -196,8 +196,8 @@ public class SignatureProcessor {
         outputJson.addProperty("failedRows", errorCount);
         outputJson.add("rows", outputRows);
 
-        // Write output JSON with pretty formatting
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        // Write output JSON with pretty formatting (disable HTML escaping for = and other chars)
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         String outputContent = gson.toJson(outputJson);
         Files.writeString(Paths.get(outputPath), outputContent, StandardCharsets.UTF_8);
 
