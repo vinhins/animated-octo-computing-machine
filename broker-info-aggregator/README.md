@@ -10,6 +10,10 @@ Fetches broker information from MetaTrader 4 API using keywords and signatures, 
 - ✅ Deduplicates broker info by company name
 - ✅ Preserves Keyword and Signature for each broker
 - ✅ Outputs structured JSON with company names as keys
+- ✅ **Error Handling**: 404 (no results) skipped silently, 403 (API blocking) detected
+- ✅ **User-Agent Rotation**: Round-robin through Android/iOS User-Agents to avoid blocking
+- ✅ **Exponential Backoff**: Increases backoff time with each consecutive 403 error
+- ✅ **Auto-Stop**: Stops gracefully after N consecutive 403 errors (configurable)
 
 ## Prerequisites
 
@@ -44,9 +48,14 @@ python broker_info_aggregator.py input_signatures.json --delay 2.5
 python broker_info_aggregator.py input_signatures.json --max-requests 10 --delay 1.0
 ```
 
+### Stop after N consecutive 403 errors (API blocking):
+```bash
+python broker_info_aggregator.py input_signatures.json --max-consecutive-errors 5
+```
+
 ### Combined options:
 ```bash
-python broker_info_aggregator.py input_signatures.json output.json --max-requests 50 --delay 0.5
+python broker_info_aggregator.py input_signatures.json output.json --max-requests 50 --delay 0.5 --max-consecutive-errors 3
 ```
 
 ## Input JSON Format
@@ -111,11 +120,51 @@ Expected output format from SignatureProcessor:
 
 - **URL**: `https://download.terminal.free/public/mt4/network/mobile`
 - **Method**: POST
-- **User-Agent**: MetaTrader 4 Android Mobile/4.1456 (Android 13)
+- **User-Agent**: Rotated through 8 different Android/iOS User-Agents (round-robin)
 - **Body**: `company={keyword}&signature={signature}`
+
+## Error Handling & API Blocking
+
+### 404 Not Found
+- **Meaning**: Keyword gave no search results on the API
+- **Behavior**: Silently skipped, not counted as error
+- **Action**: Continues to next keyword
+
+### 403 Forbidden  
+- **Meaning**: API blocking or rate limiting
+- **Behavior**: 
+  - Tracked as consecutive error
+  - Exponential backoff applied (5s, 10s, 15s, ...)
+  - Continues until `--max-consecutive-errors` threshold
+  - Once threshold reached, stops processing gracefully
+- **Action**: Use with `--max-consecutive-errors` parameter to auto-detect API blocking
+
+### User-Agent Rotation
+The aggregator rotates through 8 different User-Agents to avoid detection and blocking:
+- MetaTrader 4 Android Mobile/4.1456 (Android 13, 12, 14, 11, 10)
+- MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 17, 16, 15)
+
+Each request cycles to the next User-Agent in sequence.
+
+### Recommended Settings
+
+**For aggressive scraping (higher risk of blocking):**
+```bash
+--delay 2.0 --max-consecutive-errors 3
+```
+
+**For safe scraping (slower but more reliable):**
+```bash
+--delay 5.0 --max-consecutive-errors 10
+```
+
+**For batch processing (e.g., 10,000+ keywords):**
+```bash
+--delay 3.0 --max-consecutive-errors 5 --max-requests 500
+```
 
 ## Notes
 
-- Deduplication: Same company name from different keywords are skipped
-- Rate limiting: No built-in delay between requests (add if needed)
-- Error handling: Failed requests logged but processing continues
+- **Deduplication**: Same company name from different keywords are skipped
+- **Rate limiting**: Use `--delay` to add delays between requests
+- **Error handling**: 404 errors are silently skipped, 403 errors trigger backoff and auto-stop

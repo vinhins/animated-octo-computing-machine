@@ -15,6 +15,10 @@ on:
         description: "Max number of API requests (0 = unlimited)"
         required: false
         default: "0"
+      max_consecutive_errors:
+        description: "Stop after N consecutive 403 errors (API blocking detection)"
+        required: false
+        default: "5"
 
 permissions:
   contents: read
@@ -58,6 +62,7 @@ jobs:
         run: |
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
+          MAX_ERRORS="${{ github.event.inputs.max_consecutive_errors }}"
           INPUT="${{ github.event.inputs.input_file }}"
           WORK_DIR="broker-info-aggregator"
           
@@ -65,12 +70,13 @@ jobs:
           echo "[*] Input: $INPUT"
           echo "[*] Delay: ${DELAY} seconds"
           echo "[*] Max requests: $MAX_REQUESTS (0 = unlimited)"
+          echo "[*] Max consecutive 403 errors: $MAX_ERRORS"
           echo ""
           
           if [ "$MAX_REQUESTS" = "0" ] || [ -z "$MAX_REQUESTS" ]; then
-            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY"
+            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-consecutive-errors "$MAX_ERRORS"
           else
-            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS"
+            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS" --max-consecutive-errors "$MAX_ERRORS"
           fi
           
           # Move output to work dir for artifact upload

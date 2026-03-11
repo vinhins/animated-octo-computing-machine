@@ -15,7 +15,18 @@ from typing import Dict, List, Any
 
 # MT4 API Configuration
 API_URL = "https://download.terminal.free/public/mt4/network/mobile"
-USER_AGENT = "MetaTrader 4 Android Mobile/4.1456 (Android 13)"
+
+# User-Agent rotation list (mixed Android and iOS)
+USER_AGENTS = [
+    "MetaTrader 4 Android Mobile/4.1456 (Android 13)",
+    "MetaTrader 4 Android Mobile/4.1456 (Android 12)",
+    "MetaTrader 4 Android Mobile/4.1456 (Android 14)",
+    "MetaTrader 4 Android Mobile/4.1456 (Android 11)",
+    "MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 17)",
+    "MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 16)",
+    "MetaTrader 4 Android Mobile/4.1456 (Android 10)",
+    "MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 15)",
+]
 
 
 def redact_signature(signature: str, redact_last: int = 3) -> str:
@@ -34,7 +45,7 @@ def redact_signature(signature: str, redact_last: int = 3) -> str:
     return signature[:-redact_last] + ("*" * redact_last)
 
 class BrokerInfoAggregator:
-    def __init__(self, input_file: str, output_file: str = None, max_requests: int = 0, delay: float = 1.0):
+    def __init__(self, input_file: str, output_file: str = None, max_requests: int = 0, delay: float = 1.0, max_consecutive_errors: int = 5):
         """
         Initialize the aggregator
         
@@ -43,16 +54,32 @@ class BrokerInfoAggregator:
             output_file: Path to output JSON file (auto-generated if not provided)
             max_requests: Max API requests to make (0 = unlimited)
             delay: Delay in seconds between API requests (default 1.0)
+            max_consecutive_errors: Stop after N consecutive 403 errors (default 5)
         """
         self.input_file = input_file
         self.max_requests = max_requests
         self.delay = delay
         self.output_file = output_file
+        self.max_consecutive_errors = max_consecutive_errors
         self.broker_cache = {}  # company_name -> broker_info
         self.processed_count = 0
         self.error_count = 0
         self.skipped_count = 0
+        self.user_agent_index = 0  # For round-robin User-Agent rotation
+        self.consecutive_403_count = 0  # Track consecutive 403 errors
+        self.backoff_multiplier = 1.0  # Exponential backoff multiplier
         
+    def get_next_user_agent(self) -> str:
+        """
+        Get next User-Agent in round-robin fashion
+        
+        Returns:
+            User-Agent string
+        """
+        agent = USER_AGENTS[self.user_agent_index % len(USER_AGENTS)]
+        self.user_agent_index += 1
+        return agent
+    
     def load_signatures(self) -> List[Dict[str, Any]]:
         """Load and sort signatures by Count (descending)"""
         try:
@@ -74,7 +101,7 @@ class BrokerInfoAggregator:
     
     def fetch_broker_info(self, keyword: str, signature: str) -> Dict[str, Any]:
         """
-        Fetch broker info from MT4 API
+        Fetch broker info from MT4 API with User-Agent rotation
         
         Args:
             keyword: Company keyword
@@ -84,8 +111,11 @@ class BrokerInfoAggregator:
             API response or None if error
         """
         try:
+            # Get next User-Agent in round-robin fashion
+            user_agent = self.get_next_user_agent()
+            
             headers = {
-                'User-Agent': USER_AGENT,
+                'User-Agent': user_agent,
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
             
@@ -94,18 +124,49 @@ class BrokerInfoAggregator:
                 'signature': signature
             }
             
-            print(f"[*] Fetching: company={keyword}")
+            print(f"[*] Fetching: company={keyword} (UA: {user_agent.split('/')[1][:15]}...)")
             response = requests.post(API_URL, data=data, headers=headers, timeout=10)
             response.raise_for_status()
             
             result = response.json()
+            # Reset 403 counter on successful response
+            self.consecutive_403_count = 0
+            self.backoff_multiplier = 1.0
             return result
             
+        except requests.exceptions.HTTPError as e:
+            # Handle specific HTTP errors
+            if e.response is not None:
+                status_code = e.response.status_code
+                if status_code == 404:
+                    # 404 Not Found - keyword gave no results, skip silently
+                    print(f"[~] No results for {keyword} (404)")
+                    self.consecutive_403_count = 0  # Reset 403 counter
+                    return {}  # Return empty response to skip
+                elif status_code == 403:
+                    # 403 Forbidden - API blocking or rate limiting
+                    self.consecutive_403_count += 1
+                    backoff_seconds = self.delay * 5 * self.backoff_multiplier
+                    print(f"[!] API BLOCKING for {keyword} (403 Forbidden, consecutive: {self.consecutive_403_count}/{self.max_consecutive_errors})")
+                    print(f"[!] Exponential backoff: {backoff_seconds:.1f} seconds...")
+                    time.sleep(backoff_seconds)
+                    self.backoff_multiplier += 1.0  # Increase backoff for next time
+                    return None
+                else:
+                    print(f"[-] HTTP error for {keyword}: {status_code} {e}")
+                    self.consecutive_403_count = 0  # Reset on other HTTP errors
+                    return None
+            else:
+                print(f"[-] HTTP error for {keyword}: {e}")
+                self.consecutive_403_count = 0
+                return None
         except requests.exceptions.RequestException as e:
-            print(f"[-] API error for {keyword}: {e}")
+            print(f"[-] Request error for {keyword}: {e}")
+            self.consecutive_403_count = 0
             return None
         except json.JSONDecodeError as e:
             print(f"[-] JSON parse error for {keyword}: {e}")
+            self.consecutive_403_count = 0
             return None
     
     def process_api_response(self, response: Dict[str, Any], keyword: str, signature: str) -> int:
@@ -156,6 +217,7 @@ class BrokerInfoAggregator:
         """Main execution"""
         print("[*] Broker Info Aggregator")
         print(f"[*] Input: {self.input_file}")
+        print(f"[*] Max consecutive 403 errors before stopping: {self.max_consecutive_errors}")
         
         # Load and sort signatures
         rows = self.load_signatures()
@@ -164,6 +226,12 @@ class BrokerInfoAggregator:
         for i, row in enumerate(rows):
             if self.max_requests > 0 and self.processed_count >= self.max_requests:
                 print(f"[*] Reached request limit ({self.max_requests})")
+                break
+            
+            # Check if too many consecutive 403 errors
+            if self.consecutive_403_count >= self.max_consecutive_errors:
+                print(f"\n[!] Reached {self.consecutive_403_count} consecutive 403 errors (threshold: {self.max_consecutive_errors})")
+                print(f"[!] API appears to be blocking all requests. Stopping gracefully.")
                 break
             
             keyword = row.get('Keyword')
@@ -180,11 +248,14 @@ class BrokerInfoAggregator:
             # Fetch broker info from API
             response = self.fetch_broker_info(keyword, signature)
             
-            if response:
+            if response is not None:
+                # Response can be empty dict {} (404 - no results) or dict with data
                 added = self.process_api_response(response, keyword, signature)
                 if added > 0:
                     self.processed_count += 1
+                # Don't count 404 as error, just as no results
             else:
+                # Only count as error if response is None (actual failure like 403)
                 self.error_count += 1
             
             # Delay between requests
@@ -245,8 +316,8 @@ class BrokerInfoAggregator:
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python broker_info_aggregator.py <input_file> [output_file] [--max-requests N] [--delay SECS]")
-        print("Example: python broker_info_aggregator.py output_servers_search_keys.json --delay 2")
+        print("Usage: python broker_info_aggregator.py <input_file> [output_file] [--max-requests N] [--delay SECS] [--max-consecutive-errors N]")
+        print("Example: python broker_info_aggregator.py output_servers_search_keys.json --delay 2 --max-consecutive-errors 5")
         sys.exit(1)
     
     input_file = sys.argv[1]
@@ -274,13 +345,24 @@ def main():
                 print("[-] Invalid --delay value")
                 sys.exit(1)
     
+    # Check for --max-consecutive-errors option
+    max_consecutive_errors = 5
+    if '--max-consecutive-errors' in sys.argv:
+        idx = sys.argv.index('--max-consecutive-errors')
+        if idx + 1 < len(sys.argv):
+            try:
+                max_consecutive_errors = int(sys.argv[idx + 1])
+            except ValueError:
+                print("[-] Invalid --max-consecutive-errors value")
+                sys.exit(1)
+    
     # Check input file exists
     if not os.path.exists(input_file):
         print(f"[-] Input file not found: {input_file}")
         sys.exit(1)
     
     # Run aggregator
-    aggregator = BrokerInfoAggregator(input_file, output_file, max_requests, delay)
+    aggregator = BrokerInfoAggregator(input_file, output_file, max_requests, delay, max_consecutive_errors)
     aggregator.run()
 
 
