@@ -1,17 +1,18 @@
 # Broker Info Aggregator
 
-Fetches broker information from MetaTrader 4 API using keywords and signatures, then deduplicates and aggregates results.
+Fetches broker information from MetaTrader 4 and MetaTrader 5 APIs using keywords and signatures, then deduplicates and aggregates results.
 
 ## Features
 
+- ✅ **Dual Platform Support**: MT4 and MT5 APIs with platform-specific User-Agents
 - ✅ Loads signatures from JSON (output from SignatureProcessor)
 - ✅ Sorts by Count descending for priority-based processing
-- ✅ Makes POST requests to MT4 API with proper headers
+- ✅ Makes POST requests to MT4/MT5 APIs with proper headers
 - ✅ Deduplicates broker info by company name
 - ✅ Preserves Keyword and Signature for each broker
 - ✅ Outputs structured JSON with company names as keys
 - ✅ **Error Handling**: 404 (no results) skipped silently, 403 (API blocking) detected
-- ✅ **User-Agent Rotation**: Round-robin through Android/iOS User-Agents to avoid blocking
+- ✅ **User-Agent Rotation**: Platform-specific User-Agent rotation (MT4 Android/iOS, MT5 Mobile/Tablet)
 - ✅ **Exponential Backoff**: Increases backoff time with each consecutive 403 error
 - ✅ **Auto-Stop**: Stops gracefully after N consecutive 403 errors (configurable)
 
@@ -28,14 +29,19 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Basic usage (all keywords):
+### Basic usage (MT4, all keywords):
 ```bash
 python broker_info_aggregator.py input_signatures.json
 ```
 
+### MT5 platform:
+```bash
+python broker_info_aggregator.py input_signatures.json --platform mt5
+```
+
 ### With custom output file:
 ```bash
-python broker_info_aggregator.py input_signatures.json output_brokers.json
+python broker_info_aggregator.py input_signatures.json --output-file output_brokers.json
 ```
 
 ### With custom delay between requests (seconds):
@@ -53,10 +59,84 @@ python broker_info_aggregator.py input_signatures.json --max-requests 10 --delay
 python broker_info_aggregator.py input_signatures.json --max-consecutive-errors 5
 ```
 
+### MT5 with multi-keyword batch mode:
+```bash
+python broker_info_aggregator.py input_signatures.json --platform mt5 --multi-keyword --keywords-per-call 10
+```
+
 ### Combined options:
 ```bash
-python broker_info_aggregator.py input_signatures.json output.json --max-requests 50 --delay 0.5 --max-consecutive-errors 3
+python broker_info_aggregator.py input_signatures.json --platform mt5 --output-file output.json --max-requests 50 --delay 0.5 --max-consecutive-errors 3 --multi-keyword --keywords-per-call 5
 ```
+
+## API Modes
+
+The aggregator supports two different API calling modes:
+
+### Mode 1: Single-Keyword (Default)
+Sends one keyword per API call. Original behavior.
+
+**Advantages:**
+- Works with existing signatures from input JSON
+- More granular control per keyword
+
+**Disadvantages:**
+- More API calls needed
+- Higher rate-limit risk due to volume
+
+**Usage:**
+```bash
+python broker_info_aggregator.py input_signatures.json
+```
+
+### Mode 2: Multi-Keyword (Batch API)
+Sends multiple keywords in a single API call using MT5 batch format: `servers=broker1,broker2,broker3&signature=<batch_sig>`
+
+**Advantages:**
+- Significantly fewer API calls (up to 10x reduction with 10 keywords/call)
+- Reduced rate-limit risk
+- Faster overall processing
+
+**Disadvantages:**
+- Requires pre-computed batch signatures in input JSON
+- Assumes batch signature works for all keywords in group
+
+**Usage:**
+```bash
+# Enable multi-keyword mode with 10 keywords per call
+python broker_info_aggregator.py input_signatures.json --multi-keyword --keywords-per-call 10
+
+# Custom batch size
+python broker_info_aggregator.py input_signatures.json --multi-keyword --keywords-per-call 5
+```
+
+**Input JSON Format for Multi-Keyword Mode:**
+
+The input JSON should have a signature that's valid for multiple keywords. The aggregator will group keywords by signature and batch them together.
+
+```json
+{
+  "rows": [
+    {
+      "Keyword": "broker1",
+      "Signature": "batch_sig_123...",  // Single signature for multiple keywords
+      "Count": 10
+    },
+    {
+      "Keyword": "broker2",
+      "Signature": "batch_sig_123...",  // Same signature
+      "Count": 9
+    },
+    {
+      "Keyword": "broker3",
+      "Signature": "batch_sig_123...",  // Same signature
+      "Count": 8
+    }
+  ]
+}
+```
+
+**NOTE:** For multi-keyword mode to work correctly, you need batch signatures that are computed for the combined keywords, not individual ones. See Java SignatureProcessor class for batch signature computation.
 
 ## Input JSON Format
 
@@ -116,12 +196,31 @@ Expected output format from SignatureProcessor:
 }
 ```
 
-## API Endpoint
+## API Endpoints & Platforms
 
+### MetaTrader 4 (Default)
 - **URL**: `https://download.terminal.free/public/mt4/network/mobile`
 - **Method**: POST
-- **User-Agent**: Rotated through 8 different Android/iOS User-Agents (round-robin)
-- **Body**: `company={keyword}&signature={signature}`
+- **Code Parameter**: `code=mt4`
+- **Body Format**: `company={keyword}&signature={signature}&code=mt4`
+
+### MetaTrader 5
+- **URL**: `https://download.terminal.free/public/mt5/network/mobile`
+- **Method**: POST
+- **Code Parameter**: `code=mt5`
+- **Body Format**: `company={keyword}&signature={signature}&code=mt5`
+
+### User-Agent Rotation
+
+#### MT4 User-Agents (8 variants)
+- MetaTrader 4 Android Mobile/4.1456 (Android 13, 12, 14, 11, 10)
+- MetaTrader 4 iOS Mobile/4.1456 (iPhone OS 17, 16, 15)
+
+#### MT5 User-Agents (8 variants)
+- MetaTrader 5 Android Mobile/5.4900 (Android 13, 12, 14, 11, 10)
+- MetaTrader 5 Android Tablet/5.4900 (Android 13, 12, 11)
+
+Each request cycles to the next User-Agent in sequence to avoid detection and blocking.
 
 ## Error Handling & API Blocking
 

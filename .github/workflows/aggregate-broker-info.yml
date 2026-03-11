@@ -3,6 +3,14 @@ name: Aggregate Broker Info
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        description: "Target platform (mt4 or mt5)"
+        required: false
+        type: choice
+        options:
+          - mt4
+          - mt5
+        default: "mt4"
       input_file:
         description: "Path to input JSON file (signatures output, from repo root)"
         required: true
@@ -72,6 +80,7 @@ jobs:
       - name: Run broker aggregator
         shell: bash
         run: |
+          PLATFORM="${{ github.event.inputs.platform }}"
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
           BATCH_SIZE="${{ github.event.inputs.batch_size }}"
@@ -82,12 +91,14 @@ jobs:
           WORK_DIR="broker-info-aggregator"
           
           echo "[*] Starting broker info aggregation with enhancements..."
+          echo "[*] Platform: ${PLATFORM^^}"
           echo "[*] Input: $INPUT"
           echo "[*] Base delay: ${DELAY}s | Batch size: $BATCH_SIZE | Batch pause: ${BATCH_PAUSE}s"
           echo "[*] Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
           echo ""
           
           python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" \
+            --platform "$PLATFORM" \
             --delay "$DELAY" \
             --batch-size "$BATCH_SIZE" \
             --batch-pause "$BATCH_PAUSE" \
