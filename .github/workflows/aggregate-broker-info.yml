@@ -23,14 +23,6 @@ on:
         description: "Max total API calls (0 = unlimited)"
         required: false
         default: "100"
-      batch_size:
-        description: "Requests per batch before pause"
-        required: false
-        default: "25"
-      batch_pause:
-        description: "Pause duration between batches (seconds)"
-        required: false
-        default: "45"
       jitter_percent:
         description: "Random delay jitter ±% (0-100)"
         required: false
@@ -83,25 +75,20 @@ jobs:
           PLATFORM="${{ github.event.inputs.platform }}"
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
-          BATCH_SIZE="${{ github.event.inputs.batch_size }}"
-          BATCH_PAUSE="${{ github.event.inputs.batch_pause }}"
           JITTER="${{ github.event.inputs.jitter_percent }}"
           MAX_ERRORS="${{ github.event.inputs.max_consecutive_errors }}"
           INPUT="${{ github.event.inputs.input_file }}"
           WORK_DIR="broker-info-aggregator"
           
-          echo "[*] Starting broker info aggregation with enhancements..."
+          echo "[*] Starting broker info aggregation..."
           echo "[*] Platform: ${PLATFORM^^}"
           echo "[*] Input: $INPUT"
-          echo "[*] Base delay: ${DELAY}s | Batch size: $BATCH_SIZE | Batch pause: ${BATCH_PAUSE}s"
-          echo "[*] Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
+          echo "[*] Base delay: ${DELAY}s | Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
           echo ""
           
           python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" \
             --platform "$PLATFORM" \
             --delay "$DELAY" \
-            --batch-size "$BATCH_SIZE" \
-            --batch-pause "$BATCH_PAUSE" \
             --jitter "$JITTER" \
             --max-requests "$MAX_REQUESTS" \
             --max-consecutive-errors "$MAX_ERRORS"
