@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       input_file:
-        description: "Path to input JSON file (signatures output)"
+        description: "Path to input JSON file (signatures output, from repo root)"
         required: true
-        default: "java-tools/input/servers_search_keys.json"
+        default: "java-tools/output/keys.json"
       delay:
         description: "Delay between API requests (seconds)"
         required: false
@@ -56,11 +56,10 @@ jobs:
       - name: Run broker aggregator
         shell: bash
         run: |
-          cd broker-info-aggregator
-          
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
           INPUT="${{ github.event.inputs.input_file }}"
+          WORK_DIR="broker-info-aggregator"
           
           echo "[*] Starting broker info aggregation..."
           echo "[*] Input: $INPUT"
@@ -69,10 +68,13 @@ jobs:
           echo ""
           
           if [ "$MAX_REQUESTS" = "0" ] || [ -z "$MAX_REQUESTS" ]; then
-            python broker_info_aggregator.py "../$INPUT" --delay "$DELAY"
+            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY"
           else
-            python broker_info_aggregator.py "../$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS"
+            python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS"
           fi
+          
+          # Move output to work dir for artifact upload
+          mv output_brokers_*.json "$WORK_DIR/" 2>/dev/null || true
 
       - name: Verify output
         shell: bash
