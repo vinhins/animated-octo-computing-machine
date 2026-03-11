@@ -95,8 +95,9 @@ jobs:
             --max-requests "$MAX_REQUESTS" \
             --max-consecutive-errors "$MAX_ERRORS"
           
-          # Move output to work dir for artifact upload
+          # Move output (JSON + CSV) to work dir for artifact upload
           mv output_brokers_*.json "$WORK_DIR/" 2>/dev/null || true
+          mv output_brokers_*.csv "$WORK_DIR/" 2>/dev/null || true
 
       - name: Verify output
         shell: bash
@@ -134,7 +135,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: broker-info-aggregation-results
-          path: broker-info-aggregator/output_*.json
+          path: broker-info-aggregator/output_*
           retention-days: 30
           if-no-files-found: error
 

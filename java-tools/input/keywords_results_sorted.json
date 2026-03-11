@@ -1,0 +1,2075 @@
+{
+  "table": "SearchKeysAnalysis",
+  "source": "Commit: 61090b37fe547969386c9ded8ab1ad5879ff0f54, output_brokers_output_servers_search_keys_20260311_115525_20260311_052147.json",
+  "description": "Keywords searched and brokers found, sorted by brokers discovered",
+  "totalKeywordsTested": 295,
+  "finalBrokersFound": 633,
+  "totalApiCalls": 295,
+  "rows": [
+    {
+      "Keyword": "Mar",
+      "Count": 32,
+      "TotalBrokers": 49,
+      "Success": 2,
+      "Errors": 0
+    },
+    {
+      "Keyword": "Bal",
+      "Count": 31,
+      "TotalBrokers": 80,
+      "Success": 3,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Fin",
+      "Count": 29,
+      "TotalBrokers": 109,
+      "Success": 4,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Pty",
+      "Count": 28,
+      "TotalBrokers": 166,
+      "Success": 7,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Pri",
+      "Count": 24,
+      "TotalBrokers": 190,
+      "Success": 8,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Tra",
+      "Count": 23,
+      "TotalBrokers": 374,
+      "Success": 23,
+      "Errors": 3
+    },
+    {
+      "Keyword": "FOR",
+      "Count": 19,
+      "TotalBrokers": 275,
+      "Success": 14,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Cap",
+      "Count": 19,
+      "TotalBrokers": 332,
+      "Success": 20,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Com",
+      "Count": 18,
+      "TotalBrokers": 245,
+      "Success": 12,
+      "Errors": 2
+    },
+    {
+      "Keyword": "Lim",
+      "Count": 17,
+      "TotalBrokers": 17,
+      "Success": 1,
+      "Errors": 0
+    },
+    {
+      "Keyword": "Gro",
+      "Count": 16,
+      "TotalBrokers": 351,
+      "Success": 22,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Int",
+      "Count": 15,
+      "TotalBrokers": 138,
+      "Success": 6,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Nat",
+      "Count": 14,
+      "TotalBrokers": 123,
+      "Success": 5,
+      "Errors": 1
+    },
+    {
+      "Keyword": "ENT",
+      "Count": 13,
+      "TotalBrokers": 203,
+      "Success": 9,
+      "Errors": 1
+    },
+    {
+      "Keyword": "LLC",
+      "Count": 13,
+      "TotalBrokers": 434,
+      "Success": 35,
+      "Errors": 5
+    },
+    {
+      "Keyword": "Sec",
+      "Count": 12,
+      "TotalBrokers": 215,
+      "Success": 10,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Ser",
+      "Count": 12,
+      "TotalBrokers": 227,
+      "Success": 11,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Tec",
+      "Count": 12,
+      "TotalBrokers": 413,
+      "Success": 33,
+      "Errors": 5
+    },
+    {
+      "Keyword": "Cor",
+      "Count": 11,
+      "TotalBrokers": 256,
+      "Success": 13,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Bro",
+      "Count": 11,
+      "TotalBrokers": 304,
+      "Success": 18,
+      "Errors": 3
+    },
+    {
+      "Keyword": "ALS",
+      "Count": 10,
+      "TotalBrokers": 293,
+      "Success": 17,
+      "Errors": 3
+    },
+    {
+      "Keyword": "One",
+      "Count": 10,
+      "TotalBrokers": 474,
+      "Success": 46,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Inv",
+      "Count": 9,
+      "TotalBrokers": 313,
+      "Success": 19,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Ema",
+      "Count": 9,
+      "TotalBrokers": 390,
+      "Success": 30,
+      "Errors": 4
+    },
+    {
+      "Keyword": "Bul",
+      "Count": 9,
+      "TotalBrokers": 512,
+      "Success": 58,
+      "Errors": 7
+    },
+    {
+      "Keyword": "and",
+      "Count": 8,
+      "TotalBrokers": 283,
+      "Success": 16,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Fut",
+      "Count": 8,
+      "TotalBrokers": 401,
+      "Success": 32,
+      "Errors": 4
+    },
+    {
+      "Keyword": "Gol",
+      "Count": 8,
+      "TotalBrokers": 421,
+      "Success": 34,
+      "Errors": 5
+    },
+    {
+      "Keyword": "Sma",
+      "Count": 7,
+      "TotalBrokers": 441,
+      "Success": 37,
+      "Errors": 5
+    },
+    {
+      "Keyword": "Exn",
+      "Count": 6,
+      "TotalBrokers": 527,
+      "Success": 66,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Sol",
+      "Count": 5,
+      "TotalBrokers": 452,
+      "Success": 41,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Yat",
+      "Count": 5,
+      "TotalBrokers": 479,
+      "Success": 47,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Pro",
+      "Count": 5,
+      "TotalBrokers": 486,
+      "Success": 52,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Ber",
+      "Count": 5,
+      "TotalBrokers": 495,
+      "Success": 54,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Ban",
+      "Count": 4,
+      "TotalBrokers": 447,
+      "Success": 39,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Eur",
+      "Count": 4,
+      "TotalBrokers": 464,
+      "Success": 45,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Etr",
+      "Count": 4,
+      "TotalBrokers": 490,
+      "Success": 53,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Der",
+      "Count": 4,
+      "TotalBrokers": 499,
+      "Success": 55,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Aur",
+      "Count": 4,
+      "TotalBrokers": 535,
+      "Success": 70,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Bla",
+      "Count": 4,
+      "TotalBrokers": 548,
+      "Success": 83,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Ant",
+      "Count": 4,
+      "TotalBrokers": 557,
+      "Success": 88,
+      "Errors": 13
+    },
+    {
+      "Keyword": "ATF",
+      "Count": 4,
+      "TotalBrokers": 564,
+      "Success": 95,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Ing",
+      "Count": 4,
+      "TotalBrokers": 585,
+      "Success": 117,
+      "Errors": 16
+    },
+    {
+      "Keyword": "FXC",
+      "Count": 4,
+      "TotalBrokers": 590,
+      "Success": 122,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Glo",
+      "Count": 3,
+      "TotalBrokers": 335,
+      "Success": 21,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Rea",
+      "Count": 3,
+      "TotalBrokers": 377,
+      "Success": 27,
+      "Errors": 4
+    },
+    {
+      "Keyword": "NCE",
+      "Count": 3,
+      "TotalBrokers": 393,
+      "Success": 31,
+      "Errors": 4
+    },
+    {
+      "Keyword": "Inc",
+      "Count": 3,
+      "TotalBrokers": 457,
+      "Success": 43,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Str",
+      "Count": 3,
+      "TotalBrokers": 460,
+      "Success": 44,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Liq",
+      "Count": 3,
+      "TotalBrokers": 502,
+      "Success": 56,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Riv",
+      "Count": 3,
+      "TotalBrokers": 515,
+      "Success": 60,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Tri",
+      "Count": 3,
+      "TotalBrokers": 520,
+      "Success": 63,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Cen",
+      "Count": 3,
+      "TotalBrokers": 552,
+      "Success": 85,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Swi",
+      "Count": 3,
+      "TotalBrokers": 568,
+      "Success": 98,
+      "Errors": 15
+    },
+    {
+      "Keyword": "NFX",
+      "Count": 3,
+      "TotalBrokers": 576,
+      "Success": 107,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Fir",
+      "Count": 3,
+      "TotalBrokers": 596,
+      "Success": 127,
+      "Errors": 17
+    },
+    {
+      "Keyword": "ICM",
+      "Count": 3,
+      "TotalBrokers": 626,
+      "Success": 217,
+      "Errors": 36
+    },
+    {
+      "Keyword": "Rad",
+      "Count": 2,
+      "TotalBrokers": 379,
+      "Success": 28,
+      "Errors": 4
+    },
+    {
+      "Keyword": "Ves",
+      "Count": 2,
+      "TotalBrokers": 381,
+      "Success": 29,
+      "Errors": 4
+    },
+    {
+      "Keyword": "Men",
+      "Count": 2,
+      "TotalBrokers": 443,
+      "Success": 38,
+      "Errors": 5
+    },
+    {
+      "Keyword": "Hol",
+      "Count": 2,
+      "TotalBrokers": 454,
+      "Success": 42,
+      "Errors": 6
+    },
+    {
+      "Keyword": "All",
+      "Count": 2,
+      "TotalBrokers": 517,
+      "Success": 61,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Sey",
+      "Count": 2,
+      "TotalBrokers": 530,
+      "Success": 68,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Mil",
+      "Count": 2,
+      "TotalBrokers": 539,
+      "Success": 76,
+      "Errors": 10
+    },
+    {
+      "Keyword": "Equ",
+      "Count": 2,
+      "TotalBrokers": 541,
+      "Success": 77,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Ste",
+      "Count": 2,
+      "TotalBrokers": 580,
+      "Success": 111,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Nex",
+      "Count": 2,
+      "TotalBrokers": 598,
+      "Success": 131,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Sta",
+      "Count": 2,
+      "TotalBrokers": 600,
+      "Success": 132,
+      "Errors": 18
+    },
+    {
+      "Keyword": "Ark",
+      "Count": 2,
+      "TotalBrokers": 603,
+      "Success": 136,
+      "Errors": 18
+    },
+    {
+      "Keyword": "Rob",
+      "Count": 2,
+      "TotalBrokers": 616,
+      "Success": 184,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Jus",
+      "Count": 2,
+      "TotalBrokers": 618,
+      "Success": 193,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Alm",
+      "Count": 2,
+      "TotalBrokers": 621,
+      "Success": 198,
+      "Errors": 29
+    },
+    {
+      "Keyword": "AMa",
+      "Count": 2,
+      "TotalBrokers": 629,
+      "Success": 228,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Ade",
+      "Count": 2,
+      "TotalBrokers": 633,
+      "Success": 243,
+      "Errors": 46
+    },
+    {
+      "Keyword": "Onl",
+      "Count": 1,
+      "TotalBrokers": 480,
+      "Success": 48,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Rat",
+      "Count": 1,
+      "TotalBrokers": 481,
+      "Success": 49,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Sto",
+      "Count": 1,
+      "TotalBrokers": 503,
+      "Success": 57,
+      "Errors": 7
+    },
+    {
+      "Keyword": "MEX",
+      "Count": 1,
+      "TotalBrokers": 521,
+      "Success": 65,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Pte",
+      "Count": 1,
+      "TotalBrokers": 528,
+      "Success": 67,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Cha",
+      "Count": 1,
+      "TotalBrokers": 531,
+      "Success": 69,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Red",
+      "Count": 1,
+      "TotalBrokers": 536,
+      "Success": 74,
+      "Errors": 10
+    },
+    {
+      "Keyword": "Ind",
+      "Count": 1,
+      "TotalBrokers": 537,
+      "Success": 75,
+      "Errors": 10
+    },
+    {
+      "Keyword": "Era",
+      "Count": 1,
+      "TotalBrokers": 542,
+      "Success": 79,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Max",
+      "Count": 1,
+      "TotalBrokers": 543,
+      "Success": 80,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Lio",
+      "Count": 1,
+      "TotalBrokers": 544,
+      "Success": 81,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Ult",
+      "Count": 1,
+      "TotalBrokers": 549,
+      "Success": 84,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Tim",
+      "Count": 1,
+      "TotalBrokers": 553,
+      "Success": 87,
+      "Errors": 13
+    },
+    {
+      "Keyword": "Quo",
+      "Count": 1,
+      "TotalBrokers": 558,
+      "Success": 89,
+      "Errors": 13
+    },
+    {
+      "Keyword": "Tam",
+      "Count": 1,
+      "TotalBrokers": 559,
+      "Success": 90,
+      "Errors": 14
+    },
+    {
+      "Keyword": "Meg",
+      "Count": 1,
+      "TotalBrokers": 560,
+      "Success": 92,
+      "Errors": 14
+    },
+    {
+      "Keyword": "Asi",
+      "Count": 1,
+      "TotalBrokers": 565,
+      "Success": 97,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Man",
+      "Count": 1,
+      "TotalBrokers": 569,
+      "Success": 100,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Aus",
+      "Count": 1,
+      "TotalBrokers": 570,
+      "Success": 101,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Cre",
+      "Count": 1,
+      "TotalBrokers": 571,
+      "Success": 103,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Top",
+      "Count": 1,
+      "TotalBrokers": 572,
+      "Success": 105,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Blu",
+      "Count": 1,
+      "TotalBrokers": 573,
+      "Success": 106,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Ver",
+      "Count": 1,
+      "TotalBrokers": 577,
+      "Success": 108,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Ven",
+      "Count": 1,
+      "TotalBrokers": 578,
+      "Success": 109,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Han",
+      "Count": 1,
+      "TotalBrokers": 581,
+      "Success": 116,
+      "Errors": 16
+    },
+    {
+      "Keyword": "Big",
+      "Count": 1,
+      "TotalBrokers": 586,
+      "Success": 119,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Lit",
+      "Count": 1,
+      "TotalBrokers": 591,
+      "Success": 124,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Mon",
+      "Count": 1,
+      "TotalBrokers": 592,
+      "Success": 125,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Fun",
+      "Count": 1,
+      "TotalBrokers": 593,
+      "Success": 126,
+      "Errors": 17
+    },
+    {
+      "Keyword": "TIO",
+      "Count": 1,
+      "TotalBrokers": 601,
+      "Success": 133,
+      "Errors": 18
+    },
+    {
+      "Keyword": "FXL",
+      "Count": 1,
+      "TotalBrokers": 604,
+      "Success": 138,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Act",
+      "Count": 1,
+      "TotalBrokers": 605,
+      "Success": 145,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Met",
+      "Count": 1,
+      "TotalBrokers": 606,
+      "Success": 148,
+      "Errors": 19
+    },
+    {
+      "Keyword": "STM",
+      "Count": 1,
+      "TotalBrokers": 607,
+      "Success": 150,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Key",
+      "Count": 1,
+      "TotalBrokers": 608,
+      "Success": 154,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Art",
+      "Count": 1,
+      "TotalBrokers": 609,
+      "Success": 159,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Ene",
+      "Count": 1,
+      "TotalBrokers": 610,
+      "Success": 162,
+      "Errors": 20
+    },
+    {
+      "Keyword": "JSC",
+      "Count": 1,
+      "TotalBrokers": 611,
+      "Success": 169,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Win",
+      "Count": 1,
+      "TotalBrokers": 612,
+      "Success": 176,
+      "Errors": 23
+    },
+    {
+      "Keyword": "Van",
+      "Count": 1,
+      "TotalBrokers": 613,
+      "Success": 178,
+      "Errors": 23
+    },
+    {
+      "Keyword": "Alp",
+      "Count": 1,
+      "TotalBrokers": 614,
+      "Success": 179,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Alt",
+      "Count": 1,
+      "TotalBrokers": 619,
+      "Success": 197,
+      "Errors": 29
+    },
+    {
+      "Keyword": "NAG",
+      "Count": 1,
+      "TotalBrokers": 622,
+      "Success": 202,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Lev",
+      "Count": 1,
+      "TotalBrokers": 623,
+      "Success": 206,
+      "Errors": 30
+    },
+    {
+      "Keyword": "Atr",
+      "Count": 1,
+      "TotalBrokers": 627,
+      "Success": 219,
+      "Errors": 36
+    },
+    {
+      "Keyword": "Axi",
+      "Count": 1,
+      "TotalBrokers": 630,
+      "Success": 232,
+      "Errors": 39
+    },
+    {
+      "Keyword": "AET",
+      "Count": 1,
+      "TotalBrokers": 631,
+      "Success": 242,
+      "Errors": 46
+    },
+    {
+      "Keyword": "Sys",
+      "Count": 1,
+      "TotalBrokers": 634,
+      "Success": 249,
+      "Errors": 51
+    },
+    {
+      "Keyword": "Ltd",
+      "Count": 0,
+      "TotalBrokers": 49,
+      "Success": 2,
+      "Errors": 1
+    },
+    {
+      "Keyword": "Co",
+      "Count": 0,
+      "TotalBrokers": 227,
+      "Success": 11,
+      "Errors": 2
+    },
+    {
+      "Keyword": "PT",
+      "Count": 0,
+      "TotalBrokers": 245,
+      "Success": 12,
+      "Errors": 3
+    },
+    {
+      "Keyword": "For",
+      "Count": 0,
+      "TotalBrokers": 275,
+      "Success": 15,
+      "Errors": 3
+    },
+    {
+      "Keyword": "Liv",
+      "Count": 0,
+      "TotalBrokers": 374,
+      "Success": 23,
+      "Errors": 4
+    },
+    {
+      "Keyword": "fin",
+      "Count": 0,
+      "TotalBrokers": 374,
+      "Success": 24,
+      "Errors": 4
+    },
+    {
+      "Keyword": "bro",
+      "Count": 0,
+      "TotalBrokers": 374,
+      "Success": 25,
+      "Errors": 4
+    },
+    {
+      "Keyword": "ser",
+      "Count": 0,
+      "TotalBrokers": 374,
+      "Success": 26,
+      "Errors": 4
+    },
+    {
+      "Keyword": "LL",
+      "Count": 0,
+      "TotalBrokers": 401,
+      "Success": 32,
+      "Errors": 5
+    },
+    {
+      "Keyword": "for",
+      "Count": 0,
+      "TotalBrokers": 434,
+      "Success": 36,
+      "Errors": 5
+    },
+    {
+      "Keyword": "SA",
+      "Count": 0,
+      "TotalBrokers": 443,
+      "Success": 38,
+      "Errors": 6
+    },
+    {
+      "Keyword": "EGl",
+      "Count": 0,
+      "TotalBrokers": 447,
+      "Success": 40,
+      "Errors": 6
+    },
+    {
+      "Keyword": "XGL",
+      "Count": 0,
+      "TotalBrokers": 481,
+      "Success": 50,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Deg",
+      "Count": 0,
+      "TotalBrokers": 481,
+      "Success": 51,
+      "Errors": 6
+    },
+    {
+      "Keyword": "Mai",
+      "Count": 0,
+      "TotalBrokers": 486,
+      "Success": 52,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Wea",
+      "Count": 0,
+      "TotalBrokers": 512,
+      "Success": 59,
+      "Errors": 7
+    },
+    {
+      "Keyword": "Way",
+      "Count": 0,
+      "TotalBrokers": 517,
+      "Success": 62,
+      "Errors": 7
+    },
+    {
+      "Keyword": "AFX",
+      "Count": 0,
+      "TotalBrokers": 520,
+      "Success": 64,
+      "Errors": 7
+    },
+    {
+      "Keyword": "SR",
+      "Count": 0,
+      "TotalBrokers": 520,
+      "Success": 64,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Mau",
+      "Count": 0,
+      "TotalBrokers": 535,
+      "Success": 71,
+      "Errors": 9
+    },
+    {
+      "Keyword": "Exc",
+      "Count": 0,
+      "TotalBrokers": 535,
+      "Success": 72,
+      "Errors": 10
+    },
+    {
+      "Keyword": "Hou",
+      "Count": 0,
+      "TotalBrokers": 535,
+      "Success": 73,
+      "Errors": 10
+    },
+    {
+      "Keyword": "UK",
+      "Count": 0,
+      "TotalBrokers": 539,
+      "Success": 76,
+      "Errors": 11
+    },
+    {
+      "Keyword": "GOL",
+      "Count": 0,
+      "TotalBrokers": 541,
+      "Success": 78,
+      "Errors": 11
+    },
+    {
+      "Keyword": "Mer",
+      "Count": 0,
+      "TotalBrokers": 544,
+      "Success": 82,
+      "Errors": 11
+    },
+    {
+      "Keyword": "SRL",
+      "Count": 0,
+      "TotalBrokers": 552,
+      "Success": 85,
+      "Errors": 12
+    },
+    {
+      "Keyword": "Ins",
+      "Count": 0,
+      "TotalBrokers": 552,
+      "Success": 86,
+      "Errors": 12
+    },
+    {
+      "Keyword": "Vel",
+      "Count": 0,
+      "TotalBrokers": 552,
+      "Success": 86,
+      "Errors": 13
+    },
+    {
+      "Keyword": "RL",
+      "Count": 0,
+      "TotalBrokers": 558,
+      "Success": 89,
+      "Errors": 14
+    },
+    {
+      "Keyword": "Net",
+      "Count": 0,
+      "TotalBrokers": 559,
+      "Success": 91,
+      "Errors": 14
+    },
+    {
+      "Keyword": "Ace",
+      "Count": 0,
+      "TotalBrokers": 560,
+      "Success": 93,
+      "Errors": 14
+    },
+    {
+      "Keyword": "Rid",
+      "Count": 0,
+      "TotalBrokers": 560,
+      "Success": 93,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Squ",
+      "Count": 0,
+      "TotalBrokers": 560,
+      "Success": 94,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Efx",
+      "Count": 0,
+      "TotalBrokers": 564,
+      "Success": 96,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Poi",
+      "Count": 0,
+      "TotalBrokers": 568,
+      "Success": 99,
+      "Errors": 15
+    },
+    {
+      "Keyword": "GIC",
+      "Count": 0,
+      "TotalBrokers": 570,
+      "Success": 102,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Ass",
+      "Count": 0,
+      "TotalBrokers": 571,
+      "Success": 104,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Agl",
+      "Count": 0,
+      "TotalBrokers": 578,
+      "Success": 110,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Mul",
+      "Count": 0,
+      "TotalBrokers": 580,
+      "Success": 112,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Lin",
+      "Count": 0,
+      "TotalBrokers": 580,
+      "Success": 113,
+      "Errors": 15
+    },
+    {
+      "Keyword": "Cle",
+      "Count": 0,
+      "TotalBrokers": 580,
+      "Success": 114,
+      "Errors": 15
+    },
+    {
+      "Keyword": "NCM",
+      "Count": 0,
+      "TotalBrokers": 580,
+      "Success": 114,
+      "Errors": 16
+    },
+    {
+      "Keyword": "Wor",
+      "Count": 0,
+      "TotalBrokers": 580,
+      "Success": 115,
+      "Errors": 16
+    },
+    {
+      "Keyword": "Pod",
+      "Count": 0,
+      "TotalBrokers": 585,
+      "Success": 117,
+      "Errors": 17
+    },
+    {
+      "Keyword": "GAI",
+      "Count": 0,
+      "TotalBrokers": 585,
+      "Success": 118,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Cyp",
+      "Count": 0,
+      "TotalBrokers": 586,
+      "Success": 120,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Per",
+      "Count": 0,
+      "TotalBrokers": 586,
+      "Success": 121,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Del",
+      "Count": 0,
+      "TotalBrokers": 590,
+      "Success": 123,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Tic",
+      "Count": 0,
+      "TotalBrokers": 596,
+      "Success": 128,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Gat",
+      "Count": 0,
+      "TotalBrokers": 596,
+      "Success": 129,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Bri",
+      "Count": 0,
+      "TotalBrokers": 596,
+      "Success": 130,
+      "Errors": 17
+    },
+    {
+      "Keyword": "Pip",
+      "Count": 0,
+      "TotalBrokers": 598,
+      "Success": 131,
+      "Errors": 18
+    },
+    {
+      "Keyword": "Roy",
+      "Count": 0,
+      "TotalBrokers": 601,
+      "Success": 134,
+      "Errors": 18
+    },
+    {
+      "Keyword": "Cur",
+      "Count": 0,
+      "TotalBrokers": 601,
+      "Success": 135,
+      "Errors": 18
+    },
+    {
+      "Keyword": "V",
+      "Count": 0,
+      "TotalBrokers": 603,
+      "Success": 136,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Eve",
+      "Count": 0,
+      "TotalBrokers": 603,
+      "Success": 137,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Sev",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 139,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Ris",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 140,
+      "Errors": 19
+    },
+    {
+      "Keyword": "San",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 141,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Uni",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 142,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Dev",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 143,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Ent",
+      "Count": 0,
+      "TotalBrokers": 604,
+      "Success": 144,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Doo",
+      "Count": 0,
+      "TotalBrokers": 605,
+      "Success": 146,
+      "Errors": 19
+    },
+    {
+      "Keyword": "DMC",
+      "Count": 0,
+      "TotalBrokers": 605,
+      "Success": 147,
+      "Errors": 19
+    },
+    {
+      "Keyword": "Jew",
+      "Count": 0,
+      "TotalBrokers": 606,
+      "Success": 148,
+      "Errors": 20
+    },
+    {
+      "Keyword": "STA",
+      "Count": 0,
+      "TotalBrokers": 606,
+      "Success": 149,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Sof",
+      "Count": 0,
+      "TotalBrokers": 607,
+      "Success": 151,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Oct",
+      "Count": 0,
+      "TotalBrokers": 607,
+      "Success": 152,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Hub",
+      "Count": 0,
+      "TotalBrokers": 607,
+      "Success": 153,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Pem",
+      "Count": 0,
+      "TotalBrokers": 608,
+      "Success": 155,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Mag",
+      "Count": 0,
+      "TotalBrokers": 608,
+      "Success": 156,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Edg",
+      "Count": 0,
+      "TotalBrokers": 608,
+      "Success": 157,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Dig",
+      "Count": 0,
+      "TotalBrokers": 608,
+      "Success": 158,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Alg",
+      "Count": 0,
+      "TotalBrokers": 609,
+      "Success": 160,
+      "Errors": 20
+    },
+    {
+      "Keyword": "TEC",
+      "Count": 0,
+      "TotalBrokers": 609,
+      "Success": 161,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Lia",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 163,
+      "Errors": 20
+    },
+    {
+      "Keyword": "Rig",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 164,
+      "Errors": 20
+    },
+    {
+      "Keyword": "The",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 165,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Pre",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 166,
+      "Errors": 21
+    },
+    {
+      "Keyword": "DOO",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 167,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Inf",
+      "Count": 0,
+      "TotalBrokers": 610,
+      "Success": 168,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Pla",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 170,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Kon",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 171,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Con",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 172,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Sky",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 173,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Eig",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 174,
+      "Errors": 21
+    },
+    {
+      "Keyword": "Plu",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 174,
+      "Errors": 22
+    },
+    {
+      "Keyword": "SKY",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 175,
+      "Errors": 22
+    },
+    {
+      "Keyword": "Gul",
+      "Count": 0,
+      "TotalBrokers": 611,
+      "Success": 175,
+      "Errors": 23
+    },
+    {
+      "Keyword": "Sko",
+      "Count": 0,
+      "TotalBrokers": 612,
+      "Success": 177,
+      "Errors": 23
+    },
+    {
+      "Keyword": "Dra",
+      "Count": 0,
+      "TotalBrokers": 613,
+      "Success": 178,
+      "Errors": 24
+    },
+    {
+      "Keyword": "Eag",
+      "Count": 0,
+      "TotalBrokers": 613,
+      "Success": 178,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Lan",
+      "Count": 0,
+      "TotalBrokers": 614,
+      "Success": 180,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Loy",
+      "Count": 0,
+      "TotalBrokers": 614,
+      "Success": 181,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Gen",
+      "Count": 0,
+      "TotalBrokers": 614,
+      "Success": 182,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Dom",
+      "Count": 0,
+      "TotalBrokers": 614,
+      "Success": 183,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Qua",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 185,
+      "Errors": 25
+    },
+    {
+      "Keyword": "Yam",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 185,
+      "Errors": 26
+    },
+    {
+      "Keyword": "CY",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 185,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Jor",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 186,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Sco",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 187,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Pru",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 188,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Err",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 189,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Cit",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 190,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Dan",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 191,
+      "Errors": 27
+    },
+    {
+      "Keyword": "Car",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 191,
+      "Errors": 28
+    },
+    {
+      "Keyword": "EET",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 192,
+      "Errors": 28
+    },
+    {
+      "Keyword": "YaM",
+      "Count": 0,
+      "TotalBrokers": 616,
+      "Success": 192,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Pas",
+      "Count": 0,
+      "TotalBrokers": 618,
+      "Success": 194,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Rum",
+      "Count": 0,
+      "TotalBrokers": 618,
+      "Success": 195,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Kin",
+      "Count": 0,
+      "TotalBrokers": 621,
+      "Success": 199,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Kar",
+      "Count": 0,
+      "TotalBrokers": 621,
+      "Success": 200,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Ove",
+      "Count": 0,
+      "TotalBrokers": 621,
+      "Success": 201,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Clu",
+      "Count": 0,
+      "TotalBrokers": 622,
+      "Success": 203,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Lea",
+      "Count": 0,
+      "TotalBrokers": 622,
+      "Success": 204,
+      "Errors": 29
+    },
+    {
+      "Keyword": "Zed",
+      "Count": 0,
+      "TotalBrokers": 622,
+      "Success": 204,
+      "Errors": 30
+    },
+    {
+      "Keyword": "Mas",
+      "Count": 0,
+      "TotalBrokers": 622,
+      "Success": 205,
+      "Errors": 30
+    },
+    {
+      "Keyword": "MFX",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 207,
+      "Errors": 30
+    },
+    {
+      "Keyword": "EZI",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 207,
+      "Errors": 31
+    },
+    {
+      "Keyword": "Zea",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 208,
+      "Errors": 31
+    },
+    {
+      "Keyword": "Ara",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 209,
+      "Errors": 31
+    },
+    {
+      "Keyword": "Gle",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 209,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Hon",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 210,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Coi",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 211,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Orc",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 212,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Noo",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 213,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Cas",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 214,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Tru",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 215,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Ico",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 216,
+      "Errors": 32
+    },
+    {
+      "Keyword": "Spa",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 216,
+      "Errors": 34
+    },
+    {
+      "Keyword": "Afr",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 216,
+      "Errors": 35
+    },
+    {
+      "Keyword": "DO",
+      "Count": 0,
+      "TotalBrokers": 623,
+      "Success": 216,
+      "Errors": 36
+    },
+    {
+      "Keyword": "EBC",
+      "Count": 0,
+      "TotalBrokers": 626,
+      "Success": 218,
+      "Errors": 36
+    },
+    {
+      "Keyword": "CV",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 219,
+      "Errors": 37
+    },
+    {
+      "Keyword": "GCC",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 219,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Acc",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 220,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Sin",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 221,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Dir",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 222,
+      "Errors": 38
+    },
+    {
+      "Keyword": "ALB",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 223,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Alc",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 224,
+      "Errors": 38
+    },
+    {
+      "Keyword": "XPr",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 225,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Kiy",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 226,
+      "Errors": 38
+    },
+    {
+      "Keyword": "BDS",
+      "Count": 0,
+      "TotalBrokers": 627,
+      "Success": 227,
+      "Errors": 38
+    },
+    {
+      "Keyword": "New",
+      "Count": 0,
+      "TotalBrokers": 629,
+      "Success": 229,
+      "Errors": 38
+    },
+    {
+      "Keyword": "Tak",
+      "Count": 0,
+      "TotalBrokers": 629,
+      "Success": 229,
+      "Errors": 39
+    },
+    {
+      "Keyword": "Har",
+      "Count": 0,
+      "TotalBrokers": 629,
+      "Success": 230,
+      "Errors": 39
+    },
+    {
+      "Keyword": "Mat",
+      "Count": 0,
+      "TotalBrokers": 629,
+      "Success": 231,
+      "Errors": 39
+    },
+    {
+      "Keyword": "Gre",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 232,
+      "Errors": 40
+    },
+    {
+      "Keyword": "Tre",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 233,
+      "Errors": 40
+    },
+    {
+      "Keyword": "Adm",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 234,
+      "Errors": 40
+    },
+    {
+      "Keyword": "Raz",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 235,
+      "Errors": 40
+    },
+    {
+      "Keyword": "Rai",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 235,
+      "Errors": 41
+    },
+    {
+      "Keyword": "oo",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 235,
+      "Errors": 42
+    },
+    {
+      "Keyword": "FBS",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 236,
+      "Errors": 42
+    },
+    {
+      "Keyword": "CCT",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 236,
+      "Errors": 43
+    },
+    {
+      "Keyword": "Apr",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 237,
+      "Errors": 43
+    },
+    {
+      "Keyword": "Adh",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 237,
+      "Errors": 44
+    },
+    {
+      "Keyword": "Exp",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 238,
+      "Errors": 44
+    },
+    {
+      "Keyword": "SC",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 238,
+      "Errors": 45
+    },
+    {
+      "Keyword": "BV",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 238,
+      "Errors": 46
+    },
+    {
+      "Keyword": "Par",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 239,
+      "Errors": 46
+    },
+    {
+      "Keyword": "ISE",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 240,
+      "Errors": 46
+    },
+    {
+      "Keyword": "ACY",
+      "Count": 0,
+      "TotalBrokers": 630,
+      "Success": 241,
+      "Errors": 46
+    },
+    {
+      "Keyword": "Ubu",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 243,
+      "Errors": 47
+    },
+    {
+      "Keyword": "Fou",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 243,
+      "Errors": 48
+    },
+    {
+      "Keyword": "Hed",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 243,
+      "Errors": 49
+    },
+    {
+      "Keyword": "Dam",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 244,
+      "Errors": 49
+    },
+    {
+      "Keyword": "Phi",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 245,
+      "Errors": 49
+    },
+    {
+      "Keyword": "IUX",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 245,
+      "Errors": 50
+    },
+    {
+      "Keyword": "Jap",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 246,
+      "Errors": 50
+    },
+    {
+      "Keyword": "ECN",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 247,
+      "Errors": 50
+    },
+    {
+      "Keyword": "CFI",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 248,
+      "Errors": 50
+    },
+    {
+      "Keyword": "Dup",
+      "Count": 0,
+      "TotalBrokers": 633,
+      "Success": 248,
+      "Errors": 51
+    }
+  ]
+}
