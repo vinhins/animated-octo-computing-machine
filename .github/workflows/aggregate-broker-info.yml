@@ -1,0 +1,121 @@
+name: Aggregate Broker Info
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_file:
+        description: "Path to input JSON file (signatures output)"
+        required: true
+        default: "java-tools/input/servers_search_keys.json"
+      delay:
+        description: "Delay between API requests (seconds)"
+        required: false
+        default: "1.0"
+      max_requests:
+        description: "Max number of API requests (0 = unlimited)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  aggregate-brokers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          pip install -q -r broker-info-aggregator/requirements.txt
+          echo "[+] Dependencies installed"
+
+      - name: Verify input file exists
+        shell: bash
+        run: |
+          INPUT_FILE="${{ github.event.inputs.input_file }}"
+          if [ ! -f "$INPUT_FILE" ]; then
+            echo "[-] Input file not found: $INPUT_FILE"
+            ls -la java-tools/input/ || echo "Input directory not found"
+            exit 1
+          fi
+          echo "[+] Input file found: $INPUT_FILE"
+          SIZE=$(wc -l < "$INPUT_FILE")
+          echo "[*] File has $SIZE lines"
+
+      - name: Run broker aggregator
+        shell: bash
+        run: |
+          cd broker-info-aggregator
+          
+          DELAY="${{ github.event.inputs.delay }}"
+          MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
+          INPUT="${{ github.event.inputs.input_file }}"
+          
+          echo "[*] Starting broker info aggregation..."
+          echo "[*] Input: $INPUT"
+          echo "[*] Delay: ${DELAY} seconds"
+          echo "[*] Max requests: $MAX_REQUESTS (0 = unlimited)"
+          echo ""
+          
+          if [ "$MAX_REQUESTS" = "0" ] || [ -z "$MAX_REQUESTS" ]; then
+            python broker_info_aggregator.py "../$INPUT" --delay "$DELAY"
+          else
+            python broker_info_aggregator.py "../$INPUT" --delay "$DELAY" --max-requests "$MAX_REQUESTS"
+          fi
+
+      - name: Verify output
+        shell: bash
+        run: |
+          cd broker-info-aggregator
+          
+          OUTPUT_FILE=$(ls -t output_*.json 2>/dev/null | head -1)
+          
+          if [ -z "$OUTPUT_FILE" ]; then
+            echo "[-] No output file generated"
+            exit 1
+          fi
+          
+          echo "[+] Output file: $OUTPUT_FILE"
+          
+          SIZE=$(du -h "$OUTPUT_FILE" | cut -f1)
+          LINES=$(wc -l < "$OUTPUT_FILE")
+          
+          echo "[*] File size: $SIZE"
+          echo "[*] Line count: $LINES"
+          
+          # Verify JSON structure
+          python -c "
+          import json
+          data = json.load(open('$OUTPUT_FILE'))
+          print(f'[+] Valid JSON structure')
+          print(f'[*] Total rows: {len(data.get(\"rows\", []))}')
+          print(f'[*] Unique brokers: {data.get(\"uniqueBrokers\", 0)}')
+          print(f'[*] Requests processed: {data.get(\"processedRequests\", 0)}')
+          " || exit 1
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: broker-info-aggregation-results
+          path: broker-info-aggregator/output_*.json
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          echo "✓ Aggregation completed"
+          echo "  Artifact: broker-info-aggregation-results"
+          echo "  Files: broker-info-aggregator/output_*.json"
