@@ -1,0 +1,169 @@
+name: Test Release (ARM64)
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Release version to test (e.g., 1.0.0, leave empty for latest)"
+        required: false
+        default: ""
+      test_input_file:
+        description: "Input JSON file from java-tools/input/"
+        required: true
+        default: "servers_search_keys.json"
+
+permissions:
+  contents: read
+
+jobs:
+  test-release-arm64:
+    runs-on: ubuntu-24.04-arm64
+
+    steps:
+      - name: Checkout repository (for test input file)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "11"
+
+      - name: Determine release version
+        id: version
+        shell: bash
+        run: |
+          if [ -z "${{ github.event.inputs.release_version }}" ]; then
+            VERSION=$(gh release list --limit 1 --json tagName -q '.[0].tagName' | sed 's/^v//')
+            echo "Using latest release: v${VERSION}"
+          else
+            VERSION="${{ github.event.inputs.release_version }}"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download release
+        id: download
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          ZIP_FILE="broker-signature-processor-${VERSION}.zip"
+          
+          echo "[*] Downloading release v${VERSION}..."
+          gh release download "v${VERSION}" \
+            --pattern "${ZIP_FILE}" \
+            --dir /tmp/release \
+            --repo ${{ github.repository }}
+          
+          if [ ! -f "/tmp/release/${ZIP_FILE}" ]; then
+            echo "[-] Failed to download ${ZIP_FILE}"
+            exit 1
+          fi
+          
+          echo "zip_file=${ZIP_FILE}" >> "$GITHUB_OUTPUT"
+          echo "[+] Downloaded to /tmp/release/${ZIP_FILE}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract release
+        shell: bash
+        run: |
+          cd /tmp/release
+          unzip -q "${{ steps.download.outputs.zip_file }}"
+          echo "[+] Extracted release"
+          ls -lh
+
+      - name: Verify bundle contents
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BUNDLE_DIR="/tmp/release/broker-signature-processor-${VERSION}"
+          
+          echo "[*] Checking bundle structure:"
+          [ -f "${BUNDLE_DIR}/broker-signature-processor-${VERSION}.jar" ] && echo "  ✓ JAR found" || exit 1
+          [ -f "${BUNDLE_DIR}/run.sh" ] && echo "  ✓ run.sh found" || exit 1
+          [ -d "${BUNDLE_DIR}/lib/arm64-v8a" ] && echo "  ✓ arm64-v8a libs found" || exit 1
+          [ -f "${BUNDLE_DIR}/lib/arm64-v8a/libmt4.so" ] && echo "  ✓ libmt4.so found" || exit 1
+
+      - name: Copy test input file
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BUNDLE_DIR="/tmp/release/broker-signature-processor-${VERSION}"
+          TEST_FILE="java-tools/input/${{ github.event.inputs.test_input_file }}"
+          
+          if [ ! -f "${TEST_FILE}" ]; then
+            echo "[-] Test input file not found: ${TEST_FILE}"
+            exit 1
+          fi
+          
+          cp "${TEST_FILE}" "${BUNDLE_DIR}/input.json"
+          echo "[+] Copied test input to ${BUNDLE_DIR}/input.json"
+
+      - name: Run signature processor on ARM64
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BUNDLE_DIR="/tmp/release/broker-signature-processor-${VERSION}"
+          
+          cd "${BUNDLE_DIR}"
+          
+          echo "[*] System info:"
+          echo "[*] Architecture: $(uname -m)"
+          echo "[*] Java version: $(java -version 2>&1 | head -1)"
+          echo ""
+          
+          echo "[*] Running processor..."
+          ./run.sh input.json
+          
+          if [ $? -ne 0 ]; then
+            echo "[-] Processing failed"
+            exit 1
+          fi
+
+      - name: Verify output
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BUNDLE_DIR="/tmp/release/broker-signature-processor-${VERSION}"
+          
+          echo "[*] Output files:"
+          ls -lh "${BUNDLE_DIR}"/output_*.json
+          
+          OUTPUT_FILE=$(ls "${BUNDLE_DIR}"/output_*.json | head -1)
+          
+          if [ ! -f "${OUTPUT_FILE}" ]; then
+            echo "[-] No output file found"
+            exit 1
+          fi
+          
+          echo "[+] Output file: $(basename "${OUTPUT_FILE}")"
+          
+          # Verify JSON structure
+          echo "[*] Verifying JSON structure..."
+          RECORD_COUNT=$(cat "${OUTPUT_FILE}" | grep -o '"Keyword"' | wc -l)
+          SIGNATURE_COUNT=$(cat "${OUTPUT_FILE}" | grep -o '"Signature"' | wc -l)
+          
+          echo "[*] Records with Keyword: ${RECORD_COUNT}"
+          echo "[*] Records with Signature: ${SIGNATURE_COUNT}"
+          
+          if [ "${RECORD_COUNT}" -eq 0 ] || [ "${SIGNATURE_COUNT}" -eq 0 ]; then
+            echo "[-] Missing Keyword or Signature fields"
+            exit 1
+          fi
+          
+          echo "[+] Output verified!"
+          echo ""
+          echo "[*] First record sample:"
+          cat "${OUTPUT_FILE}" | jq '.rows[0]' 2>/dev/null || echo "(JSON parsing preview)"
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-arm64
+          path: /tmp/release/broker-signature-processor-*/output_*.json
+          retention-days: 7
