@@ -37,6 +37,25 @@ public class SignatureProcessor {
     }
 
     /**
+     * Cleans keyword by removing special characters and trimming to 3 characters max
+     */
+    private static String cleanAndTrimKeyword(String keyword) {
+        if (keyword == null || keyword.isEmpty()) {
+            return keyword;
+        }
+        
+        // Remove special characters: brackets, commas, dots, hyphens, spaces, parentheses
+        String cleaned = keyword.replaceAll("[\\[\\]\\,\\.\\-\\(\\)\\s]+", "");
+        
+        // Trim to 3 characters max
+        if (cleaned.length() > 3) {
+            cleaned = cleaned.substring(0, 3);
+        }
+        
+        return cleaned;
+    }
+
+    /**
      * Reads the input JSON file, processes each keyword, and writes results to output JSON
      */
     private static void processSearchKeys(String inputPath, String outputPath) throws Exception {
@@ -73,6 +92,14 @@ public class SignatureProcessor {
                 }
 
                 String keyword = row.get("Keyword").getAsString();
+                
+                // Clean and trim keyword: remove special chars and limit to 3 chars
+                String cleanedKeyword = cleanAndTrimKeyword(keyword);
+                if (cleanedKeyword == null || cleanedKeyword.isEmpty()) {
+                    System.err.println("[-] Row " + i + " keyword became empty after cleaning: " + keyword);
+                    errorCount++;
+                    continue;
+                }
 
                 // Extract type field (defaults to 4 for MT4)
                 int entryType = 4;
@@ -83,9 +110,9 @@ public class SignatureProcessor {
                     }
                 }
 
-                // Format: company=Keyword&code=mt4 or company=Keyword&code=mt5
+                // Format: company=CleanedKeyword&code=mt4 or company=CleanedKeyword&code=mt5
                 String codeType = (entryType == 5) ? "mt5" : "mt4";
-                String formattedKeyword = String.format("company=%s&code=%s", keyword, codeType);
+                String formattedKeyword = String.format("company=%s&code=%s", cleanedKeyword, codeType);
 
                 // Generate signature
                 String signature = brokerSignature.generateSignature(formattedKeyword);
@@ -98,7 +125,10 @@ public class SignatureProcessor {
 
                 // Create output row
                 JsonObject outputRow = new JsonObject();
-                outputRow.addProperty("Keyword", keyword);
+                outputRow.addProperty("Keyword", keyword);  // Original keyword
+                outputRow.addProperty("CleanedKeyword", cleanedKeyword);  // Cleaned and trimmed keyword
+                outputRow.addProperty("FormattedKeyword", formattedKeyword);  // Formatted for API
+                outputRow.addProperty("EntryType", entryType);  // Type (4=MT4, 5=MT5)
                 outputRow.addProperty("Signature", signature);
                 
                 // Add original count if it exists
