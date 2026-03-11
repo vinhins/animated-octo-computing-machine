@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "Keyword": "Fina",
+      "CleanedKeyword": "Fin",
+      "FormattedKeyword": "company=Fin&code=mt4",
+      "EntryType": 4,
+      "Signature": "9d175a6976d0d8ad8325d8a97178d8a3",
+      "Count": 32
+    },
+    {
+      "Keyword": "Wong",
+      "CleanedKeyword": "Won",
+      "FormattedKeyword": "company=Won&code=mt4",
+      "EntryType": 4,
+      "Signature": "5a5aad1f6d2c1683c639b4b75d9d51f9",
+      "Count": 1
+    },
+    {
+      "Keyword": "Brok",
+      "CleanedKeyword": "Bro",
+      "FormattedKeyword": "company=Bro&code=mt4",
+      "EntryType": 4,
+      "Signature": "c09dbce9978e99380e399a9cd0404a98",
+      "Count": 32
+    },
+    {
+      "Keyword": "Limi",
+      "CleanedKeyword": "Lim",
+      "FormattedKeyword": "company=Lim&code=mt4",
+      "EntryType": 4,
+      "Signature": "84f1d6cae0e0484254fcfee7410e4378",
+      "Count": 32
+    },
+    {
+      "Keyword": "EKAA",
+      "CleanedKeyword": "EKA",
+      "FormattedKeyword": "company=EKA&code=mt4",
+      "EntryType": 4,
+      "Signature": "a7b5ae43ec634bebb20bb05e1b03e948",
+      "Count": 1
+    },
+    {
+      "Keyword": "Tech",
+      "CleanedKeyword": "Tec",
+      "FormattedKeyword": "company=Tec&code=mt4",
+      "EntryType": 4,
+      "Signature": "b3347fb33dc943dfbd35f2590220c50d",
+      "Count": 26
+    },
+    {
+      "Keyword": "Ltd ",
+      "CleanedKeyword": "Ltd",
+      "FormattedKeyword": "company=Ltd&code=mt4",
+      "EntryType": 4,
+      "Signature": "56dade43b5c8d6104a1069aa09b48ce6",
+      "Count": 1
+    },
+    {
+      "Keyword": "Sama",
+      "CleanedKeyword": "Sam",
+      "FormattedKeyword": "company=Sam&code=mt4",
+      "EntryType": 4,
+      "Signature": "b0cd21e1ce7f07c9db7a7600c1a9369f",
+      "Count": 1
+    },
+    {
+      "Keyword": "Gold",
+      "CleanedKeyword": "Gol",
+      "FormattedKeyword": "company=Gol&code=mt4",
+      "EntryType": 4,
+      "Signature": "a2f79548e3f2842917cfe07cf491b77d",
+      "Count": 26
+    },
+    {
+      "Keyword": "LLC ",
+      "CleanedKeyword": "LLC",
+      "FormattedKeyword": "company=LLC&code=mt4",
+      "EntryType": 4,
+      "Signature": "b09830ecb3986b804d09587c4dc11565",
+      "Count": 2
+    }
+  ],
+  "table": "SearchKeysWithSignatures",
+  "totalRows": 10,
+  "processedRows": 10,
+  "failedRows": 0
+}

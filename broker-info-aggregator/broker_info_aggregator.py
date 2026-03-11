@@ -95,8 +95,9 @@ class BrokerInfoAggregator:
         self.current_ua_index = 0
         self.batch_num = 0
         
-        self.consecutive_403_count = 0  # Track consecutive 403 errors
+        self.consecutive_error_count = 0  # Track any consecutive errors (all types except 404)
         self.current_backoff_level = BackoffLevel.LEVEL_0
+        self.error_types = {}  # Track error types: {status_code: count}
         
     def get_random_delay(self, base_delay: float) -> float:
         """Add ±25% random jitter to delay"""
@@ -117,12 +118,12 @@ class BrokerInfoAggregator:
         return ua
     
     def update_backoff_level(self):
-        """Update backoff level based on consecutive 403 errors"""
-        if self.consecutive_403_count == 0:
+        """Update backoff level based on consecutive errors"""
+        if self.consecutive_error_count == 0:
             self.current_backoff_level = BackoffLevel.LEVEL_0
-        elif self.consecutive_403_count <= 2:
+        elif self.consecutive_error_count <= 2:
             self.current_backoff_level = BackoffLevel.LEVEL_1
-        elif self.consecutive_403_count <= 4:
+        elif self.consecutive_error_count <= 4:
             self.current_backoff_level = BackoffLevel.LEVEL_2
         else:
             self.current_backoff_level = BackoffLevel.LEVEL_3
@@ -205,51 +206,62 @@ class BrokerInfoAggregator:
             response.raise_for_status()
             
             result = response.json()
-            # Reset 403 counter on successful response
-            self.consecutive_403_count = 0
+            # Reset error counter on successful response
+            self.consecutive_error_count = 0
             self.update_backoff_level()
             self.successful_responses += 1
             return result
             
         except requests.exceptions.HTTPError as e:
-            # Handle specific HTTP errors
+            # Handle HTTP errors
             if e.response is not None:
                 status_code = e.response.status_code
+                reason = e.response.reason or "Unknown"
+                
+                # Try to get response body for diagnostics
+                try:
+                    error_body = e.response.text[:100] if e.response.text else "(empty)"
+                except:
+                    error_body = "(unavailable)"
+                
+                # Track error type
+                self.error_types[status_code] = self.error_types.get(status_code, 0) + 1
+                
                 if status_code == 404:
                     # 404 Not Found - keyword gave no results, skip silently
-                    print(f"[~] No results for {keyword} (404)")
-                    self.consecutive_403_count = 0  # Reset 403 counter
+                    print(f"[~] No results for {keyword} (404 Not Found)")
+                    self.consecutive_error_count = 0  # Reset error counter (404 doesn't count as blocking)
                     self.error_responses += 1
                     return {}  # Return empty response to skip
-                elif status_code == 403:
-                    # 403 Forbidden - API blocking or rate limiting
-                    self.consecutive_403_count += 1
+                else:
+                    # All other HTTP errors: 403, 500, 502, 503, etc. - treat as generic error
+                    self.consecutive_error_count += 1
                     self.update_backoff_level()
+                    
+                    # Calculate backoff
                     backoff_seconds = self.base_delay + self.current_backoff_level.value
                     backoff_seconds = self.get_random_delay(backoff_seconds)
-                    print(f"[!] API BLOCKING: {keyword} (403 Forbidden, consecutive: {self.consecutive_403_count}/{self.max_consecutive_errors})")
-                    print(f"[!] Backoff level: {self.current_backoff_level.name}. Pausing {backoff_seconds:.1f}s...")
+                    
+                    print(f"[!] HTTP Error {status_code}: {keyword} ({reason})")
+                    print(f"[!]   Details: {error_body}")
+                    print(f"[!]   Consecutive errors: {self.consecutive_error_count}")
+                    print(f"[!]   Backoff level: {self.current_backoff_level.name}. Pausing {backoff_seconds:.1f}s...")
                     time.sleep(backoff_seconds)
-                    self.error_responses += 1
-                    return None
-                else:
-                    print(f"[-] HTTP error for {keyword}: {status_code} {e}")
-                    self.consecutive_403_count = 0  # Reset on other HTTP errors
                     self.error_responses += 1
                     return None
             else:
                 print(f"[-] HTTP error for {keyword}: {e}")
-                self.consecutive_403_count = 0
+                self.consecutive_error_count += 1
                 self.error_responses += 1
                 return None
         except requests.exceptions.RequestException as e:
             print(f"[-] Request error for {keyword}: {e}")
-            self.consecutive_403_count = 0
+            self.consecutive_error_count += 1
             self.error_responses += 1
             return None
         except json.JSONDecodeError as e:
             print(f"[-] JSON parse error for {keyword}: {e}")
-            self.consecutive_403_count = 0
+            self.consecutive_error_count += 1
             self.error_responses += 1
             return None
     
@@ -304,7 +316,7 @@ class BrokerInfoAggregator:
         print(f"[*] Max API calls: {self.max_requests if self.max_requests > 0 else 'unlimited'}")
         print(f"[*] Batch size: {self.batch_size} requests/batch + {self.batch_pause}s pause")
         print(f"[*] Jitter: ±{self.jitter_percent}% on delays")
-        print(f"[*] Max consecutive 403 errors: {self.max_consecutive_errors}")
+        print(f"[*] Max consecutive errors (any type): {self.max_consecutive_errors}")
         
         # Load and sort signatures
         rows = self.load_signatures()
@@ -317,9 +329,11 @@ class BrokerInfoAggregator:
                 print(f"[*] Reached request limit ({self.max_requests})")
                 break
             
-            # Stop if too many consecutive 403 errors
-            if self.consecutive_403_count >= self.max_consecutive_errors:
-                print(f"\n[!] Reached {self.consecutive_403_count} consecutive 403 errors (threshold: {self.max_consecutive_errors})")
+            # Stop if too many consecutive errors (all types except 404)
+            if self.consecutive_error_count >= self.max_consecutive_errors:
+                error_summary = ", ".join([f"{code}:{count}" for code, count in sorted(self.error_types.items())])
+                print(f"\n[!] Reached {self.consecutive_error_count} consecutive errors (threshold: {self.max_consecutive_errors})")
+                print(f"[!] Error breakdown: {error_summary}")
                 print(f"[!] API appears to be blocking all requests. Stopping gracefully.")
                 break
             
@@ -388,6 +402,7 @@ class BrokerInfoAggregator:
             "totalApiCalls": self.total_api_calls,
             "successfulResponses": self.successful_responses,
             "errorResponses": self.error_responses,
+            "errorBreakdown": self.error_types,  # NEW: Track error types
             "uniqueBrokers": len(self.broker_cache),
             "skippedDuplicates": self.skipped_count,
             "timestamp": datetime.now().isoformat()
@@ -406,6 +421,9 @@ class BrokerInfoAggregator:
             print(f"    Total API calls: {self.total_api_calls}")
             print(f"    Successful responses: {self.successful_responses}")
             print(f"    Error responses: {self.error_responses}")
+            if self.error_types:
+                error_breakdown = ", ".join([f"{code}:{count}" for code, count in sorted(self.error_types.items())])
+                print(f"    Error breakdown: {error_breakdown}")
             print(f"    Unique brokers: {len(self.broker_cache)}")
             print(f"    Skipped duplicates: {self.skipped_count}")
             print(f"    Batch size: {self.batch_size}")
@@ -426,7 +444,7 @@ def main():
         print("  --batch-size N               Requests per batch before pause (default: 25)")
         print("  --batch-pause SECS           Pause duration between batches (default: 45)")
         print("  --jitter PERCENT             Random delay jitter ±% (default: 25)")
-        print("  --max-consecutive-errors N   Stop after N consecutive 403s (default: 5)")
+        print("  --max-consecutive-errors N   Stop after N consecutive HTTP errors (any type, default: 5)")
         print("\nExample:")
         print("  python broker_info_aggregator.py keys.json --max-requests 100 --delay 1.0 --batch-size 25 --jitter 25")
         sys.exit(1)
