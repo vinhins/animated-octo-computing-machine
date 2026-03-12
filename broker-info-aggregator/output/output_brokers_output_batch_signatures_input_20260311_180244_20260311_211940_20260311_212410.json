@@ -1,0 +1,14 @@
+{
+  "rows": [],
+  "totalApiCalls": 5,
+  "successfulResponses": 0,
+  "errorResponses": 5,
+  "errorBreakdown": {
+    "403": 5
+  },
+  "uniqueBrokers": 0,
+  "skippedBrokerDuplicates": 0,
+  "skippedKeywords": 0,
+  "uniqueKeywordsProcessed": 5,
+  "timestamp": "2026-03-11T21:24:10.215033"
+}

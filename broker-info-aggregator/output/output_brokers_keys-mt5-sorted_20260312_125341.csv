@@ -1,0 +1,149 @@
+servers.name;company;website
+MarketEquityInc-Demo;Market Equity Inc;www.marketequity.com
+MarketEquityInc-Live;Market Equity Inc;www.marketequity.com
+MarketPulseFX-Trade;MarketPulse FX Limited;www.themarketpulsefx.com
+Marketmates-Live;Marketmates Limited;www.marketmates.com
+MarketsVox-Demo;MarketsVox (SC) Ltd;www.marketsvox.com
+MarketsVox-Live;MarketsVox (SC) Ltd;www.marketsvox.com
+Marketsall-Server;Marketsall Ltd;marketsall.com
+AMarkets-Demo;AMarkets LLC;www.amarkets.com
+AMarkets-Real;AMarkets LLC;www.amarkets.com
+Amaricapital-Live;Amari Capital Ltd.;www.amaricapital.com
+AmariMarkets-Live;Amari Markets Ltd.;www.amarimarkets.com
+Emarmarkets-Demo;Emar Markets (Pty) Ltd;www.emarmarkets.com
+Emarmarkets-Live;Emar Markets (Pty) Ltd;www.emarmarkets.com
+SmartFinancialServices-Server;Smart Financial Services Limited;www.smartfxfin.com
+SmartSecuritiesCommodities-Demo;Smart Securities and Commodities Limited;www.smartfx.com
+SmartSecuritiesCommodities-Server;Smart Securities and Commodities Limited;www.smartfx.com
+SmartTrader-Server;Smart Trader for Selling and Purchasing Online Electronic Trading Ltd;www.smarttraderiraq.com
+SmartToolTrading-Live;SmartTool Trading SC Limited;www.axiainvestments.com
+SmartcubeFX-Trade;Smartcube FX Limited;www.smartcubeforex.com
+EMMarkets-Server;EMMarkets Limited;www.em-markets.com
+FNmarketsMU-Server;FNmarkets (Mauritius) Ltd;fnmarkets.com
+FNmarkets-Server;FNmarkets Ltd;fnmarketsglobal.com
+STMarket-Demo;STMarket Company Limited;www.stmarket.com
+STMarket-Live;STMarket Company Limited;www.stmarket.com
+VSMarkets-Server;VSMarkets Ltd;vsmarkets.com
+9XMarkets-Server;9X Markets Limited;www.9xmarkets.com
+CAMarketsGlobal-Major;CA Markets Global Limited;www.camarketsglobal.com
+Chimara-SRV01;Chimara Ltd;www.xltrade.net
+E8Markets-Server;E8 Markets Ltd.;www.e8markets.com
+ECMarketsNZ-MT5-Live04;EC Markets Financial Limited;www.ecmarkets.co.nz
+ECMarkets-MT5-Live01;EC Markets Limited;www.ecmarkets.sc
+ECMarketsLtd-Demo;EC Markets Ltd.;www.ecmarkets.mu
+ECMarketsLtd-MT5-Live02;EC Markets Ltd.;www.ecmarkets.mu
+ECMarketsLtd-MT5-Live03;EC Markets Ltd.;www.ecmarkets.mu
+FPMarketsLLC-Demo;FP Markets LLC;www.fpmarkets.com
+FPMarketsLLC-Live;FP Markets LLC;www.fpmarkets.com
+FPMarketsKE-Demo;FP Markets Limited;www.fpmarkets.co.ke
+FPMarketsKE-Live;FP Markets Limited;www.fpmarkets.co.ke
+FPMarkets-Demo2;FP Markets Ltd.;www.fpmarkets.com/stl/
+FPMarkets-Live2;FP Markets Ltd.;www.fpmarkets.com/stl/
+GOMarketsIntl-Demo;GO Markets International Ltd.;www.int.gomarkets.com
+GOMarketsIntl-Live;GO Markets International Ltd.;www.int.gomarkets.com
+GOMarketsSVG-Demo;GO Markets LLC;www.gomarkets.ltd/en-svg/
+GOMarketsSVG-Live;GO Markets LLC;www.gomarkets.ltd/en-svg/
+GOMarketsLtd-Demo;GO Markets Ltd;www.gomarkets.eu
+GOMarketsLtd-Live;GO Markets Ltd;www.gomarkets.eu
+GlobalCapitalMarket-Live;Global Capital Market Limited;www.gcfx24.com
+GlobalDynamicMarkets-Demo;Global Dynamic Markets Limited;www.dynamicmarkets.com
+GlobalDynamicMarkets-Real;Global Dynamic Markets Limited;www.dynamicmarkets.com
+GlobalFinancialContracts-Demo;Global Financial Contracts Ltd.;www.gfcmercado.com
+GlobalFinancialContracts-Live;Global Financial Contracts Ltd.;www.gfcmercado.com
+GlobalFuturesServices-Server;Global Futures Services Limited;www.gfsfutures.com
+GlobalMarketsGroup-server;Global Markets Group Limited;www.gmgmarkets.co.uk
+GlobalTauro-Server01;Global Tauro Ltd;www.mau.tauromarkets.com
+XGLOBALFX-Server;XGLOBAL FX Limited;www.xglobalfx.com
+EGlobalTrade-Classic;E-Global Trade and Finance Group, Inc.;www.markets4you.com
+EGlobalTrade-Demo;E-Global Trade and Finance Group, Inc.;www.markets4you.com
+IQGlobal-Trade;IQGlobal Limited;www.iqglobal-trade.com
+XGlobalMarkets-ABFTrade;X Global Markets Ltd;www.xglobalmarkets.com
+QQGlobalGroupLD-Live;QQ Global Group LD S.R.L.;www.qqglobalgroup.com
+SRGlobalMarkets-Live;SR Global Markets Ltd;www.srglobalmarkets.com
+STGlobalMarketsLtd-Live-1;ST Global Markets Ltd.;www.stgmarkets.com
+UpGlobalMarkets-Trade;UP Global Markets Ltd;www.upforex.com
+XMGlobal-MT5;XM Global Limited;www.xm.com
+XMGlobal-MT5 10;XM Global Limited;www.xm.com
+XMGlobal-MT5 11;XM Global Limited;www.xm.com
+XMGlobal-MT5 12;XM Global Limited;www.xm.com
+XMGlobal-MT5 13;XM Global Limited;www.xm.com
+XMGlobal-MT5 14;XM Global Limited;www.xm.com
+XMGlobal-MT5 15;XM Global Limited;www.xm.com
+XMGlobal-MT5 16;XM Global Limited;www.xm.com
+XMGlobal-MT5 17;XM Global Limited;www.xm.com
+XMGlobal-MT5 2;XM Global Limited;www.xm.com
+XMGlobal-MT5 4;XM Global Limited;www.xm.com
+XMGlobal-MT5 5;XM Global Limited;www.xm.com
+XMGlobal-MT5 6;XM Global Limited;www.xm.com
+XMGlobal-MT5 7;XM Global Limited;www.xm.com
+XMGlobal-MT5 8;XM Global Limited;www.xm.com
+XMGlobal-MT5 9;XM Global Limited;www.xm.com
+AMPGlobalUSA-Demo;AMP Global Clearing LLC;www.ampfutures.com
+AMPGlobalUSA-Live;AMP Global Clearing LLC;www.ampfutures.com
+FBLGlobal-Demo;FBL Global Ltd;www.fxbaylive.com
+FBLGlobal-Live;FBL Global Ltd;www.fxbaylive.com
+GBEGlobal-Server;GBE Global Ltd;www.gbebrokers.global
+GKMGlobalTech-Demo;GKM Global Tech DOO;www.g-global.me
+GKMGlobalTech-Live;GKM Global Tech DOO;www.g-global.me
+GTCGlobalSA-Server 2;GTC Global SA (Pty) Ltd;www.gtcfx.com
+GTCGlobalTrade-Demo;GTC Global Trade Capital Co. Limited;www.gtcfx.com
+GTCGlobalTrade-Server;GTC Global Trade Capital Co. Limited;www.gtcfx.com
+InfoGlobalMarkets-Trade;Infoglobal Markets Ltd;www.infoglobalmarkets.com
+JKVGlobalCapital-Server;JKV Global Capital Market Services Ltd;jkvglobal.com
+LDNGlobalMarkets-Demo;LDN Global Markets LLC;www.ldnglobalmarkets.com
+LDNGlobalMarkets-Live;LDN Global Markets LLC;www.ldnglobalmarkets.com
+MEXGlobalFinancial-Demo;MEX Global Financial Services L.L.C;www.mex.ae
+MEXGlobalFinancial-Real;MEX Global Financial Services L.L.C;www.mex.ae
+MEXGlobalFinancial-Real-2;MEX Global Financial Services L.L.C;www.mex.ae
+NCMGlobal-Demo;NCM Global Ltd;www.ncmgo.com
+NCMGlobal-MT5-Live;NCM Global Ltd;www.ncmgo.com
+PLMGlobalMarkets-Trade;PLM Global Markets LLC;www.plmglobalmarkets.com
+GlobalInvestama-Trade;PT. Global Investama Finansial;www.ptgif.com
+QBNGlobal-Server;QBN Global Ltd.;qbnglobal.com
+QRSGlobal-Server;QRS Global LLC;www.qrsfx.com
+RCXGlobalFZ-Server;RCX Global FZ LLC;www.rcxglobal.org
+RSIGlobalInvestment-Server;RSI Global Investment Company JSC Podgorica;www.rsiglobalinvest.com
+FinPrimeGroup-Live;FinPrime Group Limited;www.finprimegroup.com
+FinQuotesFinancialCY-Real;FinQuotes Financial (Cyprus) Ltd;www.finpros.eu
+FinaltoAustralia-Demo3;Finalto (Australia) Pty Ltd;liquidity.finalto.com/au/
+FinaltoAustralia-Live7;Finalto (Australia) Pty Ltd;liquidity.finalto.com/au/
+FinaltoBVI-Live;Finalto (BVI) Limited;www.finalto.com
+FinaltoEU-Demo3;Finalto EU Ltd;www.finalto.com/eu/
+FinaltoEU-Live7;Finalto EU Ltd;www.finalto.com/eu/
+FinaltoUK-Demo3;Finalto Financial Services Limited;liquidity.finalto.com/uk/
+FinaltoUK-Live7;Finalto Financial Services Limited;liquidity.finalto.com/uk/
+FinancialMarkets-MT5 Real Server;Financial Markets Trading Company Limited;fmtc.com.my
+FINIOR-Demo;Finior Capital Limited;www.finiorcapital.com
+FINIOR-Live;Finior Capital Limited;www.finiorcapital.com
+FinotiveMarkets-Live;Finotive Markets LLC;www.finotivemarkets.com
+FinotraxFX-Server;Finotrax FX Ltd.;www.finotraxfx.com
+FinowizFintech-Live;Finowiz Fintech Limited;www.finowizprime.com
+FinprosFinancial-Real;Finpros Financial Ltd;finpros.com
+FinsaiTrade-Server;Finsai Trade Ltd;www.finsaitrade.com
+FintezaPresentation-Teta;Finteza Presentation;www.finteza.com
+Fintrix-Live;Fintrix Markets Ltd;www.fintrixmarkets.com
+FinveoMA-Live;Finveo MA Ltd;www.finveo.mu
+XFineLtd-Server;XFine Ltd.;x-fine.com
+InfinoxCapitalLimited-MT5Demo;Infinox Capital Limited;www.infinox.co.uk
+InfinoxCapitalLimited-MT5Live;Infinox Capital Limited;www.infinox.co.uk
+InfinoxLimited-MT5Demo;Infinox Limited;www.infinox.com
+InfinoxLimited-MT5Live;Infinox Limited;www.infinox.com
+OnFin-Live;OnFin Ltd;onfin.io
+FXIFinancials-Real;FXIFinancials Ltd.;www.fxifinancials.com
+JMFinancial-Server;JM Financial Brokerage Services Company (K.S.C.);www.jmfinancialkw.com
+KTFinancial-All;KT Financial Group Limited;www.capitaria.com
+MorfinFXLLC-Server;Morfin FX LLC;www.morfinfx.com
+PMFinancials-Demo;PM Financials Ltd;www.pmfinancials.mu
+PMFinancials-Server;PM Financials Ltd;www.pmfinancials.mu
+ProFinWealth-Demo;Profin Wealth (Pty) Ltd;www.profinwealth.com
+ProFinWealth-Live;Profin Wealth (Pty) Ltd;www.profinwealth.com
+RSFinance-Server;RS Finance Limited;rs-fin.com
+XSFintech-DEMO;XS Fintech Ltd;xsfintech.com
+XSFintech-REAL-1;XS Fintech Ltd;xsfintech.com
+XSFintech-REAL-2;XS Fintech Ltd;xsfintech.com
+XSFintech-REAL-3;XS Fintech Ltd;xsfintech.com
+OneFinancialMarkets-US48-Live;AXI Financial Services (UK) Limited;www.onefinancialmarkets.com
+AXPFinancials-Server;AXP Financials Limited;www.axfinancials.com
+AlpFin-Live;Alp Financial Limited;www.alpfin.com
+DooFinancialCY-Demo;Doo Financial Cyprus Limited;www.doofinancial.eu
+DooFinancialCY-Live;Doo Financial Cyprus Limited;www.doofinancial.eu

@@ -1,0 +1,4295 @@
+{
+  "rows": [
+    {
+      "Market Equity Inc": {
+        "company": "Market Equity Inc",
+        "website": "www.marketequity.com",
+        "genericEmail": "info@marketequity.com",
+        "logoHash": "0D004E994794D6ECD21AA3FE8B702FB8",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/0D004E994794D6ECD21AA3FE8B702FB8.png",
+        "registrationAddress": "1276, Govant Building, Kumul Highway, Port Vila, Republic of Vanuatu",
+        "registrationNumber": "40221",
+        "officesLocation": "Vanuatu",
+        "abuseEmail": "info@marketequity.com",
+        "abuseUrl": "https://www.marketequity.com/en/Contact%20Us",
+        "phone": "+678 22158",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VU",
+        "servers": [
+          {
+            "name": "MarketEquityInc-Demo",
+            "access": [
+              "192.109.15.68:443"
+            ],
+            "isDemo": 2,
+            "leverage": "400|300|200|100|50|1",
+            "group": "ECN,USD",
+            "deposit": "5000",
+            "limitedAccess": false
+          },
+          {
+            "name": "MarketEquityInc-Live",
+            "access": [
+              "20.58.32.125:443",
+              "74.234.120.247:443",
+              "79.127.167.229:443"
+            ],
+            "isDemo": 0,
+            "leverage": "400|300|200|100|50|1",
+            "group": "ECN,USD",
+            "deposit": "5000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "MarketPulse FX Limited": {
+        "company": "MarketPulse FX Limited",
+        "website": "www.themarketpulsefx.com",
+        "genericEmail": "admin@themarketpulsefx.com",
+        "logoHash": "8525842FD7C6FB23006EE17D5F0B039B",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/8/8525842FD7C6FB23006EE17D5F0B039B.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village,\nRodney Bay, Gros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00349",
+        "officesLocation": "Saint Lucia",
+        "abuseEmail": "admin@themarketpulsefx.com",
+        "abuseUrl": "https://www.themarketpulsefx.com/contact.php",
+        "phone": "Tel: +1 7587185461",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "MarketPulseFX-Trade",
+            "access": [
+              "185.65.204.78:443",
+              "185.65.204.78:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Marketmates Limited": {
+        "company": "Marketmates Limited",
+        "website": "www.marketmates.com",
+        "genericEmail": "hello@marketmates.com",
+        "logoHash": "56431AB743216A12D2C8B08545A2D5A3",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/56431AB743216A12D2C8B08545A2D5A3.png",
+        "registrationAddress": "4th Floor, Les Jamalacs Building, Vieux Conseil Street, Port Louis,\nMauritius",
+        "registrationNumber": "212928 GBC",
+        "officesLocation": "Australia",
+        "abuseEmail": "hello@marketmates.com",
+        "abuseUrl": "https://marketmates.com/contact-us/",
+        "phone": "Tel: +61 290607226",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "Marketmates-Live",
+            "access": [
+              "142.91.121.204:1950",
+              "142.91.121.204:443",
+              "5.181.78.117:1950",
+              "188.42.103.148:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "MarketsVox (SC) Ltd": {
+        "company": "MarketsVox (SC) Ltd",
+        "website": "www.marketsvox.com",
+        "genericEmail": "support@marketsvox.com",
+        "logoHash": "D1C3746E9BA937ED38BCE4423D250584",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/D/D1C3746E9BA937ED38BCE4423D250584.png",
+        "registrationAddress": "CT House, Office 9A, Providence, Mahe, Seychelles",
+        "registrationNumber": "8430368-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "support@marketsvox.com",
+        "abuseUrl": "https://marketsvox.com/en/",
+        "phone": "Tel: +248 4373790",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "MarketsVox-Demo",
+            "access": [
+              "31.14.254.159:443",
+              "31.14.254.159:1950",
+              "88.211.249.148:443",
+              "88.211.249.148:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "MarketsVox-Live",
+            "access": [
+              "177.154.156.126:1950",
+              "[2001:12e8:2039::100]:443",
+              "86.104.251.168:443",
+              "86.104.251.168:1950",
+              "36.255.76.104:443",
+              "36.255.77.104:443",
+              "[2401:fce0:10:1::104]:443",
+              "[2401:fce0:11:1::104]:443",
+              "88.211.249.124:443",
+              "88.211.249.124:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Marketsall Ltd": {
+        "company": "Marketsall Ltd",
+        "website": "marketsall.com",
+        "genericEmail": "info@marketsall.com",
+        "logoHash": "7F8F7ACC4F96B21D826E1036F4ADD3F7",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/7F8F7ACC4F96B21D826E1036F4ADD3F7.png",
+        "registrationAddress": "1/F River Court, 6 St Denis Street, Port Louis, 11328, Mauritius",
+        "registrationNumber": "C203266",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "info@marketsall.com",
+        "abuseUrl": "https://marketsall.com/contact",
+        "phone": "+230 2089022",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "Marketsall-Server",
+            "access": [
+              "95.154.219.134:443",
+              "95.154.219.134:1950",
+              "159.69.164.5:443",
+              "159.69.164.5:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "AMarkets LLC": {
+        "company": "AMarkets LLC",
+        "website": "www.amarkets.com",
+        "genericEmail": "support@amarkets.com",
+        "logoHash": "5DBC31BA45A800A33C8F64CB871BF08A",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/5DBC31BA45A800A33C8F64CB871BF08A.png",
+        "registrationAddress": "T&F Chambers, Main Road, Rarotonga, Cook Islands",
+        "registrationNumber": "LLC14486/2023",
+        "officesLocation": "Serbia",
+        "abuseEmail": "support@amarkets.com",
+        "abuseUrl": "https://www.amarkets.com/about-amarkets/contacts/",
+        "phone": "+381 113216908",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "CK",
+        "servers": [
+          {
+            "name": "AMarkets-Demo",
+            "access": [
+              "52.18.32.194:443",
+              "52.18.32.194:1950",
+              "51.75.241.104:443",
+              "51.75.241.104:1950",
+              "[2001:41d0:203:4068::1]:443",
+              "[2001:41d0:203:4068::1]:1950",
+              "34.247.94.79:443",
+              "34.247.94.79:1950",
+              "[2a05:d018:14a0:c480:a85a:d50:64aa:da1]:1950",
+              "185.10.75.159:27075",
+              "185.10.72.77:1968",
+              "83.217.212.230:55444"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "AMarkets-Real",
+            "access": [
+              "137.74.94.238:443",
+              "137.74.94.238:1950",
+              "[2001:41d0:1004:32ee::1]:443",
+              "[2001:41d0:1004:32ee::1]:1950",
+              "157.175.74.224:443",
+              "[2a05:d01e:41f:1b30:e7b5:c085:e3a:846f]:443",
+              "109.230.205.151:443",
+              "109.230.205.151:1965",
+              "212.41.21.108:443",
+              "178.20.47.138:443",
+              "95.168.161.211:55443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Amari Capital Ltd.": {
+        "company": "Amari Capital Ltd.",
+        "website": "www.amaricapital.com",
+        "genericEmail": "info@amaricapital.com",
+        "logoHash": "2CEC98C6F03E2B30104749E5494CDEFA",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/2/2CEC98C6F03E2B30104749E5494CDEFA.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village,\nRodney Bay, Gros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00282",
+        "officesLocation": "UAE",
+        "abuseEmail": "info@amaricapital.com",
+        "abuseUrl": "https://amaricapital.com/contact-us/",
+        "phone": "+971 43235521",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "Amaricapital-Live",
+            "access": [
+              "57.129.97.89:443",
+              "85.195.90.190:443",
+              "85.195.90.190:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Amari Markets Ltd.": {
+        "company": "Amari Markets Ltd.",
+        "website": "www.amarimarkets.com",
+        "genericEmail": "support@amarimarkets.com",
+        "logoHash": "09578E441A37FA3A9C9788711CE38510",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/09578E441A37FA3A9C9788711CE38510.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00525",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "info@amarimarkets.com",
+        "abuseUrl": "https://www.amarimarkets.com/contact",
+        "phone": "Tel: +44 7577027729",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "AmariMarkets-Live",
+            "access": [
+              "57.129.99.46:443",
+              "57.129.99.46:1950",
+              "85.195.82.134:443",
+              "85.195.82.134:1950",
+              "170.75.204.75:443",
+              "170.75.204.75:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Emar Markets (Pty) Ltd": {
+        "company": "Emar Markets (Pty) Ltd",
+        "website": "www.emarmarkets.com",
+        "genericEmail": "support@emarmarkets.com",
+        "logoHash": "08C339E891917B672A99B9F884C99B69",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/08C339E891917B672A99B9F884C99B69.png",
+        "registrationAddress": "First Floor Kildare Centre, CNR Kildare road and main street,\nWestern Cape, Cape town, 7550, South Africa",
+        "registrationNumber": "2022/601304/07",
+        "officesLocation": "South Africa",
+        "abuseEmail": "support@emarmarkets.com",
+        "abuseUrl": "https://www.emarmarkets.com/contact-us",
+        "phone": "+27 105347518",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "ZA",
+        "servers": [
+          {
+            "name": "Emarmarkets-Demo",
+            "access": [
+              "64.120.88.232:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "Emarmarkets-Live",
+            "access": [
+              "23.106.54.150:443",
+              "23.106.52.137:443",
+              "23.106.54.149:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Smart Financial Services Limited": {
+        "company": "Smart Financial Services Limited",
+        "website": "www.smartfxfin.com",
+        "genericEmail": "support@smartfxfin.com",
+        "logoHash": "748D112E3F5205EFC73A8BA2B2199C99",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/748D112E3F5205EFC73A8BA2B2199C99.png",
+        "registrationAddress": "Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet,\nSaint Lucia",
+        "registrationNumber": "2025-00779",
+        "officesLocation": "Saint Lucia",
+        "abuseEmail": "support@smartfxfin.com",
+        "abuseUrl": "https://www.smartfxfin.com/contact-us",
+        "phone": "+1758 4521529",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "SmartFinancialServices-Server",
+            "access": [
+              "31.14.254.130:443",
+              "217.146.87.130:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Smart Securities and Commodities Limited": {
+        "company": "Smart Securities and Commodities Limited",
+        "website": "www.smartfx.com",
+        "genericEmail": "support@smartfx.com",
+        "logoHash": "2D91E95ED71823B498ACBC2E7F74EBA8",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/2/2D91E95ED71823B498ACBC2E7F74EBA8.png",
+        "registrationAddress": "1276, Govant Building, Kumul Highway, Port Vila, Vanuatu",
+        "registrationNumber": "40491",
+        "officesLocation": "UAE",
+        "abuseEmail": "support@smartfx.com",
+        "abuseUrl": "https://smartfx.com/contact-us",
+        "phone": "+971 44319003",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VU",
+        "servers": [
+          {
+            "name": "SmartSecuritiesCommodities-Demo",
+            "access": [
+              "188.240.63.174:443",
+              "188.240.63.174:1950"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "SmartSecuritiesCommodities-Server",
+            "access": [
+              "188.240.63.197:443",
+              "188.240.63.197:1950",
+              "89.21.67.23:443",
+              "89.21.67.23:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Smart Trader for Selling and Purchasing Online Electronic Trading Ltd": {
+        "company": "Smart Trader for Selling and Purchasing Online Electronic Trading Ltd",
+        "website": "www.smarttraderiraq.com",
+        "genericEmail": "info@smarttraderiraq.com",
+        "logoHash": "FD26DAE23FC88BA0644A6497D460B276",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/FD26DAE23FC88BA0644A6497D460B276.png",
+        "registrationAddress": "Villa no.46, German Village 1, \nSlemani Governorate, Kurdistan, Republic of Iraq",
+        "registrationNumber": "27751",
+        "officesLocation": "Iraq",
+        "abuseEmail": "abuse@smarttraderiraq.com",
+        "abuseUrl": "https://smarttraderiraq.com/contact",
+        "phone": "+964 77 0913 8787",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "IQ",
+        "servers": [
+          {
+            "name": "SmartTrader-Server",
+            "access": [
+              "4.210.187.185:443",
+              "78.141.203.135:443"
+            ],
+            "isDemo": 2,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "SmartTool Trading SC Limited": {
+        "company": "SmartTool Trading SC Limited",
+        "website": "www.axiainvestments.com",
+        "genericEmail": "support@axiainvestments.com",
+        "logoHash": "048ECE361581D8246D7F81781ABC3157",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/048ECE361581D8246D7F81781ABC3157.png",
+        "registrationAddress": "F20, 1st Floor, Eden Plaza, Eden Island, Mahe, Seychelles",
+        "registrationNumber": "8424753-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "support@axiainvestments.com",
+        "abuseUrl": "https://axiainvestments.com/support-center/",
+        "phone": "+248 4610937",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "SmartToolTrading-Live",
+            "access": [
+              "35.228.148.5:443",
+              "34.78.202.83:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Smartcube FX Limited": {
+        "company": "Smartcube FX Limited",
+        "website": "www.smartcubeforex.com",
+        "genericEmail": "support@smartcubeforex.com",
+        "logoHash": "E0AD5C35DED665BBEF5BD3ECE9ED77D5",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/E/E0AD5C35DED665BBEF5BD3ECE9ED77D5.png",
+        "registrationAddress": "Hamchako, Mutsamudu, Autonomous Island of Anjouan, Comoros",
+        "registrationNumber": "15877",
+        "officesLocation": "Comoros",
+        "abuseEmail": "support@smartcubeforex.com",
+        "abuseUrl": "https://smartcubeforex.com/contact.php",
+        "phone": "+44 7491866275",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "SmartcubeFX-Trade",
+            "access": [
+              "86.104.251.221:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "EMMarkets Limited": {
+        "company": "EMMarkets Limited",
+        "website": "www.em-markets.com",
+        "genericEmail": "info@em-markets.com",
+        "logoHash": "AE9C64C7FC03E3B3CB03554ED9621F03",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/A/AE9C64C7FC03E3B3CB03554ED9621F03.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00549",
+        "officesLocation": "Kuwait",
+        "abuseEmail": "info@em-markets.com",
+        "abuseUrl": "https://em-markets.com/en/contact-us",
+        "phone": "+965 22256831",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "EMMarkets-Server",
+            "access": [
+              "188.240.63.188:443",
+              "217.146.87.217:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "FNmarkets (Mauritius) Ltd": {
+        "company": "FNmarkets (Mauritius) Ltd",
+        "website": "fnmarkets.com",
+        "genericEmail": "support@fnmarkets.com",
+        "logoHash": "ABCB2345BE0FCBCC97D8BA0EC4C425F6",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/A/ABCB2345BE0FCBCC97D8BA0EC4C425F6.png",
+        "registrationAddress": "Office 306, 3rd Floor, Ebene Junction, Rue de la Democratie,\nEbene, 72201, Mauritius",
+        "registrationNumber": "224178 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "compliance@fnmarkets.com",
+        "abuseUrl": "https://fnmarkets.com/contact-us",
+        "phone": "+44 7882967220",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "FNmarketsMU-Server",
+            "access": [
+              "13.43.7.255:443",
+              "13.203.1.178:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "FNmarkets Ltd": {
+        "company": "FNmarkets Ltd",
+        "website": "fnmarketsglobal.com",
+        "genericEmail": "support@fnmarketsglobal.com",
+        "logoHash": "BF73498E43C3FA123E8A5BEC4C86466A",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/BF73498E43C3FA123E8A5BEC4C86466A.png",
+        "registrationAddress": "Bonovo Road, Fomboni, Island of Mohéli, Comoros",
+        "registrationNumber": "HT01124135",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "support@fnmarketsglobal.com",
+        "abuseUrl": "https://fnmarketsglobal.com/contact-us",
+        "phone": "Tel: +357 25248953",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "FNmarkets-Server",
+            "access": [
+              "3.9.140.100:443",
+              "3.9.140.100:1950",
+              "3.7.113.3:443",
+              "3.7.113.3:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "STMarket Company Limited": {
+        "company": "STMarket Company Limited",
+        "website": "www.stmarket.com",
+        "genericEmail": "info@stmarket.com",
+        "logoHash": "874D8425E7FEDDF86A9D6AE97BFC7145",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/8/874D8425E7FEDDF86A9D6AE97BFC7145.png",
+        "registrationAddress": "No.176, AMASS Tower, Floor 23, Street 63, Corner 282, Phum 6, Boeng Keng Kang Muoy, \nPhnom Penh, 12302, Cambodia",
+        "registrationNumber": "00049975",
+        "officesLocation": "Cambodia",
+        "abuseEmail": "admin@stmarket.com",
+        "abuseUrl": "https://stmarket.com/faq",
+        "phone": "Tel: +855 23977688",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KH",
+        "servers": [
+          {
+            "name": "STMarket-Demo",
+            "access": [
+              "192.248.175.219:443"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "deposit": "5000",
+            "limitedAccess": false
+          },
+          {
+            "name": "STMarket-Live",
+            "access": [
+              "43.217.255.9:443",
+              "43.217.255.9:1950",
+              "139.180.185.16:443",
+              "139.180.185.16:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "deposit": "5000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "VSMarkets Ltd": {
+        "company": "VSMarkets Ltd",
+        "website": "vsmarkets.com",
+        "genericEmail": "compliance@vsmarkets.com",
+        "logoHash": "D66BE515FF1B5DA0C620918C45F35E48",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/D/D66BE515FF1B5DA0C620918C45F35E48.png",
+        "registrationAddress": "Gladstonos, 116 M.Kyprianou House, 3 and 4th floor, \n3032, Limassol, Cyprus",
+        "registrationNumber": "HE431041",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "compliance@vsmarkets.com",
+        "abuseUrl": "vsmarkets.com",
+        "phone": "+357 25010782",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "VSMarkets-Server",
+            "access": [
+              "173.234.137.233:443",
+              "173.234.137.228:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "9X Markets Limited": {
+        "company": "9X Markets Limited",
+        "website": "www.9xmarkets.com",
+        "genericEmail": "support@9xmarkets.com",
+        "logoHash": "B180DAA9BB9C0A65C0B8FCA4E8FC7929",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/B180DAA9BB9C0A65C0B8FCA4E8FC7929.png",
+        "registrationAddress": "3 Emerald Park, Trianon, Quatre Bornes, 72257, Mauritius",
+        "registrationNumber": "212927 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@9xmarkets.com",
+        "abuseUrl": "https://9xmarkets.com/get-in-touch/",
+        "phone": "Tel: +230 4634500",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "9XMarkets-Server",
+            "access": [
+              "86.104.251.219:443",
+              "89.21.67.6:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "CA Markets Global Limited": {
+        "company": "CA Markets Global Limited",
+        "website": "www.camarketsglobal.com",
+        "genericEmail": "coo@camarketsglobal.com",
+        "logoHash": "6831B4D91EF93342F4ABB3D6CE10F7A4",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/6831B4D91EF93342F4ABB3D6CE10F7A4.png",
+        "registrationAddress": "Hamchako, Mutsamudu, The Autonomous Island of Anjouan,\nComoros",
+        "registrationNumber": "15682",
+        "officesLocation": "Australia",
+        "abuseEmail": "support@camarketsglobal.com",
+        "abuseUrl": "www.camarketsglobal.com/contact-us",
+        "phone": "+61 2 72573360",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "CAMarketsGlobal-Major",
+            "access": [
+              "185.96.244.251:443",
+              "185.96.244.66:443",
+              "103.225.11.72:443",
+              "103.225.11.72:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Chimara Ltd": {
+        "company": "Chimara Ltd",
+        "website": "www.xltrade.net",
+        "genericEmail": "solutions@xltrade.net",
+        "logoHash": "187610628EFC17225D25925AFC69F2AF",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/1/187610628EFC17225D25925AFC69F2AF.png",
+        "registrationAddress": "Hamchako, Mutsamudu, Anjouan, Comoros",
+        "registrationNumber": "15898",
+        "officesLocation": "Serbia",
+        "abuseEmail": "solutions@xltrade.net",
+        "abuseUrl": "www.xltrade.net/xltrade-contact",
+        "phone": "+44 2032899020, +381 114404500",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "Chimara-SRV01",
+            "access": [
+              "45.142.200.19:443",
+              "45.142.201.70:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "E8 Markets Ltd.": {
+        "company": "E8 Markets Ltd.",
+        "website": "www.e8markets.com",
+        "genericEmail": "support@e8markets.com",
+        "logoHash": "59EC88643E040B8F298728C5F9671164",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/59EC88643E040B8F298728C5F9671164.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "phone": "+357 25312128",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "E8Markets-Server",
+            "access": [
+              "155.133.11.112:443",
+              "45.142.201.164:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "EC Markets Financial Limited": {
+        "company": "EC Markets Financial Limited",
+        "website": "www.ecmarkets.co.nz",
+        "genericEmail": "support@ecmarkets.co.nz",
+        "logoHash": "73DC964D737864E83B0EB31FC6616CBB",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/73DC964D737864E83B0EB31FC6616CBB.png",
+        "registrationAddress": "Level 1, 1 Albert Street, Auckland Central, Auckland, 1010, \nNew Zealand",
+        "registrationNumber": "2446590",
+        "officesLocation": "New Zealand",
+        "abuseEmail": "compliance@ecmarkets.co.nz",
+        "abuseUrl": "https://www.ecmarkets.co.nz/contact-us/",
+        "phone": "+64 21882832",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "NZ",
+        "servers": [
+          {
+            "name": "ECMarketsNZ-MT5-Live04",
+            "access": [
+              "103.100.75.145:2065"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "EC Markets Limited": {
+        "company": "EC Markets Limited",
+        "website": "www.ecmarkets.sc",
+        "genericEmail": "support@ecmarkets.sc",
+        "logoHash": "6C03B676F9895AF4FCBB53A05D29245E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/6C03B676F9895AF4FCBB53A05D29245E.png",
+        "registrationAddress": "Suite 3, Global Village, Jivan's Complex, \nMont Fleuri, Mahe, Seychelles",
+        "registrationNumber": "8413793-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "support@ecmarkets.sc",
+        "abuseUrl": "https://www.ecmarkets.sc/en-US/aboutUs/contactUs/",
+        "phone": "+248 4610784",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "ECMarkets-MT5-Live01",
+            "access": [
+              "18.182.62.196:2050",
+              "119.147.192.195:2050",
+              "185.96.247.43:2050",
+              "103.192.215.113:2050",
+              "221.122.90.81:2050",
+              "123.138.76.130:2050",
+              "182.151.251.226:2050",
+              "103.192.215.109:2050",
+              "103.192.215.115:2050",
+              "122.248.229.74:2050",
+              "54.255.150.182:2050",
+              "65.0.27.174:2050"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "EC Markets Ltd.": {
+        "company": "EC Markets Ltd.",
+        "website": "www.ecmarkets.mu",
+        "genericEmail": "matt@ecmarkets.mu",
+        "logoHash": "C779AB61B512C0CCFC2255D17625C582",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/C779AB61B512C0CCFC2255D17625C582.png",
+        "registrationAddress": "The Cyberati Lounge, Ground Floor, The Catalyst,\nSilicon Avenue, 40 Cybercity, Ebene, 72201, Mauritius",
+        "registrationNumber": "188565 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "compliance@ecmarkets.mu",
+        "abuseUrl": "https://www.ecmarkets.mu/en-US/aboutUs/contactUs",
+        "phone": "+248 4224099",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "ECMarketsLtd-Demo",
+            "access": [
+              "10.60.39.114:443",
+              "10.60.39.114:2070",
+              "13.212.178.81:2070",
+              "13.251.1.230:2070"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "ECMarketsLtd-MT5-Live02",
+            "access": [
+              "52.221.242.18:2055",
+              "3.7.254.43:2055",
+              "43.208.49.200:2055",
+              "3.28.199.91:2055",
+              "119.147.205.168:2055",
+              "119.147.192.207:2055",
+              "103.192.215.24:2055",
+              "221.122.90.87:2055",
+              "65.1.147.86:2055",
+              "113.20.110.73:2055"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "ECMarketsLtd-MT5-Live03",
+            "access": [
+              "185.96.245.213:2060",
+              "185.96.245.98:2060",
+              "18.205.29.46:2060"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "FP Markets LLC": {
+        "company": "FP Markets LLC",
+        "website": "www.fpmarkets.com",
+        "genericEmail": "supportteam@fpmarkets.com",
+        "logoHash": "B002FDC7940DD3539EF205D2C6C7F0CF",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/B002FDC7940DD3539EF205D2C6C7F0CF.png",
+        "registrationAddress": "Euro House, Richmond Hill Road, P.O. Box 2897, Kingstown,\nVC0100, Saint Vincent and the Grenadines",
+        "registrationNumber": "126 LLC 2019",
+        "officesLocation": "Australia.",
+        "abuseEmail": "complianceteam@fpmarkets.com",
+        "abuseUrl": "www.fpmarkets.com",
+        "phone": "Tel: +44 2825447780",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "FPMarketsLLC-Demo",
+            "access": [
+              "142.91.121.100:443",
+              "213.196.26.188:443",
+              "5.181.78.112:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "FPMarketsLLC-Live",
+            "access": [
+              "5.181.78.85:443",
+              "5.181.78.73:443",
+              "213.196.24.236:443",
+              "213.196.24.236:444",
+              "10.235.195.252:444",
+              "15.134.25.231:443",
+              "43.203.98.59:443",
+              "8.220.217.232:443",
+              "8.220.217.232:1950",
+              "188.42.84.17:443",
+              "106.15.129.218:443",
+              "106.15.129.218:1950",
+              "47.242.138.252:443",
+              "47.242.138.252:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "FP Markets Limited": {
+        "company": "FP Markets Limited",
+        "website": "www.fpmarkets.co.ke",
+        "genericEmail": "support@fpmarkets.co.ke",
+        "logoHash": "7EE8A43BC779549D070CC60589897B14",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/7EE8A43BC779549D070CC60589897B14.png",
+        "registrationAddress": "Argwings Kodhek Street, Kose Heights Hurlingham Building,\nP.O Box 5144, Madaraka, Nairobi West District, Nairobi, Kenya",
+        "phone": "+254 700665983",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "servers": [
+          {
+            "name": "FPMarketsKE-Demo",
+            "access": [
+              "142.91.121.100:443",
+              "213.196.26.188:443",
+              "5.181.78.112:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "FPMarketsKE-Live",
+            "access": [
+              "5.181.78.85:443",
+              "5.181.78.73:443",
+              "213.196.24.236:443",
+              "213.196.24.236:444",
+              "10.235.195.252:444",
+              "15.134.25.231:443",
+              "43.203.98.59:443",
+              "8.220.217.232:443",
+              "8.220.217.232:1950",
+              "188.42.84.17:443",
+              "106.15.129.218:443",
+              "106.15.129.218:1950",
+              "47.242.138.252:443",
+              "47.242.138.252:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "FP Markets Ltd.": {
+        "company": "FP Markets Ltd.",
+        "website": "www.fpmarkets.com/stl/",
+        "genericEmail": "risk.team@fpmarkets.com",
+        "logoHash": "F7CF6AFE8C8434505BE7DAE0CD578DE0",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F7CF6AFE8C8434505BE7DAE0CD578DE0.png",
+        "registrationAddress": "Ground Floor, Rodney Court Building, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00853",
+        "officesLocation": "Saint Lucia",
+        "abuseEmail": "compliance.team@fpmarkets.com",
+        "abuseUrl": "www.fpmarkets.com/stl/",
+        "phone": "+1 7584579557",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "FPMarkets-Demo2",
+            "access": [
+              "172.240.252.236:443",
+              "172.241.16.7:443",
+              "13.135.134.23:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "FPMarkets-Live2",
+            "access": [
+              "172.240.252.20:443",
+              "64.120.31.137:443",
+              "192.109.23.159:443",
+              "58.84.58.44:443",
+              "3.9.66.210:443",
+              "35.169.224.12:443",
+              "139.224.202.125:443",
+              "139.224.202.125:1950",
+              "47.239.205.24:443",
+              "47.239.205.24:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "GO Markets International Ltd.": {
+        "company": "GO Markets International Ltd.",
+        "website": "www.int.gomarkets.com",
+        "genericEmail": "asiainfo@gomarkets.sc",
+        "logoHash": "B66D2607A3DF76ED735B7DE1DAA0CF52",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/B66D2607A3DF76ED735B7DE1DAA0CF52.png",
+        "registrationAddress": "Office 12, 3rd Floor, IMAD Complex, Ile Du Port, Mahe, Seychelles",
+        "registrationNumber": "8425985-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "admin@gomarkets.com",
+        "abuseUrl": "https://www.gomarkets.com/en/contact-us/",
+        "phone": "+248 4671903",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "GOMarketsIntl-Demo",
+            "access": [
+              "167.179.89.212:443",
+              "54.255.118.103:443",
+              "212.115.108.231:443",
+              "212.115.108.231:1950",
+              "18.182.214.235:443",
+              "108.137.174.186:443",
+              "[2406:da1c:25b:c201:644f:5b0d:1ea6:d177]:443",
+              "54.206.93.81:443",
+              "54.206.93.81:1950",
+              "40.172.4.4:443",
+              "[2406:da17:1fa:e3f2:1faf:ad33:d25a:87ab]:443",
+              "45.76.131.155:443",
+              "52.220.158.187:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "GOMarketsIntl-Live",
+            "access": [
+              "3.28.183.178:443",
+              "103.195.7.169:443",
+              "18.169.189.83:443",
+              "66.135.24.186:443",
+              "[2001:19f0:1000:1a89:5400:04ff:fe7d:9d31]:443",
+              "185.127.19.175:443",
+              "185.127.19.175:1950",
+              "13.233.84.250:443",
+              "13.229.142.24:443",
+              "45.77.34.206:443",
+              "[2001:19f0:4400:4d85:5400:3ff:fedb:d47c]:443",
+              "18.162.134.154:443",
+              "209.250.226.55:443",
+              "209.250.226.55:1950",
+              "13.238.238.246:443",
+              "[2406:da1c:25b:c200:f12c:1d7e:703d:60d1]:443",
+              "54.153.208.74:443",
+              "[2406:da1c:25b:c200:874b:54eb:9b23:b8d6]:443",
+              "43.198.44.247:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "GO Markets LLC": {
+        "company": "GO Markets LLC",
+        "website": "www.gomarkets.ltd/en-svg/",
+        "genericEmail": "customers_svg@gomarkets.ltd",
+        "logoHash": "0D48652E3AAAB229C586EBFC3924ED4D",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/0D48652E3AAAB229C586EBFC3924ED4D.png",
+        "registrationAddress": "Euro House, Richmond Hill Road, Kingstown, St. Vincent and the Grenadines",
+        "registrationNumber": "332 LLC 2020",
+        "officesLocation": "St. Vincent and the Grenadines",
+        "abuseEmail": "customers_svg@gomarkets.ltd",
+        "abuseUrl": "https://www.gomarkets.ltd/en-svg/",
+        "phone": "+1 2128589589",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "GOMarketsSVG-Demo",
+            "access": [
+              "167.179.89.212:443",
+              "54.255.118.103:443",
+              "212.115.108.231:443",
+              "212.115.108.231:1950",
+              "18.182.214.235:443",
+              "108.137.174.186:443",
+              "[2406:da1c:25b:c201:644f:5b0d:1ea6:d177]:443",
+              "54.206.93.81:443",
+              "54.206.93.81:1950",
+              "40.172.4.4:443",
+              "[2406:da17:1fa:e3f2:1faf:ad33:d25a:87ab]:443",
+              "45.76.131.155:443",
+              "52.220.158.187:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "GOMarketsSVG-Live",
+            "access": [
+              "3.28.183.178:443",
+              "103.195.7.169:443",
+              "18.169.189.83:443",
+              "66.135.24.186:443",
+              "[2001:19f0:1000:1a89:5400:04ff:fe7d:9d31]:443",
+              "185.127.19.175:443",
+              "185.127.19.175:1950",
+              "13.233.84.250:443",
+              "13.229.142.24:443",
+              "45.77.34.206:443",
+              "[2001:19f0:4400:4d85:5400:3ff:fedb:d47c]:443",
+              "18.162.134.154:443",
+              "209.250.226.55:443",
+              "209.250.226.55:1950",
+              "13.238.238.246:443",
+              "[2406:da1c:25b:c200:f12c:1d7e:703d:60d1]:443",
+              "54.153.208.74:443",
+              "[2406:da1c:25b:c200:874b:54eb:9b23:b8d6]:443",
+              "43.198.44.247:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "GO Markets Ltd": {
+        "company": "GO Markets Ltd",
+        "website": "www.gomarkets.eu",
+        "genericEmail": "support@gomarkets.eu",
+        "logoHash": "ED51AF44986225848CD558920F677DF6",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/E/ED51AF44986225848CD558920F677DF6.png",
+        "registrationAddress": "Spyrou Kyprianou, 38 CCS Building, 2nd Floor, Flat. Office 201, \nKato Polemidia, 4154, Limassol, Cyprus",
+        "registrationNumber": "HE 351644",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "support@gomarkets.eu",
+        "abuseUrl": "https://www.gomarkets.eu/en/contact-us/",
+        "phone": "Tel: +357 25023910",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "GOMarketsLtd-Demo",
+            "access": [
+              "167.179.89.212:443",
+              "54.255.118.103:443",
+              "212.115.108.231:443",
+              "212.115.108.231:1950",
+              "18.182.214.235:443",
+              "108.137.174.186:443",
+              "[2406:da1c:25b:c201:644f:5b0d:1ea6:d177]:443",
+              "54.206.93.81:443",
+              "54.206.93.81:1950",
+              "40.172.4.4:443",
+              "[2406:da17:1fa:e3f2:1faf:ad33:d25a:87ab]:443",
+              "45.76.131.155:443",
+              "52.220.158.187:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "GOMarketsLtd-Live",
+            "access": [
+              "3.28.183.178:443",
+              "103.195.7.169:443",
+              "18.169.189.83:443",
+              "66.135.24.186:443",
+              "[2001:19f0:1000:1a89:5400:04ff:fe7d:9d31]:443",
+              "185.127.19.175:443",
+              "185.127.19.175:1950",
+              "13.233.84.250:443",
+              "13.229.142.24:443",
+              "45.77.34.206:443",
+              "[2001:19f0:4400:4d85:5400:3ff:fedb:d47c]:443",
+              "18.162.134.154:443",
+              "209.250.226.55:443",
+              "209.250.226.55:1950",
+              "13.238.238.246:443",
+              "[2406:da1c:25b:c200:f12c:1d7e:703d:60d1]:443",
+              "54.153.208.74:443",
+              "[2406:da1c:25b:c200:874b:54eb:9b23:b8d6]:443",
+              "43.198.44.247:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Mar",
+        "Signature": "41c40e3b0b784f2468dd7d0e7f088***"
+      }
+    },
+    {
+      "Global Capital Market Limited": {
+        "company": "Global Capital Market Limited",
+        "website": "www.gcfx24.com",
+        "genericEmail": "info@gcfx24.com",
+        "logoHash": "252C658A6B8F718648A74F590163F429",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/2/252C658A6B8F718648A74F590163F429.png",
+        "registrationAddress": "Level 12F(1), Main Office Tower, Financial Park Labuan, Merdeka,\nFederal Territory of Labuan, 87000, Malaysia",
+        "registrationNumber": "LL16397",
+        "officesLocation": "Malaysia",
+        "abuseEmail": "escalation@gcfx24.com",
+        "abuseUrl": "https://gcfx24.com/reachus/",
+        "phone": "+6087586776",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MY",
+        "servers": [
+          {
+            "name": "GlobalCapitalMarket-Live",
+            "access": [
+              "86.104.251.162:443",
+              "217.146.87.194:443",
+              "185.96.244.239:443",
+              "79.127.198.62:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Global Dynamic Markets Limited": {
+        "company": "Global Dynamic Markets Limited",
+        "website": "www.dynamicmarkets.com",
+        "genericEmail": "info@dynamicmarkets.com",
+        "logoHash": "1BF0221E9B23A946921ED41E6F07A1DA",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/1/1BF0221E9B23A946921ED41E6F07A1DA.png",
+        "registrationAddress": "7A Mayer Street, Port-Louis, Mauritius",
+        "registrationNumber": "C179025",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "info@dynamicmarkets.com",
+        "abuseUrl": "www.dynamicmarkets.com/contact",
+        "phone": "Tel: +230 58 69 00 68",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "GlobalDynamicMarkets-Demo",
+            "access": [
+              "35.178.240.33:443"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "GlobalDynamicMarkets-Real",
+            "access": [
+              "18.184.111.28:443",
+              "3.8.213.159:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Global Financial Contracts Ltd.": {
+        "company": "Global Financial Contracts Ltd.",
+        "website": "www.gfcmercado.com",
+        "genericEmail": "jpeters@gfcmercado.com",
+        "logoHash": "F9822F9576D35BFD0AF85F5B968C7F5F",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F9822F9576D35BFD0AF85F5B968C7F5F.png",
+        "registrationAddress": "New Horizon Building, Ground Floor, 3½ Miles Philip S.W. Goldson\nHighway, Belize City, Belize",
+        "registrationNumber": "000014873",
+        "officesLocation": "Belize",
+        "abuseEmail": "jpeters@gfcmercado.com",
+        "abuseUrl": "https://www.gfcmercado.com/contacto/",
+        "phone": "+1 210 595 3390",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "BZ",
+        "servers": [
+          {
+            "name": "GlobalFinancialContracts-Demo",
+            "access": [
+              "157.241.5.83:443",
+              "157.241.5.83:1950",
+              "95.179.222.25:443",
+              "95.179.222.25:1950",
+              "20.216.18.113:443",
+              "20.216.18.113:1950",
+              "45.77.231.24:443",
+              "45.77.231.24:1950"
+            ],
+            "isDemo": 2,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "GlobalFinancialContracts-Live",
+            "access": [
+              "185.92.221.136:443",
+              "185.92.221.136:1950",
+              "157.175.246.82:443",
+              "157.175.246.82:1950",
+              "78.141.202.148:443",
+              "78.141.202.148:1950",
+              "104.238.171.32:443",
+              "104.238.171.32:1950",
+              "20.74.234.38:443",
+              "20.74.234.38:1950",
+              "164.132.207.155:443",
+              "164.132.207.155:1950",
+              "188.240.63.229:443",
+              "188.240.63.229:1950",
+              "188.240.63.179:443",
+              "188.240.63.179:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Global Futures Services Limited": {
+        "company": "Global Futures Services Limited",
+        "website": "www.gfsfutures.com",
+        "genericEmail": "support@gfsfutures.com",
+        "logoHash": "3C0C6C6C0E873C31E3C3922D7420D639",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/3/3C0C6C6C0E873C31E3C3922D7420D639.png",
+        "registrationAddress": "RM 1517, 15F, Amiata Industrial Building, 58 Lei Muk Road, \nKwai Chung, Hong Kong",
+        "registrationNumber": "66715742",
+        "officesLocation": "Hong Kong",
+        "abuseEmail": "support@gfsfutures.com",
+        "abuseUrl": "https://gfsfutures.com/contact-us/",
+        "phone": "+852 30022272",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "HK",
+        "servers": [
+          {
+            "name": "GlobalFuturesServices-Server",
+            "access": [
+              "3.1.56.161:443",
+              "13.192.81.115:443",
+              "43.198.34.65:443",
+              "103.100.72.82:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Global Markets Group Limited": {
+        "company": "Global Markets Group Limited",
+        "website": "www.gmgmarkets.co.uk",
+        "genericEmail": "r.donoghue@gmgmarkets.co.uk",
+        "logoHash": "32A923625AC0DD455E593FD426F31F84",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/3/32A923625AC0DD455E593FD426F31F84.png",
+        "registrationAddress": "Green Park House, 15 Stratton Street, London, W1J 8LQ, United Kingdom",
+        "registrationNumber": "9493910",
+        "officesLocation": "United Kingdom",
+        "abuseEmail": "info@gmgmarkets.co.uk",
+        "abuseUrl": "https://gmgmarkets.co.uk/company/contact-us.html",
+        "phone": "Tel: +44 2038653306",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "GB",
+        "servers": [
+          {
+            "name": "GlobalMarketsGroup-server",
+            "access": [
+              "188.240.63.149:443",
+              "188.240.63.149:1950",
+              "89.21.67.124:443",
+              "89.21.67.124:1950",
+              "78.141.238.34:443",
+              "78.141.238.34:1950",
+              "199.247.26.191:443",
+              "199.247.26.191:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Global Tauro Ltd": {
+        "company": "Global Tauro Ltd",
+        "website": "www.mau.tauromarkets.com",
+        "genericEmail": "support@mau.tauromarkets.com",
+        "logoHash": "7DA40F6ACAD82972CD90840C7CB8A818",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/7DA40F6ACAD82972CD90840C7CB8A818.png",
+        "registrationAddress": "Office 306, 3rd Floor, Ebene Junction, Rue de la Democratie,\nEbene 72201, Mauritius",
+        "registrationNumber": "208180 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@mau.tauromarkets.com",
+        "abuseUrl": "www.mau.tauromarkets.com",
+        "phone": "Tel: +230 57714060",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "GlobalTauro-Server01",
+            "access": [
+              "185.166.86.163:443",
+              "81.17.120.204:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "XGLOBAL FX Limited": {
+        "company": "XGLOBAL FX Limited",
+        "website": "www.xglobalfx.com",
+        "genericEmail": "clientsupport@xglobalfx.com",
+        "logoHash": "B8237B76E8E7ABE19AFDF260F8DBE8FC",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/B8237B76E8E7ABE19AFDF260F8DBE8FC.png",
+        "registrationAddress": "iCount House, Kumul Highway, Port Vila, Vanuatu",
+        "registrationNumber": "15062",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "clientsupport@xglobalfx.com",
+        "abuseUrl": "https://www.xglobalfx.com/contact-us/",
+        "phone": "+357 25262002",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VU",
+        "servers": [
+          {
+            "name": "XGLOBALFX-Server",
+            "access": [
+              "20.117.225.83:443",
+              "20.61.82.146:443",
+              "20.61.82.146:1950"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "E-Global Trade and Finance Group, Inc.": {
+        "company": "E-Global Trade and Finance Group, Inc.",
+        "website": "www.markets4you.com",
+        "genericEmail": "info@markets4you.com",
+        "logoHash": "5AF2B353CFED097BD8D068B59410D373",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/5AF2B353CFED097BD8D068B59410D373.png",
+        "registrationAddress": "First Floor, Mandar House, Johnson's Ghut, P.O. Box 3257\nRoad Town, Tortola, British Virgin Islands",
+        "registrationNumber": "1384287",
+        "officesLocation": "British Virgin Islands",
+        "abuseEmail": "info@markets4you.com",
+        "abuseUrl": "https://www.markets4you.com/en/contact-us/",
+        "phone": "+44 3300271824",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VG",
+        "servers": [
+          {
+            "name": "EGlobalTrade-Classic",
+            "access": [
+              "173.234.141.245:443",
+              "173.234.141.245:1950",
+              "64.120.114.145:443",
+              "64.120.114.145:1950",
+              "36.255.76.42:443",
+              "36.255.77.42:443",
+              "[2401:fce0:10:1::42]:443",
+              "[2401:fce0:11:1::42]:443",
+              "194.164.176.87:443",
+              "194.164.177.87:443",
+              "[2a01:f680:10:1::87]:443",
+              "[2a01:f680:11:1::87]:443",
+              "36.255.76.112:443",
+              "36.255.77.112:443",
+              "[2401:fce0:10:1::112]:443",
+              "[2401:fce0:11:1::112]:443",
+              "203.24.98.148:443",
+              "203.29.60.148:443",
+              "[2401:fce0:30:1::148]:443",
+              "[2401:fce0:31:1::148]:443",
+              "203.24.98.145:443",
+              "203.29.60.145:443",
+              "[2401:fce0:30:1::145]:443",
+              "[2401:fce0:31:1::145]:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|500|200|10",
+            "deposit": "10000",
+            "limitedAccess": false
+          },
+          {
+            "name": "EGlobalTrade-Demo",
+            "access": [
+              "95.217.147.61:443",
+              "23.106.59.251:443"
+            ],
+            "isDemo": 1,
+            "leverage": "100|500|200|10",
+            "deposit": "10000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "IQGlobal Limited": {
+        "company": "IQGlobal Limited",
+        "website": "www.iqglobal-trade.com",
+        "genericEmail": "support@iqglobal-trade.com",
+        "logoHash": "41FC62D3E8A966B3B45C31DF83AB2658",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/4/41FC62D3E8A966B3B45C31DF83AB2658.png",
+        "registrationAddress": "Hamchako, Mutsamudu, Autonomous Island of Anjouan,\nPO Box 1212, Comoros",
+        "registrationNumber": "15984",
+        "officesLocation": "Hong Kong",
+        "abuseEmail": "support@iqglobal-trade.com",
+        "abuseUrl": "https://www.iqglobal-trade.com/contactUs",
+        "phone": "+852 35007293",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "IQGlobal-Trade",
+            "access": [
+              "34.87.99.221:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "X Global Markets Ltd": {
+        "company": "X Global Markets Ltd",
+        "website": "www.xglobalmarkets.com",
+        "genericEmail": "support@xglobalmarkets.com",
+        "logoHash": "F067D426115CBCCA26937747E65414E7",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F067D426115CBCCA26937747E65414E7.png",
+        "registrationAddress": "162 Frangklinou Rousvelt, 1st Floor, Limassol, 3045, Cyprus",
+        "registrationNumber": "HE 291958",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "support@xglobalmarkets.com",
+        "abuseUrl": "https://www.xglobalmarkets.com/contact-us/",
+        "phone": "Tel: +357 25262002",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "XGlobalMarkets-ABFTrade",
+            "access": [
+              "45.82.65.208:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "QQ Global Group LD S.R.L.": {
+        "company": "QQ Global Group LD S.R.L.",
+        "website": "www.qqglobalgroup.com",
+        "genericEmail": "comercial@qqglobalgroup.com",
+        "logoHash": "2812FAABFD03072B1AF1241C17A5AF3E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/2/2812FAABFD03072B1AF1241C17A5AF3E.png",
+        "registrationAddress": "De la escuela Alberto Paniagua, 200 mts al Norte, Casa Esquinera\nBlanca a mano derecha, San Rafael Getsemani, Heredia, Costa Rica",
+        "registrationNumber": "3-102-891131",
+        "officesLocation": "Colombia",
+        "abuseEmail": "comercial@qqglobalgroup.com",
+        "abuseUrl": "https://qqglobalgroup.com/#Contacto",
+        "phone": "+57 6028912574",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "CR",
+        "servers": [
+          {
+            "name": "QQGlobalGroupLD-Live",
+            "access": [
+              "185.97.160.149:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "SR Global Markets Ltd": {
+        "company": "SR Global Markets Ltd",
+        "website": "www.srglobalmarkets.com",
+        "genericEmail": "support@srglobalmarkets.com",
+        "logoHash": "0F151AF966550A7DD88117017BF7523C",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/0F151AF966550A7DD88117017BF7523C.png",
+        "registrationAddress": "4th Floor, The Docks 4, The Docks, Caudan, Port-Louis, Mauritius",
+        "registrationNumber": "226909 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@srglobalmarkets.com",
+        "abuseUrl": "https://srglobalmarkets.com/contact",
+        "phone": "+230 2148500",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "SRGlobalMarkets-Live",
+            "access": [
+              "152.233.28.233:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "ST Global Markets Ltd.": {
+        "company": "ST Global Markets Ltd.",
+        "website": "www.stgmarkets.com",
+        "genericEmail": "support@stgmarkets.com",
+        "logoHash": "6FD123B77086648E1224C6C3F83D8B25",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/6FD123B77086648E1224C6C3F83D8B25.png",
+        "registrationAddress": "303 Shirley Street, P.O. Box N-492, Nassau, Bahamas",
+        "registrationNumber": "61260",
+        "officesLocation": "Bahamas",
+        "abuseEmail": "support@stgmarkets.com",
+        "abuseUrl": "https://www.stgmarkets.com/pages/contact.html",
+        "phone": "+1 2029538999",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "BS",
+        "servers": [
+          {
+            "name": "STGlobalMarketsLtd-Live-1",
+            "access": [
+              "148.251.131.125:443",
+              "148.251.131.125:1950",
+              "195.201.104.80:1950",
+              "77.68.7.154:443",
+              "77.68.7.154:1950",
+              "77.68.126.199:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "UP Global Markets Ltd": {
+        "company": "UP Global Markets Ltd",
+        "website": "www.upforex.com",
+        "genericEmail": "support@upforex.com",
+        "logoHash": "5D06564959BDC81E2E03C8C8D7E07E18",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/5D06564959BDC81E2E03C8C8D7E07E18.png",
+        "registrationAddress": "4th Floor, The Docks 4, The Docks, Caudan, Port Louis, Mauritius",
+        "registrationNumber": "223499 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@upforex.com",
+        "abuseUrl": "https://www.upforex.com/contact-us",
+        "phone": "+230 2148500",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "UpGlobalMarkets-Trade",
+            "access": [
+              "31.14.254.205:443",
+              "217.146.87.178:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "XM Global Limited": {
+        "company": "XM Global Limited",
+        "website": "www.xm.com",
+        "genericEmail": "support@xm.com",
+        "logoHash": "40C7D87E590CBF91E48F6368329798BB",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/4/40C7D87E590CBF91E48F6368329798BB.png",
+        "registrationAddress": "Suite 404, The Matalon, Coney Drive, Belize City, Belize",
+        "registrationNumber": "149,291",
+        "officesLocation": "Belize",
+        "abuseEmail": "support@xm.com",
+        "abuseUrl": "https://www.xm.com/support",
+        "phone": "Tel: +501 223 6696",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "BZ",
+        "servers": [
+          {
+            "name": "XMGlobal-MT5",
+            "access": [
+              "18.168.26.220:443",
+              "dc-r50-05.mt4servers.com:443",
+              "dc-r50-08.mt4servers.com:443",
+              "dc-r50-09.mt4servers.com:443",
+              "35.74.76.36:443",
+              "dc-r50-03.mt4servers.com:443",
+              "81.71.119.29:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 10",
+            "access": [
+              "dc-r340-01.mt4servers.com:443",
+              "3.9.199.243:443",
+              "dc-r340-02.mt4servers.com:443",
+              "3.0.238.104:443",
+              "dc-r340-04.mt4servers.com:443",
+              "34.147.150.149:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 11",
+            "access": [
+              "dc-r350-01.mt4servers.com:443",
+              "3.10.114.170:443",
+              "dc-r350-02.mt4servers.com:443",
+              "52.74.137.225:443",
+              "34.147.188.68:443",
+              "dc-r350-04.mt4servers.com:443",
+              "43.204.83.169:443",
+              "dc-r350-05.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 12",
+            "access": [
+              "dc-r360-01.mt4servers.com:443",
+              "18.135.194.21:443",
+              "dc-r360-02.mt4servers.com:443",
+              "18.136.240.159:443",
+              "dc-r360-04.mt4servers.com:443",
+              "35.246.71.66:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 13",
+            "access": [
+              "dc-r380-01.mt4servers.com:443",
+              "dc-r380-02.mt4servers.com:443",
+              "dc-r380-03.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 14",
+            "access": [
+              "18.132.141.81:443",
+              "dc-r390-01.mt4servers.com:443",
+              "dc-r390-02.mt4servers.com:443",
+              "54.251.98.234:443",
+              "20.0.122.79:443",
+              "dc-r390-03.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 15",
+            "access": [
+              "dc-r400-01.mt4servers.com:443",
+              "13.43.29.62:443",
+              "dc-r400-02.mt4servers.com:443",
+              "47.130.41.178:443",
+              "40.81.137.210:443",
+              "dc-r400-03.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 16",
+            "access": [
+              "dc-r410-01.mt4servers.com:443",
+              "3.10.218.190:443",
+              "dc-r410-02.mt4servers.com:443",
+              "18.140.31.143:443",
+              "dc-r410-03.mt4servers.com:443",
+              "13.247.157.139:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 17",
+            "access": [
+              "13.135.160.243:443",
+              "dc-r420-01.mt4servers.com:443",
+              "18.136.78.209:443",
+              "dc-r420-02.mt4servers.com:443",
+              "20.26.123.143:443",
+              "dc-r420-03.mt4servers.com:443",
+              "15.207.196.78:443",
+              "dc-r420-04.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 2",
+            "access": [
+              "35.157.110.232:443",
+              "dc-r60-01.mt4servers.com:443",
+              "35.242.156.14:443",
+              "dc-r60-03.mt4servers.com:443",
+              "177.71.131.232:443",
+              "dc-r60-02.mt4servers.com:443",
+              "dc-r60-07.mt4servers.com:443",
+              "81.69.172.42:443",
+              "dc-r60-05.mt4servers.com:443",
+              "8.131.251.73:443",
+              "dc-r60-08.mt4servers.com:443",
+              "54.179.18.23:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 4",
+            "access": [
+              "35.242.149.178:443",
+              "dc-r80-01.mt4servers.com:443",
+              "20.58.12.191:443",
+              "dc-r80-03.mt4servers.com:443",
+              "18.228.111.152:443",
+              "dc-r80-04.mt4servers.com:443",
+              "172.27.96.17:1950",
+              "139.224.80.211:1950",
+              "dc-r80-05.mt4servers.com:1950",
+              "dc-r80-07.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 5",
+            "access": [
+              "dc-r90-01.mt4servers.com:443",
+              "dc-r90-03.mt4servers.com:443",
+              "dc-r90-04.mt4servers.com:443",
+              "dc-r90-05.mt4servers.com:443",
+              "82.156.42.13:443",
+              "dc-r90-06.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 6",
+            "access": [
+              "dc-r300-01.mt4servers.com:443",
+              "3.8.41.179:443",
+              "dc-r300-03.mt4servers.com:443",
+              "dc-r300-04.mt4servers.com:443",
+              "dc-r300-05.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 7",
+            "access": [
+              "dc-r310-01.mt4servers.com:443",
+              "dc-r310-04.mt4servers.com:443",
+              "dc-r310-03.mt4servers.com:443",
+              "dc-r310-02.mt4servers.com:443",
+              "10.160.12.165:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 8",
+            "access": [
+              "dc-r320-01.mt4servers.com:443",
+              "34.105.163.176:443",
+              "dc-r320-04.mt4servers.com:443",
+              "20.108.27.134:443",
+              "dc-r320-02.mt4servers.com:443",
+              "10.160.12.149:443",
+              "3.110.8.66:443",
+              "dc-r320-03.mt4servers.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "XMGlobal-MT5 9",
+            "access": [
+              "dc-r330-01.mt4servers.com:443",
+              "13.42.182.18:443",
+              "dc-r330-02.mt4servers.com:443",
+              "52.77.131.71:443",
+              "dc-r330-03.mt4servers.com:443",
+              "18.229.102.119:443",
+              "dc-r330-04.mt4servers.com:443",
+              "35.189.101.72:443",
+              "35.189.101.72:3446"
+            ],
+            "isDemo": 0,
+            "leverage": "500|400|300|200|175|150|125|100|50|33|25|10|5|3|2|1",
+            "deposit": "100000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "AMP Global Clearing LLC": {
+        "company": "AMP Global Clearing LLC",
+        "website": "www.ampfutures.com",
+        "genericEmail": "support@ampfutures.com",
+        "logoHash": "D6970A6803CB28E4481D423AEEB6FA78",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/D/D6970A6803CB28E4481D423AEEB6FA78.png",
+        "registrationAddress": "2221 N. Lasalle St., 25th Floor, Chicago, IL 60601, USA",
+        "registrationNumber": "27-0273489",
+        "officesLocation": "USA",
+        "abuseEmail": "support@ampfutures.com",
+        "abuseUrl": "https://www.ampfutures.com/",
+        "phone": "Tel: +1 3128936400",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "US",
+        "servers": [
+          {
+            "name": "AMPGlobalUSA-Demo",
+            "access": [
+              "216.1.90.171:443",
+              "10.2.13.105:443",
+              "mt5demo1.ampfutures.com:443",
+              "208.185.224.171:443",
+              "mt5demo2.ampfutures.com:443"
+            ],
+            "isDemo": 2,
+            "leverage": "200|1",
+            "deposit": "10000",
+            "limitedAccess": false
+          },
+          {
+            "name": "AMPGlobalUSA-Live",
+            "access": [
+              "216.1.90.170:443",
+              "mt5live1.ampfutures.com:443",
+              "208.185.224.170:443",
+              "mt5live2.ampfutures.com:443"
+            ],
+            "isDemo": 0,
+            "leverage": "200|1",
+            "deposit": "10000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "FBL Global Ltd": {
+        "company": "FBL Global Ltd",
+        "website": "www.fxbaylive.com",
+        "genericEmail": "itsupport@fxbaylive.com",
+        "logoHash": "07AD58562DB5C54DBD4E6BF6DF3451B9",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/07AD58562DB5C54DBD4E6BF6DF3451B9.png",
+        "registrationAddress": "Premier Business Center, 10th Floor, Sterling Tower,\n14 Poudriere Street, Port Louis, Mauritius",
+        "registrationNumber": "198284 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "admin@fxbaylive.com",
+        "abuseUrl": "https://fxbaylive.com/contact/",
+        "phone": "+230 2456703",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "FBLGlobal-Demo",
+            "access": [
+              "167.86.76.254:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "FBLGlobal-Live",
+            "access": [
+              "89.238.191.58:443",
+              "89.238.191.58:1950",
+              "49.204.234.75:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "GBE Global Ltd": {
+        "company": "GBE Global Ltd",
+        "website": "www.gbebrokers.global",
+        "genericEmail": "backoffice@gbebrokers.global",
+        "logoHash": "FA1AC6E8A1116F8783A1B44ECAA1DF99",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/FA1AC6E8A1116F8783A1B44ECAA1DF99.png",
+        "registrationAddress": "CT House, Office 9A, Providence, Mahe, Seychelles",
+        "registrationNumber": "810597-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "compliance@gbebrokers.global",
+        "abuseUrl": "https://gbebrokers.com/about-gbe-brokers/contact/",
+        "phone": "+971 45547500",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "GBEGlobal-Server",
+            "access": [
+              "185.97.160.63:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "GKM Global Tech DOO": {
+        "company": "GKM Global Tech DOO",
+        "website": "www.g-global.me",
+        "genericEmail": "info@g-global.me",
+        "logoHash": "A06FD6B126DA34ED56D2E2B2B2402896",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/A/A06FD6B126DA34ED56D2E2B2B2402896.png",
+        "registrationAddress": "Blažene Ozane Br. 8, Podgorica, Montenegro",
+        "registrationNumber": "50927921",
+        "officesLocation": "Montenegro",
+        "abuseEmail": "abuse@g-global.me",
+        "abuseUrl": "https://g-global.me/contact/",
+        "phone": "+382 68836108",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "ME",
+        "servers": [
+          {
+            "name": "GKMGlobalTech-Demo",
+            "access": [
+              "65.21.197.3:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "GKMGlobalTech-Live",
+            "access": [
+              "34.141.145.146:443",
+              "13.39.36.177:443",
+              "34.175.245.145:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "GTC Global SA (Pty) Ltd": {
+        "company": "GTC Global SA (Pty) Ltd",
+        "website": "www.gtcfx.com",
+        "genericEmail": "support@gtcfx.com",
+        "logoHash": "CAEF0FF4118950C197F3020E2DCE88FD",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/CAEF0FF4118950C197F3020E2DCE88FD.png",
+        "registrationAddress": "18 Cavendish Road, Claremont, Cape Town, Western Cape, 7708, South Africa",
+        "registrationNumber": "2020/810937/07",
+        "officesLocation": "UAE",
+        "abuseEmail": "support@gtcfx.com",
+        "abuseUrl": "www.gtcfx.com/contact-us",
+        "phone": "+971 42970562",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "ZA",
+        "servers": [
+          {
+            "name": "GTCGlobalSA-Server 2",
+            "access": [
+              "47.91.97.62:443",
+              "139.185.40.218:1940",
+              "139.185.40.218:1960",
+              "47.86.166.51:443",
+              "43.99.54.52:443",
+              "43.99.103.208:443",
+              "47.83.147.195:443",
+              "8.208.84.62:443",
+              "8.208.118.165:443",
+              "8.208.118.165:1950",
+              "8.222.199.231:443",
+              "43.106.6.132:443",
+              "43.106.15.202:443",
+              "8.133.16.27:443",
+              "8.133.16.27:1950",
+              "47.254.241.60:1940",
+              "47.254.241.60:1960",
+              "47.254.200.234:1940",
+              "47.254.200.234:1960",
+              "8.209.205.245:1940",
+              "103.40.209.28:1940",
+              "103.40.209.28:1960",
+              "27.71.26.152:443",
+              "103.145.2.7:1940",
+              "103.145.2.7:1960"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "GTC Global Trade Capital Co. Limited": {
+        "company": "GTC Global Trade Capital Co. Limited",
+        "website": "www.gtcfx.com",
+        "genericEmail": "support@gtcfx.com",
+        "logoHash": "686CD61D2E54C319B4BDE9D12A67E593",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/686CD61D2E54C319B4BDE9D12A67E593.png",
+        "registrationAddress": "1/Floor, B&P House, Kumul Highway, Port Vila, Vanuatu",
+        "registrationNumber": "40354",
+        "officesLocation": "Vanuatu",
+        "abuseEmail": "support@gtcfx.com",
+        "abuseUrl": "www.gtcfx.com/contact-us",
+        "phone": "+971 42970562",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VU",
+        "servers": [
+          {
+            "name": "GTCGlobalTrade-Demo",
+            "access": [
+              "8.208.84.11:443",
+              "8.208.84.11:1950",
+              "170.75.204.181:443",
+              "192.109.15.54:443"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "GTCGlobalTrade-Server",
+            "access": [
+              "139.185.40.218:443",
+              "139.185.40.218:1950",
+              "47.91.105.57:443",
+              "47.91.105.57:1950",
+              "18.162.154.119:443",
+              "18.162.154.119:1950",
+              "47.239.213.174:443",
+              "47.239.213.174:1950",
+              "47.238.193.251:443",
+              "47.238.193.251:1950",
+              "47.243.154.221:443",
+              "47.243.154.221:1950",
+              "47.250.142.80:443",
+              "47.250.142.80:1950",
+              "8.208.28.12:443",
+              "8.208.28.12:1950",
+              "8.208.53.50:443",
+              "8.208.53.50:1950",
+              "103.156.251.41:443",
+              "103.156.251.41:1950",
+              "103.156.251.42:443",
+              "103.156.251.42:1950",
+              "101.132.117.49:443",
+              "101.132.117.49:1950",
+              "150.158.58.249:443",
+              "150.158.58.249:1952",
+              "8.209.205.245:443",
+              "8.209.205.245:1950",
+              "103.40.209.28:443",
+              "103.40.209.28:1950",
+              "27.71.26.250:443",
+              "103.145.2.7:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "Infoglobal Markets Ltd": {
+        "company": "Infoglobal Markets Ltd",
+        "website": "www.infoglobalmarkets.com",
+        "genericEmail": "info@infoglobalmarkets.com",
+        "logoHash": "E727B77A9EB971437937BFB3ED227425",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/E/E727B77A9EB971437937BFB3ED227425.png",
+        "registrationAddress": "Bonovo Road, Fomboni, Island of Moheli, Comoros",
+        "registrationNumber": "HT00724088",
+        "officesLocation": "UAE",
+        "abuseEmail": "info@infoglobalmarkets.com",
+        "abuseUrl": "https://infoglobalmarkets.com/contact/",
+        "phone": "+971 0585611927",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "InfoGlobalMarkets-Trade",
+            "access": [
+              "2.59.171.145:443",
+              "2.59.171.145:1950",
+              "92.42.110.92:443",
+              "92.42.110.92:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "JKV Global Capital Market Services Ltd": {
+        "company": "JKV Global Capital Market Services Ltd",
+        "website": "jkvglobal.com",
+        "genericEmail": "support@jkvglobal.com",
+        "logoHash": "9B5A81F592B1966E6DA01F8B075233D6",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/9/9B5A81F592B1966E6DA01F8B075233D6.png",
+        "registrationAddress": "The Gardens, Ground Floor, Bagatelle Office Park, \nBagatelle, Moka 80832, Mauritius",
+        "registrationNumber": "198472 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@jkvglobal.com",
+        "abuseUrl": "https://jkvglobal.com/contact/",
+        "phone": "+230 4609701",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "JKVGlobalCapital-Server",
+            "access": [
+              "193.176.31.7:443",
+              "193.176.31.7:1950",
+              "86.104.251.144:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "LDN Global Markets LLC": {
+        "company": "LDN Global Markets LLC",
+        "website": "www.ldnglobalmarkets.com",
+        "genericEmail": "admin@ldnglobalmarkets.com",
+        "logoHash": "EEECC3C601114F9A20666BEA1FE92E7E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/E/EEECC3C601114F9A20666BEA1FE92E7E.png",
+        "registrationAddress": "Suite 305, Griffith Corporate Centre, Beachmont, Kingstown,\nSt. Vincent and Grenadines",
+        "registrationNumber": "1547 LLC 2021",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "admin@ldnglobalmarkets.com",
+        "abuseUrl": "www.ldnglobalmarkets.com",
+        "phone": "+357 25010613",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "LDNGlobalMarkets-Demo",
+            "access": [
+              "176.9.168.249:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "LDNGlobalMarkets-Live",
+            "access": [
+              "23.106.34.54:443",
+              "23.106.34.54:1950",
+              "85.17.201.105:443",
+              "85.17.201.105:1950",
+              "65.21.202.32:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "MEX Global Financial Services L.L.C": {
+        "company": "MEX Global Financial Services L.L.C",
+        "website": "www.mex.ae",
+        "genericEmail": "support@mex.ae",
+        "logoHash": "F59FE24FB866883A49F2382D9134745E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F59FE24FB866883A49F2382D9134745E.png",
+        "registrationAddress": "Office 1903, Senyar Real Estate One Person Company, Bur Dubai,\nBusiness Bay, Dubai, UAE",
+        "registrationNumber": "1784821",
+        "officesLocation": "UAE",
+        "abuseEmail": "support@mex.ae",
+        "abuseUrl": "https://www.mex.ae/en-AE/support/contact-us",
+        "phone": "Tel: +971 48751300",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "AE",
+        "servers": [
+          {
+            "name": "MEXGlobalFinancial-Demo",
+            "access": [
+              "20.205.155.29:443",
+              "20.205.155.29:1950",
+              "20.203.126.12:443",
+              "20.203.126.12:1950",
+              "52.18.238.180:443",
+              "52.18.238.180:1950",
+              "13.40.248.136:443",
+              "13.40.248.136:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "MEXGlobalFinancial-Real",
+            "access": [
+              "192.109.15.176:443",
+              "47.242.80.103:443",
+              "47.242.80.103:1950",
+              "23.97.58.26:443",
+              "23.97.58.26:1950",
+              "185.96.244.92:443",
+              "18.134.151.18:443",
+              "52.50.247.221:443",
+              "52.50.247.221:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "MEXGlobalFinancial-Real-2",
+            "access": [
+              "192.109.17.81:443",
+              "149.5.84.59:443",
+              "13.214.48.31:443",
+              "40.172.185.56:443",
+              "4.151.236.104:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "NCM Global Ltd": {
+        "company": "NCM Global Ltd",
+        "website": "www.ncmgo.com",
+        "genericEmail": "info@ncmgo.com",
+        "logoHash": "BEFB5C4B533E3FBCF9F0BB9AAA8787C3",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/BEFB5C4B533E3FBCF9F0BB9AAA8787C3.png",
+        "registrationAddress": "The Cyberari Lounge, Ground Floor, The Catalyst, Silicon Avenue, \n40 Cybercity, 72201, Ebene, Mauritius",
+        "registrationNumber": "184913 GBC",
+        "officesLocation": "3rd Floor, Standard Chartered Tower, Ebene, 72201, Mauritius",
+        "abuseEmail": "support@ncmgo.com",
+        "abuseUrl": "https://www.ncmgo.com/contact-us",
+        "phone": "+230 5460 7624",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "NCMGlobal-Demo",
+            "access": [
+              "84.200.21.234:474",
+              "84.200.21.234:1957",
+              "212.224.124.40:474",
+              "212.224.124.40:1957",
+              "212.224.124.40:1958"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "NCMGlobal-MT5-Live",
+            "access": [
+              "185.96.244.140:474",
+              "185.96.244.140:1957",
+              "185.96.244.140:1958",
+              "84.200.21.237:474",
+              "84.200.21.237:1957",
+              "84.200.21.237:1958",
+              "83.142.25.231:474",
+              "83.142.25.231:1957",
+              "83.142.25.231:1958",
+              "83.142.25.232:474",
+              "83.142.25.232:1957",
+              "83.142.25.232:1958",
+              "212.224.124.35:474",
+              "212.224.124.35:1957",
+              "212.224.124.35:1958",
+              "84.200.21.238:474",
+              "84.200.21.238:1957",
+              "84.200.21.238:1958",
+              "212.224.124.42:474",
+              "212.224.124.42:1957",
+              "212.224.124.42:1958"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "PLM Global Markets LLC": {
+        "company": "PLM Global Markets LLC",
+        "website": "www.plmglobalmarkets.com",
+        "genericEmail": "info@plmglobalmarkets.com",
+        "logoHash": "FEDA3C6E9BB0FB0ED7E589ED1F269EA5",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/FEDA3C6E9BB0FB0ED7E589ED1F269EA5.png",
+        "registrationAddress": "Euro House, Richmond Hill Road, P.O. Box 2897,\nKingstown, St. Vincent and the Grenadines",
+        "registrationNumber": "2789 LLC 2022",
+        "officesLocation": "Georgia",
+        "abuseEmail": "info@plmglobalmarkets.com",
+        "abuseUrl": "http://plmglobalmarkets.com/contact.html",
+        "phone": "+44 7520637457",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "PLMGlobalMarkets-Trade",
+            "access": [
+              "192.109.17.194:443",
+              "192.229.22.169:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "PT. Global Investama Finansial": {
+        "company": "PT. Global Investama Finansial",
+        "website": "www.ptgif.com",
+        "genericEmail": "support@ptgif.com",
+        "logoHash": "2D138339D414A557360871650F4C0C9E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/2/2D138339D414A557360871650F4C0C9E.png",
+        "registrationAddress": "Soho Ebony Block B No.3, Riverwalk Ebony Island Pantai Indah\nKapuk, Jakarta, 1447, Indonesia",
+        "registrationNumber": "0404240029599",
+        "officesLocation": "Indonesia",
+        "abuseEmail": "support@ptgif.com",
+        "abuseUrl": "http://www.ptgif.com/en/contact-us",
+        "phone": "+62 02150322060",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "ID",
+        "servers": [
+          {
+            "name": "GlobalInvestama-Trade",
+            "access": [
+              "103.217.227.42:443",
+              "103.15.226.172:443",
+              "157.10.160.14:443",
+              "157.10.160.14:1950"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "QBN Global Ltd.": {
+        "company": "QBN Global Ltd.",
+        "website": "qbnglobal.com",
+        "genericEmail": "contact@qbnglobal.com",
+        "logoHash": "9810804B2050327626E057EBEF2650CB",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/9/9810804B2050327626E057EBEF2650CB.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village,\nRodney Bay, Gros-Islet, Saint Lucia",
+        "registrationNumber": "2024-00578",
+        "officesLocation": "UAE",
+        "abuseEmail": "corporate@qbnglobal.com",
+        "abuseUrl": "https://qbnglobal.com/contact/",
+        "phone": "+971 585257265",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "QBNGlobal-Server",
+            "access": [
+              "31.14.254.175:443",
+              "217.146.87.165:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "QRS Global LLC": {
+        "company": "QRS Global LLC",
+        "website": "www.qrsfx.com",
+        "genericEmail": "support@qrsfx.com",
+        "logoHash": "CF2A71EB2B5BFFAC77F36BCA8A79B513",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/CF2A71EB2B5BFFAC77F36BCA8A79B513.png",
+        "registrationAddress": "P.B. 1257 Bonovo Road, Fomboni, Fomboni, Comoros",
+        "registrationNumber": "HY00823425",
+        "officesLocation": "Thailand",
+        "abuseEmail": "support@qrsfx.com",
+        "abuseUrl": "www.qrsfx.com",
+        "phone": "Tel: +66 929171444",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "QRSGlobal-Server",
+            "access": [
+              "207.148.127.165:443",
+              "207.148.127.165:1950",
+              "139.180.223.33:443",
+              "139.180.223.33:1950",
+              "217.146.87.186:443",
+              "217.146.87.186:1950",
+              "51.79.163.128:443",
+              "51.79.163.128:1950",
+              "18.140.101.106:443",
+              "18.140.101.106:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "RCX Global FZ LLC": {
+        "company": "RCX Global FZ LLC",
+        "website": "www.rcxglobal.org",
+        "genericEmail": "contact@rcxglobal.org",
+        "logoHash": "815654A713558F089955B83F75851E39",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/8/815654A713558F089955B83F75851E39.png",
+        "registrationAddress": "W5-SO15, Shed No. 25, Al Hulaila Industrial Zone-FZ RAK,\nDubai, UAE",
+        "registrationNumber": "0000004036421",
+        "officesLocation": "UAE",
+        "abuseEmail": "complaint@rcxglobal.org",
+        "abuseUrl": "https://www.rcxglobal.org/",
+        "phone": "+971 42473728",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "AE",
+        "servers": [
+          {
+            "name": "RCXGlobalFZ-Server",
+            "access": [
+              "194.164.176.142:443",
+              "194.164.177.142:443",
+              "[2a01:f680:10:1::142]:443",
+              "[2a01:f680:11:1::142]:443",
+              "91.132.60.194:443",
+              "91.132.60.194:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "RSI Global Investment Company JSC Podgorica": {
+        "company": "RSI Global Investment Company JSC Podgorica",
+        "website": "www.rsiglobalinvest.com",
+        "genericEmail": "info@rsiglobalinvest.com",
+        "logoHash": "564E84EE9F9975659AB50CA347C9CA52",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/564E84EE9F9975659AB50CA347C9CA52.png",
+        "registrationAddress": "Ankarski Bulevar Broj 16, Podgorica, Montenegro",
+        "registrationNumber": "4-0009801/003",
+        "officesLocation": "Montenegro",
+        "abuseEmail": "info@rsiglobalinvest.com",
+        "abuseUrl": "www.rsiglobalinvest.com/Contact-Us",
+        "phone": "Tel: +382 67131016",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "ME",
+        "servers": [
+          {
+            "name": "RSIGlobalInvestment-Server",
+            "access": [
+              "46.4.122.17:443",
+              "85.10.202.82:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Bal",
+        "Signature": "b9df7851d08b33426340e722b1102***"
+      }
+    },
+    {
+      "FinPrime Group Limited": {
+        "company": "FinPrime Group Limited",
+        "website": "www.finprimegroup.com",
+        "genericEmail": "support@finprimegroup.com",
+        "logoHash": "034E7E1B5353F37C81A8AF1FB4870CC1",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/034E7E1B5353F37C81A8AF1FB4870CC1.png",
+        "registrationAddress": "Palm Grove Unit 4, 265 Smith Road, George Town, P.O. Box, 52A\nEdgewater Way, #1653, Grand Cayman KY1-9006, Cayman Islands",
+        "registrationNumber": "CR-413902",
+        "officesLocation": "Cayman Islands",
+        "abuseEmail": "compliance@finprimegroup.com",
+        "abuseUrl": "https://www.finprimegroup.com/contact-us/",
+        "phone": "+1 3458489851",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KY",
+        "servers": [
+          {
+            "name": "FinPrimeGroup-Live",
+            "access": [
+              "10.30.83.92:443",
+              "13.134.70.233:443",
+              "10.30.81.216:443",
+              "35.178.111.141:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "FinQuotes Financial (Cyprus) Ltd": {
+        "company": "FinQuotes Financial (Cyprus) Ltd",
+        "website": "www.finpros.eu",
+        "genericEmail": "proconnect@finpros.eu",
+        "registrationAddress": "Archiepiskopou Makariou III, 82, 1st Floor, Mesa Geitonia, 4003, Limassol, \nCyprus",
+        "registrationNumber": "HE 414581",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "proconnect@finpros.eu",
+        "abuseUrl": "https://finpros.eu/contact-us/",
+        "phone": "Tel:+357 25261361",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "FinQuotesFinancialCY-Real",
+            "access": [
+              "45.9.158.67:443",
+              "185.95.16.74:443",
+              "185.95.19.22:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finalto (Australia) Pty Ltd": {
+        "company": "Finalto (Australia) Pty Ltd",
+        "website": "liquidity.finalto.com/au/",
+        "genericEmail": "cs@finalto.com",
+        "logoHash": "D495C315204553909273FC89D76278AB",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/D/D495C315204553909273FC89D76278AB.png",
+        "registrationAddress": "Level 15, 225 George Street, Sydney, NSW 2000, Australia",
+        "registrationNumber": "82158641064",
+        "officesLocation": "Australia",
+        "abuseEmail": "cs@finalto.com",
+        "abuseUrl": "https://www.finalto.com/au/",
+        "phone": "Tel: +61 280077250",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "AU",
+        "servers": [
+          {
+            "name": "FinaltoAustralia-Demo3",
+            "access": [
+              "20.248.114.89:201",
+              "20.255.73.242:201",
+              "4.230.33.236:201",
+              "20.164.21.22:201",
+              "20.0.189.249:201",
+              "172.206.115.28:201",
+              "51.143.42.36:443",
+              "131.189.37.100:201",
+              "4.185.158.200:443",
+              "4.189.104.71:201",
+              "4.234.193.156:201",
+              "4.193.202.140:201",
+              "20.22.220.106:201",
+              "9.160.8.247:280"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "FinaltoAustralia-Live7",
+            "access": [
+              "185.209.217.128:443",
+              "209.250.227.66:443",
+              "176.67.166.153:280",
+              "45.63.12.235:280",
+              "104.238.172.116:280",
+              "109.123.80.254:443",
+              "101.37.19.55:280",
+              "20.248.114.89:280",
+              "20.255.73.242:280",
+              "4.230.33.236:280",
+              "20.0.189.249:443",
+              "172.206.115.28:280",
+              "51.143.42.36:280",
+              "131.189.37.100:280",
+              "4.189.104.71:280",
+              "48.201.144.97:443",
+              "4.234.193.156:280",
+              "4.193.202.140:280"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finalto (BVI) Limited": {
+        "company": "Finalto (BVI) Limited",
+        "website": "www.finalto.com",
+        "genericEmail": "cs@finalto.com",
+        "logoHash": "77D72D5E7EE924386F30B21C17141AA1",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/77D72D5E7EE924386F30B21C17141AA1.png",
+        "registrationAddress": "Luna Tower, Waterfront Drive, Road Town,\nTortola, VG1110, BVI",
+        "registrationNumber": "1579108",
+        "officesLocation": "BVI",
+        "abuseEmail": "compliance@finalto.com",
+        "abuseUrl": "https://www.finalto.com/sg/contact-us/",
+        "phone": "+44 2034558750",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "VG",
+        "servers": [
+          {
+            "name": "FinaltoBVI-Live",
+            "access": [
+              "104.238.172.116:443",
+              "20.248.114.89:43",
+              "4.230.33.236:43",
+              "20.164.21.22:43",
+              "20.0.189.249:43",
+              "172.206.115.28:43",
+              "51.143.42.36:43",
+              "131.189.37.100:43",
+              "4.189.104.71:443",
+              "4.185.158.200:43",
+              "4.234.193.156:43",
+              "4.193.202.140:43",
+              "20.255.73.242:443",
+              "20.22.220.106:43",
+              "9.160.8.247:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finalto EU Ltd": {
+        "company": "Finalto EU Ltd",
+        "website": "www.finalto.com/eu/",
+        "genericEmail": "cs@finalto.com",
+        "logoHash": "F529B01730C3DBC13B2E818339930544",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F529B01730C3DBC13B2E818339930544.png",
+        "registrationAddress": "148 Strovolos, Nicosia, 2048, Cyprus",
+        "registrationNumber": "HE 332334",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "cs@finalto.com",
+        "abuseUrl": "https://finalto.com/eu/",
+        "phone": "+357 22008376",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "FinaltoEU-Demo3",
+            "access": [
+              "20.248.114.89:201",
+              "20.255.73.242:201",
+              "4.230.33.236:201",
+              "20.164.21.22:201",
+              "20.0.189.249:201",
+              "172.206.115.28:201",
+              "51.143.42.36:443",
+              "131.189.37.100:201",
+              "4.185.158.200:443",
+              "4.189.104.71:201",
+              "4.234.193.156:201",
+              "4.193.202.140:201",
+              "20.22.220.106:201",
+              "9.160.8.247:280"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "FinaltoEU-Live7",
+            "access": [
+              "185.209.217.128:443",
+              "209.250.227.66:443",
+              "176.67.166.153:280",
+              "45.63.12.235:280",
+              "104.238.172.116:280",
+              "109.123.80.254:443",
+              "101.37.19.55:280",
+              "20.248.114.89:280",
+              "20.255.73.242:280",
+              "4.230.33.236:280",
+              "20.0.189.249:443",
+              "172.206.115.28:280",
+              "51.143.42.36:280",
+              "131.189.37.100:280",
+              "4.189.104.71:280",
+              "48.201.144.97:443",
+              "4.234.193.156:280",
+              "4.193.202.140:280"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finalto Financial Services Limited": {
+        "company": "Finalto Financial Services Limited",
+        "website": "liquidity.finalto.com/uk/",
+        "genericEmail": "cs@finalto.com",
+        "logoHash": "06C3C803E8852F07DA09ED2638BDACCE",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/06C3C803E8852F07DA09ED2638BDACCE.png",
+        "registrationAddress": "11th Floor, Broadgate Tower, 20 Primrose Street, \nLondon, EC2A 2EW, United Kingdom",
+        "registrationNumber": "06557752",
+        "officesLocation": "United Kingdom",
+        "abuseEmail": "compliance@finalto.com",
+        "abuseUrl": "https://www.finalto.com/contact-us/",
+        "phone": "Tel: +44 2034558751",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "GB",
+        "servers": [
+          {
+            "name": "FinaltoUK-Demo3",
+            "access": [
+              "20.248.114.89:201",
+              "20.255.73.242:201",
+              "4.230.33.236:201",
+              "20.164.21.22:201",
+              "20.0.189.249:201",
+              "172.206.115.28:201",
+              "51.143.42.36:443",
+              "131.189.37.100:201",
+              "4.185.158.200:443",
+              "4.189.104.71:201",
+              "4.234.193.156:201",
+              "4.193.202.140:201",
+              "20.22.220.106:201",
+              "9.160.8.247:280"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "deposit": "5000",
+            "limitedAccess": false
+          },
+          {
+            "name": "FinaltoUK-Live7",
+            "access": [
+              "185.209.217.128:443",
+              "209.250.227.66:443",
+              "176.67.166.153:280",
+              "45.63.12.235:280",
+              "104.238.172.116:280",
+              "109.123.80.254:443",
+              "101.37.19.55:280",
+              "20.248.114.89:280",
+              "20.255.73.242:280",
+              "4.230.33.236:280",
+              "20.0.189.249:443",
+              "172.206.115.28:280",
+              "51.143.42.36:280",
+              "131.189.37.100:280",
+              "4.189.104.71:280",
+              "48.201.144.97:443",
+              "4.234.193.156:280",
+              "4.193.202.140:280"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "deposit": "5000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Financial Markets Trading Company Limited": {
+        "company": "Financial Markets Trading Company Limited",
+        "website": "fmtc.com.my",
+        "genericEmail": "support@fmtc.com.my",
+        "logoHash": "C6C0839CB98F3D59E06230A0EAB99C08",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/C6C0839CB98F3D59E06230A0EAB99C08.png",
+        "registrationAddress": "Unit B, Lot 49, 1st Floor, Block F, Lazenda Warehouse 3,\nJalan Ranca-Ranca, F. T. Labuan, 87000, Malaysia",
+        "registrationNumber": "LL17171",
+        "officesLocation": "Malaysia",
+        "abuseEmail": "support@fmtc.com.my",
+        "abuseUrl": "fmtc.com.my",
+        "phone": "+6087 424717",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MY",
+        "servers": [
+          {
+            "name": "FinancialMarkets-MT5 Real Server",
+            "access": [
+              "mt5-real-prim.pro-mt-server.com:443",
+              "mt5-real-sec.pro-mt-server.com:443",
+              "mt5-real-tert.pro-mt-server.com:443",
+              "mt5-real-four.pro-mt-server.com:443",
+              "mt5-real-five.pro-mt-server.com:443",
+              "mt5-real-six.pro-mt-server.com:443",
+              "mt5-real-seven.pro-mt-server.com:443",
+              "mt5-real-eight.pro-mt-server.com:443",
+              "mt5-real-nine.pro-mt-server.com:443",
+              "mt5-real-ten.pro-mt-server.com:8444"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finior Capital Limited": {
+        "company": "Finior Capital Limited",
+        "website": "www.finiorcapital.com",
+        "genericEmail": "support@finiorcapital.com",
+        "logoHash": "53B80C559EBAEDDD0B20DBADA8F51AF0",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/53B80C559EBAEDDD0B20DBADA8F51AF0.png",
+        "registrationAddress": "Part of, Floor 7, Al Sila Tower, Abu Dhabi Global Market Square,\nAl Maryah Island, Abu Dhabi, UAE",
+        "registrationNumber": "000001143",
+        "officesLocation": "UAE",
+        "abuseEmail": "support@finiorcapital.com",
+        "abuseUrl": "https://finiorcapital.com/contact.html",
+        "phone": "+971 22351600",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "AE",
+        "servers": [
+          {
+            "name": "FINIOR-Demo",
+            "access": [
+              "145.239.67.9:443",
+              "145.239.67.9:1950",
+              "51.68.180.208:443",
+              "51.68.180.208:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "200|100|50|25|10|1",
+            "group": "forex,USD|forex-usd,USD|forex-eur,EUR",
+            "deposit": "100000",
+            "limitedAccess": false
+          },
+          {
+            "name": "FINIOR-Live",
+            "access": [
+              "198.244.201.72:443",
+              "198.244.201.72:1950",
+              "57.129.18.229:443",
+              "57.129.18.229:1950",
+              "198.244.201.123:443",
+              "198.244.201.123:1950"
+            ],
+            "isDemo": 0,
+            "leverage": "200|100|50|25|10|1",
+            "group": "forex,USD|forex-usd,USD|forex-eur,EUR",
+            "deposit": "100000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finotive Markets LLC": {
+        "company": "Finotive Markets LLC",
+        "website": "www.finotivemarkets.com",
+        "genericEmail": "support@finotivemarkets.com",
+        "logoHash": "61B23426D3C8DD7BA4EE1C23C5CEB841",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/61B23426D3C8DD7BA4EE1C23C5CEB841.png",
+        "registrationAddress": "Suite 305, Griffith Corporate Centre, Beachmont, Kingstown,\nSt. Vincent and the Grenadines",
+        "registrationNumber": "2152 LLC 2022",
+        "officesLocation": "Hungary",
+        "abuseEmail": "support@finotivemarkets.com",
+        "abuseUrl": "www.finotivemarkets.com/contact/",
+        "phone": "+36 708843780",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "FinotiveMarkets-Live",
+            "access": [
+              "176.126.66.214:443",
+              "176.126.66.214:1950",
+              "91.243.178.76:443",
+              "91.243.178.76:1950",
+              "82.118.228.160:443",
+              "82.118.228.160:1950",
+              "82.118.228.30:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finotrax FX Ltd.": {
+        "company": "Finotrax FX Ltd.",
+        "website": "www.finotraxfx.com",
+        "genericEmail": "info@finotraxfx.com",
+        "logoHash": "7C089E47B2C5D358D745A295910EC794",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/7C089E47B2C5D358D745A295910EC794.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00658",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "support@finotraxfx.com",
+        "abuseUrl": "https://finotraxfx.com/contact/",
+        "phone": "+248 2513375",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "FinotraxFX-Server",
+            "access": [
+              "86.104.251.206:443",
+              "89.21.67.99:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finowiz Fintech Limited": {
+        "company": "Finowiz Fintech Limited",
+        "website": "www.finowizprime.com",
+        "genericEmail": "support@finowizprime.com",
+        "logoHash": "9EF8CB25326282A06DCE7929CF25449E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/9/9EF8CB25326282A06DCE7929CF25449E.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia",
+        "registrationNumber": "2024-00147",
+        "officesLocation": "UAE",
+        "abuseEmail": "report-abuse@finowizprime.com",
+        "abuseUrl": "https://finowizprime.com/contact-us",
+        "phone": "Tel: +971 44475716",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "FinowizFintech-Live",
+            "access": [
+              "198.244.229.65:443",
+              "198.244.229.65:1950",
+              "5.189.188.121:443",
+              "5.189.188.121:1950"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finpros Financial Ltd": {
+        "company": "Finpros Financial Ltd",
+        "website": "finpros.com",
+        "genericEmail": "proconnect@finpros.com",
+        "logoHash": "13822902E5BBDF856D3DB1B59C3B0E32",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/1/13822902E5BBDF856D3DB1B59C3B0E32.png",
+        "registrationAddress": "CT House, Office 9A, Providence, Mahe, Seychelles",
+        "registrationNumber": "8429300-1",
+        "officesLocation": "Seychelles",
+        "abuseEmail": "proconnect@finpros.com",
+        "abuseUrl": "https://finpros.com/contact-us/",
+        "phone": "+248 4671920",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "SC",
+        "servers": [
+          {
+            "name": "FinprosFinancial-Real",
+            "access": [
+              "45.9.158.67:443",
+              "185.95.16.74:443",
+              "185.95.19.22:443"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finsai Trade Ltd": {
+        "company": "Finsai Trade Ltd",
+        "website": "www.finsaitrade.com",
+        "genericEmail": "admin@finsaitrade.com",
+        "logoHash": "D03C98B18C77774855EEE2647A92DD6D",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/D/D03C98B18C77774855EEE2647A92DD6D.png",
+        "registrationAddress": "Island Ring Road, TB Office, Yeren, Nauru",
+        "registrationNumber": "003112024",
+        "officesLocation": "UAE",
+        "abuseEmail": "support@finsaitrade.com",
+        "abuseUrl": "https://finsaitrade.com/support/contact/",
+        "phone": "Tel: +971 45236280",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "NR",
+        "servers": [
+          {
+            "name": "FinsaiTrade-Server",
+            "access": [
+              "57.129.52.177:443",
+              "15.235.220.160:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finteza Presentation": {
+        "company": "Finteza Presentation",
+        "website": "www.finteza.com",
+        "genericEmail": "support@finteza.com",
+        "logoHash": "6BDDF23647C9A23C6C263361710AD3A4",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/6BDDF23647C9A23C6C263361710AD3A4.png",
+        "registrationAddress": "Limassol",
+        "limitedAccess": true,
+        "regulation": false,
+        "regulationStatus": "None",
+        "servers": [
+          {
+            "name": "FintezaPresentation-Teta",
+            "access": [
+              "78.140.180.139:1950"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": true
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Fintrix Markets Ltd": {
+        "company": "Fintrix Markets Ltd",
+        "website": "www.fintrixmarkets.com",
+        "genericEmail": "support@fintrixmarkets.com",
+        "logoHash": "08C1550D225493172A4E17871ED5F465",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/08C1550D225493172A4E17871ED5F465.png",
+        "registrationAddress": "Ground Floor, Silver Bank Tower, 18 Bank Street, Cybercity,\nEbene, 72201, Mauritius",
+        "registrationNumber": "192641 GBC",
+        "officesLocation": "Australia",
+        "abuseEmail": "support@fintrixmarkets.com",
+        "abuseUrl": "https://fintrixmarkets.com/contact-us/",
+        "phone": "+61 370429588",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "Fintrix-Live",
+            "access": [
+              "192.229.23.54:443",
+              "38.76.16.224:443",
+              "47.102.211.208:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Finveo MA Ltd": {
+        "company": "Finveo MA Ltd",
+        "website": "www.finveo.mu",
+        "genericEmail": "finveo@finveo.mu",
+        "logoHash": "1E99634EC39E352B704387615A4A03A1",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/1/1E99634EC39E352B704387615A4A03A1.png",
+        "registrationAddress": "Office 306, 3rd Floor, Ebene Junction, Rue de la Democratie,\nEbene, 72201, Mauritius",
+        "registrationNumber": "193667",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "operations@finveo.mu",
+        "abuseUrl": "https://www.finveo.mu/en/support",
+        "phone": "+230 2139907",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "FinveoMA-Live",
+            "access": [
+              "185.97.161.138:443",
+              "193.30.23.245:443",
+              "193.30.23.245:1950",
+              "185.96.246.53:443",
+              "185.96.246.52:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "XFine Ltd.": {
+        "company": "XFine Ltd.",
+        "website": "x-fine.com",
+        "genericEmail": "support@x-fine.com",
+        "logoHash": "023E5E1922BC743C14293D5B6A10643B",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/0/023E5E1922BC743C14293D5B6A10643B.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village,\nRodney Bay, Gros-Islet, Saint Lucia",
+        "registrationNumber": "2024-00596",
+        "officesLocation": "Egypt",
+        "abuseEmail": "mt-abuse@x-fine.com",
+        "abuseUrl": "https://x-fine.com/en/contacts/",
+        "phone": "+971 501642434",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "XFineLtd-Server",
+            "access": [
+              "142.91.127.66:443",
+              "5.39.222.248:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Infinox Capital Limited": {
+        "company": "Infinox Capital Limited",
+        "website": "www.infinox.co.uk",
+        "genericEmail": "support@infinox.co.uk",
+        "logoHash": "F56EA5B1DADDD324AE559714194E26C9",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/F/F56EA5B1DADDD324AE559714194E26C9.png",
+        "registrationAddress": "90 Bartholomew Close, London, EC1A 7BN, United Kingdom",
+        "registrationNumber": "06854853",
+        "officesLocation": "United Kingdom",
+        "abuseEmail": "support@infinox.co.uk",
+        "abuseUrl": "https://www.infinox.co.uk/fca/en/contact/",
+        "phone": "+44 2045151797",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "GB",
+        "servers": [
+          {
+            "name": "InfinoxCapitalLimited-MT5Demo",
+            "access": [
+              "18.132.127.138:443",
+              "18.132.189.17:443",
+              "3.215.241.24:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "InfinoxCapitalLimited-MT5Live",
+            "access": [
+              "185.97.160.158:443",
+              "162.255.145.160:443",
+              "34.93.125.123:443",
+              "35.195.178.79:443",
+              "35.242.178.75:443",
+              "18.140.250.157:443",
+              "13.41.21.112:443",
+              "54.92.252.206:443",
+              "185.97.160.162:443",
+              "185.97.160.162:1950",
+              "13.43.192.150:443",
+              "146.56.169.188:443",
+              "116.62.125.197:443",
+              "116.62.125.197:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Infinox Limited": {
+        "company": "Infinox Limited",
+        "website": "www.infinox.com",
+        "genericEmail": "support@infinox.com",
+        "logoHash": "6F9BBD25453673D8FB23C1587A81493E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/6/6F9BBD25453673D8FB23C1587A81493E.png",
+        "registrationAddress": "The Cyberati Lounge, Ground Floor, The Catalyst, Silicon Avenue, \n40 Cybercity, 72201, Ebene, Mauritius",
+        "registrationNumber": "176639 GBC",
+        "officesLocation": "Mauritius",
+        "abuseEmail": "support@infinox.com",
+        "abuseUrl": "www.infinox.com/global/en/contact/",
+        "phone": "Tel: +66 028215994",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "InfinoxLimited-MT5Demo",
+            "access": [
+              "18.132.127.138:443",
+              "18.132.189.17:443",
+              "3.215.241.24:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "InfinoxLimited-MT5Live",
+            "access": [
+              "185.97.160.158:443",
+              "162.255.145.160:443",
+              "34.93.125.123:443",
+              "35.195.178.79:443",
+              "35.242.178.75:443",
+              "18.140.250.157:443",
+              "13.41.21.112:443",
+              "54.92.252.206:443",
+              "185.97.160.162:443",
+              "185.97.160.162:1950",
+              "13.43.192.150:443",
+              "146.56.169.188:443",
+              "116.62.125.197:443",
+              "116.62.125.197:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "OnFin Ltd": {
+        "company": "OnFin Ltd",
+        "website": "onfin.io",
+        "genericEmail": "info@onfin.io",
+        "logoHash": "479BF918FFD72789ECA49C4C242664CC",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/4/479BF918FFD72789ECA49C4C242664CC.png",
+        "registrationAddress": "Bonovo Road, Fomboni, Island of Moheli, Comoros",
+        "registrationNumber": "HT00224026",
+        "officesLocation": "Georgia",
+        "abuseEmail": "support@onfin.io",
+        "abuseUrl": "https://onfin.io/contacts",
+        "phone": "+995 322222537",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "KM",
+        "servers": [
+          {
+            "name": "OnFin-Live",
+            "access": [
+              "116.202.48.247:444",
+              "65.109.91.180:1650",
+              "65.108.101.78:443",
+              "65.108.101.78:1950",
+              "185.137.232.116:1954",
+              "85.239.36.81:1651"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "FXIFinancials Ltd.": {
+        "company": "FXIFinancials Ltd.",
+        "website": "www.fxifinancials.com",
+        "genericEmail": "info@fxifinancials.com",
+        "logoHash": "B5D8602CC44597CF3AF82FA6CAF5C337",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/B/B5D8602CC44597CF3AF82FA6CAF5C337.png",
+        "registrationAddress": "Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay,\nGros-Islet, Saint Lucia",
+        "registrationNumber": "2025-00382",
+        "officesLocation": "Lebanon",
+        "abuseEmail": "info@fxifinancials.com",
+        "abuseUrl": "https://fxifinancials.com/contact/",
+        "phone": "+961 3488486",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "LC",
+        "servers": [
+          {
+            "name": "FXIFinancials-Real",
+            "access": [
+              "57.129.146.58:443",
+              "134.119.179.162:443",
+              "134.119.179.162:1950"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "JM Financial Brokerage Services Company (K.S.C.)": {
+        "company": "JM Financial Brokerage Services Company (K.S.C.)",
+        "website": "www.jmfinancialkw.com",
+        "genericEmail": "support@jmfinancialkw.com",
+        "logoHash": "7F75C4DD05A3400C3C84ECE84F663354",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/7F75C4DD05A3400C3C84ECE84F663354.png",
+        "registrationAddress": "Murqab, Abdulah Al Mubarak Street, Al Enmaa Tower, Floor 15 Kuwait",
+        "registrationNumber": "355893",
+        "officesLocation": "Kuwait",
+        "abuseEmail": "support@jmfinancialkw.com",
+        "abuseUrl": "https://jmfinancialkw.com/contact-us/",
+        "phone": "+965 22286001",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "KW",
+        "servers": [
+          {
+            "name": "JMFinancial-Server",
+            "access": [
+              "77.76.9.199:443",
+              "77.76.9.199:1950",
+              "45.142.201.85:443",
+              "45.142.201.85:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "KT Financial Group Limited": {
+        "company": "KT Financial Group Limited",
+        "website": "www.capitaria.com",
+        "genericEmail": "mesa.clientes@capitaria.com",
+        "logoHash": "ADCAC1D501ADFAFD090F2AFF8CF9070C",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/A/ADCAC1D501ADFAFD090F2AFF8CF9070C.png",
+        "registrationAddress": "Vistra Corporate Services Centre, Wickhams Cay II, Road Town, \nTortola, VG 1110, British Virgin Islands",
+        "registrationNumber": "1488685",
+        "officesLocation": "3rd Floor, J & C Building, P.O Box 933, Road Town, Tortola, BVI",
+        "abuseEmail": "mesa.clientes@capitaria.com",
+        "abuseUrl": "www.capitaria.com",
+        "phone": "Tel: +56 225926600",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VG",
+        "servers": [
+          {
+            "name": "KTFinancial-All",
+            "access": [
+              "52.14.114.119:443",
+              "54.177.80.173:443",
+              "54.177.80.173:1950"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "deposit": "10000",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Morfin FX LLC": {
+        "company": "Morfin FX LLC",
+        "website": "www.morfinfx.com",
+        "genericEmail": "mail@morfinfx.com",
+        "logoHash": "75E86694A4BF23A514E8CEB8D3F31712",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/75E86694A4BF23A514E8CEB8D3F31712.png",
+        "registrationAddress": "Suite 305, Griffith Corporate Centre, Beachmont, Kingstown,\nSt. Vincent and the Grenadines",
+        "registrationNumber": "1539 LLC 2021",
+        "officesLocation": "Georgia",
+        "abuseEmail": "mail@morfinfx.com",
+        "abuseUrl": "https://www.morfinfx.com/contact/",
+        "phone": "+421 233221500",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "MorfinFXLLC-Server",
+            "access": [
+              "188.240.63.134:443",
+              "188.240.63.134:1950",
+              "217.146.87.162:443",
+              "217.146.87.162:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "PM Financials Ltd": {
+        "company": "PM Financials Ltd",
+        "website": "www.pmfinancials.mu",
+        "genericEmail": "info@pmfinancials.mu",
+        "logoHash": "78D38FF66044E47E6E37533D7779676B",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/7/78D38FF66044E47E6E37533D7779676B.png",
+        "registrationAddress": "Silicon Avenue, 40 Cybercity The Cyberati Lounge, Ground Floor,\nThe Catalyst, Ebène, 72201, Mauritius",
+        "registrationNumber": "C194996",
+        "officesLocation": "UAE",
+        "abuseEmail": "complaint@pmfinancials.mu",
+        "abuseUrl": "https://www.pmfinancials.mu/contact",
+        "phone": "Tel: +230 4672000",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "MU",
+        "servers": [
+          {
+            "name": "PMFinancials-Demo",
+            "access": [
+              "192.109.15.36:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "PMFinancials-Server",
+            "access": [
+              "192.229.22.134:443",
+              "192.109.15.46:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Profin Wealth (Pty) Ltd": {
+        "company": "Profin Wealth (Pty) Ltd",
+        "website": "www.profinwealth.com",
+        "genericEmail": "info@profinwealth.com",
+        "logoHash": "C258085FF07ADD707169920793B7F5E6",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/C258085FF07ADD707169920793B7F5E6.png",
+        "registrationAddress": "Greenford Office Estate, No 1 Punters Way, Kenilworth,\nCape Town, 7780, South Africa",
+        "registrationNumber": "2011/131404/07",
+        "officesLocation": "South Africa",
+        "abuseEmail": "info@profinwealth.com",
+        "abuseUrl": "https://www.profinwealth.com/contact/",
+        "phone": "+27 210234096",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "ZA",
+        "servers": [
+          {
+            "name": "ProFinWealth-Demo",
+            "access": [
+              "34.78.232.112:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          },
+          {
+            "name": "ProFinWealth-Live",
+            "access": [
+              "34.77.32.91:443",
+              "35.195.114.0:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "RS Finance Limited": {
+        "company": "RS Finance Limited",
+        "website": "rs-fin.com",
+        "genericEmail": "support@rs-fin.com",
+        "logoHash": "8E0958CB52F08AAB1FE2F0FA0D4C439E",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/8/8E0958CB52F08AAB1FE2F0FA0D4C439E.png",
+        "registrationAddress": "Suite 310, Griffith Corporate Centre, Beachmont, Kingstown,\nSt. Vincent and the Grenadines",
+        "registrationNumber": "27122 BC 2024",
+        "officesLocation": "New Zealand",
+        "abuseEmail": "support@rs-fin.com",
+        "abuseUrl": "https://rs-fin.com/contact-us/",
+        "phone": "+64 98023561",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "VC",
+        "servers": [
+          {
+            "name": "RSFinance-Server",
+            "access": [
+              "4.194.233.158:443",
+              "20.195.12.246:443",
+              "20.187.148.150:443",
+              "4.241.128.16:443",
+              "139.196.8.240:442"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "XS Fintech Ltd": {
+        "company": "XS Fintech Ltd",
+        "website": "xsfintech.com",
+        "genericEmail": "info@xsfintech.com",
+        "logoHash": "C3E9EC199566194FA5D7665F3B5F6EA8",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/C3E9EC199566194FA5D7665F3B5F6EA8.png",
+        "registrationAddress": "Spyrou Kyprianou, 68, Germasoyia 4042, Limassol, Cyprus",
+        "registrationNumber": "HE 426566",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "info@xsfintech.com",
+        "abuseUrl": "https://www.xsfintech.com/",
+        "phone": "+357 25250561",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "XSFintech-DEMO",
+            "access": [
+              "20.68.16.77:443",
+              "20.68.16.77:1950",
+              "13.69.60.242:443",
+              "13.69.60.242:1950",
+              "74.234.215.95:443",
+              "74.234.215.95:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "XSFintech-REAL-1",
+            "access": [
+              "4.234.130.92:443",
+              "4.234.130.92:1950",
+              "20.27.65.7:443",
+              "20.27.65.7:1950",
+              "20.74.135.45:443",
+              "20.74.135.45:1950",
+              "20.233.22.121:1950",
+              "104.208.84.0:443",
+              "104.208.84.0:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "XSFintech-REAL-2",
+            "access": [
+              "20.117.143.129:443",
+              "20.117.143.129:1950",
+              "13.69.57.116:443",
+              "13.69.57.116:1950",
+              "74.234.219.16:443",
+              "74.234.219.16:1950",
+              "20.74.227.156:443",
+              "20.74.227.156:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          },
+          {
+            "name": "XSFintech-REAL-3",
+            "access": [
+              "13.95.113.5:443",
+              "13.95.113.5:1950",
+              "20.160.74.93:443",
+              "20.160.74.93:1950",
+              "20.203.19.133:443",
+              "20.203.19.133:1950",
+              "4.234.130.237:443",
+              "4.234.130.237:1950"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "AXI Financial Services (UK) Limited": {
+        "company": "AXI Financial Services (UK) Limited",
+        "website": "www.onefinancialmarkets.com",
+        "genericEmail": "info@ofmarkets.com",
+        "logoHash": "57EBF09F38D6B01ACA1C019A88855EAC",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/5/57EBF09F38D6B01ACA1C019A88855EAC.png",
+        "registrationAddress": "1 Finsbury Market, Finsbury Market, London, England \nEC2A 2BN, United Kingdom",
+        "registrationNumber": "06050593",
+        "officesLocation": "United Kingdom",
+        "abuseEmail": "compliance@ofmarkets.com",
+        "abuseUrl": "https://www.onefinancialmarkets.com/contact-us/contact-department",
+        "phone": "+44 (0) 2075340950",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "GB",
+        "servers": [
+          {
+            "name": "OneFinancialMarkets-US48-Live",
+            "access": [
+              "192.229.23.90:443",
+              "US48-live.mt5tradeserver.cn:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "AXP Financials Limited": {
+        "company": "AXP Financials Limited",
+        "website": "www.axfinancials.com",
+        "genericEmail": "info@axfinancials.com",
+        "logoHash": "C5A80ED93D0EAB57B2B780A9743AF4D8",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/C/C5A80ED93D0EAB57B2B780A9743AF4D8.png",
+        "registrationAddress": "Ngong Road, Kevian Offices, Lavington, Riruta, Dagoreti District,\nP.O. Box 25290, Nairobi, Kenya",
+        "registrationNumber": "PVT-MKUMX6LY",
+        "officesLocation": "Lebanon",
+        "abuseEmail": "clientservices@axfinancials.com",
+        "abuseUrl": "https://axfinancials.com/contact-department/",
+        "phone": "+44 1234943200",
+        "limitedAccess": false,
+        "regulation": false,
+        "regulationStatus": "None",
+        "legalCountry": "KE",
+        "servers": [
+          {
+            "name": "AXPFinancials-Server",
+            "access": [
+              "157.241.22.61:443",
+              "157.241.22.61:1950",
+              "40.172.248.113:443",
+              "40.172.248.113:1950",
+              "31.14.254.214:443",
+              "31.14.254.214:1950",
+              "89.21.67.15:443"
+            ],
+            "isDemo": 1,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Alp Financial Limited": {
+        "company": "Alp Financial Limited",
+        "website": "www.alpfin.com",
+        "genericEmail": "info@alpfin.com",
+        "logoHash": "398E8EA29E66B49CCDE2AC841CE91316",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/3/398E8EA29E66B49CCDE2AC841CE91316.png",
+        "registrationAddress": "Level 7, One Canada Square, Canary Wharf, London, E14 5AA,\nUnited Kingdom",
+        "registrationNumber": "10518614",
+        "officesLocation": "United Kingdom",
+        "abuseEmail": "compliance@alpfin.com",
+        "abuseUrl": "https://www.alpfin.com/copy-of-contact",
+        "phone": "+44 2080497488",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "GB",
+        "servers": [
+          {
+            "name": "AlpFin-Live",
+            "access": [
+              "185.212.80.23:443",
+              "54.46.44.15:443"
+            ],
+            "isDemo": 0,
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    },
+    {
+      "Doo Financial Cyprus Limited": {
+        "company": "Doo Financial Cyprus Limited",
+        "website": "www.doofinancial.eu",
+        "genericEmail": "support@doofinancial.eu",
+        "logoHash": "1D44822CB8C32C42283142EFA5B8BBDC",
+        "logoUrl": "https://download.terminal.free/cdn/mobile/logos/1/1D44822CB8C32C42283142EFA5B8BBDC.png",
+        "registrationAddress": "Aiolou and Panagioti Diomidous, 9 Katholiki, \n3020, Limassol, Cyprus",
+        "registrationNumber": "HE 436509",
+        "officesLocation": "Cyprus",
+        "abuseEmail": "support@doofinancial.eu",
+        "abuseUrl": "https://www.doofinancial.eu/contactus/",
+        "phone": "Tel: +357 25263450",
+        "limitedAccess": false,
+        "regulation": true,
+        "regulationStatus": "Regulated",
+        "legalCountry": "CY",
+        "servers": [
+          {
+            "name": "DooFinancialCY-Demo",
+            "access": [
+              "47.52.111.3:60051",
+              "120.78.239.82:60047",
+              "47.94.167.193:60042",
+              "47.94.167.193:443",
+              "139.196.115.37:60046",
+              "ga-bp1giuewgnsnc6fjxxver.aliyunga0018.com:60052",
+              "52.76.192.86:60043",
+              "8.213.197.126:60048",
+              "8.213.197.126:60044",
+              "8.208.92.5:443"
+            ],
+            "isDemo": 1,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          },
+          {
+            "name": "DooFinancialCY-Live",
+            "access": [
+              "15.235.183.18:50052",
+              "15.235.183.18:1950",
+              "15.235.183.18:443",
+              "15.235.183.18:51001",
+              "8.213.197.126:50052",
+              "8.213.197.126:1950",
+              "8.213.197.126:443",
+              "8.213.197.126:51001",
+              "8.208.86.139:50054",
+              "as13-ld-mt5.cdnk7a.com:51001",
+              "47.112.175.110:50056",
+              "47.112.175.110:51002",
+              "as9-cn-mt5.cdnk7a.com:51002",
+              "182.92.230.51:50042",
+              "182.92.230.51:51001",
+              "47.52.111.3:50051",
+              "47.52.111.3:51001",
+              "206.237.35.157:1101",
+              "206.237.35.157:443",
+              "54.233.231.214:50011",
+              "ga-bp1jmwpqx9mukyduwgugt.aliyunga0018.com:50058",
+              "8.222.87.168:50060",
+              "47.254.41.92:50046",
+              "47.91.110.173:50062",
+              "47.91.110.173:1950",
+              "47.91.110.173:443",
+              "47.91.110.173:51001",
+              "47.109.36.91:50061",
+              "47.109.36.91:51002",
+              "as23-cn-mt5.cdnk7a.com:51002",
+              "8.213.192.243:50053",
+              "8.213.192.243:1950",
+              "8.213.192.243:51001",
+              "47.241.59.193:50014",
+              "51.112.30.190:50055",
+              "51.112.30.190:1950",
+              "51.112.30.190:443",
+              "10.2.40.112:2005",
+              "15.235.226.112:2005",
+              "57.128.221.252:50057",
+              "57.128.221.252:443",
+              "57.128.221.252:51001",
+              "47.102.117.149:50044",
+              "47.102.117.149:51002",
+              "as4-cn-mt5.cdnk7a.com:51002",
+              "146.59.0.178:50065",
+              "146.59.0.178:1950",
+              "146.59.0.178:443",
+              "198.244.215.30:50066",
+              "198.244.215.30:443",
+              "148.113.1.136:50067",
+              "148.113.1.136:443",
+              "148.113.1.136:51001"
+            ],
+            "isDemo": 0,
+            "leverage": "100|50|33|25|10|1",
+            "limitedAccess": false
+          }
+        ],
+        "Keyword": "Fin",
+        "Signature": "2b633c952aaf87248eeb5b8ced27e***"
+      }
+    }
+  ],
+  "totalApiCalls": 3,
+  "successfulResponses": 3,
+  "errorResponses": 0,
+  "errorBreakdown": {},
+  "uniqueBrokers": 96,
+  "skippedBrokerDuplicates": 0,
+  "skippedKeywords": 0,
+  "uniqueKeywordsProcessed": 3,
+  "timestamp": "2026-03-12T12:53:41.021413"
+}

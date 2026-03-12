@@ -573,7 +573,7 @@ class BrokerInfoAggregator:
         
         # Determine primary platform from first row's EntryType for initial setup
         if rows:
-            first_entry_type = rows[0].get('EntryType', 5)
+            first_entry_type = rows[0].get('EntryType', 4)
             primary_platform = 'mt4' if first_entry_type == 4 else 'mt5'
             # Initialize platform settings and user agents for first platform
             self.current_platform = primary_platform
@@ -581,9 +581,9 @@ class BrokerInfoAggregator:
             self.user_agents = self.platforms[primary_platform]['user_agents']
         else:
             # Fallback if no rows
-            self.current_platform = 'mt5'
-            self._init_platform_settings('mt5')
-            self.user_agents = self.platforms['mt5']['user_agents']
+            self.current_platform = 'mt4'
+            self._init_platform_settings('mt4')
+            self.user_agents = self.platforms['mt4']['user_agents']
         
         self.select_batch_user_agents()  # Initialize batch UAs
         

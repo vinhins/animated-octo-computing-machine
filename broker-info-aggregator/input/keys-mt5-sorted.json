@@ -1,0 +1,40 @@
+{
+  "table": "SearchKeysWithSignatures",
+  "totalRows": 295,
+  "processedRows": 295,
+  "failedRows": 0,
+  "rows": [
+    {
+      "Keyword": "Mar",
+      "CleanedKeyword": "Mar",
+      "FormattedKeyword": "company=Mar&code=mt5",
+      "EntryType": 5,
+      "Signature": "41c40e3b0b784f2468dd7d0e7f088be1",
+      "Count": 32
+    },
+    {
+      "Keyword": "Bal",
+      "CleanedKeyword": "Bal",
+      "FormattedKeyword": "company=Bal&code=mt5",
+      "EntryType": 5,
+      "Signature": "b9df7851d08b33426340e722b1102204",
+      "Count": 31
+    },
+    {
+      "Keyword": "Fin",
+      "CleanedKeyword": "Fin",
+      "FormattedKeyword": "company=Fin&code=mt5",
+      "EntryType": 5,
+      "Signature": "2b633c952aaf87248eeb5b8ced27edfb",
+      "Count": 29
+    },
+    {
+      "Keyword": "Pty",
+      "CleanedKeyword": "Pty",
+      "FormattedKeyword": "company=Pty&code=mt5",
+      "EntryType": 5,
+      "Signature": "c101ec58bf437b07f03291866f8a6348",
+      "Count": 28
+    }
+  ]
+}
