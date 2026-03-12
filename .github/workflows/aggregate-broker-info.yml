@@ -97,7 +97,8 @@ jobs:
           
           echo "[*] Starting broker info aggregation..."
           echo "[*] Input: $INPUT"
-          echo "[*] Base delay: ${DELAY}s | Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
+          echo "[*] Platform: Auto-detected from JSON data (FormattedKeyword field)"
+          echo "[*] Base delay: ${DELAY}s | Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max errors: $MAX_ERRORS"
           echo ""
           
           python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" \

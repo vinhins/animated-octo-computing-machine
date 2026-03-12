@@ -76,8 +76,7 @@ def redact_signature(signature: str, redact_last: int = 3) -> str:
 class BrokerInfoAggregator:
     def __init__(self, input_file: str, output_file: str = None, max_requests: int = 0, delay: float = 1.0, 
                  max_consecutive_errors: int = 5, batch_size: int = 25, batch_pause: float = 45, 
-                 jitter_percent: float = 25, use_multi_keyword_api: bool = False, keywords_per_call: int = 10,
-                 platform: str = "mt4"):
+                 jitter_percent: float = 25, use_multi_keyword_api: bool = False, keywords_per_call: int = 10):
         """
         Initialize the aggregator with enhanced resilience and multi-keyword support
         
@@ -92,12 +91,7 @@ class BrokerInfoAggregator:
             jitter_percent: Random jitter variation percentage (default 25)
             use_multi_keyword_api: Enable multi-keyword API calls (multiple keywords per request) - requires pre-computed batch signatures
             keywords_per_call: Number of keywords to batch in one API call (default 10, only used with use_multi_keyword_api=True)
-            platform: Target platform - "mt4" or "mt5" (default: mt4)
         """
-        # Validate platform
-        if platform not in ("mt4", "mt5"):
-            raise ValueError(f"Invalid platform: {platform}. Must be 'mt4' or 'mt5'")
-        
         self.input_file = input_file
         self.max_requests = max_requests
         self.base_delay = delay
@@ -108,12 +102,10 @@ class BrokerInfoAggregator:
         self.jitter_percent = jitter_percent
         self.use_multi_keyword_api = use_multi_keyword_api
         self.keywords_per_call = keywords_per_call
-        self.platform = platform.lower()
         
-        # Set platform-specific settings
-        self.api_url = API_URLS[self.platform]
-        self.user_agents = MT5_USER_AGENTS if self.platform == "mt5" else MT4_USER_AGENTS
-        self.code_param = "mt5" if self.platform == "mt5" else "mt4"
+        # Platform will be detected per-request from FormattedKeyword (code=mt4|mt5)
+        self.platforms = {}  # Cache of URL + user_agents per platform
+        self.current_platform = None  # Track current platform for user_agents
         
         self.broker_cache = {}  # company_name -> broker_info
         self.processed_keywords = set()  # Track cleaned keywords already processed
@@ -132,10 +124,65 @@ class BrokerInfoAggregator:
         self.current_backoff_level = BackoffLevel.LEVEL_0
         self.error_types = {}  # Track error types: {status_code: count}
         
+    def _init_platform_settings(self, platform: str):
+        """Initialize platform-specific settings (cache)"""
+        if platform not in self.platforms:
+            self.platforms[platform] = {
+                'api_url': API_URLS[platform],
+                'user_agents': MT5_USER_AGENTS if platform == "mt5" else MT4_USER_AGENTS,
+                'code_param': platform
+            }
+    
+    def _get_platform_from_entry_type(self, entry_type: int, formatted_keyword: str = "") -> str:
+        """
+        Extract platform from EntryType (primary source).
+        EntryType: 4 = MT4, 5 = MT5
+        Falls back to FormattedKeyword parsing if EntryType is invalid.
+        
+        Args:
+            entry_type: EntryType integer from JSON row
+            formatted_keyword: FormattedKeyword as fallback
+            
+        Returns:
+            Platform string: 'mt4' or 'mt5'
+        """
+        # Check EntryType first (most reliable)
+        if entry_type == 4:
+            return 'mt4'
+        elif entry_type == 5:
+            return 'mt5'
+        
+        # Fallback to FormattedKeyword parsing
+        if 'code=mt5' in formatted_keyword:
+            return 'mt5'
+        elif 'code=mt4' in formatted_keyword:
+            return 'mt4'
+        
+        # Default to mt4 if unable to determine
+        return 'mt4'
+    
+    def _get_platform_user_agents(self, platform: str):
+        """Get user agents for platform"""
+        self._init_platform_settings(platform)
+        return self.platforms[platform]['user_agents']
+    
+    def _get_platform_api_url(self, platform: str):
+        """Get API URL for platform"""
+        self._init_platform_settings(platform)
+        return self.platforms[platform]['api_url']
+        
     def get_random_delay(self, base_delay: float) -> float:
         """Add ±25% random jitter to delay"""
         jitter_factor = 1.0 + (random.random() - 0.5) * (self.jitter_percent / 100.0)
         return base_delay * jitter_factor
+    
+    def ensure_platform_user_agents(self, platform: str):
+        """Ensure user_agents are set for the given platform"""
+        if not hasattr(self, 'user_agents') or self.current_platform != platform:
+            self.current_platform = platform
+            self._init_platform_settings(platform)
+            self.user_agents = self.platforms[platform]['user_agents']
+            self.select_batch_user_agents()  # Reset batch UAs for new platform
     
     def select_batch_user_agents(self):
         """Select 3 random user agents for this batch"""
@@ -198,13 +245,14 @@ class BrokerInfoAggregator:
             print(f"[-] Error loading signatures: {e}")
             sys.exit(1)
     
-    def fetch_broker_info(self, keyword: str, signature: str) -> Dict[str, Any]:
+    def fetch_broker_info(self, keyword: str, signature: str, platform: str = "mt4") -> Dict[str, Any]:
         """
         Fetch broker info from MT4/MT5 API with enhanced error handling
         
         Args:
             keyword: Company keyword
             signature: Signature value
+            platform: Target platform - "mt4" or "mt5" (default: mt4)
             
         Returns:
             API response or None if error
@@ -221,6 +269,10 @@ class BrokerInfoAggregator:
         self.check_approach_limit()
         
         try:
+            # Get platform-specific settings
+            api_url = self._get_platform_api_url(platform)
+            user_agents = self._get_platform_user_agents(platform)
+            
             # Get next User-Agent from batch
             user_agent = self.get_next_user_agent()
             
@@ -233,11 +285,12 @@ class BrokerInfoAggregator:
             data = {
                 'company': keyword,
                 'signature': signature,
-                'code': self.code_param  # mt4 or mt5
+                'code': platform  # mt4 or mt5
             }
             
-            print(f"[*] [{self.total_api_calls}] Fetching ({self.platform.upper()}): {keyword} (UA: {user_agent.split('/')[1][:15]}...)")
-            response = requests.post(self.api_url, data=data, headers=headers, timeout=10)
+            print(f"[*] [{self.total_api_calls}] Fetching ({platform.upper()}): {keyword} (UA: {user_agent.split('/')[1][:15]}...)")
+            response = requests.post(api_url, data=data, headers=headers, timeout=10)
+            response.raise_for_status()
             response.raise_for_status()
             
             result = response.json()
@@ -300,7 +353,7 @@ class BrokerInfoAggregator:
             self.error_responses += 1
             return None
     
-    def fetch_broker_info_batch(self, keywords_list: List[str], batch_signature: str) -> Dict[str, Any]:
+    def fetch_broker_info_batch(self, keywords_list: List[str], batch_signature: str, platform: str = "mt4") -> Dict[str, Any]:
         """
         Fetch broker info for multiple keywords in a single API call
         Uses multi-keyword format: servers=keyword1,keyword2,keyword3&signature=<sig>&code=mt4|mt5
@@ -308,6 +361,7 @@ class BrokerInfoAggregator:
         Args:
             keywords_list: List of keywords to search
             batch_signature: Pre-computed signature for the batch request
+            platform: Target platform - "mt4" or "mt5" (default: mt4)
             
         Returns:
             API response or None if error
@@ -324,6 +378,10 @@ class BrokerInfoAggregator:
         self.check_approach_limit()
         
         try:
+            # Get platform-specific settings
+            api_url = self._get_platform_api_url(platform)
+            user_agents = self._get_platform_user_agents(platform)
+            
             # Get next User-Agent from batch
             user_agent = self.get_next_user_agent()
             
@@ -338,12 +396,12 @@ class BrokerInfoAggregator:
             data = {
                 'servers': keywords_joined,
                 'signature': batch_signature,
-                'code': self.code_param  # mt4 or mt5
+                'code': platform  # mt4 or mt5
             }
             
             keywords_display = f"[{len(keywords_list)} keywords]" if len(keywords_list) > 1 else keywords_list[0]
-            print(f"[*] [{self.total_api_calls}] Batch fetch ({self.platform.upper()}): {keywords_display} (UA: {user_agent.split('/')[1][:15]}...)")
-            response = requests.post(self.api_url, data=data, headers=headers, timeout=10)
+            print(f"[*] [{self.total_api_calls}] Batch fetch ({platform.upper()}): {keywords_display} (UA: {user_agent.split('/')[1][:15]}...)")
+            response = requests.post(api_url, data=data, headers=headers, timeout=10)
             response.raise_for_status()
             
             result = response.json()
@@ -499,9 +557,8 @@ class BrokerInfoAggregator:
     def run(self):
         """Main execution with batch processing and optional multi-keyword API support"""
         print("[*] Broker Info Aggregator (Enhanced with Multi-Keyword Support)")
-        print(f"[*] Platform: {self.platform.upper()}")
         print(f"[*] Input: {self.input_file}")
-        print(f"[*] API URL: {self.api_url}")
+        print(f"[*] Platform: Auto-detected from JSON data (EntryType field)")
         print(f"[*] Max API calls: {self.max_requests if self.max_requests > 0 else 'unlimited'}")
         print(f"[*] Batch size: {self.batch_size} requests/batch + {self.batch_pause}s pause")
         print(f"[*] Jitter: ±{self.jitter_percent}% on delays")
@@ -513,6 +570,21 @@ class BrokerInfoAggregator:
         
         # Load and sort signatures
         rows = self.load_signatures()
+        
+        # Determine primary platform from first row's EntryType for initial setup
+        if rows:
+            first_entry_type = rows[0].get('EntryType', 5)
+            primary_platform = 'mt4' if first_entry_type == 4 else 'mt5'
+            # Initialize platform settings and user agents for first platform
+            self.current_platform = primary_platform
+            self._init_platform_settings(primary_platform)
+            self.user_agents = self.platforms[primary_platform]['user_agents']
+        else:
+            # Fallback if no rows
+            self.current_platform = 'mt5'
+            self._init_platform_settings('mt5')
+            self.user_agents = self.platforms['mt5']['user_agents']
+        
         self.select_batch_user_agents()  # Initialize batch UAs
         
         # If multi-keyword mode, group rows into batches
@@ -547,6 +619,11 @@ class BrokerInfoAggregator:
             signature = row.get('Signature')
             count = row.get('Count', 0)
             cleaned_keyword = row.get('CleanedKeyword', keyword)
+            formatted_keyword = row.get('FormattedKeyword', '')
+            entry_type = row.get('EntryType', 4)  # Default to 4 (MT4) if not present
+            
+            # Extract platform from EntryType (primary) with FormattedKeyword as fallback
+            platform = self._get_platform_from_entry_type(entry_type, formatted_keyword)
             
             if not keyword or not signature:
                 print(f"[-] Row {i}: Missing Keyword or Signature")
@@ -575,8 +652,11 @@ class BrokerInfoAggregator:
                 delay = self.get_current_delay()
                 time.sleep(delay)
             
+            # Ensure user_agents are set for the current platform
+            self.ensure_platform_user_agents(platform)
+            
             # Fetch broker info from API
-            response = self.fetch_broker_info(cleaned_keyword, signature)
+            response = self.fetch_broker_info(cleaned_keyword, signature, platform)
             self.batch_request_count += 1
             
             if response is not None:
@@ -614,6 +694,12 @@ class BrokerInfoAggregator:
                 print(f"[!] Error breakdown: {error_summary}")
                 print(f"[!] API appears to be blocking all requests. Stopping gracefully.")
                 break
+            
+            # Extract platform from first row's EntryType (all rows in this signature group should have same platform)
+            first_row = sig_rows[0] if sig_rows else {}
+            entry_type = first_row.get('EntryType', 4)
+            formatted_keyword = first_row.get('FormattedKeyword', '')
+            platform = self._get_platform_from_entry_type(entry_type, formatted_keyword)
             
             # Batch keywords from this signature group
             for batch_start in range(0, len(sig_rows), self.keywords_per_call):
@@ -667,6 +753,9 @@ class BrokerInfoAggregator:
                 
                 api_call_num += 1
                 
+                # Ensure user_agents are set for the current platform
+                self.ensure_platform_user_agents(platform)
+                
                 # NOTE: In multi-keyword mode, signature is typically shared.
                 # This assumes the input JSON already has pre-computed batch signatures.
                 # For dynamic signature computation, you would need to:
@@ -676,7 +765,7 @@ class BrokerInfoAggregator:
                 # - Then use that new signature
                 
                 # Fetch broker info for this batch
-                response = self.fetch_broker_info_batch(keywords_to_fetch, signature)
+                response = self.fetch_broker_info_batch(keywords_to_fetch, signature, platform)
                 self.batch_request_count += 1
                 
                 if response is not None:
@@ -788,7 +877,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python broker_info_aggregator.py <input_file> [options]")
         print("\nOptions:")
-        print("  --platform PLATFORM          Target platform - mt4 or mt5 (default: mt4)")
         print("  --output-file FILE           Output filename")
         print("  --max-requests N             Max total API calls (0=unlimited, default: 0)")
         print("  --delay SECS                 Base delay between requests in seconds (default: 1.0)")
@@ -802,15 +890,12 @@ def main():
         print("  Single-keyword (default):  One keyword per API call (original behavior)")
         print("  Multi-keyword (--multi-keyword): Multiple keywords per call (fewer API calls, requires batch signatures)")
         print("\nPlatforms:")
-        print("  mt4: MetaTrader 4 (default) - Uses MT4 User-Agents and MT4 API endpoint")
-        print("  mt5: MetaTrader 5 - Uses MT5 User-Agents and MT5 API endpoint")
+        print("  Platform (mt4/mt5) is detected from JSON data (FormattedKeyword field contains 'code=mt4' or 'code=mt5')")
         print("\nExamples:")
-        print("  # MT4 single-keyword mode (default):")
+        print("  # Single-keyword mode (default, auto-detect platform from JSON):")
         print("  python broker_info_aggregator.py keys.json")
-        print("\n  # MT5 single-keyword mode:")
-        print("  python broker_info_aggregator.py keys.json --platform mt5")
-        print("\n  # MT5 multi-keyword mode (batched):")
-        print("  python broker_info_aggregator.py keys.json --platform mt5 --multi-keyword --keywords-per-call 10")
+        print("\n  # Multi-keyword mode (batched):")
+        print("  python broker_info_aggregator.py keys.json --multi-keyword --keywords-per-call 10")
         sys.exit(1)
     
     input_file = sys.argv[1]
@@ -823,16 +908,10 @@ def main():
     max_consecutive_errors = 5
     use_multi_keyword_api = False
     keywords_per_call = 10
-    platform = "mt4"
     
     # Parse options
     for i in range(2, len(sys.argv)):
-        if sys.argv[i] == '--platform' and i + 1 < len(sys.argv):
-            platform = sys.argv[i + 1].lower()
-            if platform not in ("mt4", "mt5"):
-                print(f"[-] Invalid platform: {platform}. Must be 'mt4' or 'mt5'")
-                sys.exit(1)
-        elif sys.argv[i] == '--output-file' and i + 1 < len(sys.argv):
+        if sys.argv[i] == '--output-file' and i + 1 < len(sys.argv):
             output_file = sys.argv[i + 1]
         elif sys.argv[i] == '--max-requests' and i + 1 < len(sys.argv):
             try:
@@ -895,8 +974,7 @@ def main():
         batch_pause=batch_pause,
         jitter_percent=jitter_percent,
         use_multi_keyword_api=use_multi_keyword_api,
-        keywords_per_call=keywords_per_call,
-        platform=platform
+        keywords_per_call=keywords_per_call
     )
     aggregator.run()
 
