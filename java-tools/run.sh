@@ -4,6 +4,33 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIR="$SCRIPT_DIR"
 
+# Default type is mt5
+TYPE="mt5"
+LIB_PATH=""
+INPUT_FILE=""
+OUTPUT_FILE=""
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --type)
+            TYPE="$2"
+            shift 2
+            ;;
+        *)
+            # Positional arguments
+            if [ -z "$LIB_PATH" ] && [ -d "$1" ]; then
+                LIB_PATH="$1"
+            elif [ -z "$INPUT_FILE" ]; then
+                INPUT_FILE="$1"
+            elif [ -z "$OUTPUT_FILE" ]; then
+                OUTPUT_FILE="$1"
+            fi
+            shift
+            ;;
+    esac
+done
+
 # Auto-detect architecture if lib/ directory exists
 if [ -d "$SCRIPT_DIR/lib" ]; then
     # Determine system architecture
@@ -16,36 +43,57 @@ if [ -d "$SCRIPT_DIR/lib" ]; then
         # Default to arm64-v8a if not ARM
         ARCH_DIR="arm64-v8a"
     fi
-    LIB_PATH="$SCRIPT_DIR/lib/$ARCH_DIR"
-    # If first arg provided and looks like a path, use it instead
-    if [ -n "${1:-}" ] && [ -d "$1" ]; then
-        LIB_PATH="$1"
-        INPUT_FILE="${2:-mt5_servers_search_keys_10032026.json}"
-        OUTPUT_FILE="${3:-}"
-    else
-        INPUT_FILE="${1:-mt5_servers_search_keys_10032026.json}"
-        OUTPUT_FILE="${2:-}"
+    if [ -z "$LIB_PATH" ]; then
+        LIB_PATH="$SCRIPT_DIR/lib/$ARCH_DIR"
     fi
 else
-    # No bundled lib, require explicit path
-    LIB_PATH="${1:-.}"  # First argument is library path, defaults to current directory
-    INPUT_FILE="${2:-mt5_servers_search_keys_10032026.json}"
-    OUTPUT_FILE="${3:-}"
+    # No bundled lib, use current directory as default
+    if [ -z "$LIB_PATH" ]; then
+        LIB_PATH="."
+    fi
+fi
+
+# Set defaults based on type if not provided
+if [ -z "$INPUT_FILE" ]; then
+    if [ "$TYPE" = "mt4" ]; then
+        INPUT_FILE="mt4_servers_search_keys_10032026.json"
+    else
+        INPUT_FILE="mt5_servers_search_keys_10032026.json"
+    fi
 fi
 
 # Generate output filename if not provided
 if [ -z "$OUTPUT_FILE" ]; then
-    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-    INPUT_BASENAME="${INPUT_FILE%.*}"
-    INPUT_EXT="${INPUT_FILE##*.}"
-    OUTPUT_FILE="output_${INPUT_BASENAME}_${TIMESTAMP}.${INPUT_EXT}"
+    if [ "$TYPE" = "mt4" ]; then
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        INPUT_BASENAME="${INPUT_FILE%.*}"
+        INPUT_EXT="${INPUT_FILE##*.}"
+        OUTPUT_FILE="output_mt4_${INPUT_BASENAME}_${TIMESTAMP}.${INPUT_EXT}"
+    else
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        INPUT_BASENAME="${INPUT_FILE%.*}"
+        INPUT_EXT="${INPUT_FILE##*.}"
+        OUTPUT_FILE="output_${INPUT_BASENAME}_${TIMESTAMP}.${INPUT_EXT}"
+    fi
 fi
 
 echo "[*] Broker Signature Processor Runner"
+echo "[*] Type: $TYPE"
 echo "[*] System architecture: $(uname -m)"
 echo "[*] Library path: $LIB_PATH"
 echo "[*] Input file: $INPUT_FILE"
 echo "[*] Output file: $OUTPUT_FILE"
+echo ""
+echo "Usage: ./run.sh [--type mt4|mt5] [lib_path] [input_file] [output_file]"
+echo "  --type mt4      : Process MT4 broker data (default: mt5)"
+echo "  --type mt5      : Process MT5 broker data (default)"
+echo "  lib_path        : Path to native library (auto-detected if available)"
+echo "  input_file      : Input JSON file (default: {type}_servers_search_keys_10032026.json)"
+echo "  output_file     : Output JSON file (default: auto-generated with timestamp)"
+echo ""
+echo "Examples:"
+echo "  ./run.sh --type mt4"
+echo "  ./run.sh --type mt5 /usr/lib input.json output.json"
 echo ""
 
 # Find JAR file (check multiple naming schemes)

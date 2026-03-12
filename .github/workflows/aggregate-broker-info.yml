@@ -3,18 +3,10 @@ name: Aggregate Broker Info
 on:
   workflow_dispatch:
     inputs:
-      platform:
-        description: "Target platform (mt4 or mt5)"
-        required: false
-        type: choice
-        options:
-          - mt4
-          - mt5
-        default: "mt4"
       input_file:
-        description: "Path to input JSON file (signatures output, from repo root)"
-        required: true
-        default: "java-tools/output/keys.json"
+        description: "Path to input JSON file (override BROKER_INPUT_DATA secret, from repo root)"
+        required: false
+        default: ""
       delay:
         description: "Base delay between API requests (seconds)"
         required: false
@@ -56,38 +48,59 @@ jobs:
           pip install -q -r broker-info-aggregator/requirements.txt
           echo "[+] Dependencies installed"
 
-      - name: Verify input file exists
+      - name: Prepare input file from secret
         shell: bash
+        env:
+          INPUT_DATA: ${{ secrets.BROKER_INPUT_DATA }}
         run: |
-          INPUT_FILE="${{ github.event.inputs.input_file }}"
-          if [ ! -f "$INPUT_FILE" ]; then
-            echo "[-] Input file not found: $INPUT_FILE"
-            ls -la java-tools/input/ || echo "Input directory not found"
+          if [ -z "$INPUT_DATA" ]; then
+            echo "[-] BROKER_INPUT_DATA secret is not set"
             exit 1
           fi
-          echo "[+] Input file found: $INPUT_FILE"
+          
+          # Use workflow input if provided, otherwise write secret data to file
+          if [ -n "${{ github.event.inputs.input_file }}" ]; then
+            INPUT_FILE="${{ github.event.inputs.input_file }}"
+            echo "[*] Using input_file parameter: $INPUT_FILE"
+          else
+            # Write secret JSON content to temporary file
+            INPUT_FILE="/tmp/broker_input.json"
+            echo "$INPUT_DATA" > "$INPUT_FILE"
+            echo "[*] Created input file from BROKER_INPUT_DATA secret"
+          fi
+          
+          # Verify file exists and is valid JSON
+          if [ ! -f "$INPUT_FILE" ]; then
+            echo "[-] Input file not found: $INPUT_FILE"
+            exit 1
+          fi
+          
+          if ! python -c "import json; json.load(open('$INPUT_FILE'))" 2>/dev/null; then
+            echo "[-] Invalid JSON in input file"
+            exit 1
+          fi
+          
+          # Export for next steps
+          echo "INPUT_FILE=$INPUT_FILE" >> $GITHUB_ENV
           SIZE=$(wc -l < "$INPUT_FILE")
-          echo "[*] File has $SIZE lines"
+          echo "[+] Input file ready: $INPUT_FILE ($SIZE lines)"
 
       - name: Run broker aggregator
         shell: bash
         run: |
-          PLATFORM="${{ github.event.inputs.platform }}"
           DELAY="${{ github.event.inputs.delay }}"
           MAX_REQUESTS="${{ github.event.inputs.max_requests }}"
           JITTER="${{ github.event.inputs.jitter_percent }}"
           MAX_ERRORS="${{ github.event.inputs.max_consecutive_errors }}"
-          INPUT="${{ github.event.inputs.input_file }}"
+          INPUT="${{ env.INPUT_FILE }}"
           WORK_DIR="broker-info-aggregator"
           
           echo "[*] Starting broker info aggregation..."
-          echo "[*] Platform: ${PLATFORM^^}"
           echo "[*] Input: $INPUT"
           echo "[*] Base delay: ${DELAY}s | Jitter: ±${JITTER}% | Max requests: $MAX_REQUESTS | Max 403 errors: $MAX_ERRORS"
           echo ""
           
           python "$WORK_DIR/broker_info_aggregator.py" "$INPUT" \
-            --platform "$PLATFORM" \
             --delay "$DELAY" \
             --jitter "$JITTER" \
             --max-requests "$MAX_REQUESTS" \
