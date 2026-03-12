@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.metaquotes.common.ui.Toolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="?android:actionBarSize" app:layout_constraintTop_toTopOf="parent" />
-    <ListView android:id="@id/log_view" android:scrollbars="horizontal|vertical" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0.0dp" android:listSelector="@android:color/transparent" android:drawSelectorOnTop="false" android:divider="@color/color_list_divider" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar" />
-</androidx.constraintlayout.widget.ConstraintLayout>

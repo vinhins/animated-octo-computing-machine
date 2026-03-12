@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <net.metaquotes.common.ui.MetaTraderSpinner android:textSize="15.0sp" android:textColor="@color/list_item_base_color" android:gravity="right|bottom" android:layout_gravity="bottom" android:id="@id/param_value" android:paddingRight="12.0dp" android:layout_width="0.0px" android:layout_height="44.0dp" android:singleLine="true" android:layout_weight="1.0" style="@style/MQSpinner" />
-</LinearLayout>

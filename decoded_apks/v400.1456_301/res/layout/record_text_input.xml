@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/container" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="48.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textColor="#808080" android:id="@id/hint" android:text="@string/phone" style="@style/DemoAccountFieldTitle" />
-    <EditText android:textColor="@color/text_hint" android:id="@id/value" android:hint="@string/new_account_phone_hint" style="@style/DemoAccountField" />
-</LinearLayout>

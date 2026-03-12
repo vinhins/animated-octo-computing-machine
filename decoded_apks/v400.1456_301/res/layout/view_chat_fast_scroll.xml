@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="right|bottom" android:id="@id/chat_fast_scroll" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:animateLayoutChanges="true" android:scaleX="0.0" android:scaleY="0.0" android:paddingVertical="2.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageButton android:layout_gravity="center" android:id="@id/fast_scroll_button" android:background="@drawable/chat_fast_scroll_background" android:layout_width="48.0dp" android:layout_height="48.0dp" android:layout_marginTop="10.0dp" android:layout_marginBottom="4.0dp" android:src="@drawable/ic_dir_down" android:tint="@color/blue_button_selector" />
-    <TextSwitcher android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/text_switcher" android:background="@drawable/chat_fast_scroll_counter_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-2.0dp" android:inAnimation="@anim/slide_up" android:outAnimation="@anim/slide_down" />
-</FrameLayout>

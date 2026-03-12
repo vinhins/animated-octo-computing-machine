@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:background="@color/background_panel" android:layout_width="56.0dip" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:id="@id/app_icon" android:background="@color/nav_bar_background" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:layout_width="56.0dip" android:layout_height="?android:actionBarSize" android:src="@mipmap/ic_launcher" android:contentDescription="App icon" android:paddingHorizontal="4.0dip" app:layout_constraintEnd_toStartOf="@id/border" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <ListView android:id="@id/menu_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:divider="@color/drawer_background_normal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/border" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/app_icon" />
-    <View android:id="@id/border" android:background="@color/background_panel_border" android:layout_width="1.0dip" android:layout_height="0.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/app_icon" />
-</androidx.constraintlayout.widget.ConstraintLayout>
